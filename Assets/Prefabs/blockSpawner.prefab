@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4505820255283244}
   - component: {fileID: 61441287229899450}
   - component: {fileID: 114346418075448594}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: blockSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,6 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23dc5f2e6af36ef47939901a7e3caadf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  qty: 0
   blocks:
   - {fileID: 1878720684860812, guid: e07f364e97a98994384b479abd02018d, type: 2}
   - {fileID: 1709445462560878, guid: 831ad495a0061ad469199f42852ae05c, type: 2}
