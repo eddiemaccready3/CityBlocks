@@ -86,9 +86,9 @@ public class UserInput : MonoBehaviour {
             //}
 
             //Create List of Blocks clicked on in a 9 x 9 grid
-            for (int y = 0; y < 2; y++)
+            for (int y = 0; y < 3; y++)
             {
-                for (int x = 0; x < 2; x++)
+                for (int x = 0; x < 3; x++)
                 {
                     Vector3 gridCheck = new Vector3(x, y, 0);
                     if (checkBlocksClickedOn.Contains(gridCheck))
@@ -99,10 +99,13 @@ public class UserInput : MonoBehaviour {
                     {
                         checkShapeGrid.Add(0);
                     }
+
+                    //print("Grid pos: " + checkShapeGrid[checkShapeGrid.Count]);
                 }
             }
 
-            print(checkShapeGrid);
+            string grid = string.Join(";", checkShapeGrid.Select(x => x.ToString()).ToArray());
+            print(grid);
 
             //Compare this list to Shape
             //If matched, destroy matching Blocks at original coordinates
@@ -110,6 +113,7 @@ public class UserInput : MonoBehaviour {
 
             listBlocksClickedOn.Clear();
             listTagsClicked.Clear();
+            checkShapeGrid.Clear();
 
             minX = 0f;
             minY = 0f;
