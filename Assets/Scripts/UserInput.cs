@@ -44,6 +44,8 @@ public class UserInput : MonoBehaviour {
     private Vector3 blockClickedPoition;
     private Vector3 newPosToCheckShape;
 
+    [SerializeField] GameObject destroyer;
+
     private string tagFirstBlockClicked;
     private string currentGridIndex;
     
@@ -206,8 +208,8 @@ public class UserInput : MonoBehaviour {
                 }
             }
 
-            //string grid = string.Join("", checkShapeGrid.Select(x => x.ToString()).ToArray());
-            //print(grid);
+            string grid = string.Join("", checkShapeGrid.Select(x => x.ToString()).ToArray());
+            print(grid);
 
             //Compare this list to Shape
 
@@ -317,7 +319,13 @@ public class UserInput : MonoBehaviour {
             if (match == false & checkShapeGrid[i] == 1 & checkShapeGrid[i + shapeMatchIndexes[1]] == 1 & checkShapeGrid[i + shapeMatchIndexes[2]] == 1 & checkShapeGrid[i + shapeMatchIndexes[3]] == 1)
             {
                 print("Match shape O!");
-                //print(i);
+
+                Instantiate(destroyer, new Vector3((i % 6), (i / 6), 0), Quaternion.identity);
+                Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[1]) % 6), ((i + shapeMatchIndexes[1]) / 6), 0), Quaternion.identity);
+                Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[2]) % 6), ((i + shapeMatchIndexes[2]) / 6), 0), Quaternion.identity);
+                Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[3]) % 6), ((i + shapeMatchIndexes[3]) / 6), 0), Quaternion.identity);
+
+                print(i);
                 match = true;
             }
         }
