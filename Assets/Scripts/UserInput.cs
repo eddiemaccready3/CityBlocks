@@ -5,15 +5,45 @@ using System.Linq;
 
 public class UserInput : MonoBehaviour {
 
+    private const string SHAPET1 = "10000111";
+    private const string SHAPET2 = "1000001100001";
+    private const string SHAPET3 = "11100001";
+    private const string SHAPET4 = "1000011000001";
+    private const string SHAPEO  = "11000011";
+    private const string SHAPES1 = "10000111";
+    private const string SHAPES2 = "100001100001";
+    private const string SHAPEZ1 = "1100011";
+    private const string SHAPEZ2 = "10000011000001";
+    private const string SHAPEI1 = "1000001000001000001";
+    private const string SHAPEI2 = "1111";
+    private const string SHAPEJ1 = "11000001000001";
+    private const string SHAPEJ2 = "1110001";
+    private const string SHAPEL1 = "1100001000001";
+    private const string SHAPEL2 = "111000001";
+    private const string SHAPEX  = "1000011100001";
+    
     private List<Vector3> listBlocksClickedOn = new List<Vector3>();
     private List<Vector3> checkBlocksClickedOn = new List<Vector3>();
+    
     private List<int> checkShapeGrid = new List<int>();
+    private List<int> shapeMatchIndexes = new List<int>();
+    
     private List<string> listTagsClicked = new List<string>();
-
+    private List<string> listOfShapes = new List<string>();
+    private List<string> shapeTGrid = new List<string>();
+    private List<string> shapeSGrid = new List<string>();
+    private List<string> shapeZGrid = new List<string>();
+    private List<string> shapeIGrid = new List<string>();
+    private List<string> shapeJGrid = new List<string>();
+    private List<string> shapeLGrid = new List<string>();
+    
     private Vector3 blockClickedPoition;
     private Vector3 newPosToCheckShape;
 
     private string tagFirstBlockClicked;
+    private string currentGridIndex;
+    
+    private bool match;
 
     private float minX = 0f;
     private float minY = 0f;
@@ -22,13 +52,54 @@ public class UserInput : MonoBehaviour {
     private int shapeGridPosY = 0;
 
 	// Use this for initialization
-	void Start () {
-		listBlocksClickedOn.Clear();
+	void Start ()
+    {
+        listBlocksClickedOn.Clear();
         listTagsClicked.Clear();
-	}
-	
-	// Update is called once per frame
-	void Update ()
+        match = false;
+        PopulateShapesList();
+        PopulateShapeGridList();
+
+    }
+
+    private void PopulateShapeGridList()
+    {
+        shapeTGrid.Add(SHAPET1);
+        shapeTGrid.Add(SHAPET2);
+        shapeTGrid.Add(SHAPET3);
+        shapeTGrid.Add(SHAPET4);
+
+        shapeSGrid.Add(SHAPES1);
+        shapeSGrid.Add(SHAPES2);
+
+        shapeZGrid.Add(SHAPEZ1);
+        shapeZGrid.Add(SHAPEZ2);
+
+        shapeIGrid.Add(SHAPEI1);
+        shapeIGrid.Add(SHAPEI2);
+
+        shapeJGrid.Add(SHAPEJ1);
+        shapeJGrid.Add(SHAPEJ2);
+
+        shapeLGrid.Add(SHAPEL1);
+        shapeLGrid.Add(SHAPEL2);
+    }
+
+    private void PopulateShapesList()
+    {
+        listOfShapes.Add("ShapeT");
+        listOfShapes.Add("ShapeO");
+        listOfShapes.Add("ShapeS");
+        listOfShapes.Add("ShapeZ");
+        listOfShapes.Add("ShapeI");
+        listOfShapes.Add("ShapeJ");
+        listOfShapes.Add("ShapeL");
+        listOfShapes.Add("ShapeX");
+        
+    }
+
+    // Update is called once per frame
+    void Update ()
     {
         CheckMouseClicks();
         //OnMouseUp();
@@ -48,22 +119,22 @@ public class UserInput : MonoBehaviour {
             //MatchShapes();
 
             //Move positions saved in list to lower left coordinates
-            int length = listBlocksClickedOn.Count;
-            minX = listBlocksClickedOn.Min(v => v.x);
-            minY = listBlocksClickedOn.Min(v => v.y);
-            float newXPos;
-            float newYPos;
-            float zPos;
+            //int length = listBlocksClickedOn.Count;
+            //minX = listBlocksClickedOn.Min(v => v.x);
+            //minY = listBlocksClickedOn.Min(v => v.y);
+            //float newXPos;
+            //float newYPos;
+            //float zPos;
 
-            for (int i = 0; i < length; i++)
-            {
-                newXPos = listBlocksClickedOn[i].x - minX;
-                newYPos = listBlocksClickedOn[i].y - minY;
-                zPos = listBlocksClickedOn[i].z;
-                newPosToCheckShape = new Vector3(newXPos, newYPos, zPos);
-                checkBlocksClickedOn.Add(newPosToCheckShape);
-                //print("New position " + checkBlocksClickedOn[i]);
-            }
+            //for (int i = 0; i < length; i++)
+            //{
+            //    newXPos = listBlocksClickedOn[i].x - minX;
+            //    newYPos = listBlocksClickedOn[i].y - minY;
+            //    zPos = listBlocksClickedOn[i].z;
+            //    newPosToCheckShape = new Vector3(newXPos, newYPos, zPos);
+            //    checkBlocksClickedOn.Add(newPosToCheckShape);
+            //    //print("New position " + checkBlocksClickedOn[i]);
+            //}
             
             //foreach (Vector3 item in checkBlocksClickedOn)
             //{
@@ -85,13 +156,31 @@ public class UserInput : MonoBehaviour {
             //    print("New Sorted position " + item);
             //}
 
-            //Create List of Blocks clicked on in a 9 x 9 grid
-            for (int y = 0; y < 3; y++)
+            //Create List of Blocks clicked on in a 6 x 10 grid
+            //for (int y = 0; y < 10; y++)
+            //{
+            //    for (int x = 0; x < 6; x++)
+            //    {
+            //        Vector3 gridCheck = new Vector3(x, y, 0);
+            //        if (checkBlocksClickedOn.Contains(gridCheck))
+            //        {
+            //            checkShapeGrid.Add(1);
+            //        }
+            //        else
+            //        {
+            //            checkShapeGrid.Add(0);
+            //        }
+
+            //        //print("Grid pos: " + checkShapeGrid[checkShapeGrid.Count]);
+            //    }
+            //}
+
+            for (int y = 0; y < 10; y++)
             {
-                for (int x = 0; x < 3; x++)
+                for (int x = 0; x < 6; x++)
                 {
                     Vector3 gridCheck = new Vector3(x, y, 0);
-                    if (checkBlocksClickedOn.Contains(gridCheck))
+                    if (listBlocksClickedOn.Contains(gridCheck))
                     {
                         checkShapeGrid.Add(1);
                     }
@@ -104,20 +193,296 @@ public class UserInput : MonoBehaviour {
                 }
             }
 
-            string grid = string.Join(";", checkShapeGrid.Select(x => x.ToString()).ToArray());
+            string grid = string.Join("", checkShapeGrid.Select(x => x.ToString()).ToArray());
             print(grid);
 
             //Compare this list to Shape
+
+            for (int s = 0; s < listOfShapes.Count; s++)
+                if (GameObject.Find(listOfShapes[s]) != null)
+                {
+                    if (s == 0)
+                    {
+                        CheckForShapeT();
+                    }
+
+                    if (s == 1)
+                    {
+                        CheckForShapeO();
+                    }
+
+                    if (s == 2)
+                    {
+                        CheckForShapeS();
+                    }
+
+                    if (s == 3)
+                    {
+                        CheckForShapeZ();
+                    }
+
+                    if (s == 4)
+                    {
+                        CheckForShapeI();
+                    }
+
+                    if (s == 5)
+                    {
+                        CheckForShapeJ();
+                    }
+
+                    if (s == 6)
+                    {
+                        CheckForShapeL();
+                    }
+
+                    if (s == 7)
+                    {
+                        CheckForShapeX();
+                    }
+
+
+
+
+                }
             //If matched, destroy matching Blocks at original coordinates
 
+            
 
             listBlocksClickedOn.Clear();
             listTagsClicked.Clear();
             checkShapeGrid.Clear();
+            checkBlocksClickedOn.Clear();
+            shapeMatchIndexes.Clear();
 
             minX = 0f;
             minY = 0f;
+            match = false;
 
+        }
+    }
+
+    private void CheckForShapeT()
+    {
+        for (int g = 0; g < shapeTGrid.Count; g++)
+        {
+            currentGridIndex = shapeTGrid[g];
+            for (int i = 0; i < currentGridIndex.Length; i++)
+            {
+                if (currentGridIndex[i] == '1')
+                {
+                    shapeMatchIndexes.Add(i);
+                }
+            }
+
+            string shapeMatchIndexString = string.Join("", shapeMatchIndexes.Select(x => x.ToString()).ToArray());
+            print("Match Indexes: " + shapeMatchIndexString);
+
+            for (int i = 0; i < (60 - currentGridIndex.Length); i++)
+            {
+                if (match == false & checkShapeGrid[i] == 1 & checkShapeGrid[i + shapeMatchIndexes[1]] == 1 & checkShapeGrid[i + shapeMatchIndexes[2]] == 1 & checkShapeGrid[i + shapeMatchIndexes[3]] == 1)
+                {
+                    print("Match!");
+                    print(i);
+                    match = true;
+                }
+            }
+        }
+    }
+
+    private void CheckForShapeO()
+    {
+        for (int g = 0; g < shapeOGrid.Count; g++)
+        {
+            currentGridIndex = shapeTGrid[g];
+            for (int i = 0; i < currentGridIndex.Length; i++)
+            {
+                if (currentGridIndex[i] == '1')
+                {
+                    shapeMatchIndexes.Add(i);
+                }
+            }
+
+            string shapeMatchIndexString = string.Join("", shapeMatchIndexes.Select(x => x.ToString()).ToArray());
+            print("Match Indexes: " + shapeMatchIndexString);
+
+            for (int i = 0; i < (60 - currentGridIndex.Length); i++)
+            {
+                if (match == false & checkShapeGrid[i] == 1 & checkShapeGrid[i + shapeMatchIndexes[1]] == 1 & checkShapeGrid[i + shapeMatchIndexes[2]] == 1 & checkShapeGrid[i + shapeMatchIndexes[3]] == 1)
+                {
+                    print("Match!");
+                    print(i);
+                    match = true;
+                }
+            }
+        }
+    }
+
+    private void CheckForShapeS()
+    {
+        for (int g = 0; g < shapeTGrid.Count; g++)
+        {
+            currentGridIndex = shapeTGrid[g];
+            for (int i = 0; i < currentGridIndex.Length; i++)
+            {
+                if (currentGridIndex[i] == '1')
+                {
+                    shapeMatchIndexes.Add(i);
+                }
+            }
+
+            string shapeMatchIndexString = string.Join("", shapeMatchIndexes.Select(x => x.ToString()).ToArray());
+            print("Match Indexes: " + shapeMatchIndexString);
+
+            for (int i = 0; i < (60 - currentGridIndex.Length); i++)
+            {
+                if (match == false & checkShapeGrid[i] == 1 & checkShapeGrid[i + shapeMatchIndexes[1]] == 1 & checkShapeGrid[i + shapeMatchIndexes[2]] == 1 & checkShapeGrid[i + shapeMatchIndexes[3]] == 1)
+                {
+                    print("Match!");
+                    print(i);
+                    match = true;
+                }
+            }
+        }
+    }
+
+    private void CheckForShapeZ()
+    {
+        for (int g = 0; g < shapeTGrid.Count; g++)
+        {
+            currentGridIndex = shapeTGrid[g];
+            for (int i = 0; i < currentGridIndex.Length; i++)
+            {
+                if (currentGridIndex[i] == '1')
+                {
+                    shapeMatchIndexes.Add(i);
+                }
+            }
+
+            string shapeMatchIndexString = string.Join("", shapeMatchIndexes.Select(x => x.ToString()).ToArray());
+            print("Match Indexes: " + shapeMatchIndexString);
+
+            for (int i = 0; i < (60 - currentGridIndex.Length); i++)
+            {
+                if (match == false & checkShapeGrid[i] == 1 & checkShapeGrid[i + shapeMatchIndexes[1]] == 1 & checkShapeGrid[i + shapeMatchIndexes[2]] == 1 & checkShapeGrid[i + shapeMatchIndexes[3]] == 1)
+                {
+                    print("Match!");
+                    print(i);
+                    match = true;
+                }
+            }
+        }
+    }
+
+    private void CheckForShapeI()
+    {
+        for (int g = 0; g < shapeTGrid.Count; g++)
+        {
+            currentGridIndex = shapeTGrid[g];
+            for (int i = 0; i < currentGridIndex.Length; i++)
+            {
+                if (currentGridIndex[i] == '1')
+                {
+                    shapeMatchIndexes.Add(i);
+                }
+            }
+
+            string shapeMatchIndexString = string.Join("", shapeMatchIndexes.Select(x => x.ToString()).ToArray());
+            print("Match Indexes: " + shapeMatchIndexString);
+
+            for (int i = 0; i < (60 - currentGridIndex.Length); i++)
+            {
+                if (match == false & checkShapeGrid[i] == 1 & checkShapeGrid[i + shapeMatchIndexes[1]] == 1 & checkShapeGrid[i + shapeMatchIndexes[2]] == 1 & checkShapeGrid[i + shapeMatchIndexes[3]] == 1)
+                {
+                    print("Match!");
+                    print(i);
+                    match = true;
+                }
+            }
+        }
+    }
+
+    private void CheckForShapeJ()
+    {
+        for (int g = 0; g < shapeTGrid.Count; g++)
+        {
+            currentGridIndex = shapeTGrid[g];
+            for (int i = 0; i < currentGridIndex.Length; i++)
+            {
+                if (currentGridIndex[i] == '1')
+                {
+                    shapeMatchIndexes.Add(i);
+                }
+            }
+
+            string shapeMatchIndexString = string.Join("", shapeMatchIndexes.Select(x => x.ToString()).ToArray());
+            print("Match Indexes: " + shapeMatchIndexString);
+
+            for (int i = 0; i < (60 - currentGridIndex.Length); i++)
+            {
+                if (match == false & checkShapeGrid[i] == 1 & checkShapeGrid[i + shapeMatchIndexes[1]] == 1 & checkShapeGrid[i + shapeMatchIndexes[2]] == 1 & checkShapeGrid[i + shapeMatchIndexes[3]] == 1)
+                {
+                    print("Match!");
+                    print(i);
+                    match = true;
+                }
+            }
+        }
+    }
+
+    private void CheckForShapeL()
+    {
+        for (int g = 0; g < shapeTGrid.Count; g++)
+        {
+            currentGridIndex = shapeTGrid[g];
+            for (int i = 0; i < currentGridIndex.Length; i++)
+            {
+                if (currentGridIndex[i] == '1')
+                {
+                    shapeMatchIndexes.Add(i);
+                }
+            }
+
+            string shapeMatchIndexString = string.Join("", shapeMatchIndexes.Select(x => x.ToString()).ToArray());
+            print("Match Indexes: " + shapeMatchIndexString);
+
+            for (int i = 0; i < (60 - currentGridIndex.Length); i++)
+            {
+                if (match == false & checkShapeGrid[i] == 1 & checkShapeGrid[i + shapeMatchIndexes[1]] == 1 & checkShapeGrid[i + shapeMatchIndexes[2]] == 1 & checkShapeGrid[i + shapeMatchIndexes[3]] == 1)
+                {
+                    print("Match!");
+                    print(i);
+                    match = true;
+                }
+            }
+        }
+    }
+
+    private void CheckForShapeX()
+    {
+        for (int g = 0; g < shapeTGrid.Count; g++)
+        {
+            currentGridIndex = shapeTGrid[g];
+            for (int i = 0; i < currentGridIndex.Length; i++)
+            {
+                if (currentGridIndex[i] == '1')
+                {
+                    shapeMatchIndexes.Add(i);
+                }
+            }
+
+            string shapeMatchIndexString = string.Join("", shapeMatchIndexes.Select(x => x.ToString()).ToArray());
+            print("Match Indexes: " + shapeMatchIndexString);
+
+            for (int i = 0; i < (60 - currentGridIndex.Length); i++)
+            {
+                if (match == false & checkShapeGrid[i] == 1 & checkShapeGrid[i + shapeMatchIndexes[1]] == 1 & checkShapeGrid[i + shapeMatchIndexes[2]] == 1 & checkShapeGrid[i + shapeMatchIndexes[3]] == 1)
+                {
+                    print("Match!");
+                    print(i);
+                    match = true;
+                }
+            }
         }
     }
 
