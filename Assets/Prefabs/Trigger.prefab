@@ -21,14 +21,14 @@ GameObject:
   - component: {fileID: 4149472872746712}
   - component: {fileID: 58627429389638598}
   - component: {fileID: 212868946706121286}
-  - component: {fileID: 114785099797624596}
+  - component: {fileID: 114676571652597820}
   m_Layer: 0
-  m_Name: Destroyer
-  m_TagString: Untagged
+  m_Name: Trigger
+  m_TagString: Trigger
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4149472872746712
 Transform:
   m_ObjectHideFlags: 1
@@ -57,7 +57,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &114785099797624596
+--- !u!114 &114676571652597820
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1308035583604918}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c7d379b660abc14596838a197ea97bb, type: 3}
+  m_Script: {fileID: 11500000, guid: 0132b6ca680e32c41b3a347d88aea5ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212868946706121286
@@ -104,7 +104,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.11741887, g: 0.7735849, b: 0, a: 1}
+  m_Color: {r: 0.9622642, g: 0.49474904, b: 0.86647445, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

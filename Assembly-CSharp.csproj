@@ -63,8 +63,9 @@
     <Compile Include="Assets\Scripts\CollisionDetection.cs" />
     <Compile Include="Assets\Scripts\Destroy.cs" />
     <Compile Include="Assets\Scripts\Gameplay.cs" />
-    <Compile Include="Assets\Scripts\Gravity.cs" />
+    <Compile Include="Assets\Scripts\SimGravity.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
+    <Compile Include="Assets\Scripts\Trigger.cs" />
     <Compile Include="Assets\Scripts\UserInput.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/Amy MacCready/Desktop/Eddie/Games/Unity3d/City Blocks/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>

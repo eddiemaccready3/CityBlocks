@@ -24,7 +24,6 @@ GameObject:
   - component: {fileID: 114117761240747022}
   - component: {fileID: 50681820042361550}
   - component: {fileID: 114813140681631110}
-  - component: {fileID: 114105753116027196}
   m_Layer: 0
   m_Name: RedBlock
   m_TagString: Red
@@ -68,7 +67,7 @@ Transform:
   m_GameObject: {fileID: 1709445462560878}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 1}
   m_Children:
   - {fileID: 4569449169543596}
   m_Father: {fileID: 0}
@@ -117,20 +116,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 1}
+  m_Size: {x: 0.8, y: 1.2}
   m_EdgeRadius: 0
---- !u!114 &114105753116027196
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1709445462560878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c7d379b660abc14596838a197ea97bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  other: {fileID: 1308035583604918, guid: 3b37b56e5794ae64b93504c4b82a9b18, type: 2}
 --- !u!114 &114117761240747022
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -193,7 +180,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6729179d140e7f3468810277ed64f14f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 571bd3230cf1b2b45b36ad8ce20b0d4d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

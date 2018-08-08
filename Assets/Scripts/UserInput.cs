@@ -45,11 +45,20 @@ public class UserInput : MonoBehaviour {
     private Vector3 newPosToCheckShape;
 
     [SerializeField] GameObject destroyer;
+    [SerializeField] GameObject trigger;
+
+    //GameObject blueBlock = new GameObject("BlueBlock");
+    //GameObject redBlock = new GameObject("RedBlock");
+    //GameObject destroyer;
+    //GameObject destroyer;
+    //GameObject destroyer;
+    //GameObject destroyer;
 
     private string tagFirstBlockClicked;
     private string currentGridIndex;
     
     private bool match;
+    public SimGravity resetIsGrounded;
 
     private float minX = 0f;
     private float minY = 0f;
@@ -270,6 +279,8 @@ public class UserInput : MonoBehaviour {
             minY = 0f;
             match = false;
 
+            //blueBlock.GetComponent<resetIsGrounded>().isGrounded = false;
+
         }
     }
 
@@ -320,12 +331,16 @@ public class UserInput : MonoBehaviour {
             {
                 print("Match shape O!");
 
+                //Instantiate(trigger, new Vector3((i % 6), (i / 6) + 1, 0), Quaternion.identity);
+                //Instantiate(trigger, new Vector3(((i + shapeMatchIndexes[1]) % 6), ((i + shapeMatchIndexes[1]) / 6) + 1, 0), Quaternion.identity);
+                //Instantiate(trigger, new Vector3(((i + shapeMatchIndexes[2]) % 6), ((i + shapeMatchIndexes[2]) / 6) + 1, 0), Quaternion.identity);
+                //Instantiate(trigger, new Vector3(((i + shapeMatchIndexes[3]) % 6), ((i + shapeMatchIndexes[3]) / 6) + 1, 0), Quaternion.identity);
                 Instantiate(destroyer, new Vector3((i % 6), (i / 6), 0), Quaternion.identity);
                 Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[1]) % 6), ((i + shapeMatchIndexes[1]) / 6), 0), Quaternion.identity);
                 Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[2]) % 6), ((i + shapeMatchIndexes[2]) / 6), 0), Quaternion.identity);
                 Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[3]) % 6), ((i + shapeMatchIndexes[3]) / 6), 0), Quaternion.identity);
 
-                print(i);
+                //print(i);
                 match = true;
             }
         }

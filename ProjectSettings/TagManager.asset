@@ -9,6 +9,8 @@ TagManager:
   - Ground
   - Blue
   - Red
+  - Destroyer
+  - Trigger
   layers:
   - Default
   - TransparentFX

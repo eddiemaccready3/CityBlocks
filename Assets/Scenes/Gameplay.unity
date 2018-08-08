@@ -795,6 +795,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyer: {fileID: 1308035583604918, guid: 3b37b56e5794ae64b93504c4b82a9b18, type: 2}
+  trigger: {fileID: 1308035583604918, guid: 064193180f2ca73488f6b4104501682a, type: 2}
+  resetIsGrounded: {fileID: 0}
 --- !u!1001 &1166346935
 Prefab:
   m_ObjectHideFlags: 0

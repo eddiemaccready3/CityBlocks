@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gravity : MonoBehaviour
+public class SimGravity : MonoBehaviour
 {
    [SerializeField] private float gravityModifier = 1f;
 
@@ -17,13 +17,12 @@ public class Gravity : MonoBehaviour
     public Transform transformRayOrigin;
     public GameObject findRaycaster;
     
-
-
     public bool isGrounded = false;
-
-
+    
     private Vector2 startPosition;
     private Vector2 currentPosition;
+    private Vector2 startOfPositionCheckBelow;
+    private Vector2 endOfPositionCheckBelow;
     private float xPosition;
     private float checkYPosition;
     private float yPosition;
@@ -37,7 +36,10 @@ public class Gravity : MonoBehaviour
         findRaycaster = transform.Find ("RayCast").gameObject;
     }
 
-
+    private void Update()
+    {
+        
+    }
     private void FixedUpdate()
     {
         if (!isGrounded)
@@ -85,15 +87,55 @@ public class Gravity : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        //startOfPositionCheckBelow = new Vector2 (gameObject.transform.position.x, gameObject.transform.position.y);
+        //endOfPositionCheckBelow = new Vector2 (gameObject.transform.position.x, gameObject.transform.position.y - 1);
+        
+
         if (other.tag != "Spawner")
         {
             GroundBlock();
         }
 
+        else if (other.tag == "Trigger")
+        {
+            isGrounded = false;
+        }
+
+        //else if(Physics2D.Linecast(startOfPositionCheckBelow, endOfPositionCheckBelow))
+        //{
+        //    print ("Start " + startOfPositionCheckBelow);
+        //    print ("End " + endOfPositionCheckBelow);
+        //    isGrounded = false;
+        //}
+
+        //else if (other.tag == "Destroyer")
+        //{
+        //    Destroy(gameObject);
+        //    print("Destroy " + gameObject);
+        //    Destroy(other.gameObject);
+        //    print("Destroy other game object " + other.gameObject);
+        //    isGrounded = false;
+        //}
+
         else
         {
             isGrounded = false;
         }
+    }
+
+    //void OnTriggerStay2D(Collider2D other)
+    //{
+    //    if (other.gameObject.tag == "Destroyer")
+    //    { 
+    //        print ("Destroyer contact!");
+           
+    //        //transform.position = new Vector2(xPosition, (yPosition - 0.25f));
+    //    }
+    //}
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        isGrounded = false;
     }
 
     private void GroundBlock()
