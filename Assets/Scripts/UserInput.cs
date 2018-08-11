@@ -25,6 +25,12 @@ public class UserInput : MonoBehaviour {
     private const string SHAPEL3 = "1000001000011";
     private const string SHAPEL4 = "100000111";
     private const string SHAPEX  = "1000011100001";
+    private const string SHAPEV1  = "1100001";
+    private const string SHAPEV2  = "10000011";
+    private const string SHAPEV3  = "1000011";
+    private const string SHAPEV4  = "11000001";
+
+
     
     private List<Vector3> listBlocksClickedOn = new List<Vector3>();
     private List<Vector3> checkBlocksClickedOn = new List<Vector3>();
@@ -40,6 +46,7 @@ public class UserInput : MonoBehaviour {
     private List<string> shapeIGrid = new List<string>();
     private List<string> shapeJGrid = new List<string>();
     private List<string> shapeLGrid = new List<string>();
+    private List<string> shapeVGrid = new List<string>();
     
     private Vector3 blockClickedPoition;
     private Vector3 newPosToCheckShape;
@@ -107,6 +114,11 @@ public class UserInput : MonoBehaviour {
         shapeLGrid.Add(SHAPEL2);
         shapeLGrid.Add(SHAPEL3);
         shapeLGrid.Add(SHAPEL4);
+
+        shapeVGrid.Add(SHAPEV1);
+        shapeVGrid.Add(SHAPEV2);
+        shapeVGrid.Add(SHAPEV3);
+        shapeVGrid.Add(SHAPEV4);
     }
 
     private void PopulateShapesList()
@@ -119,6 +131,7 @@ public class UserInput : MonoBehaviour {
         listOfShapes.Add("ShapeJ");
         listOfShapes.Add("ShapeI");
         listOfShapes.Add("ShapeO");
+        listOfShapes.Add("ShapeV");
         
     }
 
@@ -263,6 +276,11 @@ public class UserInput : MonoBehaviour {
                 {
                     CheckForShapeO();
                 }
+
+                else if (GameObject.Find(listOfShapes[s]) != null & s == 8)
+                {
+                    CheckForShapeV();
+                }
             }
 
             //If matched, destroy matching Blocks at original coordinates
@@ -306,19 +324,16 @@ public class UserInput : MonoBehaviour {
                 if (match == false & checkShapeGrid[i] == 1 & checkShapeGrid[i + shapeMatchIndexes[1]] == 1 & checkShapeGrid[i + shapeMatchIndexes[2]] == 1 & checkShapeGrid[i + shapeMatchIndexes[3]] == 1)
                 {
                     print("Match shape T!");
-                    
-                    Instantiate(destroyer, new Vector3((i % 6), (i / 6), 0), Quaternion.identity);
-                    Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[1]) % 6), ((i + shapeMatchIndexes[1]) / 6), 0), Quaternion.identity);
-                    Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[2]) % 6), ((i + shapeMatchIndexes[2]) / 6), 0), Quaternion.identity);
-                    Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[3]) % 6), ((i + shapeMatchIndexes[3]) / 6), 0), Quaternion.identity);
 
-                    match = true;
+                    Match4BlockShape(i);
                 }
             }
 
             shapeMatchIndexes.Clear();
         }
     }
+
+    
 
     private void CheckForShapeO()
     {
@@ -336,13 +351,7 @@ public class UserInput : MonoBehaviour {
             {
                 print("Match shape O!");
 
-                Instantiate(destroyer, new Vector3((i % 6), (i / 6), 0), Quaternion.identity);
-                Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[1]) % 6), ((i + shapeMatchIndexes[1]) / 6), 0), Quaternion.identity);
-                Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[2]) % 6), ((i + shapeMatchIndexes[2]) / 6), 0), Quaternion.identity);
-                Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[3]) % 6), ((i + shapeMatchIndexes[3]) / 6), 0), Quaternion.identity);
-
-                //print(i);
-                match = true;
+                Match4BlockShape(i);
             }
         }
     }
@@ -365,12 +374,7 @@ public class UserInput : MonoBehaviour {
             {
                 if (match == false & checkShapeGrid[i] == 1 & checkShapeGrid[i + shapeMatchIndexes[1]] == 1 & checkShapeGrid[i + shapeMatchIndexes[2]] == 1 & checkShapeGrid[i + shapeMatchIndexes[3]] == 1)
                 {
-                    print("Match shape S!");
-                    Instantiate(destroyer, new Vector3((i % 6), (i / 6), 0), Quaternion.identity);
-                    Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[1]) % 6), ((i + shapeMatchIndexes[1]) / 6), 0), Quaternion.identity);
-                    Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[2]) % 6), ((i + shapeMatchIndexes[2]) / 6), 0), Quaternion.identity);
-                    Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[3]) % 6), ((i + shapeMatchIndexes[3]) / 6), 0), Quaternion.identity);
-                    match = true;
+                    Match4BlockShape(i);
                 }
             }
 
@@ -400,12 +404,7 @@ public class UserInput : MonoBehaviour {
             {
                 if (match == false & checkShapeGrid[i] == 1 & checkShapeGrid[i + shapeMatchIndexes[1]] == 1 & checkShapeGrid[i + shapeMatchIndexes[2]] == 1 & checkShapeGrid[i + shapeMatchIndexes[3]] == 1)
                 {
-                    print("Match shape Z!");
-                    Instantiate(destroyer, new Vector3((i % 6), (i / 6), 0), Quaternion.identity);
-                    Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[1]) % 6), ((i + shapeMatchIndexes[1]) / 6), 0), Quaternion.identity);
-                    Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[2]) % 6), ((i + shapeMatchIndexes[2]) / 6), 0), Quaternion.identity);
-                    Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[3]) % 6), ((i + shapeMatchIndexes[3]) / 6), 0), Quaternion.identity);
-                    match = true;
+                    Match4BlockShape(i);
                 }
             }
 
@@ -431,12 +430,7 @@ public class UserInput : MonoBehaviour {
             {
                 if (match == false & checkShapeGrid[i] == 1 & checkShapeGrid[i + shapeMatchIndexes[1]] == 1 & checkShapeGrid[i + shapeMatchIndexes[2]] == 1 & checkShapeGrid[i + shapeMatchIndexes[3]] == 1)
                 {
-                    print("Match shape I!");
-                    Instantiate(destroyer, new Vector3((i % 6), (i / 6), 0), Quaternion.identity);
-                    Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[1]) % 6), ((i + shapeMatchIndexes[1]) / 6), 0), Quaternion.identity);
-                    Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[2]) % 6), ((i + shapeMatchIndexes[2]) / 6), 0), Quaternion.identity);
-                    Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[3]) % 6), ((i + shapeMatchIndexes[3]) / 6), 0), Quaternion.identity);
-                    match = true;
+                    Match4BlockShape(i);
                 }
             }
 
@@ -462,12 +456,7 @@ public class UserInput : MonoBehaviour {
             {
                 if (match == false & checkShapeGrid[i] == 1 & checkShapeGrid[i + shapeMatchIndexes[1]] == 1 & checkShapeGrid[i + shapeMatchIndexes[2]] == 1 & checkShapeGrid[i + shapeMatchIndexes[3]] == 1)
                 {
-                    print("Match shape J!");
-                    Instantiate(destroyer, new Vector3((i % 6), (i / 6), 0), Quaternion.identity);
-                    Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[1]) % 6), ((i + shapeMatchIndexes[1]) / 6), 0), Quaternion.identity);
-                    Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[2]) % 6), ((i + shapeMatchIndexes[2]) / 6), 0), Quaternion.identity);
-                    Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[3]) % 6), ((i + shapeMatchIndexes[3]) / 6), 0), Quaternion.identity);
-                    match = true;
+                    Match4BlockShape(i);
                 }
             }
 
@@ -493,12 +482,7 @@ public class UserInput : MonoBehaviour {
             {
                 if (match == false & checkShapeGrid[i] == 1 & checkShapeGrid[i + shapeMatchIndexes[1]] == 1 & checkShapeGrid[i + shapeMatchIndexes[2]] == 1 & checkShapeGrid[i + shapeMatchIndexes[3]] == 1)
                 {
-                    print("Match shape L!");
-                    Instantiate(destroyer, new Vector3((i % 6), (i / 6), 0), Quaternion.identity);
-                    Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[1]) % 6), ((i + shapeMatchIndexes[1]) / 6), 0), Quaternion.identity);
-                    Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[2]) % 6), ((i + shapeMatchIndexes[2]) / 6), 0), Quaternion.identity);
-                    Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[3]) % 6), ((i + shapeMatchIndexes[3]) / 6), 0), Quaternion.identity);
-                    match = true;
+                    Match4BlockShape(i);
                 }
             }
 
@@ -522,14 +506,70 @@ public class UserInput : MonoBehaviour {
             if (match == false & checkShapeGrid[i] == 1 & checkShapeGrid[i + shapeMatchIndexes[1]] == 1 & checkShapeGrid[i + shapeMatchIndexes[2]] == 1 & checkShapeGrid[i + shapeMatchIndexes[3]] == 1 & checkShapeGrid[i + shapeMatchIndexes[4]] == 1)
             {
                 print("Match shape X!");
-                Instantiate(destroyer, new Vector3((i % 6), (i / 6), 0), Quaternion.identity);
-                Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[1]) % 6), ((i + shapeMatchIndexes[1]) / 6), 0), Quaternion.identity);
-                Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[2]) % 6), ((i + shapeMatchIndexes[2]) / 6), 0), Quaternion.identity);
-                Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[3]) % 6), ((i + shapeMatchIndexes[3]) / 6), 0), Quaternion.identity);
-                Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[4]) % 6), ((i + shapeMatchIndexes[4]) / 6), 0), Quaternion.identity);
-                match = true;
+                Match5BlockShape(i);
             }
         }
+    }
+
+    
+
+    private void CheckForShapeV()
+    {
+        for (int g = 0; g < shapeVGrid.Count; g++)
+        {
+            currentGridIndex = shapeVGrid[g];
+            shapeMatchIndexes.Clear();
+            //print("Current grid: " + currentGridIndex);
+            for (int i = 0; i < currentGridIndex.Length; i++)
+            {
+                if (currentGridIndex[i] == '1')
+                {
+                    shapeMatchIndexes.Add(i);
+                }
+            }
+
+            string temp = string.Join(" , ", shapeMatchIndexes.Select(x => x.ToString()).ToArray());
+            //print("Match Indexes: " + temp);
+
+            for (int i = 0; i < (60 - currentGridIndex.Length); i++)
+            {
+                if (match == false & checkShapeGrid[i] == 1 & checkShapeGrid[i + shapeMatchIndexes[1]] == 1 & checkShapeGrid[i + shapeMatchIndexes[2]] == 1)
+                {
+                    print("Match shape V!");
+                    Match3BlockShape(i);
+                }
+            }
+
+            shapeMatchIndexes.Clear();
+        }
+    }
+
+    private void Match3BlockShape(int i)
+    {
+        Instantiate(destroyer, new Vector3((i % 6), (i / 6), 0), Quaternion.identity);
+        Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[1]) % 6), ((i + shapeMatchIndexes[1]) / 6), 0), Quaternion.identity);
+        Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[2]) % 6), ((i + shapeMatchIndexes[2]) / 6), 0), Quaternion.identity);
+        match = true;
+    }
+
+    private void Match4BlockShape(int i)
+    {
+        Instantiate(destroyer, new Vector3((i % 6), (i / 6), 0), Quaternion.identity);
+        Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[1]) % 6), ((i + shapeMatchIndexes[1]) / 6), 0), Quaternion.identity);
+        Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[2]) % 6), ((i + shapeMatchIndexes[2]) / 6), 0), Quaternion.identity);
+        Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[3]) % 6), ((i + shapeMatchIndexes[3]) / 6), 0), Quaternion.identity);
+
+        match = true;
+    }
+
+    private void Match5BlockShape(int i)
+    {
+        Instantiate(destroyer, new Vector3((i % 6), (i / 6), 0), Quaternion.identity);
+        Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[1]) % 6), ((i + shapeMatchIndexes[1]) / 6), 0), Quaternion.identity);
+        Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[2]) % 6), ((i + shapeMatchIndexes[2]) / 6), 0), Quaternion.identity);
+        Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[3]) % 6), ((i + shapeMatchIndexes[3]) / 6), 0), Quaternion.identity);
+        Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[4]) % 6), ((i + shapeMatchIndexes[4]) / 6), 0), Quaternion.identity);
+        match = true;
     }
 
     private void PopulateClickedLists(RaycastHit2D hit)

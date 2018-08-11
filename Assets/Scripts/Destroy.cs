@@ -75,10 +75,6 @@ public class Destroy : MonoBehaviour {
 
                 SetDestroyOn();
 
-                print("xPos " + xPos);
-                print("yPos " + yPos);
-                print("InitialXPos " + initialXPos);
-                print("InitialYPos " + initialYPos);
                 //print("Destroy " + other);
                 //Destroy(gameObject);
                 //print("Game Object " + gameObject);
