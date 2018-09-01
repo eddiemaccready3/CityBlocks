@@ -14,6 +14,19 @@ TagManager:
   - Yellow
   - Green
   - Purple
+  - ShapeI
+  - ShapeJ
+  - ShapeL
+  - ShapeO
+  - ShapeS
+  - ShapeT
+  - ShapeV
+  - ShapeZ
+  - ShapeX
+  - LeftTrigger
+  - ShapeArrow
+  - ShapeDash
+  - ShapeShortI
   layers:
   - Default
   - TransparentFX
@@ -26,7 +39,7 @@ TagManager:
   - Spawner
   - Destroyer
   - AllElse
-  - 
+  - Shape
   - 
   - 
   - 
@@ -53,4 +66,7 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Foreground
+    uniqueID: 3744093391
     locked: 0

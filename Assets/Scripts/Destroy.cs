@@ -40,6 +40,7 @@ public class Destroy : MonoBehaviour {
     private void MoveRight()
     {
         gameObject.transform.position = tempMoveRight;
+        Destroy(gameObject);
     }
 
 

@@ -17,7 +17,7 @@ public class SimGravity : MonoBehaviour
     public Transform transformRayOrigin;
     public GameObject findRaycaster;
     
-    public bool isGrounded = false;
+    private bool isGrounded = false;
     
     private Vector2 startPosition;
     private Vector2 currentPosition;
@@ -96,10 +96,10 @@ public class SimGravity : MonoBehaviour
             GroundBlock();
         }
 
-        else if (other.tag == "Trigger")
-        {
-            isGrounded = false;
-        }
+        //else if (other.tag == "Trigger")
+        //{
+        //    isGrounded = false;
+        //}
 
         //else if(Physics2D.Linecast(startOfPositionCheckBelow, endOfPositionCheckBelow))
         //{

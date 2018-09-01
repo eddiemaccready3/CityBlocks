@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e4864a7fc7dc2594b88847159710bc77
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - transformRayOrigin: {instanceID: 0}
+  - findRaycaster: {instanceID: 0}
+  - col: {fileID: 61388057125835572, guid: a57747ff36336cb4ab69f79d7263f5c1, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

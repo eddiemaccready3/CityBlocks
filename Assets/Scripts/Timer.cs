@@ -1,22 +1,34 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class Timer : MonoBehaviour {
 
-    public float timeLeft = 60.0f;
+    [SerializeField] public float timeLeft = 60.0f;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    Text timeLeftText;
+     // Use this for initialization
+    void Start()
+    {
+        timeLeftText = GetComponent<Text>();
+        timeLeftText.text = timeLeft.ToString();
+    }
 	
 	// Update is called once per frame
 	void Update ()
     {        
         timeLeft -= Time.deltaTime;
+        timeLeftText.text = (Mathf.Round(timeLeft)).ToString();
                 
         //Debug.Log(timeLeft);
         //Debug.Log(Mathf.Round(timeLeft));
+
+        //if (timeLeft <= 0)
+        //{
+        //    SceneManager.LoadScene("GameOver");
+        //}
 	}
 }

@@ -18,7 +18,7 @@ public class Trigger : MonoBehaviour {
         {
             referenceObject = other.gameObject;
             referenceScript = referenceObject.GetComponent<SimGravity>();
-            referenceScript.isGrounded = false;
+            //referenceScript.isGrounded = false;
         }
     }
 }

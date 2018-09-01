@@ -20,9 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4148071069820606}
   - component: {fileID: 61540883220411296}
-  m_Layer: 0
+  - component: {fileID: 114729168699780214}
+  m_Layer: 8
   m_Name: ShapeSpawner
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33,8 +34,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1678793117002044}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.1003579, y: -2.6316142, z: -3.7692478}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.7361166, y: -8.4902, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -49,7 +50,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -63,5 +64,26 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &114729168699780214
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1678793117002044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41b6d0a7d4bdf1145b1ba47c38c1930b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shapes:
+  - {fileID: 1302776085009358, guid: 33345011ba54d3e43a13fc1960fe8b2c, type: 2}
+  - {fileID: 1982996445689656, guid: 577cb230684aa054a8b0ab70a9e1ee8b, type: 2}
+  - {fileID: 1982996445689656, guid: 5f72dcadc6d81a946a9a2fe36d6bb49f, type: 2}
+  - {fileID: 1982996445689656, guid: a523aef1742d09e48ae14a354941d1e4, type: 2}
+  - {fileID: 1161439621034570, guid: 1a2e44ac58da4cc46807bbc0878a0206, type: 2}
+  - {fileID: 1137516199262894, guid: fb1bd4486dbbee44cbf8bb0f25a51d2a, type: 2}
+  - {fileID: 1704695396089312, guid: f2237a9a1631bb944a2e7da6149e7f23, type: 2}
+  - {fileID: 1983998184574632, guid: 644a31a60b253194ab20827dbb9ba116, type: 2}
+  - {fileID: 1593448905277252, guid: cf5eef15f97bfd644b2688c339409671, type: 2}

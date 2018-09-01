@@ -7,9 +7,12 @@ public class BlockSpawner : MonoBehaviour
     public int qty;
     public GameObject[] blocks;
 
+    private int i;
+
     void Start () {
 
     int i = Random.Range(0, blocks.Length);
+    qty = 0;
         
 
     // Spawn Block at current Position
@@ -20,7 +23,7 @@ public class BlockSpawner : MonoBehaviour
 
     public void OnTriggerExit2D(Collider2D other)
     {
-        qty = 0;
+
         
         int i = Random.Range(0, blocks.Length);
         
