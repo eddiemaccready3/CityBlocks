@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\ScoreBoard.cs" />
     <Compile Include="Assets\Scripts\ShapeMovement.cs" />
     <Compile Include="Assets\Scripts\ShapeSpawner.cs" />
+    <Compile Include="Assets\Scripts\ShuffleBlocks.cs" />
     <Compile Include="Assets\Scripts\SimGravity.cs" />
     <Compile Include="Assets\Scripts\Spray.cs" />
     <Compile Include="Assets\Scripts\Sprayer.cs" />

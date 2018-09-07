@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4548154319105778}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: RayCast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 61003698492830964}
   - component: {fileID: 114515887471534698}
   - component: {fileID: 50734427403607090}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: YellowBlock
   m_TagString: Yellow
   m_Icon: {fileID: 0}
@@ -131,7 +131,6 @@ MonoBehaviour:
   gravityModifier: 1
   transformRayOrigin: {fileID: 0}
   findRaycaster: {fileID: 0}
-  isGrounded: 0
 --- !u!212 &212571504744629912
 SpriteRenderer:
   m_ObjectHideFlags: 1

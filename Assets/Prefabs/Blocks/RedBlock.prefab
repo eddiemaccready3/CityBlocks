@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 61377207825371102}
   - component: {fileID: 114117761240747022}
   - component: {fileID: 50681820042361550}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: RedBlock
   m_TagString: Red
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4569449169543596}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: RayCast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,7 +131,6 @@ MonoBehaviour:
   gravityModifier: 1
   transformRayOrigin: {fileID: 0}
   findRaycaster: {fileID: 0}
-  isGrounded: 0
 --- !u!212 &212942926474538166
 SpriteRenderer:
   m_ObjectHideFlags: 1
