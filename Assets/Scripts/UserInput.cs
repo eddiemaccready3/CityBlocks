@@ -76,6 +76,7 @@ public class UserInput : MonoBehaviour {
     private Vector3 newPosToCheckShape;
 
     private ScoreBoard scoreBoard;
+    private Timer timer;
 
     [SerializeField] GameObject destroyer;
     [SerializeField] GameObject trigger;
@@ -104,6 +105,7 @@ public class UserInput : MonoBehaviour {
     {
         
         scoreBoard = FindObjectOfType<ScoreBoard>();
+        timer = FindObjectOfType<Timer>();
         listBlocksClickedOn.Clear();
         listTagsClicked.Clear();
         match = false;
@@ -325,7 +327,8 @@ public class UserInput : MonoBehaviour {
                     //print("Match shape T!");
                     Match4BlockShape(i);
                     Destroy (GameObject.FindWithTag("ShapeT"));
-                    scoreBoard.ScoreHit();
+                    scoreBoard.ScoreHit(350);
+                    timer.timeLeft = timer.timeLeft + 10f;
                 }
             }
 
@@ -356,7 +359,8 @@ public class UserInput : MonoBehaviour {
 
                 Match4BlockShape(i);
                 Destroy (GameObject.FindWithTag("ShapeO"));
-                scoreBoard.ScoreHit();
+                scoreBoard.ScoreHit(100);
+                timer.timeLeft = timer.timeLeft + 5f;
             }
         }
     }
@@ -381,8 +385,8 @@ public class UserInput : MonoBehaviour {
                 {
                     Match4BlockShape(i);
                     Destroy (GameObject.FindWithTag("ShapeS"));
-                    scoreBoard.ScoreHit();
-                    //print("Match Shape S!");
+                    scoreBoard.ScoreHit(275);
+                    timer.timeLeft = timer.timeLeft + 7f;
                 }
             }
 
@@ -414,7 +418,8 @@ public class UserInput : MonoBehaviour {
                 {
                     Match4BlockShape(i);
                     Destroy (GameObject.FindWithTag("ShapeZ"));
-                    scoreBoard.ScoreHit();
+                    scoreBoard.ScoreHit(275);
+                    timer.timeLeft = timer.timeLeft + 7f;
                 }
             }
 
@@ -442,7 +447,8 @@ public class UserInput : MonoBehaviour {
                 {
                     Match4BlockShape(i);
                     Destroy (GameObject.FindWithTag("ShapeI"));
-                    scoreBoard.ScoreHit();
+                    scoreBoard.ScoreHit(175);
+                    timer.timeLeft = timer.timeLeft + 5f;
                 }
             }
 
@@ -470,7 +476,8 @@ public class UserInput : MonoBehaviour {
                 {
                     Match4BlockShape(i);
                     Destroy (GameObject.FindWithTag("ShapeJ"));
-                    scoreBoard.ScoreHit();
+                    scoreBoard.ScoreHit(200);
+                    timer.timeLeft = timer.timeLeft + 6f;
                 }
             }
 
@@ -498,7 +505,8 @@ public class UserInput : MonoBehaviour {
                 {
                     Match4BlockShape(i);
                     Destroy (GameObject.FindWithTag("ShapeL"));
-                    scoreBoard.ScoreHit();
+                    scoreBoard.ScoreHit(200);
+                    timer.timeLeft = timer.timeLeft + 6f;
                 }
             }
 
@@ -524,7 +532,8 @@ public class UserInput : MonoBehaviour {
                 //print("Match shape X!");
                 Match5BlockShape(i);
                 Destroy (GameObject.FindWithTag("ShapeX"));
-                scoreBoard.ScoreHit();
+                scoreBoard.ScoreHit(500);
+                timer.timeLeft = timer.timeLeft + 15f;
             }
         }
     }
@@ -556,6 +565,8 @@ public class UserInput : MonoBehaviour {
                     //print("Match shape V!");
                     Match3BlockShape(i);
                     Destroy (GameObject.FindWithTag("ShapeV"));
+                    scoreBoard.ScoreHit(100);
+                    timer.timeLeft = timer.timeLeft + 3f;
                 }
             }
 
@@ -588,6 +599,8 @@ public class UserInput : MonoBehaviour {
                     //print("Match shape V!");
                     Match3BlockShape(i);
                     Destroy (GameObject.FindWithTag("ShapeArrow"));
+                    scoreBoard.ScoreHit(150);
+                    timer.timeLeft = timer.timeLeft + 4f;
                 }
             }
 
@@ -620,6 +633,8 @@ public class UserInput : MonoBehaviour {
                     //print("Match shape V!");
                     Match2BlockShape(i);
                     Destroy (GameObject.FindWithTag("ShapeDash"));
+                    scoreBoard.ScoreHit(75);
+                    timer.timeLeft = timer.timeLeft + 3f;
                 }
             }
 
@@ -652,6 +667,8 @@ public class UserInput : MonoBehaviour {
                     //print("Match shape V!");
                     Match2BlockShape(i);
                     Destroy (GameObject.FindWithTag("ShapeShortI"));
+                    scoreBoard.ScoreHit(50);
+                    timer.timeLeft = timer.timeLeft + 2f;
                 }
             }
 
@@ -719,9 +736,4 @@ public class UserInput : MonoBehaviour {
             //}
         }
     }
-
-    //private void MatchShapes()
-    //{
-
-    //}
 }

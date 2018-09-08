@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4548154319105778}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: RayCast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,6 +131,12 @@ MonoBehaviour:
   gravityModifier: 1
   transformRayOrigin: {fileID: 0}
   findRaycaster: {fileID: 0}
+  blocks:
+  - {fileID: 1878720684860812, guid: e07f364e97a98994384b479abd02018d, type: 2}
+  - {fileID: 1878720684860812, guid: 219932a0cdf4cd44abf02f8d4df1e219, type: 2}
+  - {fileID: 1878720684860812, guid: 4a6ebae5531b90b459dce36f3cfcf687, type: 2}
+  - {fileID: 1709445462560878, guid: 831ad495a0061ad469199f42852ae05c, type: 2}
+  - {fileID: 1878720684860812}
 --- !u!212 &212571504744629912
 SpriteRenderer:
   m_ObjectHideFlags: 1

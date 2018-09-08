@@ -9,6 +9,13 @@ public class ShapeMovement : MonoBehaviour {
     private float zRotationMiddle = 0;
     private float zRotationRight = 0;
 
+    private Timer timer;
+
+    void Start ()
+    {
+        timer = FindObjectOfType<Timer>();
+    }
+
 
     void Update()
     {
@@ -20,19 +27,21 @@ public class ShapeMovement : MonoBehaviour {
             {
                 zRotationLeft = zRotationLeft + 90;
                 hitShape.transform.rotation = Quaternion.Euler(0f, 0f, zRotationLeft);
-
+                timer.timeLeft = timer.timeLeft - 1f;
             }
 
             else if(hitShape != null && hitShape.collider != null && hitShape.transform.position.y < 0f && hitShape.transform.position.x > 2f && hitShape.transform.position.x < 5f && hitShape.transform.gameObject.layer == 11)
             {
                 zRotationMiddle = zRotationMiddle + 90;
                 hitShape.transform.rotation = Quaternion.Euler(0f, 0f, zRotationMiddle);
+                timer.timeLeft = timer.timeLeft - 1f;
             }
 
             else if(hitShape != null && hitShape.collider != null && hitShape.transform.position.y < 0f && hitShape.transform.position.x > 5f && hitShape.transform.gameObject.layer == 11)
             {
                 zRotationRight = zRotationRight + 90;
                 hitShape.transform.rotation = Quaternion.Euler(0f, 0f, zRotationRight);
+                timer.timeLeft = timer.timeLeft - 1f;
             }
         }
     }

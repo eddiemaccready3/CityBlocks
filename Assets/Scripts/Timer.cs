@@ -19,10 +19,9 @@ public class Timer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update ()
-    {        
-        timeLeft -= Time.deltaTime;
-        timeLeftText.text = (Mathf.Round(timeLeft)).ToString();
-                
+    {
+        AdjustTimeLeft();
+
         //Debug.Log(timeLeft);
         //Debug.Log(Mathf.Round(timeLeft));
 
@@ -30,5 +29,11 @@ public class Timer : MonoBehaviour {
         //{
         //    SceneManager.LoadScene("GameOver");
         //}
-	}
+    }
+
+    public void AdjustTimeLeft()
+    {
+        timeLeft = timeLeft - Time.deltaTime;
+        timeLeftText.text = (Mathf.Round(timeLeft)).ToString();
+    }
 }

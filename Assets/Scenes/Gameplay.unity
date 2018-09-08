@@ -1093,7 +1093,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1017660545}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: blockSpawnerGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1716,42 +1716,42 @@ Prefab:
     - target: {fileID: 224556830525381780, guid: 1c02c798938d86d45b7fbeaa506755cc,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 1.5000305
       objectReference: {fileID: 0}
     - target: {fileID: 224556830525381780, guid: 1c02c798938d86d45b7fbeaa506755cc,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 0.9699707
       objectReference: {fileID: 0}
     - target: {fileID: 224556830525381780, guid: 1c02c798938d86d45b7fbeaa506755cc,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 48.2
+      value: -4.8
       objectReference: {fileID: 0}
     - target: {fileID: 224556830525381780, guid: 1c02c798938d86d45b7fbeaa506755cc,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: -8.9
+      value: -5.65
       objectReference: {fileID: 0}
     - target: {fileID: 224556830525381780, guid: 1c02c798938d86d45b7fbeaa506755cc,
         type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0.39537036
+      value: 0.36951852
       objectReference: {fileID: 0}
     - target: {fileID: 224556830525381780, guid: 1c02c798938d86d45b7fbeaa506755cc,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0.13018751
+      value: 0.133
       objectReference: {fileID: 0}
     - target: {fileID: 224556830525381780, guid: 1c02c798938d86d45b7fbeaa506755cc,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0.6231481
+      value: 0.6462963
       objectReference: {fileID: 0}
     - target: {fileID: 224556830525381780, guid: 1c02c798938d86d45b7fbeaa506755cc,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0.16350003
+      value: 0.16766669
       objectReference: {fileID: 0}
     - target: {fileID: 224556830525381780, guid: 1c02c798938d86d45b7fbeaa506755cc,
         type: 2}
@@ -1782,6 +1782,16 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114368119755244040, guid: 1c02c798938d86d45b7fbeaa506755cc,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114368119755244040, guid: 1c02c798938d86d45b7fbeaa506755cc,
+        type: 2}
+      propertyPath: m_FontData.m_MaxSize
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1c02c798938d86d45b7fbeaa506755cc, type: 2}
@@ -2543,6 +2553,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a88c0e563b3c5c4f93fa616364810db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blocks:
+  - {fileID: 1878720684860812, guid: e07f364e97a98994384b479abd02018d, type: 2}
+  - {fileID: 1878720684860812, guid: 219932a0cdf4cd44abf02f8d4df1e219, type: 2}
+  - {fileID: 1878720684860812, guid: 4a6ebae5531b90b459dce36f3cfcf687, type: 2}
+  - {fileID: 1709445462560878, guid: 831ad495a0061ad469199f42852ae05c, type: 2}
   shuffleButton: {fileID: 323282930}
 --- !u!224 &1994728947
 RectTransform:

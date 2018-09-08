@@ -22,9 +22,6 @@ public class Destroy : MonoBehaviour {
         yPos = gameObject.transform.position.y;
     }
 
-
-    //GameObject other;
-
     private void SetDestroyOn()
     {
         if (initialYPos == yPos)
@@ -54,16 +51,8 @@ public class Destroy : MonoBehaviour {
         tempMoveRight = new Vector2 (xPos + 10f, yPos);
         if (destroyOn)
         {    
-            if (other) //.name != "Destroyer")
+            if (other)
             {
-                //referenceObject = other.gameObject;
-                //referenceScript = referenceObject.GetComponent<SimGravity>();
-                //referenceScript.isGrounded = false;
-                //tempMove = other.transform.position.y + .25f;
-
-                //other.gameObject.transform.Translate(Vector2.right);
-                //SetDestroyOn();
-
                 if (destroyOn)
                 {
                     Destroy(other.gameObject);
@@ -75,11 +64,6 @@ public class Destroy : MonoBehaviour {
                 yPos = gameObject.transform.position.y;
 
                 SetDestroyOn();
-
-                //print("Destroy " + other);
-                //Destroy(gameObject);
-                //print("Game Object " + gameObject);
-                //SimGravity.isGrounded = false;
             }
         }
     }
