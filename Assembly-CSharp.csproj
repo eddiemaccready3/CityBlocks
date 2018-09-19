@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\SimGravity.cs" />
     <Compile Include="Assets\Scripts\Spray.cs" />
     <Compile Include="Assets\Scripts\Sprayer.cs" />
+    <Compile Include="Assets\Scripts\StartGame.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
     <Compile Include="Assets\Scripts\Trigger.cs" />
     <Compile Include="Assets\Scripts\UserInput.cs" />

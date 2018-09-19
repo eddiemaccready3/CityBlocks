@@ -1,0 +1,56 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="Block Smash_data" version="1.3.0" audacityversion="2.2.2" sel0="0.0000000000" sel1="0.6971882086" vpos="0" h="0.0000000000" zoom="481.9407894737" rate="44100.0" snapto="off" selectionformat="hh:mm:ss + milliseconds" frequencyformat="Hz" bandwidthformat="octaves">
+	<tags>
+		<tag name="COMMENTS" value="ROCK, CRASH - STONE STATUE FALL AND BREAK Rock, Dirt, Gravel &amp; Concrete Impacts"/>
+		<tag name="Content group description" value="Sound Ideas"/>
+		<tag name="File owner" value="Crash &amp; Burn"/>
+		<tag name="GENRE" value="ROCK, CRASH"/>
+		<tag name="Copyright message" value="2014Crash &amp; Burn"/>
+		<tag name="Original album" value="www.sound-ideas.com"/>
+		<tag name="Publisher" value="Sound Ideas"/>
+		<tag name="TRACKNUMBER" value="0"/>
+		<tag name="Subtitle" value="All Sound Effects &amp; Music are Copyright Sound Ideas - All Rights Reserved"/>
+		<tag name="ARTIST" value="Crash &amp; Burn"/>
+		<tag name="TITLE" value="RockCrash CRB02_84_1"/>
+		<tag name="Length" value="2310"/>
+		<tag name="YEAR" value="2014"/>
+		<tag name="Software" value="LAME 3.98.2 - Metadata by Soundminer Inc. www.soundminer.com - 4.1v05"/>
+	</tags>
+	<wavetrack name="Block Smash" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="30746">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808572.au" len="30746" min="-1.044214" max="1.016024" rms="0.208915"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+		<waveclip offset="0.69718821" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="2083">
+				<waveblock start="0">
+					<simpleblockfile filename="e08085ee.au" len="2083" min="0.0" max="0.0" rms="0.0"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="Block Smash" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="30746">
+				<waveblock start="0">
+					<simpleblockfile filename="e08080aa.au" len="30746" min="-1.092085" max="1.017413" rms="0.209018"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+		<waveclip offset="0.69718821" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="2083">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808b93.au" len="2083" min="0.0" max="0.0" rms="0.0"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+</project>

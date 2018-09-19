@@ -5,7 +5,10 @@ using UnityEngine;
 
 public class SimGravity : MonoBehaviour
 {
-   [SerializeField] private float gravityModifier = 1f;
+    [SerializeField] private float gravityModifier = 1f;
+    [SerializeField] AudioClip blockImpact;
+
+    AudioSource AudioSource;
 
     private float gravityAcceleration = -9.8f;
     private float yMovementEachFrame;
@@ -23,6 +26,7 @@ public class SimGravity : MonoBehaviour
         timeElapsed = 0f;
         currentPosition = transform.position;
         xPosition = transform.position.x;
+        AudioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -71,6 +75,7 @@ public class SimGravity : MonoBehaviour
     {
         isGrounded = true;
         transform.position = new Vector2(xPosition, Mathf.Round(yPosition));
+        AudioSource.PlayOneShot(blockImpact);
         //timeElapsed = 0f;
     }
 }
