@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class Destroy : MonoBehaviour {
 
-    [SerializeField] AudioClip blockDestroy;
+    //[SerializeField] AudioClip blockDestroy;
 
     private float xPos;
     private float yPos;
     private float initialXPos;
     private float initialYPos;
 
+    public GameObject blockToBeDestroyed;
+
     private Vector2 tempMoveUp;
     private Vector2 tempMoveRight;
 
     private bool destroyOn = true;
 
-    AudioSource AudioSource;
+    AudioSource audioSource;
 
     private void Start()
     {
@@ -24,7 +26,11 @@ public class Destroy : MonoBehaviour {
         initialYPos = gameObject.transform.position.y;
         xPos = gameObject.transform.position.x;
         yPos = gameObject.transform.position.y;
-        AudioSource = GetComponent<AudioSource>();
+        //audioSource = GetComponent<AudioSource>();
+        //if (!audioSource.isPlaying)
+        //{
+        //    audioSource.PlayOneShot(blockDestroy);
+        //}
     }
 
     private void SetDestroyOn()
@@ -42,7 +48,6 @@ public class Destroy : MonoBehaviour {
     private void MoveRight()
     {
         gameObject.transform.position = tempMoveRight;
-        AudioSource.PlayOneShot(blockDestroy);
         Destroy(gameObject);
     }
 
@@ -55,6 +60,7 @@ public class Destroy : MonoBehaviour {
 
         tempMoveUp = new Vector2 (xPos, yPos + 1);
         tempMoveRight = new Vector2 (xPos + 10f, yPos);
+        blockToBeDestroyed = other.gameObject;
         if (destroyOn)
         {    
             if (other)

@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 61003698492830964}
   - component: {fileID: 114515887471534698}
   - component: {fileID: 50734427403607090}
+  - component: {fileID: 114423964648328386}
   m_Layer: 12
   m_Name: BlueBlock
   m_TagString: Blue
@@ -65,7 +66,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1878720684860812}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -8.951876, y: 3.1694083, z: 0}
   m_LocalScale: {x: 0.9, y: 0.9, z: 1}
   m_Children:
   - {fileID: 4548154319105778}
@@ -117,6 +118,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 1.2}
   m_EdgeRadius: 0
+--- !u!114 &114423964648328386
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1878720684860812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a91133133a26b864ea66299658533407, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockDestroyParticles: {fileID: 198274673805640282, guid: 5738f35f9d9de864f95b26b37ce5856d,
+    type: 2}
+  blockDestroyed: 1
 --- !u!114 &114515887471534698
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -129,14 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravityModifier: 1
-  transformRayOrigin: {fileID: 0}
-  findRaycaster: {fileID: 0}
-  blocks:
-  - {fileID: 1878720684860812}
-  - {fileID: 1878720684860812, guid: 219932a0cdf4cd44abf02f8d4df1e219, type: 2}
-  - {fileID: 1878720684860812, guid: 4a6ebae5531b90b459dce36f3cfcf687, type: 2}
-  - {fileID: 1709445462560878, guid: 831ad495a0061ad469199f42852ae05c, type: 2}
-  - {fileID: 1878720684860812, guid: 4033c0269fdfd6543afe9bf14dd07467, type: 2}
+  blockImpact: {fileID: 0}
 --- !u!212 &212571504744629912
 SpriteRenderer:
   m_ObjectHideFlags: 1

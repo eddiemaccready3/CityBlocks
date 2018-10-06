@@ -27,6 +27,7 @@ TagManager:
   - ShapeArrow
   - ShapeDash
   - ShapeShortI
+  - Particles
   layers:
   - Default
   - TransparentFX

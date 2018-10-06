@@ -5,6 +5,14 @@ using System.Linq;
 
 public class UserInput : MonoBehaviour {
 
+    [SerializeField] AudioClip blockDestroy;
+
+    [SerializeField] BlockDestroyed blockDestroyedScript;
+    //Destroy blockColor = new Destroy();
+
+    
+    //[SerializeField] ParticleSystem blockDestroyParticles;
+    
     private const string SHAPET1 = "10000111";
     private const string SHAPET2 = "1000001100001";
     private const string SHAPET3 = "11100001";
@@ -49,7 +57,7 @@ public class UserInput : MonoBehaviour {
     private const string SHAPESHORTI1  = "1000001";
     private const string SHAPESHORTI2  = "11";
 
-
+    AudioSource audioSource;
 
     
     private List<Vector3> listBlocksClickedOn = new List<Vector3>();
@@ -79,7 +87,12 @@ public class UserInput : MonoBehaviour {
     private Timer timer;
 
     [SerializeField] GameObject destroyer;
+    [SerializeField] GameObject explosionParticle;
     [SerializeField] GameObject trigger;
+    GameObject[] explosion;
+
+    private string name = "Particles";
+
 
     //GameObject blueBlock = new GameObject("BlueBlock");
     //GameObject redBlock = new GameObject("RedBlock");
@@ -101,7 +114,9 @@ public class UserInput : MonoBehaviour {
     private int shapeGridPosY = 0;
 
 	// Use this for initialization
-	void Start ()
+	
+        
+    void Start ()
     {
         
         scoreBoard = FindObjectOfType<ScoreBoard>();
@@ -111,6 +126,10 @@ public class UserInput : MonoBehaviour {
         match = false;
         PopulateShapesList();
         PopulateShapeGridList();
+
+
+        audioSource = GetComponent<AudioSource>();
+        //audioSource.volume = 0.25f;
 
         //string temp = string.Join(" , ", listOfShapes.Select(x => x.ToString()).ToArray());
         //print("Shape List: " + temp);
@@ -678,39 +697,89 @@ public class UserInput : MonoBehaviour {
 
     private void Match2BlockShape(int i)
     {
+        //blockDestroyedScript.blockDestroyed = true;
+        GameObject destroyObject = GameObject.Find("Destroy");
+        Destroy detroyScript = destroyObject.GetComponent<Destroy>();
         Instantiate(destroyer, new Vector3((i % 6), (i / 6), 0), Quaternion.identity);
         Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[1]) % 6), ((i + shapeMatchIndexes[1]) / 6), 0), Quaternion.identity);
+        Instantiate(explosionParticle, new Vector3((i % 6), (i / 6), 0), Quaternion.identity);
+        Instantiate(explosionParticle, new Vector3(((i + shapeMatchIndexes[1]) % 6), ((i + shapeMatchIndexes[1]) / 6), 0), Quaternion.identity);
+        Invoke("DestroyParticle", 1f);
         match = true;
+        if (!audioSource.isPlaying)
+        {
+            //audioSource.volume = 0.25f;
+            audioSource.PlayOneShot(blockDestroy);
+            //audioSource.volume = 1f;
+        }
+        
     }
     
     private void Match3BlockShape(int i)
     {
+        //blockDestroyedScript.blockDestroyed = true;
         Instantiate(destroyer, new Vector3((i % 6), (i / 6), 0), Quaternion.identity);
         Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[1]) % 6), ((i + shapeMatchIndexes[1]) / 6), 0), Quaternion.identity);
         Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[2]) % 6), ((i + shapeMatchIndexes[2]) / 6), 0), Quaternion.identity);
         match = true;
+        if (!audioSource.isPlaying)
+        {
+            //audioSource.volume = 0.25f;
+            audioSource.PlayOneShot(blockDestroy);
+            //audioSource.volume = 1f;
+        }
+        //blockDestroyParticles.Play();
+        
+        
     }
 
     private void Match4BlockShape(int i)
     {
+        //blockDestroyedScript.blockDestroyed = true;
         Instantiate(destroyer, new Vector3((i % 6), (i / 6), 0), Quaternion.identity);
         Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[1]) % 6), ((i + shapeMatchIndexes[1]) / 6), 0), Quaternion.identity);
         Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[2]) % 6), ((i + shapeMatchIndexes[2]) / 6), 0), Quaternion.identity);
         Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[3]) % 6), ((i + shapeMatchIndexes[3]) / 6), 0), Quaternion.identity);
-
         match = true;
+        if (!audioSource.isPlaying)
+        {
+            //audioSource.volume = 0.25f;
+            audioSource.PlayOneShot(blockDestroy);
+            //audioSource.volume = 1f;
+        }
+        //blockDestroyParticles.Play();
+        
     }
 
     private void Match5BlockShape(int i)
     {
+        //blockDestroyedScript.blockDestroyed = true;
         Instantiate(destroyer, new Vector3((i % 6), (i / 6), 0), Quaternion.identity);
         Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[1]) % 6), ((i + shapeMatchIndexes[1]) / 6), 0), Quaternion.identity);
         Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[2]) % 6), ((i + shapeMatchIndexes[2]) / 6), 0), Quaternion.identity);
         Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[3]) % 6), ((i + shapeMatchIndexes[3]) / 6), 0), Quaternion.identity);
         Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[4]) % 6), ((i + shapeMatchIndexes[4]) / 6), 0), Quaternion.identity);
         match = true;
+        if (!audioSource.isPlaying)
+        {
+            //audioSource.volume = 0.25f;
+            audioSource.PlayOneShot(blockDestroy);
+            //audioSource.volume = 1f;
+        }
+        //blockDestroyParticles.Play();
+        
+
+
     }
 
+    private void DestroyParticle()
+    {
+        explosion = GameObject.FindGameObjectsWithTag (name);
+        for(int i = 0 ; i < explosion.Length; i ++)
+        {
+        Destroy(explosion[i]);
+        }
+    }
     private void PopulateClickedLists(RaycastHit2D hit)
     {
         if (hit)
