@@ -164,7 +164,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c7d379b660abc14596838a197ea97bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blockDestroy: {fileID: 8300000, guid: 20955b08e3cd24d4ba1100e9c1efe77b, type: 3}
+  blockToBeDestroyed: {fileID: 0}
+  explosionParticle: {fileID: 1402457311999024, guid: 5738f35f9d9de864f95b26b37ce5856d,
+    type: 2}
 --- !u!212 &212868946706121286
 SpriteRenderer:
   m_ObjectHideFlags: 1

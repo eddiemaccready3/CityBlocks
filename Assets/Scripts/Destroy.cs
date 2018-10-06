@@ -12,9 +12,13 @@ public class Destroy : MonoBehaviour {
     private float initialYPos;
 
     public GameObject blockToBeDestroyed;
+    [SerializeField] GameObject explosionParticle;
+    GameObject[] explosion;
 
     private Vector2 tempMoveUp;
     private Vector2 tempMoveRight;
+
+    private string particlesName = "Particles";
 
     private bool destroyOn = true;
 
@@ -48,7 +52,21 @@ public class Destroy : MonoBehaviour {
     private void MoveRight()
     {
         gameObject.transform.position = tempMoveRight;
+        Invoke("DestroyGameObject", 1.1f);
+    }
+
+    private void DestroyGameObject()
+    {
         Destroy(gameObject);
+    }
+
+    private void DestroyParticle()
+    {
+        explosion = GameObject.FindGameObjectsWithTag (particlesName);
+        for(int i = 0 ; i < explosion.Length; i ++)
+        {
+        Destroy(explosion[i]);
+        }
     }
 
 
@@ -68,6 +86,12 @@ public class Destroy : MonoBehaviour {
                 if (destroyOn)
                 {
                     Destroy(other.gameObject);
+                    if (other.gameObject.name == "BlueBlock(Clone)")
+                    {
+                        Instantiate(explosionParticle, transform.position, Quaternion.identity);
+                        Invoke("DestroyParticle", 1f);
+                    }
+
                 }
                 gameObject.transform.position = tempMoveUp;
                 Invoke("MoveRight", 0.05f);

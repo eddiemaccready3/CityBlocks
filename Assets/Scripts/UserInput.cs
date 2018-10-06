@@ -698,13 +698,13 @@ public class UserInput : MonoBehaviour {
     private void Match2BlockShape(int i)
     {
         //blockDestroyedScript.blockDestroyed = true;
-        GameObject destroyObject = GameObject.Find("Destroy");
-        Destroy detroyScript = destroyObject.GetComponent<Destroy>();
+        //GameObject destroyObject = GameObject.Find("Destroy");
+        //Destroy detroyScript = destroyObject.GetComponent<Destroy>();
         Instantiate(destroyer, new Vector3((i % 6), (i / 6), 0), Quaternion.identity);
         Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[1]) % 6), ((i + shapeMatchIndexes[1]) / 6), 0), Quaternion.identity);
-        Instantiate(explosionParticle, new Vector3((i % 6), (i / 6), 0), Quaternion.identity);
-        Instantiate(explosionParticle, new Vector3(((i + shapeMatchIndexes[1]) % 6), ((i + shapeMatchIndexes[1]) / 6), 0), Quaternion.identity);
-        Invoke("DestroyParticle", 1f);
+        //Instantiate(explosionParticle, new Vector3((i % 6), (i / 6), 0), Quaternion.identity);
+        //Instantiate(explosionParticle, new Vector3(((i + shapeMatchIndexes[1]) % 6), ((i + shapeMatchIndexes[1]) / 6), 0), Quaternion.identity);
+        //Invoke("DestroyParticle", 1f);
         match = true;
         if (!audioSource.isPlaying)
         {
