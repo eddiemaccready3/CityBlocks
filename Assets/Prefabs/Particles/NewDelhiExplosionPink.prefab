@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 198274673805640282}
   - component: {fileID: 199083969765743728}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: NewDelhiExplosionPink
   m_TagString: Particles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4588,7 +4588,7 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 80d34c5e82e80f547b6cc1fe4ac26ffa, type: 2}
+  - {fileID: 2100000, guid: 60e773204d438f94a81936ffb7b841af, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0

@@ -10,9 +10,14 @@ public class Destroy : MonoBehaviour {
     private float yPos;
     private float initialXPos;
     private float initialYPos;
+    [SerializeField] private float delayBeforeFall = 0.05f;
 
     public GameObject blockToBeDestroyed;
-    [SerializeField] GameObject explosionParticle;
+    [SerializeField] GameObject blueExplosionParticle;
+    [SerializeField] GameObject greenExplosionParticle;
+    [SerializeField] GameObject purpleExplosionParticle;
+    [SerializeField] GameObject redExplosionParticle;
+    [SerializeField] GameObject yellowExplosionParticle;
     GameObject[] explosion;
 
     private Vector2 tempMoveUp;
@@ -88,13 +93,33 @@ public class Destroy : MonoBehaviour {
                     Destroy(other.gameObject);
                     if (other.gameObject.name == "BlueBlock(Clone)")
                     {
-                        Instantiate(explosionParticle, transform.position, Quaternion.identity);
+                        Instantiate(blueExplosionParticle, transform.position, Quaternion.identity);
+                        Invoke("DestroyParticle", 1f);
+                    }
+                    else if (other.gameObject.name == "GreenBlock(Clone)")
+                    {
+                        Instantiate(greenExplosionParticle, transform.position, Quaternion.identity);
+                        Invoke("DestroyParticle", 1f);
+                    }
+                    else if (other.gameObject.name == "PurpleBlock(Clone)")
+                    {
+                        Instantiate(purpleExplosionParticle, transform.position, Quaternion.identity);
+                        Invoke("DestroyParticle", 1f);
+                    }
+                    else if (other.gameObject.name == "RedBlock(Clone)")
+                    {
+                        Instantiate(redExplosionParticle, transform.position, Quaternion.identity);
+                        Invoke("DestroyParticle", 1f);
+                    }
+                    else if (other.gameObject.name == "YellowBlock(Clone)")
+                    {
+                        Instantiate(yellowExplosionParticle, transform.position, Quaternion.identity);
                         Invoke("DestroyParticle", 1f);
                     }
 
                 }
                 gameObject.transform.position = tempMoveUp;
-                Invoke("MoveRight", 0.05f);
+                Invoke("MoveRight", delayBeforeFall);
 
                 xPos = gameObject.transform.position.x;
                 yPos = gameObject.transform.position.y;

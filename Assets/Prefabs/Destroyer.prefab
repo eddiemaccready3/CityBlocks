@@ -164,8 +164,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c7d379b660abc14596838a197ea97bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  delayBeforeFall: 0.2
   blockToBeDestroyed: {fileID: 0}
-  explosionParticle: {fileID: 1402457311999024, guid: 5738f35f9d9de864f95b26b37ce5856d,
+  blueExplosionParticle: {fileID: 1402457311999024, guid: 5738f35f9d9de864f95b26b37ce5856d,
+    type: 2}
+  greenExplosionParticle: {fileID: 1402457311999024, guid: 70a1d55b8099a364c93f5dc139843803,
+    type: 2}
+  purpleExplosionParticle: {fileID: 1402457311999024, guid: f0d7867d0ca2b2344a7753a095168fbb,
+    type: 2}
+  redExplosionParticle: {fileID: 1402457311999024, guid: 7693b48232c47604482a85bf844cd9ad,
+    type: 2}
+  yellowExplosionParticle: {fileID: 1402457311999024, guid: 9e6838c6bc5bc3b469db356aa0017d09,
     type: 2}
 --- !u!212 &212868946706121286
 SpriteRenderer:

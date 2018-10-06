@@ -91,7 +91,7 @@ public class UserInput : MonoBehaviour {
     [SerializeField] GameObject trigger;
     GameObject[] explosion;
 
-    private string name = "Particles";
+    //private string name = "Particles";
 
 
     //GameObject blueBlock = new GameObject("BlueBlock");
