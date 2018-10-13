@@ -8,10 +8,11 @@ public class SimGravity : MonoBehaviour
 {
     [SerializeField] private float gravityModifier = 1f;
     [SerializeField] AudioClip blockImpact;
+    [SerializeField] GameObject blockOfNewColor;
 
     AudioSource audioSource;
 
-    GameObject checkForCollision;
+    
 
     private float gravityAcceleration = -9.8f;
     private float yMovementEachFrame;
@@ -23,7 +24,7 @@ public class SimGravity : MonoBehaviour
     private bool isGrounded = false;
     
     private Vector2 currentPosition;
-    private Vector2 down3 = new Vector2(0, -3);
+    private Vector2 newPositionBlockOfNewColor = new Vector2(-3, 4);
     private Vector2 collisionSpot = new Vector2(0, 9);
 
     Scene m_Scene;
@@ -69,7 +70,7 @@ public class SimGravity : MonoBehaviour
         //checkForCollision = GameObject.Find ("CheckSpotForCollision");
         
         
-        if (other.tag != "Spawner" && other.name != "Stop1X3")
+        if (other.tag != "Spawner" && other.name != "ColorChanger")
         {
             GroundBlock();
         }
@@ -95,13 +96,13 @@ public class SimGravity : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        Collider2D hitColliders = Physics2D.OverlapCircle(collisionSpot, 0.05f);
-        checkForCollision = hitColliders.gameObject;
-        print("Collision object: " + checkForCollision);
-        if (other.name == "Stop1X3")
+        //Collider2D hitColliders = Physics2D.OverlapCircle(collisionSpot, 0.05f);
+        //checkForCollision = hitColliders.gameObject;
+        //print("Collision object: " + checkForCollision);
+        if (other.name == "ColorChanger")
         {
-            Instantiate(checkForCollision, transform.position, Quaternion.identity);
-            Destroy(this.gameObject);
+            Instantiate(blockOfNewColor, newPositionBlockOfNewColor, Quaternion.identity);
+            //Destroy(this.gameObject);
         }
             
         isGrounded = false;
