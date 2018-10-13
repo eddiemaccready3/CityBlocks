@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SimGravity : MonoBehaviour
 {
@@ -10,16 +11,24 @@ public class SimGravity : MonoBehaviour
 
     AudioSource audioSource;
 
+    GameObject checkForCollision;
+
     private float gravityAcceleration = -9.8f;
     private float yMovementEachFrame;
     private float timeElapsed;
     private float moveDistance;
+    private float xPosition;
+    private float yPosition;
 
     private bool isGrounded = false;
     
     private Vector2 currentPosition;
-    private float xPosition;
-    private float yPosition;
+    private Vector2 down3 = new Vector2(0, -3);
+    private Vector2 collisionSpot = new Vector2(0, 9);
+
+    Scene m_Scene;
+
+    private string sceneName;
 
     void Start()
     {
@@ -27,6 +36,8 @@ public class SimGravity : MonoBehaviour
         currentPosition = transform.position;
         xPosition = transform.position.x;
         audioSource = GetComponent<AudioSource>();
+        m_Scene = SceneManager.GetActiveScene();
+        
     }
 
     private void Update()
@@ -55,10 +66,26 @@ public class SimGravity : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag != "Spawner")
+        //checkForCollision = GameObject.Find ("CheckSpotForCollision");
+        
+        
+        if (other.tag != "Spawner" && other.name != "Stop1X3")
         {
             GroundBlock();
         }
+
+        //else if (other.name == "Stop1X3")
+        //{
+        //    if (hitColliders == null)
+        //    {
+        //        this.transform.position = new Vector2(xPosition, yPosition - 3);
+        //    }
+
+        //    else
+        //    {
+        //        GroundBlock();
+        //    }
+        //}
 
         else
         {
@@ -68,13 +95,23 @@ public class SimGravity : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
+        Collider2D hitColliders = Physics2D.OverlapCircle(collisionSpot, 0.05f);
+        checkForCollision = hitColliders.gameObject;
+        print("Collision object: " + checkForCollision);
+        if (other.name == "Stop1X3")
+        {
+            Instantiate(checkForCollision, transform.position, Quaternion.identity);
+            Destroy(this.gameObject);
+        }
+            
         isGrounded = false;
     }
+
 
     private void GroundBlock()
     {
         isGrounded = true;
-        transform.position = new Vector2(xPosition, Mathf.Round(yPosition));
+        this.transform.position = new Vector2(xPosition, Mathf.Round(yPosition));
         if (!audioSource.isPlaying)
         {
             audioSource.PlayOneShot(blockImpact);
