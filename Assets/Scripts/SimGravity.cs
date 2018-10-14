@@ -12,7 +12,7 @@ public class SimGravity : MonoBehaviour
 
     AudioSource audioSource;
 
-    
+    private Collider2D hitColliders;
 
     private float gravityAcceleration = -9.8f;
     private float yMovementEachFrame;
@@ -24,8 +24,8 @@ public class SimGravity : MonoBehaviour
     private bool isGrounded = false;
     
     private Vector2 currentPosition;
-    private Vector2 newPositionBlockOfNewColor = new Vector2(-3, 4);
-    private Vector2 collisionSpot = new Vector2(0, 9);
+    private Vector3 newPositionBlockOfNewColor = new Vector3(-3, 4, 0);
+    private Vector2 collisionSpot = new Vector2(0, 4.25f);
 
     Scene m_Scene;
 
@@ -38,6 +38,8 @@ public class SimGravity : MonoBehaviour
         xPosition = transform.position.x;
         audioSource = GetComponent<AudioSource>();
         m_Scene = SceneManager.GetActiveScene();
+        isGrounded = false;
+        
         
     }
 
@@ -64,34 +66,66 @@ public class SimGravity : MonoBehaviour
 
     }
 
+    private void EnableBoxCollider2D()
+    {
+        this.GetComponent<BoxCollider2D> ().enabled = true;
+    }
+
+    //void OnTriggerStay2D(Collider2D other)
+    //{
+    //    if (other.name == "ColorChanger")
+    //    {
+    //        isGrounded = false;
+    //    }
+    //}
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        print("On trigger enter with: " + other.name);
         //checkForCollision = GameObject.Find ("CheckSpotForCollision");
-        
-        
-        if (other.tag != "Spawner" && other.name != "ColorChanger")
+        Collider2D hitColliders = Physics2D.OverlapCircle(collisionSpot, 0.01f);
+        //checkForCollision = hitColliders.gameObject;
+        //print("Before if statements.");
+        //print(hitColliders);
+
+        if (other.tag != "Spawner" && other.name != "Stop1X3")
         {
             GroundBlock();
         }
 
-        //else if (other.name == "Stop1X3")
+        //else if (other.name == "ColorChanger")
         //{
-        //    if (hitColliders == null)
-        //    {
-        //        this.transform.position = new Vector2(xPosition, yPosition - 3);
-        //    }
-
-        //    else
-        //    {
-        //        GroundBlock();
-        //    }
+        //    print("Color changed!");
+        //    Instantiate(blockOfNewColor, transform.position, Quaternion.identity);
+        //    isGrounded = false;
+        //    Destroy(this.gameObject);
+        //    //Destroy(this.gameObject);
         //}
 
         else
         {
             isGrounded = false;
         }
+
+        if (other.name == "Stop1X3")
+        {
+            
+            //print("Mesage hitcolliders" + hitColliders);
+            if (hitColliders == null)
+            {
+                //print("Hit colliders = null");
+                this.transform.position = new Vector2(xPosition, yPosition - 4);
+            }
+
+            else
+            {
+                //print("Else");
+                GroundBlock();
+            }
+        }
+
+        
+
     }
 
     void OnTriggerExit2D(Collider2D other)
@@ -99,12 +133,14 @@ public class SimGravity : MonoBehaviour
         //Collider2D hitColliders = Physics2D.OverlapCircle(collisionSpot, 0.05f);
         //checkForCollision = hitColliders.gameObject;
         //print("Collision object: " + checkForCollision);
-        if (other.name == "ColorChanger")
-        {
-            Instantiate(blockOfNewColor, newPositionBlockOfNewColor, Quaternion.identity);
-            //Destroy(this.gameObject);
-        }
-            
+
+        //if (other.name == "ColorChanger")
+        //{
+        //    print("Color changed!");
+        //    Instantiate(blockOfNewColor, transform.position, Quaternion.identity);
+        //    Destroy(this.gameObject);
+        //}
+        print("On trigger exit with: " + other.name);
         isGrounded = false;
     }
 
@@ -117,6 +153,6 @@ public class SimGravity : MonoBehaviour
         {
             audioSource.PlayOneShot(blockImpact);
         }
-        //timeElapsed = 0f;
+        timeElapsed = 0f;
     }
 }

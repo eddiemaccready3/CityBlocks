@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\CollisionDetection.cs" />
     <Compile Include="Assets\Scripts\Destroy.cs" />
     <Compile Include="Assets\Scripts\DestroyShapes.cs" />
+    <Compile Include="Assets\Scripts\ExitStopBlock.cs" />
     <Compile Include="Assets\Scripts\Gameplay.cs" />
     <Compile Include="Assets\Scripts\ScoreBoard.cs" />
     <Compile Include="Assets\Scripts\ShapeMovement.cs" />

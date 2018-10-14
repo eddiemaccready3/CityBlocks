@@ -236,7 +236,7 @@ public class UserInput : MonoBehaviour {
             }
 
             string grid = string.Join("", checkShapeGrid.Select(x => x.ToString()).ToArray());
-            print(grid);
+            //print(grid);
 
             //Compare this list to Shape
 

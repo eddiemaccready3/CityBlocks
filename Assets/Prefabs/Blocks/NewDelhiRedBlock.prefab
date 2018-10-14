@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 82081182014209416}
   m_Layer: 12
   m_Name: NewDelhiRedBlock
-  m_TagString: Red
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,7 +109,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.35, y: 1.35}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -226,6 +226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityModifier: 1
   blockImpact: {fileID: 8300000, guid: b6f2b4efa8c86f543b0dd84dbb0d23bb, type: 3}
+  blockOfNewColor: {fileID: 0}
 --- !u!212 &212942926474538166
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 82464055746692420}
   m_Layer: 12
   m_Name: AmsterdamYellowBlock
-  m_TagString: Yellow
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -226,6 +226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityModifier: 1
   blockImpact: {fileID: 8300000, guid: b6f2b4efa8c86f543b0dd84dbb0d23bb, type: 3}
+  blockOfNewColor: {fileID: 0}
 --- !u!212 &212571504744629912
 SpriteRenderer:
   m_ObjectHideFlags: 1

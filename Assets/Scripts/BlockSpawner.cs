@@ -19,6 +19,9 @@ public class BlockSpawner : MonoBehaviour
     Instantiate(blocks[i],
                 transform.position,
                 Quaternion.identity);
+
+    
+    
 	}
 
     public void OnTriggerExit2D(Collider2D other)
@@ -34,4 +37,7 @@ public class BlockSpawner : MonoBehaviour
                     Quaternion.identity);
         qty++;
     }
+
+    
+
 }

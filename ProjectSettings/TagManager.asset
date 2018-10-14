@@ -28,6 +28,7 @@ TagManager:
   - ShapeDash
   - ShapeShortI
   - Particles
+  - IsGroundedSet
   layers:
   - Default
   - TransparentFX

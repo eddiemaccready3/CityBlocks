@@ -53,7 +53,7 @@ public class ShuffleBlocks : MonoBehaviour {
 
         foreach (GameObject item in blocksGameObjectsList)
         {
-            print(item.name);
+            //print(item.name);
         }
         
         foreach (GameObject item in spawnerGameObjectsList)
