@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\BlockSpawner.cs" />
     <Compile Include="Assets\Scripts\CollisionDetection.cs" />
     <Compile Include="Assets\Scripts\Destroy.cs" />
+    <Compile Include="Assets\Scripts\DestroyBlock.cs" />
     <Compile Include="Assets\Scripts\DestroyShapes.cs" />
     <Compile Include="Assets\Scripts\ExitStopBlock.cs" />
     <Compile Include="Assets\Scripts\Gameplay.cs" />

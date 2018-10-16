@@ -114,7 +114,7 @@ public class SimGravity : MonoBehaviour
             if (hitColliders == null)
             {
                 //print("Hit colliders = null");
-                this.transform.position = new Vector2(xPosition, yPosition - 4);
+                this.transform.position = new Vector2(xPosition, yPosition - 3);
             }
 
             else
