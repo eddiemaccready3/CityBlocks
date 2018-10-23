@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Destroy : MonoBehaviour {
 
@@ -23,6 +24,9 @@ public class Destroy : MonoBehaviour {
     private Vector2 tempMoveUp;
     private Vector2 tempMoveRight;
 
+    Scene m_Scene;
+
+    private string sceneName;
     private string particlesName = "Particles";
 
     private bool destroyOn = true;
@@ -35,6 +39,9 @@ public class Destroy : MonoBehaviour {
         initialYPos = gameObject.transform.position.y;
         xPos = gameObject.transform.position.x;
         yPos = gameObject.transform.position.y;
+
+        m_Scene = SceneManager.GetActiveScene();
+        sceneName = m_Scene.name;
         //audioSource = GetComponent<AudioSource>();
         //if (!audioSource.isPlaying)
         //{
@@ -91,7 +98,7 @@ public class Destroy : MonoBehaviour {
                 if (destroyOn)
                 {
                     Destroy(other.gameObject);
-                    if (other.gameObject.name == "BlueBlock(Clone)")
+                    if (other.gameObject.name == sceneName + "BlueBlock(Clone)")
                     {
                         Instantiate(blueExplosionParticle, transform.position, Quaternion.identity);
                         Invoke("DestroyParticle", 1f);

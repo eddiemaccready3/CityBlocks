@@ -29,6 +29,7 @@ TagManager:
   - ShapeShortI
   - Particles
   - IsGroundedSet
+  - Stopper
   layers:
   - Default
   - TransparentFX
@@ -43,7 +44,7 @@ TagManager:
   - AllElse
   - Shape
   - Blocks
-  - 
+  - Button
   - 
   - 
   - 

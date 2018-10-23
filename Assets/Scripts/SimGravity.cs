@@ -21,6 +21,9 @@ public class SimGravity : MonoBehaviour
     private float xPosition;
     private float yPosition;
 
+    private int blockFallCounter;
+    private int qtyCollidersHitCounter;
+
     private bool isGrounded = false;
     
     private Vector2 currentPosition;
@@ -39,7 +42,11 @@ public class SimGravity : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         m_Scene = SceneManager.GetActiveScene();
         isGrounded = false;
-        
+        blockFallCounter = GameObject.Find("Stop1X3").GetComponent<ExitStopBlock>().blockFallCount5;
+        if(this.gameObject.transform.position.x == 0)
+        {
+            qtyCollidersHitCounter = GameObject.Find("Stop1X3").GetComponent<ExitStopBlock>().qtyCollidersHit;
+        }
         
     }
 
@@ -66,10 +73,10 @@ public class SimGravity : MonoBehaviour
 
     }
 
-    private void EnableBoxCollider2D()
-    {
-        this.GetComponent<BoxCollider2D> ().enabled = true;
-    }
+    //private void EnableBoxCollider2D()
+    //{
+    //    this.GetComponent<BoxCollider2D> ().enabled = true;
+    //}
 
     //void OnTriggerStay2D(Collider2D other)
     //{
@@ -81,17 +88,26 @@ public class SimGravity : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        print("On trigger enter with: " + other.name);
+        //print("On trigger enter with: " + other.name);
         //checkForCollision = GameObject.Find ("CheckSpotForCollision");
-        Collider2D hitColliders = Physics2D.OverlapCircle(collisionSpot, 0.01f);
+        //Collider2D hitColliders = Physics2D.OverlapCircle(collisionSpot, 0.01f);
         //checkForCollision = hitColliders.gameObject;
         //print("Before if statements.");
         //print(hitColliders);
-
-        if (other.tag != "Spawner" && other.name != "Stop1X3")
-        {
+        //print("SimGravity BlockFallCounter: " + blockFallCounter);
+        //rint("HitColliderCounter from SimGrav: " + qtyCollidersHitCounter);
+        if(other.tag == "Ground" || other.tag == "Block" || other.tag == "Stopper")// && qtyCollidersHitCounter > 5))
+        {    
             GroundBlock();
         }
+
+        //if (other.tag != "Spawner")
+        //{
+        //    if(other.tag == "Stopper" && blockFallCounter < 1)
+        //    {    
+        //        GroundBlock();
+        //    }
+        //}
 
         //else if (other.name == "ColorChanger")
         //{
@@ -107,22 +123,22 @@ public class SimGravity : MonoBehaviour
             isGrounded = false;
         }
 
-        if (other.name == "Stop1X3")
-        {
+        //if (other.name == "Stop1X3")
+        //{
             
-            //print("Mesage hitcolliders" + hitColliders);
-            if (hitColliders == null)
-            {
-                //print("Hit colliders = null");
-                this.transform.position = new Vector2(xPosition, yPosition - 3);
-            }
+        //    //print("Mesage hitcolliders" + hitColliders);
+        //    if (hitColliders == null)
+        //    {
+        //        //print("Hit colliders = null");
+        //        this.transform.position = new Vector2(xPosition, yPosition - 3);
+        //    }
 
-            else
-            {
-                //print("Else");
-                GroundBlock();
-            }
-        }
+        //    else
+        //    {
+        //        //print("Else");
+        //        GroundBlock();
+        //    }
+        //}
 
         
 
@@ -140,8 +156,11 @@ public class SimGravity : MonoBehaviour
         //    Instantiate(blockOfNewColor, transform.position, Quaternion.identity);
         //    Destroy(this.gameObject);
         //}
-        print("On trigger exit with: " + other.name);
-        isGrounded = false;
+        //print("On trigger exit with: " + other.name);
+        if(other.gameObject.layer != 13)
+        {
+            isGrounded = false;
+        }
     }
 
 
@@ -149,10 +168,10 @@ public class SimGravity : MonoBehaviour
     {
         isGrounded = true;
         this.transform.position = new Vector2(xPosition, Mathf.Round(yPosition));
-        if (!audioSource.isPlaying)
-        {
-            audioSource.PlayOneShot(blockImpact);
-        }
+        //if (!audioSource.isPlaying)
+        //{
+        //    audioSource.PlayOneShot(blockImpact);
+        //}
         timeElapsed = 0f;
     }
 }
