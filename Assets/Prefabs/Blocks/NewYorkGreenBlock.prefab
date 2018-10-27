@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 82051330574633714}
   m_Layer: 12
   m_Name: NewYorkGreenBlock
-  m_TagString: Block
+  m_TagString: Green
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,7 +116,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 1.35}
+  m_Size: {x: 0.8, y: 1}
   m_EdgeRadius: 0
 --- !u!82 &82051330574633714
 AudioSource:
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2df03527306fd104cab73abbf94033d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravityModifier: 1
+  gravityModifier: 10
   blockImpact: {fileID: 8300000, guid: b6f2b4efa8c86f543b0dd84dbb0d23bb, type: 3}
   blockOfNewColor: {fileID: 1709445462560878, guid: 831ad495a0061ad469199f42852ae05c,
     type: 2}

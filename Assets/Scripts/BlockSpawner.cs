@@ -27,7 +27,7 @@ public class BlockSpawner : MonoBehaviour
 
     // Spawn Block at current Position
     Instantiate(blocks[i],
-                transform.position,
+                instantiatePosition,
                 Quaternion.identity);
 
     
@@ -41,7 +41,7 @@ public class BlockSpawner : MonoBehaviour
         //print("hitColliders Length: " + hitColliders.Length);
         if (hitColliders.Length < 1)
         {
-            int i = Random.Range(0, blocks.Length - 1);
+            int i = Random.Range(0, blocks.Length);
             Instantiate(blocks[i],
                     instantiatePosition,
                     Quaternion.identity);

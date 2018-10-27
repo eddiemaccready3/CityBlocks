@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 82749459093294812}
   m_Layer: 12
   m_Name: NewDelhiBlueBlock
-  m_TagString: Block
+  m_TagString: Blue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

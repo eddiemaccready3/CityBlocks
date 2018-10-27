@@ -442,12 +442,6 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224556830525381780, guid: 1c02c798938d86d45b7fbeaa506755cc,
     type: 2}
   m_PrefabInternal: {fileID: 1219350138}
---- !u!114 &323282930 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114521870808563518, guid: 1c02c798938d86d45b7fbeaa506755cc,
-    type: 2}
-  m_PrefabInternal: {fileID: 1219350138}
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &457386821
 Prefab:
   m_ObjectHideFlags: 0
@@ -608,7 +602,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4505820255283244, guid: c28611bbcc197ca47a6548db2c341942, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1.3
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114346418075448594, guid: c28611bbcc197ca47a6548db2c341942,
+        type: 2}
+      propertyPath: layerMask.m_Bits
+      value: 4096
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c28611bbcc197ca47a6548db2c341942, type: 2}
@@ -1135,7 +1134,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1017660544}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 10.1, z: 0}
+  m_LocalPosition: {x: 0, y: 11.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1174398961}
@@ -1363,7 +1362,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4505820255283244, guid: c28611bbcc197ca47a6548db2c341942, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1.3
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114346418075448594, guid: c28611bbcc197ca47a6548db2c341942,
+        type: 2}
+      propertyPath: layerMask.m_Bits
+      value: 4096
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c28611bbcc197ca47a6548db2c341942, type: 2}
@@ -1670,7 +1674,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4505820255283244, guid: c28611bbcc197ca47a6548db2c341942, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1.3
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114346418075448594, guid: c28611bbcc197ca47a6548db2c341942,
+        type: 2}
+      propertyPath: layerMask.m_Bits
+      value: 4096
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c28611bbcc197ca47a6548db2c341942, type: 2}
@@ -1758,7 +1767,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4505820255283244, guid: c28611bbcc197ca47a6548db2c341942, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1.3
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114346418075448594, guid: c28611bbcc197ca47a6548db2c341942,
+        type: 2}
+      propertyPath: layerMask.m_Bits
+      value: 4096
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c28611bbcc197ca47a6548db2c341942, type: 2}
@@ -1854,7 +1868,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4505820255283244, guid: c28611bbcc197ca47a6548db2c341942, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1.3
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114346418075448594, guid: c28611bbcc197ca47a6548db2c341942,
+        type: 2}
+      propertyPath: layerMask.m_Bits
+      value: 4096
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c28611bbcc197ca47a6548db2c341942, type: 2}
@@ -2330,7 +2349,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4505820255283244, guid: c28611bbcc197ca47a6548db2c341942, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1.3
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114346418075448594, guid: c28611bbcc197ca47a6548db2c341942,
+        type: 2}
+      propertyPath: layerMask.m_Bits
+      value: 4096
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c28611bbcc197ca47a6548db2c341942, type: 2}
@@ -2614,12 +2638,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a88c0e563b3c5c4f93fa616364810db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spinSpeed: 0
+  startRotationAngle: 0
+  maxBlocksOnScreen: 0
   blocks:
   - {fileID: 1878720684860812, guid: e07f364e97a98994384b479abd02018d, type: 2}
   - {fileID: 1878720684860812, guid: 219932a0cdf4cd44abf02f8d4df1e219, type: 2}
   - {fileID: 1878720684860812, guid: 4a6ebae5531b90b459dce36f3cfcf687, type: 2}
   - {fileID: 1709445462560878, guid: 831ad495a0061ad469199f42852ae05c, type: 2}
-  shuffleButton: {fileID: 323282930}
 --- !u!224 &1994728947
 RectTransform:
   m_ObjectHideFlags: 0

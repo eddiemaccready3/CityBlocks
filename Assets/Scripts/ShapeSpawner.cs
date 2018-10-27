@@ -9,7 +9,7 @@ public class ShapeSpawner : MonoBehaviour {
 
     void Start () {
 
-    int i = Random.Range(0, shapes.Length - 1);
+    int i = Random.Range(0, shapes.Length);
     
     Instantiate(shapes[i],
                 transform.position,
@@ -19,7 +19,7 @@ public class ShapeSpawner : MonoBehaviour {
 
     public void OnTriggerExit2D(Collider2D other)
     {
-        int i = Random.Range(0, shapes.Length - 1);
+        int i = Random.Range(0, shapes.Length);
 
         StartCoroutine(InstantiateShape(i));
     }

@@ -58,7 +58,7 @@ public class ShuffleBlocks : MonoBehaviour {
             
             foreach (GameObject item in blocksGameObjectsList)
             {
-                print(item);
+                //print(item);
             }
             if(hitShape != null && hitShape.collider != null && hitShape.transform.gameObject.layer == 13 && blocksGameObjectsList.Count == maxBlocksOnScreen && rotationAngle == startRotationAngle)
             {

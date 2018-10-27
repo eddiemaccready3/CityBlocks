@@ -30,6 +30,11 @@ TagManager:
   - Particles
   - IsGroundedSet
   - Stopper
+  - Orange
+  - Pink
+  - Peach
+  - Brown
+  - ShapeMedI
   layers:
   - Default
   - TransparentFX

@@ -14,11 +14,15 @@ public class Destroy : MonoBehaviour {
     [SerializeField] private float delayBeforeFall = 0.05f;
 
     public GameObject blockToBeDestroyed;
-    [SerializeField] GameObject blueExplosionParticle;
-    [SerializeField] GameObject greenExplosionParticle;
-    [SerializeField] GameObject purpleExplosionParticle;
-    [SerializeField] GameObject redExplosionParticle;
-    [SerializeField] GameObject yellowExplosionParticle;
+    GameObject blueExplosionParticle;
+    GameObject greenExplosionParticle;
+    GameObject purpleExplosionParticle;
+    GameObject redExplosionParticle;
+    GameObject yellowExplosionParticle;
+    GameObject orangeExplosionParticle;
+    GameObject pinkExplosionParticle;
+    GameObject brownExplosionParticle;
+    GameObject peachExplosionParticle;
     GameObject[] explosion;
 
     private Vector2 tempMoveUp;
@@ -42,6 +46,16 @@ public class Destroy : MonoBehaviour {
 
         m_Scene = SceneManager.GetActiveScene();
         sceneName = m_Scene.name;
+
+        blueExplosionParticle = Resources.Load("Particles/" + sceneName + "ExplosionBlue") as GameObject;
+        greenExplosionParticle = Resources.Load("Particles/" + sceneName + "ExplosionGreen") as GameObject;
+        purpleExplosionParticle = Resources.Load("Particles/" + sceneName + "ExplosionPurple") as GameObject;
+        redExplosionParticle = Resources.Load("Particles/" + sceneName + "ExplosionRed") as GameObject;
+        yellowExplosionParticle = Resources.Load("Particles/" + sceneName + "ExplosionYellow") as GameObject;
+        orangeExplosionParticle = Resources.Load("Particles/" + sceneName + "ExplosionOrange") as GameObject;
+        pinkExplosionParticle = Resources.Load("Particles/" + sceneName + "ExplosionPink") as GameObject;
+        brownExplosionParticle = Resources.Load("Particles/" + sceneName + "ExplosionBrown") as GameObject;
+        peachExplosionParticle = Resources.Load("Particles/" + sceneName + "ExplosionPeach") as GameObject;
         //audioSource = GetComponent<AudioSource>();
         //if (!audioSource.isPlaying)
         //{
@@ -100,27 +114,48 @@ public class Destroy : MonoBehaviour {
                     Destroy(other.gameObject);
                     if (other.gameObject.name == sceneName + "BlueBlock(Clone)")
                     {
+                        //print("Instatiate " + blueExplosionParticle);
                         Instantiate(blueExplosionParticle, transform.position, Quaternion.identity);
                         Invoke("DestroyParticle", 1f);
                     }
-                    else if (other.gameObject.name == "GreenBlock(Clone)")
+                    else if (other.gameObject.name == sceneName + "GreenBlock(Clone)")
                     {
                         Instantiate(greenExplosionParticle, transform.position, Quaternion.identity);
                         Invoke("DestroyParticle", 1f);
                     }
-                    else if (other.gameObject.name == "PurpleBlock(Clone)")
+                    else if (other.gameObject.name == sceneName + "PurpleBlock(Clone)")
                     {
                         Instantiate(purpleExplosionParticle, transform.position, Quaternion.identity);
                         Invoke("DestroyParticle", 1f);
                     }
-                    else if (other.gameObject.name == "RedBlock(Clone)")
+                    else if (other.gameObject.name == sceneName + "RedBlock(Clone)")
                     {
                         Instantiate(redExplosionParticle, transform.position, Quaternion.identity);
                         Invoke("DestroyParticle", 1f);
                     }
-                    else if (other.gameObject.name == "YellowBlock(Clone)")
+                    else if (other.gameObject.name == sceneName + "YellowBlock(Clone)")
                     {
                         Instantiate(yellowExplosionParticle, transform.position, Quaternion.identity);
+                        Invoke("DestroyParticle", 1f);
+                    }
+                    else if (other.gameObject.name == sceneName + "OrangeBlock(Clone)")
+                    {
+                        Instantiate(orangeExplosionParticle, transform.position, Quaternion.identity);
+                        Invoke("DestroyParticle", 1f);
+                    }
+                    else if (other.gameObject.name == sceneName + "PinkBlock(Clone)")
+                    {
+                        Instantiate(pinkExplosionParticle, transform.position, Quaternion.identity);
+                        Invoke("DestroyParticle", 1f);
+                    }
+                    else if (other.gameObject.name == sceneName + "BrownBlock(Clone)")
+                    {
+                        Instantiate(brownExplosionParticle, transform.position, Quaternion.identity);
+                        Invoke("DestroyParticle", 1f);
+                    }
+                    else if (other.gameObject.name == sceneName + "PeachBlock(Clone)")
+                    {
+                        Instantiate(peachExplosionParticle, transform.position, Quaternion.identity);
                         Invoke("DestroyParticle", 1f);
                     }
 
