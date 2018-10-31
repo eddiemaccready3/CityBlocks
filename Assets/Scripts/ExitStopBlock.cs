@@ -4,26 +4,26 @@ using UnityEngine;
 
 public class ExitStopBlock : MonoBehaviour {
 
-	[SerializeField] GameObject isGroundedSetToFalse;
-    [SerializeField] GameObject destroyExtraBlock;
-    [SerializeField] GameObject blockTrigger;
+	//[SerializeField] GameObject isGroundedSetToFalse;
+ //   [SerializeField] GameObject destroyExtraBlock;
+ //   [SerializeField] GameObject blockTrigger;
 
     [SerializeField] private Vector2 overlapBoxPosition;
     [SerializeField] private Vector2 overlapBoxSize;
 
     private Collider2D [] hitColliders;
-    public int qtyCollidersHit;
+    [SerializeField] private int qtyCollidersHit;
     
     
-    GameObject tempGameObject;
+    //GameObject tempGameObject;
 
-    public int blockFallCount5;
+    //private int blockFallCount5;
     
-    private Vector2 tempMoveLeft;
-    private Vector2 tempMoveUp3;
-    private Vector2 tempMoveUp2;
-    private Vector2 tempMoveUp1;
-    private Vector2 tempMoveUp;
+    //private Vector2 tempMoveLeft;
+    //private Vector2 tempMoveUp3;
+    //private Vector2 tempMoveUp2;
+    //private Vector2 tempMoveUp1;
+    //private Vector2 tempMoveUp;
     
     
     // Use this for initialization
@@ -31,13 +31,13 @@ public class ExitStopBlock : MonoBehaviour {
     
     this.gameObject.GetComponent<Collider2D>().enabled = false;
 
-    tempMoveLeft = new Vector2 (transform.position.x - 10f, transform.position.y + 3f);
-    tempMoveUp3 = new Vector2 (transform.position.x, transform.position.y + 2.5f);
-    tempMoveUp2 = new Vector2 (transform.position.x, transform.position.y + 2f);
-    tempMoveUp1 = new Vector2 (transform.position.x, transform.position.y + 1f);
-    tempMoveUp = new Vector2 (transform.position.x, (transform.lossyScale.y / 2) + transform.position.y + 0.5f);
+    //tempMoveLeft = new Vector2 (transform.position.x - 10f, transform.position.y + 3f);
+    //tempMoveUp3 = new Vector2 (transform.position.x, transform.position.y + 2.5f);
+    //tempMoveUp2 = new Vector2 (transform.position.x, transform.position.y + 2f);
+    //tempMoveUp1 = new Vector2 (transform.position.x, transform.position.y + 1f);
+    //tempMoveUp = new Vector2 (transform.position.x, (transform.lossyScale.y / 2) + transform.position.y + 0.5f);
 
-    blockFallCount5 = 4;
+    //blockFallCount5 = 4;
 		
 	}
 	
@@ -45,9 +45,10 @@ public class ExitStopBlock : MonoBehaviour {
 	void Update ()
     {
         hitColliders = Physics2D.OverlapBoxAll(overlapBoxPosition, overlapBoxSize, 0);
-        qtyCollidersHit = hitColliders.Length;
+        print(this.gameObject.name + " hitCollidersQty " + hitColliders.Length);
+        //qtyCollidersHit = hitColliders.Length;
         //print("hitColliders Length: " + hitColliders.Length);
-        if (hitColliders.Length >= 5)
+        if (hitColliders.Length >= qtyCollidersHit)
         {
             this.gameObject.GetComponent<Collider2D>().enabled = true;
             //print("Hitcolliders = 5");
@@ -59,13 +60,13 @@ public class ExitStopBlock : MonoBehaviour {
         }
 	}
 
-void OnTriggerEnter2D(Collider2D other)
-    {
-        //print("ExitStopBlock blockFallCount before trigger: " + blockFallCount5);
-        blockFallCount5--;
+//void OnTriggerEnter2D(Collider2D other)
+//    {
+//        //print("ExitStopBlock blockFallCount before trigger: " + blockFallCount5);
+//        blockFallCount5--;
         
-        //print("ExitStopBlock blockFallCount after trigger: " + blockFallCount5);
-    }
+//        //print("ExitStopBlock blockFallCount after trigger: " + blockFallCount5);
+//    }
 
     //void OnTriggerExit2D(Collider2D other)
     //{
@@ -93,13 +94,13 @@ void OnTriggerEnter2D(Collider2D other)
 
     
 
-    private void MoveObject()
-    {
-        tempGameObject = GameObject.FindGameObjectWithTag("IsGroundedSet");
-        tempGameObject.transform.position = tempMoveLeft;
+    //private void MoveObject()
+    //{
+    //    tempGameObject = GameObject.FindGameObjectWithTag("IsGroundedSet");
+    //    tempGameObject.transform.position = tempMoveLeft;
 
-        Invoke("DestroyTempGameObject", 0.05f);
-    }
+    //    Invoke("DestroyTempGameObject", 0.05f);
+    //}
 
 
 
@@ -125,9 +126,9 @@ void OnTriggerEnter2D(Collider2D other)
     //    tempGameObject.transform.position = tempMoveRight;
     //}
 
-    private void DestroyTempGameObject()
-    {
-        Destroy(tempGameObject);
-    }
+    //private void DestroyTempGameObject()
+    //{
+    //    Destroy(tempGameObject);
+    //}
 
 }

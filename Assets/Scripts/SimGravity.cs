@@ -7,10 +7,7 @@ using UnityEngine.SceneManagement;
 public class SimGravity : MonoBehaviour
 {
     [SerializeField] private float gravityModifier = 1f;
-    [SerializeField] AudioClip blockImpact;
     [SerializeField] GameObject blockOfNewColor;
-
-    AudioSource audioSource;
 
     private Collider2D [] hitColliders;
     private int qtyCollidersHit;
@@ -43,7 +40,6 @@ public class SimGravity : MonoBehaviour
         currentPosition = transform.position;
         xPosition = transform.position.x;
         yPosition = transform.position.y;
-        audioSource = GetComponent<AudioSource>();
         m_Scene = SceneManager.GetActiveScene();
         isGrounded = false;
 

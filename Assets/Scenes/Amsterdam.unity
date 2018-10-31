@@ -1205,7 +1205,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4581622164144994, guid: 1ce13487395122d41973a0945f67ee6c, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 7.862
+      value: 1.48
       objectReference: {fileID: 0}
     - target: {fileID: 4581622164144994, guid: 1ce13487395122d41973a0945f67ee6c, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1488,6 +1488,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockDestroy: {fileID: 8300000, guid: 20955b08e3cd24d4ba1100e9c1efe77b, type: 3}
   blockDestroyedScript: {fileID: 0}
+  reqBlocksOnScreen: 0
   destroyer: {fileID: 1308035583604918, guid: 3b37b56e5794ae64b93504c4b82a9b18, type: 2}
   explosionParticle: {fileID: 1402457311999024, guid: 5738f35f9d9de864f95b26b37ce5856d,
     type: 2}

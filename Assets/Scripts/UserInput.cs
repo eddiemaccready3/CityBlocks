@@ -362,7 +362,7 @@ public class UserInput : MonoBehaviour {
             }
         }
 
-        print("All Blocks Counted on Screen: " + listOfBlockGameObjects.Count);
+        //print("All Blocks Counted on Screen: " + listOfBlockGameObjects.Count);
     }
 
     private void CheckForShapeT()
