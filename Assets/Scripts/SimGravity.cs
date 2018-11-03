@@ -138,7 +138,6 @@ public class SimGravity : MonoBehaviour
 
             if (hitColliders.Length > 0 && (yPosition - Math.Floor(yPosition)) < Math.Abs(moveDistance))
             {
-                
                 isGrounded = true;
             }
             
