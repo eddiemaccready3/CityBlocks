@@ -11,16 +11,22 @@ public class Timer : MonoBehaviour {
 
     Text timeLeftText;
      // Use this for initialization
+
     void Start()
     {
         timeLeftText = GetComponent<Text>();
         timeLeftText.text = timeLeft.ToString();
+        timeLeft = GlobalControl.Instance.timeLeftSave;
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
         AdjustTimeLeft();
+        if(timeLeft <= 0)
+        {
+            Invoke("LoadGameOverScene", 0.25f);
+        }
 
         //Debug.Log(timeLeft);
         //Debug.Log(Mathf.Round(timeLeft));
@@ -35,5 +41,10 @@ public class Timer : MonoBehaviour {
     {
         timeLeft = timeLeft - Time.deltaTime;
         timeLeftText.text = (Mathf.Round(timeLeft)).ToString();
+    }
+
+    private void LoadGameOverScene()
+    {
+        SceneManager.LoadScene(9);
     }
 }

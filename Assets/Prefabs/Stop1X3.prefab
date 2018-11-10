@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 61972044003229060}
   - component: {fileID: 114525932407851048}
   - component: {fileID: 50830145561590808}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Stop1X3
   m_TagString: Stopper
   m_Icon: {fileID: 0}
@@ -98,13 +98,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 806860e001b957e4690dcbbf4a35b094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isGroundedSetToFalse: {fileID: 1308035583604918, guid: 7456c8f7ef9f098439a4808afede4497,
-    type: 2}
-  destroyExtraBlock: {fileID: 1025089466035150, guid: a66aed039302d66488e4b36818bcf376,
-    type: 2}
-  blockTrigger: {fileID: 1308035583604918, guid: 7456c8f7ef9f098439a4808afede4497,
-    type: 2}
   overlapBoxPosition: {x: 0.3, y: 3.5}
   overlapBoxSize: {x: 0.15, y: 7.5}
   qtyCollidersHit: 0
-  blockFallCount5: 0

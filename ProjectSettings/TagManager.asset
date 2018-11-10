@@ -35,6 +35,8 @@ TagManager:
   - Peach
   - Brown
   - ShapeMedI
+  - Undefined
+  - Timer
   layers:
   - Default
   - TransparentFX
@@ -50,8 +52,8 @@ TagManager:
   - Shape
   - Blocks
   - Button
-  - 
-  - 
+  - MovingObjects
+  - Ground
   - 
   - 
   - 

@@ -5,22 +5,19 @@ using UnityEngine;
 public class MenuScreenSpawner : MonoBehaviour {
 
     [SerializeField] private GameObject[] blocks;
-    //private float timeElapsed;
-    //private float timeNow;
-    //private float randSeconds;
 
     private float nextSpawn;
 
     private void Start()
     {
-        nextSpawn = nextSpawn + Random.Range (0f, 8f);
+        nextSpawn = nextSpawn + Random.Range (0f, 3f);
     }
 
     private void Update()
     {
-        if (Time.time > nextSpawn)
+        if (Time.timeSinceLevelLoad > nextSpawn)
         {
-            nextSpawn = Time.time + Random.Range (1f, 8f);
+            nextSpawn = Time.timeSinceLevelLoad + Random.Range (0.5f, 3f);
             int i = Random.Range(0, blocks.Length);
             Instantiate(blocks[i],
                 transform.position,

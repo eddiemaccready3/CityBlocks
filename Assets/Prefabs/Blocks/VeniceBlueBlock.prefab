@@ -143,6 +143,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2df03527306fd104cab73abbf94033d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 36864
   gravityModifier: 2
   blockOfNewColor: {fileID: 0}
 --- !u!212 &212571504744629912

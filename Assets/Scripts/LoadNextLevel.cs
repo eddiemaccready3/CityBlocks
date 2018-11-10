@@ -1,21 +1,35 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LoadNextLevel : MonoBehaviour {
 
-	private ScoreBoard scoreBoard;
-    
-    // Use this for initialization
-	void Start () {
-		scoreBoard = FindObjectOfType<ScoreBoard>();
-	}
-	
-	// Update is called once per frame
-	//void Update () {
-	//	if(ScoreBoard.score == 3000)
- //       {
+	[SerializeField] private float secondsToWait;
 
- //       }
-	//}
+    
+    private Scene scene;
+    private int sceneIndex;
+    private int nextSceneIndex;
+    
+    void Start ()
+    {
+        sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        if(sceneIndex + 1 > 9)
+        {
+            nextSceneIndex = 2;
+        }
+        
+        else
+        {
+            nextSceneIndex = sceneIndex + 1;
+        }
+
+        Invoke("LoadLevel", secondsToWait);
+	}
+
+    private void LoadLevel()
+    {
+        SceneManager.LoadScene(nextSceneIndex);
+    }
 }

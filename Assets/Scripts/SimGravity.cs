@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class SimGravity : MonoBehaviour
 {
+    [SerializeField] LayerMask layerMask;
     [SerializeField] private float gravityModifier = 1f;
     [SerializeField] GameObject blockOfNewColor;
 
@@ -93,7 +94,7 @@ public class SimGravity : MonoBehaviour
     {
         overlapBoxPosition = new Vector2(transform.position.x, transform.position.y - 0.85f);
         overlapBoxSize = new Vector2(0.25f, 0.85f);
-        hitColliders = Physics2D.OverlapBoxAll(overlapBoxPosition, overlapBoxSize, 0);
+        hitColliders = Physics2D.OverlapBoxAll(overlapBoxPosition, overlapBoxSize, 0, layerMask);
         qtyCollidersHit = hitColliders.Length;
         //if (hitColliders.Length > 0)
         //{
