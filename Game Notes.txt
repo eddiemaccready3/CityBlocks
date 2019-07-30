@@ -1,0 +1,55 @@
+
+
+  /\
+_/  \    /\  _
+     \  /  \/
+      \/
+
+++----+++--+
+
+0, 1, 2, 1, 0, -1, -2, -1, 0, 1, 0, -1, 0
+
+length		12
+i		0, 1, 2, 3, 4,  5,  6,  7, 8, 9, 10, 11, 12
+elev		0, 1, 2, 1, 0, -1, -2, -1, 0, 1,  0, -1,  0
+mountain	t, t, t, t, t,  f,  f,  f, f, t,  t,  f,  f
+valley		f, f, f, f, f,  t,  t,  t, f, f,  f,  t,  f
+qtyValleys	0, 0, 0, 0, 0,  1,  1,  1, 1, 1,  1,  2,  2
+
+T = 350
+O = 300
+S = 350
+Z = 350
+I = 225
+J = 200
+L = 200
+X = 500
+V = 100
+Arrow = 150
+Dash = 75
+ShortI = 50
+MedI = 50
+
+shapeTPoints = 350;
+    private int shapeSPoints = 350;
+    private int shapeZPoints = 350;
+    private int shapeIPoints = 225;
+    private int shapeJPoints = 200;
+    private int shapeLPoints = 200;
+    private int shapeVPoints = 100;
+    private int shapeXPoints = 500;
+    private int shapeArrowPoints = 150;
+    private int shapeDashPoints = 75;
+    private int shapeShortIPoints = 50;
+    private int shapeMedIPoints
+
+
+Blue = B
+Red = R
+Yellow = Y
+Green = G
+Purple = P
+Orange = O
+Pink = K
+Peach = H
+Brown = W

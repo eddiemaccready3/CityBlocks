@@ -6,22 +6,32 @@ public class Sprayer : MonoBehaviour {
 
     private float depth = 8f;
 
+    PauseGame pauseGame;
+
 	// Use this for initialization
 	void Start () {
-
+        pauseGame = FindObjectOfType<PauseGame>();
         Cursor.visible = true;
         GetComponent<TrailRenderer>().enabled = false;
 		
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
+        if(pauseGame.pauseManual == false)
+        {
+            Spray();
+        }
+    }
 
-        if(Input.GetMouseButton(0))
+    private void Spray()
+    {
+        if (Input.GetMouseButton(0))
         {
             GetComponent<TrailRenderer>().enabled = true;
             Vector3 mousePos = Input.mousePosition;
-            Vector3 wantedPos = Camera.main.ScreenToWorldPoint (new Vector3 (mousePos.x, mousePos.y, depth));
+            Vector3 wantedPos = Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, depth));
             transform.position = wantedPos;
         }
 
@@ -31,5 +41,4 @@ public class Sprayer : MonoBehaviour {
             GetComponent<TrailRenderer>().enabled = false;
         }
     }
-
 }

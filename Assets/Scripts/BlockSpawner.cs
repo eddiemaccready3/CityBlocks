@@ -6,7 +6,6 @@ public class BlockSpawner : MonoBehaviour
 {
     [SerializeField] LayerMask layerMask;
 
-    public int qty;
     public GameObject[] blocks;
     private Collider2D[] hitColliders;
     private Vector2 overlapBoxPosition;
@@ -16,22 +15,18 @@ public class BlockSpawner : MonoBehaviour
 
     private int i;
 
-    void Start () {
-
-    int i = Random.Range(0, blocks.Length);
-    qty = 0;
-    overlapBoxPosition = new Vector2 (transform.position.x, transform.position.y - 1f);
-    instantiatePosition = new Vector2 (transform.position.x, transform.position.y - 1f);
-    overlapBoxSize = new Vector2 (.8f, 1.8f);
+    void Start ()
+    {
+        int i = Random.Range(0, blocks.Length);
+        overlapBoxPosition = new Vector2 (transform.position.x, transform.position.y - 1f);
+        instantiatePosition = new Vector2 (transform.position.x, transform.position.y - 1f);
+        overlapBoxSize = new Vector2 (.8f, 1.8f);
         
 
-    // Spawn Block at current Position
-    Instantiate(blocks[i],
-                instantiatePosition,
-                Quaternion.identity);
-
-    
-    
+        // Spawn Block at current Position
+        Instantiate(blocks[i],
+                    instantiatePosition,
+                    Quaternion.identity);
 	}
 
     private void Update()

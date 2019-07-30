@@ -37,6 +37,28 @@ TagManager:
   - ShapeMedI
   - Undefined
   - Timer
+  - GroundUI
+  - Gold
+  - Bronze
+  - Silver
+  - Draw
+  - DarkGreen
+  - DarkPink
+  - MapView
+  - Toggle
+  - PauseMenu
+  - OptionsMenu
+  - Activator
+  - Marker
+  - LevelMenu
+  - PlayButton
+  - SceneButton
+  - MenuButton
+  - Map
+  - ThanksForPlaying
+  - ExitButton
+  - UI
+  - Menu
   layers:
   - Default
   - TransparentFX
@@ -54,18 +76,18 @@ TagManager:
   - Button
   - MovingObjects
   - Ground
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Back
+  - Coin
+  - UIStop
+  - Menus
+  - ShapeSpawner
+  - Toggle
+  - Replay
+  - Slider
+  - ContinueButton
+  - PlayButton
+  - Marker
+  - ExitButton
   - 
   - 
   - 
@@ -79,4 +101,7 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 3744093391
+    locked: 0
+  - name: Menus
+    uniqueID: 3226215989
     locked: 0

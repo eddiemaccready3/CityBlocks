@@ -6,47 +6,51 @@ using System.Linq;
 
 public class ShuffleBlocks : MonoBehaviour {
 
-    [SerializeField] float spinSpeed;
-    [SerializeField] float startRotationAngle;
-    [SerializeField] int maxBlocksOnScreen;
+    //[SerializeField] float spinSpeed;
+    //[SerializeField] float startRotationAngle;
+    [SerializeField] public int maxBlocksOnScreen;
+
+    [SerializeField] private Vector3 hitShapePos;
+
+    private float shuffleLoopDelayIncrement = 0.08f;
+    public float currentShuffleLoopDelay = 0f;
+
+    private int shuffleCounter = 0;
+
+    private int picNumber = 0;
     
-    private float rotationAngle;
+    //private float rotationAngle;
 
     public GameObject[] blocks;
     private GameObject[] allGameObjectsArray;
 
-    private int i;
+    //private bool rotate = false;
+
+    [SerializeField] private Timer timer;
+    private SpinShuffleIcon spinShuffleIcon;
+    private AutoShuffle autoShuffleScript;
     
-
-    private bool rotate = false;
-
-    private Timer timer;
-    
-    //public Button shuffleButton;
-
-    private List<GameObject> blocksGameObjectsList = new List<GameObject>();
+    public List<GameObject> blocksGameObjectsList = new List<GameObject>();
     private List<GameObject> spawnerGameObjectsList = new List<GameObject>();
-
-    private RaycastHit2D hitShape;
-
 
 	// Use this for initialization
 	void Start()
     {
-        //Button btn = shuffleButton.GetComponent<Button>();
-        //btn.onClick.AddListener(TaskOnClick);
-        timer = FindObjectOfType<Timer>();
-        rotationAngle = startRotationAngle;
+        //timer = FindObjectOfType<Timer>();
+        spinShuffleIcon = FindObjectOfType<SpinShuffleIcon>();
+        autoShuffleScript = FindObjectOfType<AutoShuffle>();
+        //rotationAngle = startRotationAngle;
     }
 
     void Update()
     {
-    if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
             blocksGameObjectsList.Clear();
             spawnerGameObjectsList.Clear();
 
             allGameObjectsArray = GameObject.FindObjectsOfType(typeof(GameObject)) as GameObject[];
+
             for (int i = 0; i < allGameObjectsArray.Length; i++)
             {
                 if (allGameObjectsArray[i].layer == 12)
@@ -56,52 +60,61 @@ public class ShuffleBlocks : MonoBehaviour {
             }
             RaycastHit2D hitShape = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
             
-            foreach (GameObject item in blocksGameObjectsList)
+            if(hitShape.collider != null && hitShape.transform.gameObject.layer == 5 && blocksGameObjectsList.Count == maxBlocksOnScreen && hitShape.transform.position == hitShapePos)// && spinShuffleIcon.rotate == true)
             {
-                //print(item);
-            }
-            if(hitShape != null && hitShape.collider != null && hitShape.transform.gameObject.layer == 13 && blocksGameObjectsList.Count == maxBlocksOnScreen && rotationAngle == startRotationAngle)
-            {
-                rotate = true;
-                ChangeBlockColor();
+                //rotate = true;
+                InvokeChangeBlockColors();
+
                 timer.timeLeft = timer.timeLeft - 2f;
 
                 blocksGameObjectsList.Clear();
                 spawnerGameObjectsList.Clear();
             }
-
-            
-
         }
-        if(rotate)
-        {
-            if(rotationAngle > (1))
-            {
-                this.transform.rotation = Quaternion.Euler(0f, 0f, rotationAngle);
-                rotationAngle = rotationAngle * spinSpeed;
-                //print("Rotation Angle: " + rotationAngle);
-            }
 
-            else
-            {
-                rotate = false;
-                rotationAngle = startRotationAngle;
-            }
-        }
+        //if(rotate)
+        //{
+        //    if(rotationAngle > (1))
+        //    {
+        //        this.transform.rotation = Quaternion.Euler(0f, 0f, rotationAngle);
+        //        rotationAngle = rotationAngle * spinSpeed;
+        //    }
+
+        //    else
+        //    {
+        //        rotate = false;
+        //        rotationAngle = startRotationAngle;
+        //        this.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+        //    }
+        //}
     }
 
-
-    //void TaskOnClick()
-    //{
-    //    ChangeBlockColor();
-    //    timer.timeLeft = timer.timeLeft - 2f;
-
-    //    blocksGameObjectsList.Clear();
-    //    spawnerGameObjectsList.Clear();
-    //}
-
-    private void ChangeBlockColor()
+    public void InvokeChangeBlockColors()
     {
+        shuffleCounter = 0;
+        Invoke("ChangeBlockColor", currentShuffleLoopDelay);
+        currentShuffleLoopDelay += shuffleLoopDelayIncrement;
+        Invoke("ChangeBlockColor", currentShuffleLoopDelay);
+        currentShuffleLoopDelay += shuffleLoopDelayIncrement;
+        Invoke("ChangeBlockColor", currentShuffleLoopDelay);
+        currentShuffleLoopDelay += shuffleLoopDelayIncrement;
+        Invoke("ChangeBlockColor", currentShuffleLoopDelay);
+        currentShuffleLoopDelay += shuffleLoopDelayIncrement;
+        Invoke("ChangeBlockColor", currentShuffleLoopDelay);
+        currentShuffleLoopDelay = 0;
+        //print("After, after shuffleCounter = " + shuffleCounter);
+        //if(shuffleCounter == 5)
+        //{
+        //    print("shuffleCounter = 5");
+        //    autoShuffleScript.tooFewBlocks = true;
+        //    shuffleCounter = 0;
+        //}
+    }
+
+    public void ChangeBlockColor()
+    {
+        //ScreenCapture.CaptureScreenshot("MatchPic" + picNumber + ".png");
+        //picNumber++;
         blocksGameObjectsList.Clear();
         spawnerGameObjectsList.Clear();
         allGameObjectsArray = GameObject.FindObjectsOfType(typeof(GameObject)) as GameObject[];
@@ -134,6 +147,17 @@ public class ShuffleBlocks : MonoBehaviour {
         foreach (GameObject item in spawnerGameObjectsList)
         {
             item.SetActive(true);
+        }
+
+        //print("Before shuffleCounter = " + shuffleCounter);
+        shuffleCounter++;
+        //print("After shuffleCounter = " + shuffleCounter);
+
+        if(shuffleCounter == 5)
+        {
+            //print("shuffleCounter = 5");
+            autoShuffleScript.tooFewBlocks = true;
+            shuffleCounter = 0;
         }
     }
 }

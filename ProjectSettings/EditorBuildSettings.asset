@@ -15,24 +15,24 @@ EditorBuildSettings:
     path: Assets/Scenes/MenuScreen.unity
     guid: a1bc0f3a720a8a8468e3c5fb575493cf
   - enabled: 1
-    path: Assets/Scenes/London.unity
+    path: Assets/Scenes/Europe/London.unity
     guid: 1f672b75b0158134cb118a1d86382489
   - enabled: 1
-    path: Assets/Scenes/Amsterdam.unity
+    path: Assets/Scenes/Europe/Amsterdam.unity
     guid: 0aa6e413e607f6d4d98b46f0abb44394
   - enabled: 1
-    path: Assets/Scenes/NewYork.unity
-    guid: 16f6e5445a179e64780c6dc098b1643c
-  - enabled: 1
-    path: Assets/Scenes/Paris.unity
+    path: Assets/Scenes/Europe/Santorini.unity
     guid: 7e8fdd2c2ce266b489ae1f34a64f1128
   - enabled: 1
-    path: Assets/Scenes/NewDelhi.unity
-    guid: 36a38042d6a5d2d418c65e96381aa153
+    path: Assets/Scenes/Europe/Paris.unity
+    guid: 19d9cab4a1534b043ba0f7479f194a86
   - enabled: 1
-    path: Assets/Scenes/Venice.unity
+    path: Assets/Scenes/Europe/Zermatt.unity
+    guid: 67828f4bc3ef3394683283de4e58f428
+  - enabled: 1
+    path: Assets/Scenes/Europe/Venice.unity
     guid: 0935e9866af08c446930b7fe6341d4dc
   - enabled: 1
-    path: Assets/Scenes/GameOver.unity
-    guid: bfbb8b6b74704b54cae5692c39f0539b
+    path: Assets/Scenes/MainMapScreen.unity
+    guid: 3e330dbaad8146f4da5368feff2a76c8
   m_configObjects: {}

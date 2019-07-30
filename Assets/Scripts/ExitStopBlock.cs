@@ -45,7 +45,7 @@ public class ExitStopBlock : MonoBehaviour {
 	void Update ()
     {
         hitColliders = Physics2D.OverlapBoxAll(overlapBoxPosition, overlapBoxSize, 0);
-        print(this.gameObject.name + " hitCollidersQty " + hitColliders.Length);
+        //print(this.gameObject.name + " hitCollidersQty " + hitColliders.Length);
         //qtyCollidersHit = hitColliders.Length;
         //print("hitColliders Length: " + hitColliders.Length);
         if (hitColliders.Length >= qtyCollidersHit)

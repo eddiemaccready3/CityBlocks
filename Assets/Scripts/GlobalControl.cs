@@ -4,10 +4,22 @@ using UnityEngine;
 
 public class GlobalControl : MonoBehaviour {
 
+    public bool deactivateMenu = false;
+    
     public static GlobalControl Instance;
 
-    public int scoreSave = 0;
-    public float timeLeftSave = 64f;
+    private ScoreBoard scoreboardScript;
+
+    public float timeLeftSave = 90f;
+    public int scoreBalanceSave;
+    public int coinsBalanceSave;
+    public int matchesBalanceSave;
+
+    private void Start()
+    {
+        scoreboardScript = FindObjectOfType<ScoreBoard>();
+        
+    }
 
     void Awake ()   
         {
@@ -21,11 +33,19 @@ public class GlobalControl : MonoBehaviour {
                 Destroy (gameObject);
             }
         }
+
     void Update()
     {
         if (Input.GetKey("escape"))
         {
+            scoreboardScript.HighScoreSave();
+            PlayerPrefs.Save();
             Application.Quit();
+        }
+
+        if (Input.GetKey("backspace"))
+        {
+            PlayerPrefs.DeleteAll();
         }
     }
 }
