@@ -491,7 +491,7 @@ public class UserInput : MonoBehaviour {
             Collider2D hit = Physics2D.OverlapCircle(origin, pointRadius, layerMask);
             if(hit != null)
             {
-                print("Block clicked on: " + hit.transform.name + " at " + hit.transform.position);
+                //print("Block clicked on: " + hit.transform.name + " at " + hit.transform.position);
             }
             //if(hit2 != null)
             //{

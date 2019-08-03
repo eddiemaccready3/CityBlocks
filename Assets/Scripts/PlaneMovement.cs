@@ -4,52 +4,62 @@ using UnityEngine;
 
 public class PlaneMovement : MonoBehaviour
 {
-    [SerializeField] private float speedModifier = 1f;
+    //Distance variables:
     [SerializeField] private float distanceToScaleUp;
 
-    private float angle;
-    private float xDistance;
-    private float yDistance;
+    private float xDistanceMarkerToMarker;
+    private float yDistanceMarkerToMarker;
     private float distanceMarkerToMarker;
     private float distanceStartToCurrent;
     private float distanceCurrentToEnd;
+    private float xPerFrameMoveDistance;
+    private float yPerFrameMoveDistance;
+    private float straightPerFrameMoveDistance;
+
+    //Position variables:
+    private float previousMarkerXPos;
+    private float previousMarkerYPos;
+    private float thisMarkerXPos;
+    private float thisMarkerYPos;
+    private float currentXPosition;
+    private float currentYPosition;
+    private float newXPosEachFrame;
+    private float newYPosEachFrame;
+
+    private int xMoveDirection;
+    private int yMoveDirection;
+
+    //Scale variables:
+    [SerializeField] private float fullScale;
+
+    private float startingScale;
+    private float scaleFactorPerFrame;
+
+    //Speed variables:
+    [SerializeField] private float speedModifier = 1f;
+
     private float acceleration = 10f;
-    private float xMoveDistance;
-    private float yMoveDistance;
-    private float straightMoveDistance;
-    private float scaleFactor;
 
-    private int xMoveDirectionPosNeg;
-    private int yMoveDirectionPosNeg;
-    private float xPosition;
-    private float yPosition;
-    private Vector2 currentPosition;
-
+    //Reference scripts:
     private Availability availabilityScript;
     private PauseGame pauseGameScript;
-
 
     // Use this for initialization
 	void Start()
     {
         PauseGame();
         
-        //distanceToScaleUp *= acceleration;
-        currentPosition = transform.position;
-        xPosition = transform.position.x;
-        yPosition = transform.position.y;
-        acceleration = 10f;
-
         GameObject thisCityMarker = GameObject.Find(PlayerPrefs.GetString("thisCityName") + "Marker");
         availabilityScript = thisCityMarker.GetComponent<Availability>();
 
-        FindFlightDistances();
-    }
+        startingScale = transform.localScale.x;
 
-    private void UnpauseGame()
-    {
-        pauseGameScript = FindObjectOfType<PauseGame>();
-        pauseGameScript.pauseAuto = true;
+        previousMarkerXPos = availabilityScript.previousMarkerPos.x;
+        previousMarkerYPos = availabilityScript.previousMarkerPos.y;
+        thisMarkerXPos = availabilityScript.thisMarkerPos.x;
+        thisMarkerYPos = availabilityScript.thisMarkerPos.y;
+
+        distanceMarkerToMarker = CalcFlightDistances(previousMarkerXPos, thisMarkerXPos, previousMarkerYPos, thisMarkerYPos);
     }
 
     private void PauseGame()
@@ -60,9 +70,29 @@ public class PlaneMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        FindDistanceFromStart();
-        FindDistanceToEnd();
-        Move();
+        SetFlightDistances();
+        MoveGameObject();
+    }
+
+    private void SetFlightDistances()
+    {
+        distanceStartToCurrent = CalcFlightDistances(previousMarkerXPos, currentXPosition, previousMarkerYPos, currentYPosition);
+        distanceCurrentToEnd = CalcFlightDistances(currentXPosition, thisMarkerXPos, currentYPosition, thisMarkerYPos);
+    }
+
+    private float CalcFlightDistances(float startXPos, float endXPos, float startYPos, float endYPos)
+    {
+        currentXPosition = transform.position.x;
+        currentYPosition = transform.position.y;
+
+        float xDistStartToEnd = FindDistance(startXPos, endXPos);
+        float yDistStartToEnd = FindDistance(startYPos, endYPos);
+        return PythagoreanTheorem(xDistStartToEnd, yDistStartToEnd);
+    }
+
+    private float FindDistance(float start, float end)
+    {
+        return Mathf.Abs(start - end);
     }
 
     private float PythagoreanTheorem(float a, float b)
@@ -71,94 +101,69 @@ public class PlaneMovement : MonoBehaviour
         return c;
     }
 
-    private float FindXDistance(float xStart, float xEnd)
+    private void MoveGameObject()
     {
-        return Mathf.Abs(xStart - xEnd);
+        currentXPosition = transform.position.x;
+        currentYPosition = transform.position.y;
+
+        xMoveDirection = SetMoveDirection(previousMarkerXPos, thisMarkerXPos);
+        yMoveDirection = SetMoveDirection(previousMarkerYPos, thisMarkerYPos);
+
+        xDistanceMarkerToMarker = FindDistance(previousMarkerXPos, thisMarkerXPos);
+        yDistanceMarkerToMarker = FindDistance(previousMarkerYPos, thisMarkerYPos);
+
+        xPerFrameMoveDistance = CalcAxisMoveDistance(xDistanceMarkerToMarker, xMoveDirection);
+        yPerFrameMoveDistance = CalcAxisMoveDistance(yDistanceMarkerToMarker, yMoveDirection);
+
+        straightPerFrameMoveDistance = PythagoreanTheorem(xPerFrameMoveDistance, yPerFrameMoveDistance);
+
+        scaleFactorPerFrame = (fullScale - startingScale) / (distanceToScaleUp / straightPerFrameMoveDistance);
+
+        newXPosEachFrame = currentXPosition + xPerFrameMoveDistance;
+        newYPosEachFrame = currentYPosition + yPerFrameMoveDistance;
+
+        SetGameObjectPosAndStat();
+
+        SetGameObjectScale();
     }
 
-    private float FindYDistance(float yStart, float yEnd)
+    private int SetMoveDirection(float previousMarkerPos, float thisMarkerPos)
     {
-        return Mathf.Abs(yStart - yEnd);
-    }
-
-    private void FindFlightDistances()
-    {
-        xDistance = FindXDistance(availabilityScript.previousMarkerPos.x, availabilityScript.thisMarkerPos.x);
-        yDistance = FindYDistance(availabilityScript.previousMarkerPos.y, availabilityScript.thisMarkerPos.y);
-        distanceMarkerToMarker = PythagoreanTheorem(xDistance, yDistance);
-    }
-
-    private void FindDistanceFromStart()
-    {
-        float xDistanceFromStart = FindXDistance(availabilityScript.previousMarkerPos.x, transform.position.x);
-        float yDistanceFromStart = FindYDistance(availabilityScript.previousMarkerPos.y, transform.position.y);
-        distanceStartToCurrent = PythagoreanTheorem(xDistanceFromStart, yDistanceFromStart);
-    }
-
-    private void FindDistanceToEnd()
-    {
-        float xDistanceToEnd = FindXDistance(transform.position.x, availabilityScript.thisMarkerPos.x);
-        float yDistanceToEnd = FindYDistance(transform.position.y, availabilityScript.thisMarkerPos.y);
-        distanceCurrentToEnd = PythagoreanTheorem(xDistanceToEnd, yDistanceToEnd);
-    }
-
-    private void Move()
-    {
-        if(availabilityScript.previousMarkerPos.x > availabilityScript.thisMarkerPos.x)
+        if(previousMarkerPos > thisMarkerPos)
         {
-            xMoveDirectionPosNeg = -1;
+            return -1;
         }
 
         else
         {
-            xMoveDirectionPosNeg = 1;
+            return 1;
         }
+    }
 
-        if(availabilityScript.previousMarkerPos.y > availabilityScript.thisMarkerPos.y)
+    private float CalcAxisMoveDistance(float totalAxisDistance, float moveDirection)
+    {
+        if(totalAxisDistance > 0)
         {
-            yMoveDirectionPosNeg = -1;
-        }
-
-        else
-        {
-            yMoveDirectionPosNeg = 1;
-        }
-
-        if(xDistance > 0)
-        {
-            xMoveDistance = ((((xDistance * acceleration) / distanceMarkerToMarker) * speedModifier) * xMoveDirectionPosNeg) * Time.deltaTime;
-        }
-        
-        else
-        {
-            xMoveDistance = 0;
-        }
-
-        if(yDistance > 0)
-        {
-            yMoveDistance = ((((yDistance * acceleration) / distanceMarkerToMarker) * speedModifier) * yMoveDirectionPosNeg) * Time.deltaTime;
+            return ((((totalAxisDistance * acceleration) / distanceMarkerToMarker) * speedModifier) * moveDirection) * Time.deltaTime;
         }
 
         else
         {
-            yMoveDistance = 0;
+            return 0;
         }
+    }
 
-        straightMoveDistance = Mathf.Sqrt(Mathf.Pow(xMoveDistance, 2) + Mathf.Pow(yMoveDistance, 2));
-        scaleFactor = 1.5f / (distanceToScaleUp / straightMoveDistance);
-
-        float xMovementEachFrame = transform.position.x + xMoveDistance;
-        float yMovementEachFrame = transform.position.y + yMoveDistance;
-
-        if  (
-            (xMoveDirectionPosNeg < 0 && transform.position.x > availabilityScript.thisMarkerPos.x) ||
-            (xMoveDirectionPosNeg > 0 && transform.position.x < availabilityScript.thisMarkerPos.x) ||
-            (yMoveDirectionPosNeg < 0 && transform.position.y > availabilityScript.thisMarkerPos.y) ||
-            (yMoveDirectionPosNeg > 0 && transform.position.y < availabilityScript.thisMarkerPos.y)
-            )
+    private void SetGameObjectPosAndStat()
+    {
+        if (
+                    (xMoveDirection < 0 && currentXPosition > thisMarkerXPos) ||
+                    (xMoveDirection > 0 && currentXPosition < thisMarkerXPos) ||
+                    (yMoveDirection < 0 && currentYPosition > thisMarkerYPos) ||
+                    (yMoveDirection > 0 && currentYPosition < thisMarkerYPos)
+                    )
 
         {
-            transform.position = new Vector2(xMovementEachFrame, yMovementEachFrame);
+            transform.position = new Vector2(newXPosEachFrame, newYPosEachFrame);
         }
 
         else
@@ -166,25 +171,34 @@ public class PlaneMovement : MonoBehaviour
             UnpauseGame();
             Invoke("InvokeDestroy", 0.15f);
         }
+    }
 
+    private void UnpauseGame()
+    {
+        pauseGameScript = FindObjectOfType<PauseGame>();
+        pauseGameScript.pauseAuto = true;
+    }
+
+    private void InvokeDestroy()
+    {
+        Destroy(gameObject);
+    }
+
+    private void SetGameObjectScale()
+    {
         if (distanceStartToCurrent < distanceToScaleUp)
         {
-            transform.localScale += new Vector3(scaleFactor, scaleFactor, 0f);
+            transform.localScale += new Vector3(scaleFactorPerFrame, scaleFactorPerFrame, 0f);
         }
 
         else if (distanceCurrentToEnd < distanceToScaleUp)
         {
-            transform.localScale -= new Vector3(scaleFactor, scaleFactor, 0f);
+            transform.localScale -= new Vector3(scaleFactorPerFrame, scaleFactorPerFrame, 0f);
         }
 
         if (transform.localScale.x <= 0.5f)
         {
             transform.localScale = new Vector3(0.5f, 0.5f, 0f);
         }
-    }
-
-    private void InvokeDestroy()
-    {
-        Destroy(gameObject);
     }
 }

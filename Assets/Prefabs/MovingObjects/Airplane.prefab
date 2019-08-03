@@ -141,5 +141,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3da27d3b4da0a0e4986f3a2e2431afc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedModifier: 10
-  distanceToScaleUp: 10
+  distanceToScaleUp: 15
+  fullScale: 1.5
+  speedModifier: 12
