@@ -12,10 +12,4 @@ public class PauseGame : MonoBehaviour
         pauseManual = false;
         pauseAuto = false;
     }
-
-    void Update()
-    {
-        //print("PauseManual: " + pauseManual);
-        //print("PauseAuto: " + pauseAuto);
-    }
 }

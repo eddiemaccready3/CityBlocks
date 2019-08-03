@@ -26,10 +26,14 @@ public class PlaneMovement : MonoBehaviour
     private Vector2 currentPosition;
 
     private Availability availabilityScript;
+    private PauseGame pauseGameScript;
+
 
     // Use this for initialization
 	void Start()
     {
+        PauseGame();
+        
         //distanceToScaleUp *= acceleration;
         currentPosition = transform.position;
         xPosition = transform.position.x;
@@ -40,6 +44,18 @@ public class PlaneMovement : MonoBehaviour
         availabilityScript = thisCityMarker.GetComponent<Availability>();
 
         FindFlightDistances();
+    }
+
+    private void UnpauseGame()
+    {
+        pauseGameScript = FindObjectOfType<PauseGame>();
+        pauseGameScript.pauseAuto = true;
+    }
+
+    private void PauseGame()
+    {
+        pauseGameScript = FindObjectOfType<PauseGame>();
+        pauseGameScript.pauseAuto = true;
     }
 
     private void FixedUpdate()
@@ -147,10 +163,9 @@ public class PlaneMovement : MonoBehaviour
 
         else
         {
+            UnpauseGame();
             Invoke("InvokeDestroy", 0.15f);
         }
-
-        print("Scale: " + transform.localScale.x + ", " + transform.localScale.y);
 
         if (distanceStartToCurrent < distanceToScaleUp)
         {
