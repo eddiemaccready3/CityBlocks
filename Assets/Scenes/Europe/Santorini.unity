@@ -3121,6 +3121,16 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7037286758221517112, guid: fa1b241b57e2d394e84426ad46500c33,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 35.000015
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037286758221517112, guid: fa1b241b57e2d394e84426ad46500c33,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -144.00002
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa1b241b57e2d394e84426ad46500c33, type: 3}
 --- !u!114 &1829462230 stripped
@@ -3234,6 +3244,11 @@ PrefabInstance:
       propertyPath: qtyMaxBlocksOnScreen
       value: 41
       objectReference: {fileID: 0}
+    - target: {fileID: 1952627226, guid: 4a31d09a8725c6c48b6037da6a6e9132, type: 3}
+      propertyPath: dot
+      value: 
+      objectReference: {fileID: 5138681378541273861, guid: 5faf6eb5659c27444bba8f21b2f627b7,
+        type: 3}
     - target: {fileID: 2292100581162427202, guid: 4a31d09a8725c6c48b6037da6a6e9132,
         type: 3}
       propertyPath: passPoints

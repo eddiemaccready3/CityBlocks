@@ -4,10 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
 
-public class ShuffleBlocks : MonoBehaviour {
-
-    //[SerializeField] float spinSpeed;
-    //[SerializeField] float startRotationAngle;
+public class ShuffleBlocks : MonoBehaviour 
+{
     [SerializeField] public int maxBlocksOnScreen;
 
     [SerializeField] private Vector3 hitShapePos;
