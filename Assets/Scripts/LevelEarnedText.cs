@@ -89,7 +89,7 @@ public class LevelEarnedText : MonoBehaviour
             ScoreCounter();
         }
 
-        if(pointsStar.GetComponent<SpriteRenderer>().sprite.name == "filled star")
+        if(int.Parse(pointsEarned.text) == GlobalControl.Instance.scoreBalanceSave)
         {
             if(startAddingCoins == true)
             {
@@ -97,7 +97,7 @@ public class LevelEarnedText : MonoBehaviour
             }
         }
 
-        if(coinsStar.GetComponent<SpriteRenderer>().sprite.name == "filled star")
+        if(int.Parse(coinsEarned.text) == GlobalControl.Instance.coinsBalanceSave)
         {
             if(startAddingMatches == true)
             {

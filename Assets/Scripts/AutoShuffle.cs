@@ -526,7 +526,6 @@ public class AutoShuffle : MonoBehaviour
                         if (shapeSizeAndRot(allBlocks, arrayToCheckFor, x, y))
                         {
                             shapeMatch = true;
-                            print(nameof(shapeMatch) + "at "  + x + ", " + y);
                         }
 
                         else

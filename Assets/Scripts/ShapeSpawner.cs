@@ -19,9 +19,12 @@ public class ShapeSpawner : MonoBehaviour {
 
     public void OnTriggerExit2D(Collider2D other)
     {
-        int i = Random.Range(0, shapes.Length);
+        if(other.transform.gameObject.layer == 11)
+        {
+            int i = Random.Range(0, shapes.Length);
 
-        StartCoroutine(InstantiateShape(i));
+            StartCoroutine(InstantiateShape(i));
+        }
     }
 
     IEnumerator InstantiateShape(int i)

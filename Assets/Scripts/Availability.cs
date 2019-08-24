@@ -98,5 +98,21 @@ public class Availability : MonoBehaviour
         {
             spriteRenderer.sprite = unavailable;
         }
+
+        //if(Input.GetKey("p"))
+        //{
+        //    GameObject previousMarker = GameObject.Find(previousCityName + "Marker");
+        //    previousMarkerPos = previousMarker.transform.position;
+        //    GameObject thisMarker = GameObject.Find(thisCityName + "Marker");
+        //    thisMarkerPos = thisMarker.transform.position;
+
+        //    PlayerPrefs.SetString("thisCityName", thisCityName);
+
+        //    float angleInRad = Mathf.Atan2(previousMarkerPos.x - thisMarkerPos.x, previousMarkerPos.y - thisMarkerPos.y);
+        //    float angleInDeg = angleInRad * (180 / Mathf.PI);
+
+        //    plane.transform.localScale = new Vector3(0.5F, 0.5f, 0f);
+        //    Instantiate(plane, previousMarkerPos, Quaternion.Euler(0f, 0f, -angleInDeg + 180));
+        //}
     }
 }

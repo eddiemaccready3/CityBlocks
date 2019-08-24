@@ -36,7 +36,7 @@ public class PlaneMovement : MonoBehaviour
     private float scaleFactorPerFrame;
 
     //Speed variables:
-    [SerializeField] private float speedModifier = 1f;
+    private float speedModifier;
 
     private float acceleration = 10f;
 
@@ -60,6 +60,20 @@ public class PlaneMovement : MonoBehaviour
         thisMarkerYPos = availabilityScript.thisMarkerPos.y;
 
         distanceMarkerToMarker = CalcFlightDistances(previousMarkerXPos, thisMarkerXPos, previousMarkerYPos, thisMarkerYPos);
+
+        if(distanceMarkerToMarker < 300f)
+        {
+            speedModifier = 6f;
+        }
+
+        else
+        {
+            speedModifier = 12f;
+        }
+
+        print("distanceMarkerToMarker:" + distanceMarkerToMarker);
+
+        //if(distanceMarkerToMarker)
     }
 
     private void PauseGame()
