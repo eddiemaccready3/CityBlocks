@@ -33,12 +33,12 @@ public class PanAndZoom : MonoBehaviour
     [SerializeField] private float minFov = 500f;
     [SerializeField] private float maxFov = 1000f;
     
-    private PauseGame pauseGameScript;
+    private PauseGameStatus pauseGameScript;
     
     // Start is called before the first frame update
     void Start()
     {
-        pauseGameScript = FindObjectOfType<PauseGame>();
+        pauseGameScript = FindObjectOfType<PauseGameStatus>();
         mapLocation = map.transform.position;
     }
 

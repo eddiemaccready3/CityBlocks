@@ -10,7 +10,7 @@ public class SimGravity : MonoBehaviour
     [SerializeField] private float gravityModifier = 1f;
     //[SerializeField] GameObject blockOfNewColor;
 
-    PauseGame pauseGame;
+    PauseGameStatus pauseGameScript;
 
     private Collider2D [] hitColliders;
     private int qtyCollidersHit;
@@ -39,7 +39,8 @@ public class SimGravity : MonoBehaviour
 
     void Start()
     {
-        pauseGame = FindObjectOfType<PauseGame>();
+        pauseGameScript = FindObjectOfType<PauseGameStatus>();
+
         timeElapsed = 0f;
         currentPosition = transform.position;
         xPosition = transform.position.x;
@@ -50,7 +51,7 @@ public class SimGravity : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(pauseGame.pauseManual == false)
+        if(pauseGameScript.pauseManual == false)
         {
             CheckForCollisions();
             MoveOrGround();

@@ -18,7 +18,7 @@ public class DrawLine : MonoBehaviour
 
     private bool firstPoint = true;
 
-    private PauseGame pauseGameScript;
+    private PauseGameStatus pauseGameScript;
 
     private List<float> xPostions = new List<float>();
     private List<float> yPostions = new List<float>();
@@ -39,7 +39,7 @@ public class DrawLine : MonoBehaviour
     {
         cam = Camera.main;
 
-        pauseGameScript = FindObjectOfType<PauseGame>();
+        pauseGameScript = FindObjectOfType<PauseGameStatus>();
     }
 
     // Update is called once per frame

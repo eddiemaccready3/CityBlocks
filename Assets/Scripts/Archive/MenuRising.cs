@@ -34,7 +34,7 @@ public class MenuRising : MonoBehaviour
     private RaycastHit2D hitShape;
 
     private ButtonActions buttonActionsScript;
-    private PauseGame pauseGameScript;
+    private PauseGameStatus pauseGameScript;
     private GlobalControl globalControlScript;
 
     void Start ()
@@ -45,7 +45,7 @@ public class MenuRising : MonoBehaviour
             spriteRenderer.sprite = buttonIn; // set the sprite to sprite1
         }
 
-        pauseGameScript = FindObjectOfType<PauseGame>();
+        pauseGameScript = FindObjectOfType<PauseGameStatus>();
         buttonActionsScript = FindObjectOfType<ButtonActions>();
         globalControlScript = FindObjectOfType<GlobalControl>();
 

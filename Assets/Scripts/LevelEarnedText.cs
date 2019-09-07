@@ -37,11 +37,11 @@ public class LevelEarnedText : MonoBehaviour
     private Counter counterScript;
     private UserInput userInputScript;
     private GameSaver gameSaverScript;
-    private PauseGame pauseGameScript;
+    private PauseGameStatus pauseGameScript;
 
     void Start()
     {
-        pauseGameScript = FindObjectOfType<PauseGame>();
+        pauseGameScript = FindObjectOfType<PauseGameStatus>();
         pauseGameScript.pauseAuto = false;
         pauseGameScript.pauseManual = false;
 

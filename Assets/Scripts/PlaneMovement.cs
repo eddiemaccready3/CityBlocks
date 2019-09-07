@@ -42,7 +42,7 @@ public class PlaneMovement : MonoBehaviour
 
     //Reference scripts:
     private Availability availabilityScript;
-    private PauseGame pauseGameScript;
+    private PauseGameStatus pauseGameScript;
 
     // Use this for initialization
 	void Start()
@@ -78,7 +78,7 @@ public class PlaneMovement : MonoBehaviour
 
     private void PauseGame()
     {
-        pauseGameScript = FindObjectOfType<PauseGame>();
+        pauseGameScript = FindObjectOfType<PauseGameStatus>();
         pauseGameScript.pauseAuto = true;
     }
 
@@ -189,7 +189,7 @@ public class PlaneMovement : MonoBehaviour
 
     private void UnpauseGame()
     {
-        pauseGameScript = FindObjectOfType<PauseGame>();
+        pauseGameScript = FindObjectOfType<PauseGameStatus>();
         pauseGameScript.pauseAuto = true;
     }
 

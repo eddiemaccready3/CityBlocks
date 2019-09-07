@@ -14,7 +14,7 @@ public class AutoShuffle : MonoBehaviour
     [SerializeField] GameObject dot;
 
     private ShuffleBlocks shuffleBlocks;
-    private PauseGame pauseGame;
+    private PauseGameStatus pauseGame;
 
     private Vector2 instantiatePosition;
 
@@ -297,7 +297,7 @@ public class AutoShuffle : MonoBehaviour
 
         //Assign game objects to variables
         shuffleBlocks = FindObjectOfType<ShuffleBlocks>();
-        pauseGame = FindObjectOfType<PauseGame>();
+        pauseGame = FindObjectOfType<PauseGameStatus>();
         shuffleBlocks.currentShuffleLoopDelay = 0;
     }
 

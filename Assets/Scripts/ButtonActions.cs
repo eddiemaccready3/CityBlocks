@@ -38,15 +38,15 @@ public class ButtonActions : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
-    private PauseGame pauseGameScript;
+    private PauseGameStatus pauseGameScript;
 
     // Start is called before the first frame update
     void Start()
     {
-        pauseGameScript = FindObjectOfType<PauseGame>();
+        pauseGameScript = FindObjectOfType<PauseGameStatus>();
 
-        pauseGameScript.pauseManual = false;
-        pauseGameScript.pauseAuto = false;
+        //pauseGameScript.pauseManual = false;
+        //pauseGameScript.pauseAuto = false;
         SetPauseStatus();
         SetMenuStatus();
         
@@ -95,7 +95,12 @@ public class ButtonActions : MonoBehaviour
     {
         menuObjects = GameObject.FindGameObjectsWithTag(menuTagName);
 
-        pauseGameScript = FindObjectOfType<PauseGame>();
+        //foreach(GameObject go in menuObjects)
+        //{
+        //    print("menuObjects" + go.name);
+        //}
+
+        pauseGameScript = FindObjectOfType<PauseGameStatus>();
 
         if (menuObjects.Length > 0)
         {

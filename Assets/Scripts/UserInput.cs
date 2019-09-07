@@ -345,7 +345,7 @@ public class UserInput : MonoBehaviour {
 
     //Reference Scripts
     [SerializeField] BlockDestroyed blockDestroyedScript;
-    private PauseGame pauseGame;
+    private PauseGameStatus pauseGame;
     private ScoreBoard scoreBoardScript;
     private ScoreCounter scoreCounterScript;
     private Timer timer;
@@ -365,9 +365,9 @@ public class UserInput : MonoBehaviour {
         pointRadius = 0.001f;
 
         //Initialize pause state
-        pauseGame = FindObjectOfType<PauseGame>();
-        pauseGame.pauseAuto = false;
-        pauseGame.pauseManual = false;
+        pauseGame = FindObjectOfType<PauseGameStatus>();
+        pauseGame.pauseAuto = true;
+        pauseGame.pauseManual = true;
 
         //Initialize reference scripts
         scoreBoardScript = FindObjectOfType<ScoreBoard>();

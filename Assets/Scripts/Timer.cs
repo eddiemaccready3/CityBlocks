@@ -16,16 +16,17 @@ public class Timer : MonoBehaviour {
     private bool timeUp = false;
 
     Text timeLeftText;
-    private PauseGame pauseGameScript;
+    private PauseGameStatus pauseGameScript;
     private ScoreBoard scoreBoardScript;
 
     void Start()
     {
-        pauseGameScript = FindObjectOfType<PauseGame>();
+        pauseGameScript = FindObjectOfType<PauseGameStatus>();
+        pauseGameScript.pauseAuto = true;
+        pauseGameScript.pauseManual = true;
+
         timeLeftText = GetComponent<Text>();
-        timeLeftText.text = timeLeft.ToString();
-        //timeLeft = GlobalControl.Instance.timeLeftSave;
-        scoreBoardScript = FindObjectOfType<ScoreBoard>();
+        timeLeftText.text = "1:30";
 
         timeUp = false;
     }
@@ -42,7 +43,6 @@ public class Timer : MonoBehaviour {
         {
             pauseGameScript.pauseAuto = true;
             pauseGameScript.pauseManual = true;
-            //scoreBoardScript.SaveLevelInfo();
             LoadResultsMenu();
             timeUp = true;
         }
@@ -55,7 +55,17 @@ public class Timer : MonoBehaviour {
         {
             timeLeft = 0;
         }
-        timeLeftText.text = (Mathf.Round(timeLeft)).ToString();
+
+        
+        if(timeLeft > 90f)
+        {
+            timeLeftText.text = "1:30";
+        }
+
+        else
+        {
+            timeLeftText.text = (Mathf.Floor(timeLeft / 60f)).ToString() + ":" + (Mathf.Floor(timeLeft % 60)).ToString();
+        }
     }
 
     private void LoadResultsMenu()

@@ -12,16 +12,20 @@ public class BlockSpawner : MonoBehaviour
     private Vector2 instantiatePosition;
     private Vector2 overlapBoxSize;
     private int qtyCollidersHit;
-
     private int i;
+
+    private PauseGameStatus pauseGameScript;
 
     void Start ()
     {
+        pauseGameScript = FindObjectOfType<PauseGameStatus>();
+        pauseGameScript.pauseAuto = true;
+        pauseGameScript.pauseManual = true;
+        
         int i = Random.Range(0, blocks.Length);
         overlapBoxPosition = new Vector2 (transform.position.x, transform.position.y - 1f);
         instantiatePosition = new Vector2 (transform.position.x, transform.position.y - 1f);
         overlapBoxSize = new Vector2 (.8f, 1.8f);
-        
 
         // Spawn Block at current Position
         Instantiate(blocks[i],

@@ -143,5 +143,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedModifier: 0.5
   yMoveFactor: 0
-  accelerationMin: 1
-  accelerationMax: 3
+  accelerationMin: 2
+  accelerationMax: 2

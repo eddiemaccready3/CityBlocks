@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class PauseGame : MonoBehaviour
 {
-    public bool pauseManual;
-    public bool pauseAuto;
-
-    private void Start()
+    [SerializeField] private float pauseDelay;
+    private PauseGameStatus pauseGameScript;
+    
+    // Start is called before the first frame update
+    void Start()
     {
-        pauseManual = false;
-        pauseAuto = false;
+        pauseGameScript = FindObjectOfType<PauseGameStatus>();
+        Invoke("Pause", pauseDelay);
+    }
+
+    private void Pause()
+    {
+        pauseGameScript.pauseAuto = true;
+        pauseGameScript.pauseManual = true;
     }
 }

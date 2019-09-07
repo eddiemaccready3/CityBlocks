@@ -5,23 +5,36 @@ using UnityEngine;
 public class ShapeSpawner : MonoBehaviour {
 
     public GameObject[] shapes;
+    
     private int i;
 
-    void Start () {
+    private bool firstShapesSpawned = false;
 
-    int i = Random.Range(0, shapes.Length);
-    
-    Instantiate(shapes[i],
-                transform.position,
-                Quaternion.identity);
+    private PauseGameStatus pauseGameScript;
 
+    void Start ()
+    {
+        pauseGameScript = FindObjectOfType<PauseGameStatus>();
 	}
+
+    private void Update()
+    {
+        if(pauseGameScript.pauseAuto == false && firstShapesSpawned == false)
+        {
+            i = Random.Range(0, shapes.Length);
+            
+            Instantiate(shapes[i],
+                    transform.position,
+                    Quaternion.identity);
+            firstShapesSpawned = true;
+        }
+    }
 
     public void OnTriggerExit2D(Collider2D other)
     {
         if(other.transform.gameObject.layer == 11)
         {
-            int i = Random.Range(0, shapes.Length);
+            i = Random.Range(0, shapes.Length);
 
             StartCoroutine(InstantiateShape(i));
         }

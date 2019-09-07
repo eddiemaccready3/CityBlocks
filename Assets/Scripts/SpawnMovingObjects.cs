@@ -13,7 +13,7 @@ public class SpawnMovingObjects : MonoBehaviour {
     // Use this for initialization
 	void Start () {
         nextSpawn = Time.timeSinceLevelLoad + Random.Range(spawnRangeMin, spawnRangeMax);
-		SpawnObject();
+		//SpawnObject();
 	}
 	
     

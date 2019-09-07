@@ -32,7 +32,7 @@ public class OverlapMenuRising : MonoBehaviour
 
     private RaycastHit2D hitShape;
 
-    private PauseGame pauseGameScript;
+    private PauseGameStatus pauseGameScript;
     private GlobalControl GlobalControlScript;
 
     void Start ()
@@ -43,7 +43,7 @@ public class OverlapMenuRising : MonoBehaviour
             spriteRenderer.sprite = buttonIn; // set the sprite to sprite1
         }
 
-        pauseGameScript = FindObjectOfType<PauseGame>();
+        pauseGameScript = FindObjectOfType<PauseGameStatus>();
         GlobalControlScript = FindObjectOfType<GlobalControl>();
 
         move = false;

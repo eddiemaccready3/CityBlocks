@@ -20,7 +20,7 @@ public class InstantiateMenu : MonoBehaviour
 
     private RaycastHit2D hitShape;
 
-    private PauseGame pauseGameScript;
+    private PauseGameStatus pauseGameScript;
     private GlobalControl globalControlScript;
 
     private GameObject pauseMenu;
@@ -34,7 +34,7 @@ public class InstantiateMenu : MonoBehaviour
             spriteRenderer.sprite = buttonIn; // set the sprite to sprite1
         }
 
-        pauseGameScript = FindObjectOfType<PauseGame>();
+        pauseGameScript = FindObjectOfType<PauseGameStatus>();
         globalControlScript = FindObjectOfType<GlobalControl>();
     }
  

@@ -6,11 +6,11 @@ public class Sprayer : MonoBehaviour {
 
     private float depth = 8f;
 
-    PauseGame pauseGame;
+    PauseGameStatus pauseGame;
 
 	// Use this for initialization
 	void Start () {
-        pauseGame = FindObjectOfType<PauseGame>();
+        pauseGame = FindObjectOfType<PauseGameStatus>();
         Cursor.visible = true;
         GetComponent<TrailRenderer>().enabled = false;
 		

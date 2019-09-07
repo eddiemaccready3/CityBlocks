@@ -26,7 +26,7 @@ public class SceneButton : MonoBehaviour
     private RaycastHit2D hitShape;
 
     private GlobalControl globalControlScript;
-    private PauseGame pauseGame;
+    private PauseGameStatus pauseGame;
     //private Counter counterScript;
     //private UserInput userInputScript;
     //private GameSaver gameSaverScript;
@@ -69,7 +69,7 @@ public class SceneButton : MonoBehaviour
                     sceneButtonActive = false;
                     //SaveLevelInfo();
 
-                    pauseGame = FindObjectOfType<PauseGame>();
+                    pauseGame = FindObjectOfType<PauseGameStatus>();
                     pauseGame.pauseAuto = false;
                     pauseGame.pauseManual = false;
                     SceneManager.LoadScene(sceneToLoad);
