@@ -5,18 +5,18 @@ using UnityEngine;
 public class PauseGame : MonoBehaviour
 {
     [SerializeField] private float pauseDelay;
-    private PauseGameStatus pauseGameScript;
+    private PauseGameStatus pauseGameStatusScript;
     
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        pauseGameScript = FindObjectOfType<PauseGameStatus>();
+        pauseGameStatusScript = FindObjectOfType<PauseGameStatus>();
         Invoke("Pause", pauseDelay);
     }
 
     private void Pause()
     {
-        pauseGameScript.pauseAuto = true;
-        pauseGameScript.pauseManual = true;
+        pauseGameStatusScript.pauseAuto = true;
+        pauseGameStatusScript.pauseManual = true;
     }
 }

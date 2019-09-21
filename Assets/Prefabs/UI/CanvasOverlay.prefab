@@ -60,7 +60,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: -550873905
-  m_SortingOrder: 10
+  m_SortingOrder: 11
   m_TargetDisplay: 0
 --- !u!114 &114961118741890816
 MonoBehaviour:
@@ -288,6 +288,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Score
       objectReference: {fileID: 0}
+    - target: {fileID: 1882451884659351737, guid: d58756a526c1e19428de769ea92f93e2,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882451884659351737, guid: d58756a526c1e19428de769ea92f93e2,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882451884659351737, guid: d58756a526c1e19428de769ea92f93e2,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882451884659351737, guid: d58756a526c1e19428de769ea92f93e2,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882451884659351737, guid: d58756a526c1e19428de769ea92f93e2,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882451884659351737, guid: d58756a526c1e19428de769ea92f93e2,
+        type: 3}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882451884659351737, guid: d58756a526c1e19428de769ea92f93e2,
+        type: 3}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1771719433782817121, guid: d58756a526c1e19428de769ea92f93e2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -407,41 +442,6 @@ PrefabInstance:
         type: 3}
       propertyPath: amsterdamEndScore
       value: 2500
-      objectReference: {fileID: 0}
-    - target: {fileID: 1882451884659351737, guid: d58756a526c1e19428de769ea92f93e2,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1882451884659351737, guid: d58756a526c1e19428de769ea92f93e2,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1882451884659351737, guid: d58756a526c1e19428de769ea92f93e2,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1882451884659351737, guid: d58756a526c1e19428de769ea92f93e2,
-        type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 1882451884659351737, guid: d58756a526c1e19428de769ea92f93e2,
-        type: 3}
-      propertyPath: m_FontData.m_MinSize
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1882451884659351737, guid: d58756a526c1e19428de769ea92f93e2,
-        type: 3}
-      propertyPath: m_FontData.m_HorizontalOverflow
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1882451884659351737, guid: d58756a526c1e19428de769ea92f93e2,
-        type: 3}
-      propertyPath: m_FontData.m_VerticalOverflow
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d58756a526c1e19428de769ea92f93e2, type: 3}

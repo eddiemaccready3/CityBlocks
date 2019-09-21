@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class FadeOutText : MonoBehaviour
 {
-    [SerializeField] private float durationOfFadeOut;
-    [SerializeField] private float fadeStartTime;
+    [SerializeField] public float durationOfFadeOut;
+    [SerializeField] public float fadeStartTime;
     private float timeOfInitialization;
 
     private float minimum = 0f;

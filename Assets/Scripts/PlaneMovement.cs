@@ -70,10 +70,6 @@ public class PlaneMovement : MonoBehaviour
         {
             speedModifier = 12f;
         }
-
-        print("distanceMarkerToMarker:" + distanceMarkerToMarker);
-
-        //if(distanceMarkerToMarker)
     }
 
     private void PauseGame()

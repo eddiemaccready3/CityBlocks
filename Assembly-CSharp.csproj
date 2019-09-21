@@ -117,6 +117,7 @@
     <Compile Include="Assets\Scripts\InstantiateMenu.cs" />
     <Compile Include="Assets\Scripts\InstantiateObject.cs" />
     <Compile Include="Assets\Scripts\LevelEarnedText.cs" />
+    <Compile Include="Assets\Scripts\LevelIntroTimeline.cs" />
     <Compile Include="Assets\Scripts\LevelMenuRising.cs" />
     <Compile Include="Assets\Scripts\LevelPassReqs.cs" />
     <Compile Include="Assets\Scripts\LevelTextPopulater.cs" />
@@ -142,6 +143,7 @@
     <Compile Include="Assets\Scripts\ScoreBoard.cs" />
     <Compile Include="Assets\Scripts\ScoreCounter.cs" />
     <Compile Include="Assets\Scripts\SetActiveStatus.cs" />
+    <Compile Include="Assets\Scripts\SetInitialLevelValues.cs" />
     <Compile Include="Assets\Scripts\SetMovingShapeSprite.cs" />
     <Compile Include="Assets\Scripts\SetScreenResolution.cs" />
     <Compile Include="Assets\Scripts\SetStarStatus.cs" />

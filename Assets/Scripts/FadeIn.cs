@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class FadeIn : MonoBehaviour
 {
-    [SerializeField] private float durationOfFadeIn;
-    [SerializeField] private float fadeStartTime;
+    [SerializeField] public float durationOfFadeIn;
+    [SerializeField] public float fadeStartTime;
     private float timeOfInitialization;
 
     private float minimum = 0f;

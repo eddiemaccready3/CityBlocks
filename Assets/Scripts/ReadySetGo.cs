@@ -12,7 +12,7 @@ public class ReadySetGo : MonoBehaviour
     [SerializeField] private string go;
 
     [SerializeField] private float timeInterval;
-    [SerializeField] private float startTime;
+    [SerializeField] public float startTime;
 
     private float timeOfInitialization;
     

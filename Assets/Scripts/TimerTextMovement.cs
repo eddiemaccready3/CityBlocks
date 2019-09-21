@@ -5,7 +5,7 @@ using UnityEngine;
 public class TimerTextMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
-    [SerializeField] private float moveDelay;
+    [SerializeField] public float moveDelay;
     [SerializeField] private float xEndPosition;
     [SerializeField] private float yEndPosition;
     [SerializeField] private float scaleFactor;

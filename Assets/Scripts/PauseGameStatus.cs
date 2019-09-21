@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class PauseGameStatus : MonoBehaviour
 {
-    public bool pauseManual = true;
-    public bool pauseAuto = true;
+    public bool pauseManual;
+    public bool pauseAuto;
 }

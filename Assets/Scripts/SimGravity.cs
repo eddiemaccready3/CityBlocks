@@ -10,7 +10,7 @@ public class SimGravity : MonoBehaviour
     [SerializeField] private float gravityModifier = 1f;
     //[SerializeField] GameObject blockOfNewColor;
 
-    PauseGameStatus pauseGameScript;
+    PauseGameStatus pauseGameStatusScript;
 
     private Collider2D [] hitColliders;
     private int qtyCollidersHit;
@@ -27,7 +27,7 @@ public class SimGravity : MonoBehaviour
     private Vector2 overlapBoxPosition;
     private Vector2 overlapBoxSize;
 
-    private bool isGrounded = false;
+    public bool isGrounded = false;
     
     private Vector2 currentPosition;
     private Vector3 newPositionBlockOfNewColor = new Vector3(-3, 4, 0);
@@ -39,7 +39,7 @@ public class SimGravity : MonoBehaviour
 
     void Start()
     {
-        pauseGameScript = FindObjectOfType<PauseGameStatus>();
+        pauseGameStatusScript = FindObjectOfType<PauseGameStatus>();
 
         timeElapsed = 0f;
         currentPosition = transform.position;
@@ -51,7 +51,8 @@ public class SimGravity : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(pauseGameScript.pauseManual == false)
+        print("pauseGameStatusScript.pauseManual: " + pauseGameStatusScript.pauseManual);
+        if(pauseGameStatusScript.pauseManual == false)
         {
             CheckForCollisions();
             MoveOrGround();

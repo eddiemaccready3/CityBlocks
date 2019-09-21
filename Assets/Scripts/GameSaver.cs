@@ -49,9 +49,12 @@ public class GameSaver : MonoBehaviour
     public string musicVolumeLevel = "musicVolumeLevel";
     public string sfxVolumeLevel = "sfxVolumeLevel";
 
+    //Keys for actions that happen once per game.
     public string thanksForPlayingCompleted = "keyThanksForPlayingCompleted";
 
     public string keyPlaneFlightCompletedPerLevel = "keyPlaneFlightCompletedPerLevel";
+
+    public string keyLevelIntroCompleted = "keyLevelIntroCompleted";
 
     
 
@@ -84,46 +87,5 @@ public class GameSaver : MonoBehaviour
             PlayerPrefs.SetFloat(sfxVolumeLevel, 1f);
             PlayerPrefs.SetInt(sfxVolumeSet, 1);
         }
-        
-
-        //musicVolume = 1f;
-        //sfxVolume = 1f;
-
-        
-       
-        //PlayerPrefs.SetInt ("bullets_CharacterSlot" + keyHighScoresPerLevel, data.bullets);
-        //PlayerPrefs.SetInt ("bullets_CharacterSlot" + keyHighCoinsPerLevel, data.bullets);
-        //PlayerPrefs.SetInt ("bullets_CharacterSlot" + keyHighMatchesPerLevel, data.bullets);
-
-        ////if(
-        //PlayerPrefs.SetInt ("bullets_CharacterSlot" + keyScoreStarPerLevel, data.bullets);
-        //PlayerPrefs.SetInt ("bullets_CharacterSlot" + keyCoinsStarPerLevel, data.bullets);
-        //PlayerPrefs.SetInt ("bullets_CharacterSlot" + keyMatchesStarPerLevel, data.bullets);
-        
-        
-        
-        //PlayerPrefs.SetString (userNames[0], data.characterName);
-        //PlayerPrefs.SetFloat ("power_CharacterSlot" + characterSlot, data.power);
-        //PlayerPrefs.SetInt ("bullets_CharacterSlot" + characterSlot, data.bullets);
-        //PlayerPrefs.Save ();
     }
-    
-
-    //static void SaveGameData()
-    //{
-    //    PlayerPrefs.SetString (userNames[0], data.characterName);
-    //    PlayerPrefs.SetFloat ("power_CharacterSlot" + characterSlot, data.power);
-    //    PlayerPrefs.SetInt ("bullets_CharacterSlot" + characterSlot, data.bullets);
-    //    PlayerPrefs.Save ();
-    //}
-
-    //static CharacterData LoadCharacter (int characterSlot)
-    //{
-    //    CharacterData loadedCharacter = new CharacterData ();
-    //    loadedCharacter.characterName = PlayerPrefs.GetString ("characterName_CharacterSlot" + characterSlot);
-    //    loadedCharacter.power = PlayerPrefs.GetFloat ("power_CharacterSlot" + characterSlot);
-    //    loadedCharacter.bullets = PlayerPrefs.GetInt ("bullets_CharacterSlot" + characterSlot);
-
-    //    return loadedCharacter;
-    //}
 }

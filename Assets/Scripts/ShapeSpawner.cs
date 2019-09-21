@@ -15,11 +15,12 @@ public class ShapeSpawner : MonoBehaviour {
     void Start ()
     {
         pauseGameScript = FindObjectOfType<PauseGameStatus>();
+        firstShapesSpawned = false;
 	}
 
     private void Update()
     {
-        if(pauseGameScript.pauseAuto == false && firstShapesSpawned == false)
+        if(Time.time > 1f && pauseGameScript.pauseAuto == false && firstShapesSpawned == false)
         {
             i = Random.Range(0, shapes.Length);
             
