@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 798278495401502791}
   - component: {fileID: 799171434169965531}
   - component: {fileID: 6518261137663368904}
-  - component: {fileID: 8843747254605282246}
+  - component: {fileID: 7301513531796035967}
+  - component: {fileID: 2684456197445722799}
   m_Layer: 5
   m_Name: Timer
   m_TagString: Timer
@@ -94,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4375f65940a7a6f40a87c4c7abdc6600, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLeft: 94
+  timeLeft: 95
   resultsMenu: {fileID: 0}
   menuPos: {x: 0, y: 0}
 --- !u!114 &6518261137663368904
@@ -104,26 +105,41 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 757933128500241945}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24f51f3cceb07eb41ae18c8c3dcad84b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   durationOfFadeIn: 0
-  fadeStartTime: 18
---- !u!114 &8843747254605282246
+  fadeStartTime: 8
+--- !u!114 &7301513531796035967
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 757933128500241945}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d48661969d73a5949ba6e6ea10a6814d, type: 3}
+  m_Script: {fileID: 11500000, guid: db1bc507c6020664481d15a1a73c062e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToInstantiate: {fileID: 7713473221027971050, guid: cd72a08909cf0ff4d8558eb3b40ec1c5,
-    type: 3}
-  instantiateDelay: 14
-  instantiatePos: {x: 2.5, y: 3.75}
+  moveSpeed: 30
+  moveDelay: 11
+  xEndPosition: -0.75
+  yEndPosition: 10.3
+--- !u!114 &2684456197445722799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757933128500241945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 3, y: 3}
+  m_UseGraphicAlpha: 1

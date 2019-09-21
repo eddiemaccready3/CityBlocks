@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 61288099227849172}
   - component: {fileID: 114495909531877406}
   - component: {fileID: 50137322064762258}
+  - component: {fileID: -3116141534142843701}
   m_Layer: 11
   m_Name: ShapeShortI
   m_TagString: ShapeShortI
@@ -141,3 +142,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
+--- !u!114 &-3116141534142843701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982996445689656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91469042b64037f47a2b957805d2b122, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  matched: {fileID: 21300000, guid: 06ce0e0dedcb10343934135a7ea045d6, type: 3}
+  unmatched: {fileID: 21300000, guid: 1e66cf34d412c57438feac0c699ec21f, type: 3}

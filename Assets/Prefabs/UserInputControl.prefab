@@ -47,18 +47,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reqBlocksOnScreen: 0
-  blockDestroyedScript: {fileID: 114423964648328386, guid: e07f364e97a98994384b479abd02018d,
-    type: 3}
-  blockDestroy: {fileID: 8300000, guid: 20955b08e3cd24d4ba1100e9c1efe77b, type: 3}
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 4096
   shapesMatched: []
   destroyer: {fileID: 1308035583604918, guid: 3b37b56e5794ae64b93504c4b82a9b18, type: 3}
   explosionParticle: {fileID: 1402457311999024, guid: 5738f35f9d9de864f95b26b37ce5856d,
     type: 3}
   trigger: {fileID: 0}
-  resetIsGrounded: {fileID: 0}
   Points500: {fileID: 1006164466811292, guid: 0da6e5d1a2ff5ce4cac5c018242a17b0, type: 3}
   Points350: {fileID: 1006164466811292, guid: e3d0ac75248d2a24a89a8626547e26d2, type: 3}
   Points300: {fileID: 1006164466811292, guid: 0b89b291024f0d7468754b525399c681, type: 3}
@@ -69,6 +62,39 @@ MonoBehaviour:
   Points100: {fileID: 1006164466811292, guid: 763ddd671c088194bad6e844a769c689, type: 3}
   Points75: {fileID: 1006164466811292, guid: 27d6428a8df7a294d8f4f65eaceeac01, type: 3}
   Points50: {fileID: 1006164466811292, guid: a6a9f29c419ef804a976561e3727bd39, type: 3}
+  floatingShapeO: {fileID: 1983998184574632, guid: d45ca58c598120b458263b99cc6b6e13,
+    type: 3}
+  floatingShapeT: {fileID: 1593448905277252, guid: ef76a63d3a1734440bbc978eb06b3931,
+    type: 3}
+  floatingShapeS: {fileID: 1511737282950680, guid: eef96009c2ec67343a013e0cd332742e,
+    type: 3}
+  floatingShapeZ: {fileID: 1982996445689656, guid: 0248fda467027d84fa95b89163c9456a,
+    type: 3}
+  floatingShapeI: {fileID: 1161439621034570, guid: 82bec78afa0e636418a8a5a5e9b2f55f,
+    type: 3}
+  floatingShapeJ: {fileID: 1137516199262894, guid: 720e872f1bcf9544888e27303cbc2d56,
+    type: 3}
+  floatingShapeL: {fileID: 1704695396089312, guid: a4befb53e76c0f044a5187f7df1cf83f,
+    type: 3}
+  floatingShapeV: {fileID: 1302776085009358, guid: 333004709b1ec0349bfcaef1c9f09b6f,
+    type: 3}
+  floatingShapeX: {fileID: 1982996445689656, guid: b8336d668313577499470fd77175a3d3,
+    type: 3}
+  floatingShapeArrow: {fileID: 1982996445689656, guid: 656ff416f74edbb459507c5d102c9012,
+    type: 3}
+  floatingShapeDash: {fileID: 1982996445689656, guid: 08d4d9e5be1bd184bbbdf147c8143828,
+    type: 3}
+  floatingShapeShortI: {fileID: 1982996445689656, guid: 133d7b49c64b9bf49b0a23b8cdfef2d0,
+    type: 3}
+  floatingShapeMedI: {fileID: 1982996445689656, guid: 07e3e6db26a977c43bd657bbc806c0e3,
+    type: 3}
+  blockDestroy: {fileID: 8300000, guid: 20955b08e3cd24d4ba1100e9c1efe77b, type: 3}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 4096
+  blockDestroyedScript: {fileID: 114423964648328386, guid: e07f364e97a98994384b479abd02018d,
+    type: 3}
+  resetIsGrounded: {fileID: 0}
 --- !u!82 &82627206322370476
 AudioSource:
   m_ObjectHideFlags: 0
@@ -183,6 +209,7 @@ MonoBehaviour:
   qtyMaxBlocksOnScreen: 39
   yTopRow: 9
   noMatches: {fileID: 1709445462560878, guid: 133bd2d0ec9969746ab0cb84b1134be4, type: 3}
+  dot: {fileID: 0}
   tooFewBlocks: 1
 --- !u!114 &2292100581162427202
 MonoBehaviour:

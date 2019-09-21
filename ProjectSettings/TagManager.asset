@@ -59,6 +59,8 @@ TagManager:
   - ExitButton
   - UI
   - Menu
+  - MovingShape
+  - SmallShape
   layers:
   - Default
   - TransparentFX
@@ -76,7 +78,7 @@ TagManager:
   - Button
   - MovingObjects
   - Ground
-  - Back
+  - Background
   - Coin
   - UIStop
   - Menus

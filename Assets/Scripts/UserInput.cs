@@ -334,8 +334,21 @@ public class UserInput : MonoBehaviour {
     [SerializeField] private GameObject Points75;
     [SerializeField] private GameObject Points50;
 
-    GameObject[] explosion;
+    [SerializeField] private GameObject floatingShapeO;
+    [SerializeField] private GameObject floatingShapeT;
+    [SerializeField] private GameObject floatingShapeS;
+    [SerializeField] private GameObject floatingShapeZ;
+    [SerializeField] private GameObject floatingShapeI;
+    [SerializeField] private GameObject floatingShapeJ;
+    [SerializeField] private GameObject floatingShapeL;
+    [SerializeField] private GameObject floatingShapeV;
+    [SerializeField] private GameObject floatingShapeX;
+    [SerializeField] private GameObject floatingShapeArrow;
+    [SerializeField] private GameObject floatingShapeDash;
+    [SerializeField] private GameObject floatingShapeShortI;
+    [SerializeField] private GameObject floatingShapeMedI;
 
+    GameObject[] explosion;   
     //Audio
     [SerializeField] AudioClip blockDestroy;
     AudioSource audioSource;
@@ -719,7 +732,8 @@ public class UserInput : MonoBehaviour {
                         shapesMatched.Add("ShapeT");
                     }
                     counterScript.AddInAmount(shapeTPoints, scoreBalanceName);
-                    Instantiate(Points350, centerXYClicked, Quaternion.identity);
+                    Instantiate(Points350, (centerXYClicked + new Vector3(0.5f, 0f, 0)), Quaternion.identity);
+                    Instantiate(floatingShapeT, (centerXYClicked - new Vector3(0.5f, 0f, 0)), Quaternion.identity);
                     timer.timeLeft = timer.timeLeft + 2f;
                 }
             }
@@ -749,7 +763,8 @@ public class UserInput : MonoBehaviour {
                         shapesMatched.Add("ShapeO");
                     }
                 counterScript.AddInAmount(shapeOPoints, scoreBalanceName);
-                Instantiate(Points300, centerXYClicked, Quaternion.identity);
+                Instantiate(Points300, (centerXYClicked + new Vector3(0.5f, 0f, 0)), Quaternion.identity);
+                Instantiate(floatingShapeO, (centerXYClicked - new Vector3(0.5f, 0f, 0)), Quaternion.identity);
                 timer.timeLeft = timer.timeLeft + 2f;
             }
         }
@@ -785,7 +800,8 @@ public class UserInput : MonoBehaviour {
                         shapesMatched.Add("ShapeS");
                     }
                     counterScript.AddInAmount(shapeSPoints, scoreBalanceName);
-                    Instantiate(Points350, centerXYClicked, Quaternion.identity);
+                    Instantiate(Points350, (centerXYClicked + new Vector3(0.5f, 0f, 0)), Quaternion.identity);
+                    Instantiate(floatingShapeS, (centerXYClicked - new Vector3(0.5f, 0f, 0)), Quaternion.identity);
                     timer.timeLeft = timer.timeLeft + 3f;
                 }
             }
@@ -823,7 +839,8 @@ public class UserInput : MonoBehaviour {
                         shapesMatched.Add("ShapeZ");
                     }
                     counterScript.AddInAmount(shapeZPoints, scoreBalanceName);
-                    Instantiate(Points350, centerXYClicked, Quaternion.identity);
+                    Instantiate(Points350, (centerXYClicked + new Vector3(0.5f, 0f, 0)), Quaternion.identity);
+                    Instantiate(floatingShapeZ, (centerXYClicked - new Vector3(0.5f, 0f, 0)), Quaternion.identity);
                     timer.timeLeft = timer.timeLeft + 3f;
                 }
             }
@@ -860,7 +877,8 @@ public class UserInput : MonoBehaviour {
                         shapesMatched.Add("ShapeI");
                     }
                     counterScript.AddInAmount(shapeIPoints, scoreBalanceName);
-                    Instantiate(Points225, centerXYClicked, Quaternion.identity);
+                    Instantiate(Points225, (centerXYClicked + new Vector3(0.5f, 0f, 0)), Quaternion.identity);
+                    Instantiate(floatingShapeI, (centerXYClicked - new Vector3(0.5f, 0f, 0)), Quaternion.identity);
                     timer.timeLeft = timer.timeLeft + 2f;
                 }
             }
@@ -897,7 +915,8 @@ public class UserInput : MonoBehaviour {
                         shapesMatched.Add("ShapeJ");
                     }
                     counterScript.AddInAmount(shapeJPoints, scoreBalanceName);
-                    Instantiate(Points200, centerXYClicked, Quaternion.identity);
+                    Instantiate(Points200, (centerXYClicked + new Vector3(0.5f, 0f, 0)), Quaternion.identity);
+                    Instantiate(floatingShapeJ, (centerXYClicked - new Vector3(0.5f, 0f, 0)), Quaternion.identity);
                     timer.timeLeft = timer.timeLeft + 2f;
                 }
             }
@@ -934,7 +953,8 @@ public class UserInput : MonoBehaviour {
                         shapesMatched.Add("ShapeL");
                     }
                     counterScript.AddInAmount(shapeLPoints, scoreBalanceName);
-                    Instantiate(Points200, centerXYClicked, Quaternion.identity);
+                    Instantiate(Points200, (centerXYClicked + new Vector3(0.5f, 0f, 0)), Quaternion.identity);
+                    Instantiate(floatingShapeL, (centerXYClicked - new Vector3(0.5f, 0f, 0)), Quaternion.identity);
                     timer.timeLeft = timer.timeLeft + 2f;
                 }
             }
@@ -969,7 +989,8 @@ public class UserInput : MonoBehaviour {
                         shapesMatched.Add("ShapeX");
                     }
                 counterScript.AddInAmount(shapeXPoints, scoreBalanceName);
-                Instantiate(Points500, centerXYClicked, Quaternion.identity);
+                Instantiate(Points500, (centerXYClicked + new Vector3(0.5f, 0f, 0)), Quaternion.identity);
+                Instantiate(floatingShapeX, (centerXYClicked - new Vector3(0.5f, 0f, 0)), Quaternion.identity);
                 timer.timeLeft = timer.timeLeft + 3f;
             }
         }
@@ -1009,7 +1030,8 @@ public class UserInput : MonoBehaviour {
                         shapesMatched.Add("ShapeV");
                     }
                     counterScript.AddInAmount(shapeVPoints, scoreBalanceName);
-                    Instantiate(Points100, centerXYClicked, Quaternion.identity);
+                    Instantiate(Points100, (centerXYClicked + new Vector3(0.5f, 0f, 0)), Quaternion.identity);
+                    Instantiate(floatingShapeV, (centerXYClicked - new Vector3(0.5f, 0f, 0)), Quaternion.identity);
                     timer.timeLeft = timer.timeLeft + 1f;
                 }
             }
@@ -1048,7 +1070,8 @@ public class UserInput : MonoBehaviour {
                         shapesMatched.Add("ShapeArrow");
                     }
                     counterScript.AddInAmount(shapeArrowPoints, scoreBalanceName);
-                    Instantiate(Points150, centerXYClicked, Quaternion.identity);
+                    Instantiate(Points150, (centerXYClicked + new Vector3(0.5f, 0f, 0)), Quaternion.identity);
+                    Instantiate(floatingShapeArrow, (centerXYClicked - new Vector3(0.5f, 0f, 0)), Quaternion.identity);
                     timer.timeLeft = timer.timeLeft + 1f;
                 }
             }
@@ -1087,7 +1110,8 @@ public class UserInput : MonoBehaviour {
                         shapesMatched.Add("ShapeDash");
                     }
                     counterScript.AddInAmount(shapeDashPoints, scoreBalanceName);
-                    Instantiate(Points75, centerXYClicked, Quaternion.identity);
+                    Instantiate(Points75, (centerXYClicked + new Vector3(0.5f, 0f, 0)), Quaternion.identity);
+                    Instantiate(floatingShapeDash, (centerXYClicked - new Vector3(0.5f, 0f, 0)), Quaternion.identity);
                     timer.timeLeft = timer.timeLeft + 1f;
                 }
             }
@@ -1126,7 +1150,8 @@ public class UserInput : MonoBehaviour {
                         shapesMatched.Add("ShapeShortI");
                     }
                     counterScript.AddInAmount(shapeShortIPoints, scoreBalanceName);
-                    Instantiate(Points50, centerXYClicked, Quaternion.identity);
+                    Instantiate(Points50, (centerXYClicked + new Vector3(0.5f, 0f, 0)), Quaternion.identity);
+                    Instantiate(floatingShapeShortI, (centerXYClicked - new Vector3(0.5f, 0f, 0)), Quaternion.identity);
                     timer.timeLeft = timer.timeLeft + 1f;
                 }
             }
@@ -1164,7 +1189,8 @@ public class UserInput : MonoBehaviour {
                         shapesMatched.Add("ShapeMedI");
                     }
                     counterScript.AddInAmount(shapeMedIPoints, scoreBalanceName);
-                    Instantiate(Points125, centerXYClicked, Quaternion.identity);
+                    Instantiate(Points125, (centerXYClicked + new Vector3(0.5f, 0f, 0)), Quaternion.identity);
+                    Instantiate(floatingShapeMedI, (centerXYClicked - new Vector3(0.5f, 0f, 0)), Quaternion.identity);
                     timer.timeLeft = timer.timeLeft + 2f;
                 }
             }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 114052201070228080}
   - component: {fileID: 61117664596922180}
   - component: {fileID: 50116794594691238}
+  - component: {fileID: -302729550782129525}
   m_Layer: 11
   m_Name: ShapeT
   m_TagString: ShapeT
@@ -141,3 +142,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
+--- !u!114 &-302729550782129525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593448905277252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91469042b64037f47a2b957805d2b122, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  matched: {fileID: 21300000, guid: 92c9f6ce6c227b8409c4f5ffb3ab0fca, type: 3}
+  unmatched: {fileID: 21300000, guid: 86950c1040c338f4cb836e79b8112274, type: 3}

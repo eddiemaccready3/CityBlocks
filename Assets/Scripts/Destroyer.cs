@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Destroyer : MonoBehaviour {
-
-    private Transform child;
-    private CoinsCounter coinsCounterScript;
-
+public class Destroyer : MonoBehaviour
+{
     private void OnTriggerEnter2D(Collider2D other)
     {
         Destroy(other.gameObject);

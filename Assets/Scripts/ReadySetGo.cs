@@ -7,7 +7,6 @@ public class ReadySetGo : MonoBehaviour
 {
     [SerializeField] private Text cityNameTextObject;
 
-    [SerializeField] private string timeLeft;
     [SerializeField] private string ready;
     [SerializeField] private string set;
     [SerializeField] private string go;
@@ -21,22 +20,17 @@ public class ReadySetGo : MonoBehaviour
     void Start()
     {
         timeOfInitialization = Time.time;
-        cityNameTextObject.text = timeLeft;
+        cityNameTextObject.text = ready;
     }
 
     private void Update()
     {
-        if ((Time.time - timeOfInitialization) > ((timeInterval * 2) + startTime))
-        {
-            cityNameTextObject.text = ready;
-        }
-
-        if((Time.time - timeOfInitialization) > ((timeInterval * 3) + startTime))
+        if ((Time.time - timeOfInitialization) > (timeInterval + startTime))
         {
             cityNameTextObject.text = set;
         }
 
-        if((Time.time - timeOfInitialization) > ((timeInterval * 4) + startTime))
+        if((Time.time - timeOfInitialization) > ((timeInterval * 2) + startTime))
         {
             cityNameTextObject.text = go;
         }

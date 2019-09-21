@@ -20,7 +20,7 @@ public class ButtonPressedAnim : MonoBehaviour {
 
     //public bool failed;
 
-    private SpriteRenderer spriteRenderer; 
+    private SpriteRenderer spriteRenderer;
 
     private RaycastHit2D hitShape;
  
@@ -31,16 +31,6 @@ public class ButtonPressedAnim : MonoBehaviour {
         {
             spriteRenderer.sprite = buttonIn; // set the sprite to sprite1
         }
-
-        //if(GlobalControl.Instance.scoreBalanceSave >= passScore || GlobalControl.Instance.coinsBalanceSave >= passCoins)
-        //{
-        //    failed = false;
-        //}
-
-        //else
-        //{
-        //    failed = true;
-        //}
     }
  
     void Update ()

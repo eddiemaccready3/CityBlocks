@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxBlocksOnScreen: 55
-  hitShapePos: {x: 2.5, y: 9.88, z: 0}
+  hitShapePos: {x: 2.5, y: 10.26, z: 0}
   currentShuffleLoopDelay: 0
   blocks:
   - {fileID: 1878720684860812, guid: aeff55c25a8047e489cbcbdf20a18d9c, type: 3}
