@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Assets;
 
 public class PlaneMovement : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class PlaneMovement : MonoBehaviour
     private float distanceMarkerToMarker;
     private float distanceStartToCurrent;
     private float distanceCurrentToEnd;
-    private float xPerFrameMoveDistance;
+    public float xPerFrameMoveDistance;
     private float yPerFrameMoveDistance;
     private float straightPerFrameMoveDistance;
 
@@ -28,6 +29,8 @@ public class PlaneMovement : MonoBehaviour
 
     private int xMoveDirection;
     private int yMoveDirection;
+
+    public bool moveCamera;
 
     //Scale variables:
     [SerializeField] private float fullScale;
@@ -51,6 +54,15 @@ public class PlaneMovement : MonoBehaviour
         
         GameObject thisCityMarker = GameObject.Find(PlayerPrefs.GetString("thisCityName") + "Marker");
         availabilityScript = thisCityMarker.GetComponent<Availability>();
+
+        if (availabilityScript.thisContinent != availabilityScript.lastContinent)
+        {
+            moveCamera = true;
+        }
+        else
+        {
+            moveCamera = false;
+        }
 
         startingScale = transform.localScale.x;
 
@@ -95,20 +107,9 @@ public class PlaneMovement : MonoBehaviour
         currentXPosition = transform.position.x;
         currentYPosition = transform.position.y;
 
-        float xDistStartToEnd = FindDistance(startXPos, endXPos);
-        float yDistStartToEnd = FindDistance(startYPos, endYPos);
-        return PythagoreanTheorem(xDistStartToEnd, yDistStartToEnd);
-    }
-
-    private float FindDistance(float start, float end)
-    {
-        return Mathf.Abs(start - end);
-    }
-
-    private float PythagoreanTheorem(float a, float b)
-    {
-        float c = Mathf.Sqrt(Mathf.Pow(a, 2) + Mathf.Pow(b, 2));
-        return c;
+        float xDistStartToEnd = TrigFunctions.FindDistance(startXPos, endXPos);
+        float yDistStartToEnd = TrigFunctions.FindDistance(startYPos, endYPos);
+        return TrigFunctions.PythagoreanTheorem(xDistStartToEnd, yDistStartToEnd);
     }
 
     private void MoveGameObject()
@@ -119,13 +120,13 @@ public class PlaneMovement : MonoBehaviour
         xMoveDirection = SetMoveDirection(previousMarkerXPos, thisMarkerXPos);
         yMoveDirection = SetMoveDirection(previousMarkerYPos, thisMarkerYPos);
 
-        xDistanceMarkerToMarker = FindDistance(previousMarkerXPos, thisMarkerXPos);
-        yDistanceMarkerToMarker = FindDistance(previousMarkerYPos, thisMarkerYPos);
+        xDistanceMarkerToMarker = TrigFunctions.FindDistance(previousMarkerXPos, thisMarkerXPos);
+        yDistanceMarkerToMarker = TrigFunctions.FindDistance(previousMarkerYPos, thisMarkerYPos);
 
         xPerFrameMoveDistance = CalcAxisMoveDistance(xDistanceMarkerToMarker, xMoveDirection);
         yPerFrameMoveDistance = CalcAxisMoveDistance(yDistanceMarkerToMarker, yMoveDirection);
 
-        straightPerFrameMoveDistance = PythagoreanTheorem(xPerFrameMoveDistance, yPerFrameMoveDistance);
+        straightPerFrameMoveDistance = TrigFunctions.PythagoreanTheorem(xPerFrameMoveDistance, yPerFrameMoveDistance);
 
         scaleFactorPerFrame = (fullScale - startingScale) / (distanceToScaleUp / straightPerFrameMoveDistance);
 
@@ -186,7 +187,7 @@ public class PlaneMovement : MonoBehaviour
     private void UnpauseGame()
     {
         pauseGameScript = FindObjectOfType<PauseGameStatus>();
-        pauseGameScript.pauseAuto = true;
+        pauseGameScript.pauseAuto = false;
     }
 
     private void InvokeDestroy()

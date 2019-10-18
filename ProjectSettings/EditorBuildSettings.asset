@@ -35,4 +35,31 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menus/MainMapScreen.unity
     guid: 3e330dbaad8146f4da5368feff2a76c8
+  - enabled: 1
+    path: Assets/Scenes/Asia/Bangkok.unity
+    guid: 6876b8a3d78382a4eb1111d1b3e6d2db
+  - enabled: 1
+    path: Assets/Scenes/Asia/NewDelhi.unity
+    guid: af968a35ff13ffe45936460beed94fe5
+  - enabled: 1
+    path: Assets/Scenes/Asia/Beijing.unity
+    guid: 1ec70d848a5d0fd4e9c849c425362e19
+  - enabled: 1
+    path: Assets/Scenes/Asia/ChiangMai.unity
+    guid: 5cec47e9b1096af47b55321ddd670148
+  - enabled: 1
+    path: Assets/Scenes/Asia/Seoul.unity
+    guid: fa9f01c7ca0600f4f9eb312e8a9d96ba
+  - enabled: 1
+    path: Assets/Scenes/Asia/HongKong.unity
+    guid: c9875a8d9303adb46b5b794b8ff80bf1
+  - enabled: 1
+    path: Assets/Scenes/Asia/Tokyo.unity
+    guid: 6466e65d98703ba4aab790af85e864ef
+  - enabled: 1
+    path: Assets/Scenes/Asia/Taipei.unity
+    guid: 5b5774e082567d7469103f87bcf2afa5
+  - enabled: 1
+    path: Assets/Scenes/Asia/Kathmandu.unity
+    guid: 41dc34f034c4ef044b57fa6b23b8b95e
   m_configObjects: {}

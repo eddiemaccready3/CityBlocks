@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,12 +7,13 @@ public class FloatingObjectMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
     [SerializeField] private float moveDelay;
-    [SerializeField] private float xEndPosition;
-    [SerializeField] private float yEndPosition;
+    
     [SerializeField] private float scaleSpeed;
     [SerializeField] private float minScale;
     [SerializeField] private float xMinMoveDistance;
     
+    private float xEndPosition;
+    private float yEndPosition;
     private float xPosEachFrame;
     private float yPosEachFrame;
     private float timeElapsed = 0;
@@ -24,9 +26,19 @@ public class FloatingObjectMovement : MonoBehaviour
     private float startYPosition;
     private float scaleFactor;
 
+    private GameObject smallShapeObject;
+    private string smallShapeObjectName;
+
     // Use this for initialization
 	void Start()
     {
+        smallShapeObjectName = transform.gameObject.name;
+        smallShapeObjectName = smallShapeObjectName.Replace("(Clone)", "");
+        smallShapeObjectName = smallShapeObjectName.Remove(0,6);
+        smallShapeObject = GameObject.Find("Small" + smallShapeObjectName);
+        xEndPosition = smallShapeObject.transform.position.x;
+        yEndPosition = smallShapeObject.transform.position.y;
+        
         startXPosition = transform.position.x;
         startYPosition = transform.position.y;
 

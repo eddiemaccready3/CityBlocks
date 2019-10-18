@@ -65,13 +65,15 @@ public class Counter : MonoBehaviour
     {
         if (scoreCurrentAmount < scoreTotalAmount)
         {
-            scoreCurrentAmount++;
+            scoreCurrentAmount += 25;
             scoreBalanceText.text = scoreCurrentAmount.ToString();
         }
 
         else
         {
             startAddingScore = false;
+            //scoreCurrentAmount = scoreTotalAmount;
+            //scoreBalanceText.text = scoreCurrentAmount.ToString();
         }
     }
     
@@ -86,6 +88,8 @@ public class Counter : MonoBehaviour
         else
         {
             startAddingCoins = false;
+            //coinsCurrentAmount = coinsTotalAmount;
+            //coinsBalanceText.text = coinsCurrentAmount.ToString();
         }
     }
 

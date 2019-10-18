@@ -44,6 +44,8 @@ public class GameSaver : MonoBehaviour
     public string keyCoinsStarEarnedPerLevel = "keyCoinsStarEarnedPerLevel";
     public string keyMatchesStarEarnedPerLevel = "keyMatchesStarEarnedPerLevel";
 
+    public string keyNewShapeAnnounced = "keyNewShapeAnnounced";
+
     public string musicVolumeSet = "keyBoolMusicVolumeSet";
     public string sfxVolumeSet = "keyBoolSfxVolumeSet";
     public string musicVolumeLevel = "musicVolumeLevel";
@@ -55,6 +57,8 @@ public class GameSaver : MonoBehaviour
     public string keyPlaneFlightCompletedPerLevel = "keyPlaneFlightCompletedPerLevel";
 
     public string keyLevelIntroCompleted = "keyLevelIntroCompleted";
+
+    public string keyClearAllData = "keyClearAllData";
 
     
 
@@ -69,6 +73,18 @@ public class GameSaver : MonoBehaviour
 
     private void Start()
     {
+        //PlayerPrefs.SetInt(keyClearAllData, 0);
+
+        if (PlayerPrefs.GetInt(keyClearAllData) == 0)
+        {
+            PlayerPrefs.DeleteAll();
+            PlayerPrefs.SetInt(keyClearAllData, 1);
+        }
+        else
+        {
+            PlayerPrefs.SetInt(keyClearAllData, 1);
+        }
+
         musicAudioSource = Camera.main.GetComponentInChildren<AudioSource>();
         
         if (PlayerPrefs.GetInt(musicVolumeSet) == 0)
@@ -86,6 +102,16 @@ public class GameSaver : MonoBehaviour
         {
             PlayerPrefs.SetFloat(sfxVolumeLevel, 1f);
             PlayerPrefs.SetInt(sfxVolumeSet, 1);
+        }
+
+        if(PlayerPrefs.GetInt(keyClearAllData) == 0)
+        {
+            PlayerPrefs.DeleteAll();
+            PlayerPrefs.SetInt(keyClearAllData, 1);
+        }
+        else
+        {
+            PlayerPrefs.SetInt(keyClearAllData, 1);
         }
     }
 }

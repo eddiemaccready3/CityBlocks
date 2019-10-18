@@ -95,6 +95,7 @@
     <Compile Include="Assets\Scripts\Availability.cs" />
     <Compile Include="Assets\Scripts\BlockSpawner.cs" />
     <Compile Include="Assets\Scripts\ButtonActions.cs" />
+    <Compile Include="Assets\Scripts\ButtonActions2.cs" />
     <Compile Include="Assets\Scripts\ButtonPressedAnim.cs" />
     <Compile Include="Assets\Scripts\CoinsMovement.cs" />
     <Compile Include="Assets\Scripts\CoinSpawner.cs" />
@@ -116,6 +117,7 @@
     <Compile Include="Assets\Scripts\GrowObject.cs" />
     <Compile Include="Assets\Scripts\InstantiateMenu.cs" />
     <Compile Include="Assets\Scripts\InstantiateObject.cs" />
+    <Compile Include="Assets\Scripts\InstructionButton.cs" />
     <Compile Include="Assets\Scripts\LevelEarnedText.cs" />
     <Compile Include="Assets\Scripts\LevelIntroTimeline.cs" />
     <Compile Include="Assets\Scripts\LevelMenuRising.cs" />
@@ -127,25 +129,33 @@
     <Compile Include="Assets\Scripts\MarkerActivator.cs" />
     <Compile Include="Assets\Scripts\MenuFalling.cs" />
     <Compile Include="Assets\Scripts\MenuText.cs" />
+    <Compile Include="Assets\Scripts\MoveCameraToContinent.cs" />
+    <Compile Include="Assets\Scripts\NewShape.cs" />
+    <Compile Include="Assets\Scripts\NextButtonStatus.cs" />
     <Compile Include="Assets\Scripts\ObjectMovement.cs" />
+    <Compile Include="Assets\Scripts\OscillatingObject.cs" />
     <Compile Include="Assets\Scripts\PanAndZoom.cs" />
     <Compile Include="Assets\Scripts\PauseGame.cs" />
     <Compile Include="Assets\Scripts\PauseGameStatus.cs" />
     <Compile Include="Assets\Scripts\PlaneMovement.cs" />
     <Compile Include="Assets\Scripts\PlanePathDots.cs" />
+    <Compile Include="Assets\Scripts\PlaySoundOnCollision.cs" />
     <Compile Include="Assets\Scripts\PointsMovement.cs" />
     <Compile Include="Assets\Scripts\ReadySetGo.cs" />
     <Compile Include="Assets\Scripts\ReplayButton.cs" />
     <Compile Include="Assets\Scripts\RotateObject.cs" />
     <Compile Include="Assets\Scripts\RunButton.cs" />
+    <Compile Include="Assets\Scripts\RunSceneButton.cs" />
     <Compile Include="Assets\Scripts\SceneActivator.cs" />
     <Compile Include="Assets\Scripts\SceneButton.cs" />
+    <Compile Include="Assets\Scripts\SceneButtonOnClick.cs" />
     <Compile Include="Assets\Scripts\ScoreBoard.cs" />
     <Compile Include="Assets\Scripts\ScoreCounter.cs" />
     <Compile Include="Assets\Scripts\SetActiveStatus.cs" />
     <Compile Include="Assets\Scripts\SetInitialLevelValues.cs" />
     <Compile Include="Assets\Scripts\SetMovingShapeSprite.cs" />
     <Compile Include="Assets\Scripts\SetScreenResolution.cs" />
+    <Compile Include="Assets\Scripts\SetSprite.cs" />
     <Compile Include="Assets\Scripts\SetStarStatus.cs" />
     <Compile Include="Assets\Scripts\SetStarStatusMapScreen.cs" />
     <Compile Include="Assets\Scripts\SetTransparency.cs" />
@@ -170,6 +180,7 @@
     <Compile Include="Assets\Scripts\Trigger.cs" />
     <Compile Include="Assets\Scripts\UnpauseGame.cs" />
     <Compile Include="Assets\Scripts\UserInput.cs" />
+    <Compile Include="Assets\TrigFunctions.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Amy MacCready/Desktop/Eddie/Games/Unity3d/City Blocks/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

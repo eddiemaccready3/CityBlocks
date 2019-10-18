@@ -8,7 +8,7 @@ public class PauseGame : MonoBehaviour
     private PauseGameStatus pauseGameStatusScript;
     
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         pauseGameStatusScript = FindObjectOfType<PauseGameStatus>();
         Invoke("Pause", pauseDelay);

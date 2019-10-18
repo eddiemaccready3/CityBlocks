@@ -49,9 +49,10 @@ public class SimGravity : MonoBehaviour
         isGrounded = false;
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
-        print("pauseGameStatusScript.pauseManual: " + pauseGameStatusScript.pauseManual);
+        //print("SimGravity - pauseGameStatusScript.pauseManual: " + pauseGameStatusScript.pauseManual);
+        
         if(pauseGameStatusScript.pauseManual == false)
         {
             CheckForCollisions();

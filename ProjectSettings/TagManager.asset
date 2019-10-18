@@ -61,6 +61,7 @@ TagManager:
   - Menu
   - MovingShape
   - SmallShape
+  - Home
   layers:
   - Default
   - TransparentFX
@@ -90,8 +91,8 @@ TagManager:
   - PlayButton
   - Marker
   - ExitButton
-  - 
-  - 
+  - Row1
+  - Row2
   - 
   - 
   m_SortingLayers:

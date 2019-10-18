@@ -82,7 +82,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 99
+  m_Text: 1:00
 --- !u!114 &799171434169965531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4375f65940a7a6f40a87c4c7abdc6600, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLeft: 95
+  timeLeft: 65
   resultsMenu: {fileID: 0}
   menuPos: {x: 0, y: 0}
 --- !u!114 &6518261137663368904
@@ -137,11 +137,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 757933128500241945}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 3, y: 3}
+  m_EffectDistance: {x: 5, y: 5}
   m_UseGraphicAlpha: 1

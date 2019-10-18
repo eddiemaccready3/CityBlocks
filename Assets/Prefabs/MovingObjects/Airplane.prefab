@@ -143,6 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceToScaleUp: 85
+  xPerFrameMoveDistance: 0
   fullScale: 1.5
 --- !u!114 &4326436376552406577
 MonoBehaviour:
@@ -157,4 +158,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trailDot: {fileID: 2486166917017593817, guid: b1fdd6f145d575b4da37fa16d49ac6d6,
+    type: 3}
+  dotsParentTran: {fileID: 6006984854353530063, guid: 0da681ac1e1163c4fbc3c90af6aae597,
     type: 3}

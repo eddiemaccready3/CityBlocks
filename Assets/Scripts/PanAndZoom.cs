@@ -28,10 +28,10 @@ public class PanAndZoom : MonoBehaviour
     private float cameraHeight;
 
     //Zoom variables:
-    [SerializeField] private float pinchZoomSpeed = 0.5f;        // The rate of change of the orthographic size by pinching.
-    [SerializeField] private float scrollZoomSpeed = 10f;        // The rate of change of the orthographic size by scroll wheel.
-    [SerializeField] private float minFov = 500f;
-    [SerializeField] private float maxFov = 1000f;
+    [SerializeField] private float pinchZoomSpeed = 0.25f;        // The rate of change of the orthographic size by pinching.
+    [SerializeField] private float scrollZoomSpeed = 5f;        // The rate of change of the orthographic size by scroll wheel.
+    [SerializeField] private float minFov = 570f;
+    [SerializeField] private float maxFov = 1200f;
     
     private PauseGameStatus pauseGameScript;
     
@@ -97,38 +97,38 @@ public class PanAndZoom : MonoBehaviour
 
             //Zoom logic:
             // If there are two touches on the device...
-            //if (Input.touchCount == 2)
+            if (Input.touchCount == 2)
+            {
+                // Store both touches.
+                Touch zoomTouchZero = Input.GetTouch(0);
+                Touch zoomTouchOne = Input.GetTouch(1);
+
+                // Find the position in the previous frame of each touch.
+                Vector2 touchZeroPrevPos = zoomTouchZero.position - zoomTouchZero.deltaPosition;
+                Vector2 touchOnePrevPos = zoomTouchOne.position - zoomTouchOne.deltaPosition;
+
+                // Find the magnitude of the vector (the distance) between the touches in each frame.
+                float prevTouchDeltaMag = (touchZeroPrevPos - touchOnePrevPos).magnitude;
+                float touchDeltaMag = (zoomTouchZero.position - zoomTouchOne.position).magnitude;
+
+                // Find the difference in the distances between each frame.
+                float deltaMagnitudeDiff = prevTouchDeltaMag - touchDeltaMag;
+
+                // ... change the orthographic size based on the change in distance between the touches.
+                cam.orthographicSize += deltaMagnitudeDiff * pinchZoomSpeed;
+
+                // Make sure the orthographic size never drops below zero.
+                cam.orthographicSize = Mathf.Clamp(cam.orthographicSize, minFov, maxFov);
+            }
+
+            //else
             //{
-            //    // Store both touches.
-            //    Touch zoomTouchZero = Input.GetTouch(0);
-            //    Touch zoomTouchOne = Input.GetTouch(1);
+            float orthoSize = cam.orthographicSize;
+            float mapMenuScale;
 
-            //    // Find the position in the previous frame of each touch.
-            //    Vector2 touchZeroPrevPos = zoomTouchZero.position - zoomTouchZero.deltaPosition;
-            //    Vector2 touchOnePrevPos = zoomTouchOne.position - zoomTouchOne.deltaPosition;
-
-            //    // Find the magnitude of the vector (the distance) between the touches in each frame.
-            //    float prevTouchDeltaMag = (touchZeroPrevPos - touchOnePrevPos).magnitude;
-            //    float touchDeltaMag = (zoomTouchZero.position - zoomTouchOne.position).magnitude;
-
-            //    // Find the difference in the distances between each frame.
-            //    float deltaMagnitudeDiff = prevTouchDeltaMag - touchDeltaMag;
-
-            //    // ... change the orthographic size based on the change in distance between the touches.
-            //    cam.orthographicSize += deltaMagnitudeDiff * pinchZoomSpeed;
-
-            //    // Make sure the orthographic size never drops below zero.
-            //    cam.orthographicSize = Mathf.Clamp(cam.orthographicSize, minFov, maxFov);
-            //}
-
-            ////else
-            ////{
-            //    float orthoSize = cam.orthographicSize;
-            //    float mapMenuScale;
-
-            //    orthoSize += Input.GetAxis("Mouse ScrollWheel") * scrollZoomSpeed;
-            //    orthoSize = Mathf.Clamp(orthoSize, minFov, maxFov);
-            //    cam.orthographicSize = orthoSize;
+            orthoSize += Input.GetAxis("Mouse ScrollWheel") * scrollZoomSpeed;
+            orthoSize = Mathf.Clamp(orthoSize, minFov, maxFov);
+            cam.orthographicSize = orthoSize;
         }
     }
 }

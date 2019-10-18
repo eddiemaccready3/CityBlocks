@@ -25,6 +25,7 @@ public class ReplayButton : MonoBehaviour
     void Start ()
     {
         sceneNo = SceneManager.GetActiveScene().buildIndex;
+        print("Start sceneNo: " + sceneNo);
     }
  
     void Update ()
@@ -49,6 +50,8 @@ public class ReplayButton : MonoBehaviour
 
     private void LoadScene()
     {
+        sceneNo = SceneManager.GetActiveScene().buildIndex;
+        print("Pressed sceneNo: " + sceneNo);
         SceneManager.LoadScene(sceneNo);
     }
 }

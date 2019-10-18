@@ -22,11 +22,9 @@ public class Timer : MonoBehaviour {
     void Start()
     {
         pauseGameScript = FindObjectOfType<PauseGameStatus>();
-        pauseGameScript.pauseAuto = true;
-        pauseGameScript.pauseManual = true;
 
         timeLeftText = GetComponent<Text>();
-        timeLeftText.text = "1:30";
+        timeLeftText.text = "1:00";
 
         timeUp = false;
     }
@@ -57,9 +55,9 @@ public class Timer : MonoBehaviour {
         }
 
         
-        if(timeLeft > 90f)
+        if(timeLeft > 60f)
         {
-            timeLeftText.text = "1:30";
+            timeLeftText.text = "1:00";
         }
 
         else

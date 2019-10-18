@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4053018244357426}
   - component: {fileID: 114217482220143544}
-  - component: {fileID: 1249731939458515274}
   - component: {fileID: 648769221}
   m_Layer: 0
   m_Name: GameMaster
@@ -50,20 +49,6 @@ MonoBehaviour:
   scoreBalanceSave: 0
   coinsBalanceSave: 0
   matchesBalanceSave: 0
---- !u!114 &1249731939458515274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1534745477610700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f87856cbf9c4fcb4c965642db28aae9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseManual: 0
-  pauseAuto: 0
 --- !u!114 &648769221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,6 +65,7 @@ MonoBehaviour:
   keyAllTimeHighestCoin: keyAllTimeHighestCoin
   keyAllTimeHighestMatch: keyAllTimeHighestMatch
   coinsBalanceSave: 0
+  keyTotalCoinBalance: keyTotalCoinBalance
   musicVolume: 1
   sfxVolume: 1
   sceneNames:
@@ -106,12 +92,13 @@ MonoBehaviour:
   keyPointsStarEarnedPerLevel: keyPointsStarEarnedPerLevel
   keyCoinsStarEarnedPerLevel: keyCoinsStarEarnedPerLevel
   keyMatchesStarEarnedPerLevel: keyMatchesStarEarnedPerLevel
-  levelsLocked: 
-  levelsUnlocked: 
   musicVolumeSet: keyBoolMusicVolumeSet
   sfxVolumeSet: keyBoolSfxVolumeSet
   musicVolumeLevel: musicVolumeLevel
   sfxVolumeLevel: sfxVolumeLevel
+  thanksForPlayingCompleted: keyThanksForPlayingCompleted
+  keyPlaneFlightCompletedPerLevel: keyPlaneFlightCompletedPerLevel
+  keyLevelIntroCompleted: keyLevelIntroCompleted
   howToPlay: 0
   howToShuffle: 0
   howToEarnStars: 0

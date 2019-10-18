@@ -15,7 +15,7 @@ public class RunButton : MonoBehaviour
         {
             hitShape = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 0, layer);
         
-            if(hitShape.collider != null)
+            if(hitShape.collider != null && hitShape.transform.gameObject.GetComponent<ButtonActions>().buttonActive == true)
             {
                 hitShape.transform.gameObject.GetComponent<ButtonActions>().ButtonIn();
             }

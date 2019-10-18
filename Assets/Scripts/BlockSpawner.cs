@@ -12,56 +12,31 @@ public class BlockSpawner : MonoBehaviour
     private Vector2 instantiatePosition;
     private Vector2 overlapBoxSize;
     private int qtyCollidersHit;
-    private int i;
 
     private PauseGameStatus pauseGameScript;
 
     void Start ()
     {
         pauseGameScript = FindObjectOfType<PauseGameStatus>();
-        pauseGameScript.pauseAuto = true;
-        pauseGameScript.pauseManual = true;
-        
-        int i = Random.Range(0, blocks.Length);
-        overlapBoxPosition = new Vector2 (transform.position.x, transform.position.y - 1f);
-        instantiatePosition = new Vector2 (transform.position.x, transform.position.y - 1f);
-        overlapBoxSize = new Vector2 (.8f, 1.8f);
+        //pauseGameScript.pauseAuto = true;
+        //pauseGameScript.pauseManual = true;
 
-        // Spawn Block at current Position
-        Instantiate(blocks[i],
-                    instantiatePosition,
-                    Quaternion.identity);
-	}
+        overlapBoxPosition = new Vector2(transform.position.x, transform.position.y - 1f);
+        instantiatePosition = new Vector2(transform.position.x, transform.position.y - 1f);
+        overlapBoxSize = new Vector2(.8f, 1.8f);
+
+    }
 
     private void Update()
     {
         hitColliders = Physics2D.OverlapBoxAll(overlapBoxPosition, overlapBoxSize, 0, layerMask);
         qtyCollidersHit = hitColliders.Length;
-        //print("hitColliders Length: " + hitColliders.Length);
         if (hitColliders.Length < 1)
         {
             int i = Random.Range(0, blocks.Length);
             Instantiate(blocks[i],
                     instantiatePosition,
                     Quaternion.identity);
-            //print("Hitcolliders = 5");
         }
     }
-
-    //public void OnTriggerExit2D(Collider2D other)
-    //{
-
-        
-    //    int i = Random.Range(0, blocks.Length);
-        
-
-    //    // Spawn Block at current Position
-    //    Instantiate(blocks[i],
-    //                transform.position,
-    //                Quaternion.identity);
-    //    qty++;
-    //}
-
-    
-
 }

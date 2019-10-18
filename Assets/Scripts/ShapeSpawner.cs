@@ -10,20 +10,20 @@ public class ShapeSpawner : MonoBehaviour {
 
     private bool firstShapesSpawned = false;
 
-    private PauseGameStatus pauseGameScript;
+    private PauseGameStatus pauseGameStatusScript;
 
     void Start ()
     {
-        pauseGameScript = FindObjectOfType<PauseGameStatus>();
+        pauseGameStatusScript = FindObjectOfType<PauseGameStatus>();
         firstShapesSpawned = false;
 	}
 
     private void Update()
     {
-        if(Time.time > 1f && pauseGameScript.pauseAuto == false && firstShapesSpawned == false)
+        if (Time.time > 1f && pauseGameStatusScript.pauseAuto == false && firstShapesSpawned == false)
         {
             i = Random.Range(0, shapes.Length);
-            
+
             Instantiate(shapes[i],
                     transform.position,
                     Quaternion.identity);

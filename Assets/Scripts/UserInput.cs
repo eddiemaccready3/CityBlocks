@@ -68,20 +68,21 @@ public class UserInput : MonoBehaviour {
 
     private int gridIndexParam = 0;
 
-    private int shapeOPoints = 300;
-    private int shapeTPoints = 350;
-    private int shapeSPoints = 350;
-    private int shapeZPoints = 350;
-    private int shapeIPoints = 225;
+    private int shapeShortIPoints = 50;
+    private int shapeDashPoints = 75;
+    private int shapeVPoints = 100;
+    private int shapeMedIPoints = 125;
+    private int shapeArrowPoints = 150;
     private int shapeJPoints = 200;
     private int shapeLPoints = 200;
-    private int shapeVPoints = 100;
+    private int shapeTPoints = 250;
+    private int shapeIPoints = 325;
+    private int shapeOPoints = 300;
+    private int shapeZPoints = 375;
+    private int shapeSPoints = 375;
     private int shapeXPoints = 500;
-    private int shapeArrowPoints = 150;
-    private int shapeDashPoints = 75;
-    private int shapeShortIPoints = 50;
-    private int shapeMedIPoints = 125;
-
+    
+    
     private int coinGold = 25;
     private int coinSilver = 15;
     private int coinBronze = 8;
@@ -133,6 +134,7 @@ public class UserInput : MonoBehaviour {
     private List<string> shapeDashGrid = new List<string>();
     private List<string> shapeShortIGrid = new List<string>();
     private List<string> shapeMedIGrid = new List<string>();
+    private List<string> shapeOGrid = new List<string>();
 
     public List<string> shapesMatched = new List<string>();
 
@@ -379,8 +381,8 @@ public class UserInput : MonoBehaviour {
 
         //Initialize pause state
         pauseGame = FindObjectOfType<PauseGameStatus>();
-        pauseGame.pauseAuto = true;
-        pauseGame.pauseManual = true;
+        //pauseGame.pauseAuto = true;
+        //pauseGame.pauseManual = true;
 
         //Initialize reference scripts
         scoreBoardScript = FindObjectOfType<ScoreBoard>();
@@ -459,23 +461,27 @@ public class UserInput : MonoBehaviour {
 
         shapeMedIGrid.Add(SHAPEMEDI1);
         shapeMedIGrid.Add(SHAPEMEDI2);
+
+        shapeXGrid.Add(SHAPEX);
+
+        shapeOGrid.Add(SHAPEO);
     }
 
     private void PopulateShapesList()
     {
-        listOfShapes.Add("ShapeX");
-        listOfShapes.Add("ShapeT");
-        listOfShapes.Add("ShapeS");
-        listOfShapes.Add("ShapeZ");
-        listOfShapes.Add("ShapeL");
-        listOfShapes.Add("ShapeJ");
-        listOfShapes.Add("ShapeI");
-        listOfShapes.Add("ShapeO");
-        listOfShapes.Add("ShapeMedI");
-        listOfShapes.Add("ShapeArrow");
-        listOfShapes.Add("ShapeV");
-        listOfShapes.Add("ShapeShortI");
-        listOfShapes.Add("ShapeDash");
+        listOfShapes.Add("SmallShapeX");
+        listOfShapes.Add("SmallShapeS");
+        listOfShapes.Add("SmallShapeZ");
+        listOfShapes.Add("SmallShapeO");
+        listOfShapes.Add("SmallShapeI");
+        listOfShapes.Add("SmallShapeT");
+        listOfShapes.Add("SmallShapeL");
+        listOfShapes.Add("SmallShapeJ");
+        listOfShapes.Add("SmallShapeArrow");
+        listOfShapes.Add("SmallShapeMedI");
+        listOfShapes.Add("SmallShapeV");
+        listOfShapes.Add("SmallShapeDash");
+        listOfShapes.Add("SmallShapeShortI");
     }
 
     private void CheckMouseClicks()
@@ -540,14 +546,14 @@ public class UserInput : MonoBehaviour {
     
     private void CheckForShapes(int s)
     {
-        if (GameObject.FindWithTag(listOfShapes[s]) != null && s == 0)
+        if (GameObject.Find(listOfShapes[s]) != null && s == 0)
         {
             CheckForShapeX();
         }
 
-        else if (GameObject.FindWithTag(listOfShapes[s]) != null && s == 1)
+        else if (GameObject.Find(listOfShapes[s]) != null && s == 1)
         {
-            CheckForShapeT();
+            CheckForShapeS();
 
             /*
             CheckForShapeRot(shapeTGrid, () => CheckForShapeMatch(gridIndexParam, () => Match4BlockShape(gridIndexParam), "ShapeT",
@@ -591,59 +597,59 @@ public class UserInput : MonoBehaviour {
         }
 
 
-        else if (GameObject.FindWithTag(listOfShapes[s]) != null && s == 2)
-        {
-            CheckForShapeS();
-        }
-
-        else if (GameObject.FindWithTag(listOfShapes[s]) != null && s == 3)
+        else if (GameObject.Find(listOfShapes[s]) != null && s == 2)
         {
             CheckForShapeZ();
         }
 
-        else if (GameObject.FindWithTag(listOfShapes[s]) != null && s == 4)
-        {
-            CheckForShapeL();
-        }
-
-        else if (GameObject.FindWithTag(listOfShapes[s]) != null && s == 5)
-        {
-            CheckForShapeJ();
-        }
-
-        else if (GameObject.FindWithTag(listOfShapes[s]) != null && s == 6)
-        {
-            CheckForShapeI();
-        }
-
-        else if (GameObject.FindWithTag(listOfShapes[s]) != null && s == 7)
+        else if (GameObject.Find(listOfShapes[s]) != null && s == 3)
         {
             CheckForShapeO();
         }
 
-        else if (GameObject.FindWithTag(listOfShapes[s]) != null && s == 8)
+        else if (GameObject.Find(listOfShapes[s]) != null && s == 4)
         {
-            CheckForShapeMedI();
+            CheckForShapeI();
         }
 
-        else if (GameObject.FindWithTag(listOfShapes[s]) != null && s == 9)
+        else if (GameObject.Find(listOfShapes[s]) != null && s == 5)
+        {
+            CheckForShapeT();
+        }
+
+        else if (GameObject.Find(listOfShapes[s]) != null && s == 6)
+        {
+            CheckForShapeL();
+        }
+
+        else if (GameObject.Find(listOfShapes[s]) != null && s == 7)
+        {
+            CheckForShapeJ();
+        }
+
+        else if (GameObject.Find(listOfShapes[s]) != null && s == 8)
         {
             CheckForShapeArrow();
         }
 
-        else if (GameObject.FindWithTag(listOfShapes[s]) != null && s == 10)
+        else if (GameObject.Find(listOfShapes[s]) != null && s == 9)
+        {
+            CheckForShapeMedI();
+        }
+
+        else if (GameObject.Find(listOfShapes[s]) != null && s == 10)
         {
             CheckForShapeV();
         }
 
-        else if (GameObject.FindWithTag(listOfShapes[s]) != null && s == 11)
-        {
-            CheckForShapeShortI();
-        }
-
-        else if (GameObject.FindWithTag(listOfShapes[s]) != null && s == 12)
+        else if (GameObject.Find(listOfShapes[s]) != null && s == 11)
         {
             CheckForShapeDash();
+        }
+
+        else if (GameObject.Find(listOfShapes[s]) != null && s == 12)
+        {
+            CheckForShapeShortI();
         }
     }
 
@@ -706,6 +712,19 @@ public class UserInput : MonoBehaviour {
     }
     */
 
+    private void InstantiateFloatingShape(GameObject floatingShape)
+    {
+        if (centerXYClicked.x <= 0f)
+        {
+            Instantiate(floatingShape, (centerXYClicked + new Vector3(0.05f, 0f, 0)), Quaternion.identity);
+        }
+
+        else
+        {
+            Instantiate(floatingShape, (centerXYClicked - new Vector3(0.5f, 0f, 0)), Quaternion.identity);
+        }
+    }
+
 
     private void CheckForShapeT()
     {
@@ -726,21 +745,24 @@ public class UserInput : MonoBehaviour {
                 if (match == false && checkShapeGrid[i] == 1 && checkShapeGrid[i + shapeMatchIndexes[1]] == 1 && checkShapeGrid[i + shapeMatchIndexes[2]] == 1 && checkShapeGrid[i + shapeMatchIndexes[3]] == 1)
                 {
                     Match4BlockShape(i);
-                    Destroy (GameObject.FindWithTag("ShapeT"));
+                    Destroy(GameObject.FindWithTag("ShapeT"));
                     if (!shapesMatched.Contains("ShapeT"))
                     {
                         shapesMatched.Add("ShapeT");
                     }
                     counterScript.AddInAmount(shapeTPoints, scoreBalanceName);
                     Instantiate(Points350, (centerXYClicked + new Vector3(0.5f, 0f, 0)), Quaternion.identity);
-                    Instantiate(floatingShapeT, (centerXYClicked - new Vector3(0.5f, 0f, 0)), Quaternion.identity);
-                    timer.timeLeft = timer.timeLeft + 2f;
+                    InstantiateFloatingShape(floatingShapeT);
+
+                    //timer.timeLeft = timer.timeLeft + 2f;
                 }
             }
 
             shapeMatchIndexes.Clear();
         }
     }
+
+    
 
     private void CheckForShapeO()
     {
@@ -764,8 +786,8 @@ public class UserInput : MonoBehaviour {
                     }
                 counterScript.AddInAmount(shapeOPoints, scoreBalanceName);
                 Instantiate(Points300, (centerXYClicked + new Vector3(0.5f, 0f, 0)), Quaternion.identity);
-                Instantiate(floatingShapeO, (centerXYClicked - new Vector3(0.5f, 0f, 0)), Quaternion.identity);
-                timer.timeLeft = timer.timeLeft + 2f;
+                InstantiateFloatingShape(floatingShapeO);
+                //timer.timeLeft = timer.timeLeft + 2f;
             }
         }
 
@@ -801,8 +823,8 @@ public class UserInput : MonoBehaviour {
                     }
                     counterScript.AddInAmount(shapeSPoints, scoreBalanceName);
                     Instantiate(Points350, (centerXYClicked + new Vector3(0.5f, 0f, 0)), Quaternion.identity);
-                    Instantiate(floatingShapeS, (centerXYClicked - new Vector3(0.5f, 0f, 0)), Quaternion.identity);
-                    timer.timeLeft = timer.timeLeft + 3f;
+                    InstantiateFloatingShape(floatingShapeS);
+                    //timer.timeLeft = timer.timeLeft + 3f;
                 }
             }
 
@@ -840,8 +862,8 @@ public class UserInput : MonoBehaviour {
                     }
                     counterScript.AddInAmount(shapeZPoints, scoreBalanceName);
                     Instantiate(Points350, (centerXYClicked + new Vector3(0.5f, 0f, 0)), Quaternion.identity);
-                    Instantiate(floatingShapeZ, (centerXYClicked - new Vector3(0.5f, 0f, 0)), Quaternion.identity);
-                    timer.timeLeft = timer.timeLeft + 3f;
+                    InstantiateFloatingShape(floatingShapeZ);
+                    //timer.timeLeft = timer.timeLeft + 3f;
                 }
             }
 
@@ -878,8 +900,8 @@ public class UserInput : MonoBehaviour {
                     }
                     counterScript.AddInAmount(shapeIPoints, scoreBalanceName);
                     Instantiate(Points225, (centerXYClicked + new Vector3(0.5f, 0f, 0)), Quaternion.identity);
-                    Instantiate(floatingShapeI, (centerXYClicked - new Vector3(0.5f, 0f, 0)), Quaternion.identity);
-                    timer.timeLeft = timer.timeLeft + 2f;
+                    InstantiateFloatingShape(floatingShapeI);
+                    //timer.timeLeft = timer.timeLeft + 2f;
                 }
             }
 
@@ -916,8 +938,8 @@ public class UserInput : MonoBehaviour {
                     }
                     counterScript.AddInAmount(shapeJPoints, scoreBalanceName);
                     Instantiate(Points200, (centerXYClicked + new Vector3(0.5f, 0f, 0)), Quaternion.identity);
-                    Instantiate(floatingShapeJ, (centerXYClicked - new Vector3(0.5f, 0f, 0)), Quaternion.identity);
-                    timer.timeLeft = timer.timeLeft + 2f;
+                    InstantiateFloatingShape(floatingShapeJ);
+                    //timer.timeLeft = timer.timeLeft + 2f;
                 }
             }
 
@@ -954,8 +976,8 @@ public class UserInput : MonoBehaviour {
                     }
                     counterScript.AddInAmount(shapeLPoints, scoreBalanceName);
                     Instantiate(Points200, (centerXYClicked + new Vector3(0.5f, 0f, 0)), Quaternion.identity);
-                    Instantiate(floatingShapeL, (centerXYClicked - new Vector3(0.5f, 0f, 0)), Quaternion.identity);
-                    timer.timeLeft = timer.timeLeft + 2f;
+                    InstantiateFloatingShape(floatingShapeL);
+                    //timer.timeLeft = timer.timeLeft + 2f;
                 }
             }
 
@@ -990,8 +1012,8 @@ public class UserInput : MonoBehaviour {
                     }
                 counterScript.AddInAmount(shapeXPoints, scoreBalanceName);
                 Instantiate(Points500, (centerXYClicked + new Vector3(0.5f, 0f, 0)), Quaternion.identity);
-                Instantiate(floatingShapeX, (centerXYClicked - new Vector3(0.5f, 0f, 0)), Quaternion.identity);
-                timer.timeLeft = timer.timeLeft + 3f;
+                InstantiateFloatingShape(floatingShapeX);
+                //timer.timeLeft = timer.timeLeft + 3f;
             }
         }
 
@@ -1031,8 +1053,8 @@ public class UserInput : MonoBehaviour {
                     }
                     counterScript.AddInAmount(shapeVPoints, scoreBalanceName);
                     Instantiate(Points100, (centerXYClicked + new Vector3(0.5f, 0f, 0)), Quaternion.identity);
-                    Instantiate(floatingShapeV, (centerXYClicked - new Vector3(0.5f, 0f, 0)), Quaternion.identity);
-                    timer.timeLeft = timer.timeLeft + 1f;
+                    InstantiateFloatingShape(floatingShapeV);
+                    //timer.timeLeft = timer.timeLeft + 1f;
                 }
             }
 
@@ -1071,8 +1093,8 @@ public class UserInput : MonoBehaviour {
                     }
                     counterScript.AddInAmount(shapeArrowPoints, scoreBalanceName);
                     Instantiate(Points150, (centerXYClicked + new Vector3(0.5f, 0f, 0)), Quaternion.identity);
-                    Instantiate(floatingShapeArrow, (centerXYClicked - new Vector3(0.5f, 0f, 0)), Quaternion.identity);
-                    timer.timeLeft = timer.timeLeft + 1f;
+                    InstantiateFloatingShape(floatingShapeArrow);
+                    //timer.timeLeft = timer.timeLeft + 1f;
                 }
             }
 
@@ -1111,8 +1133,8 @@ public class UserInput : MonoBehaviour {
                     }
                     counterScript.AddInAmount(shapeDashPoints, scoreBalanceName);
                     Instantiate(Points75, (centerXYClicked + new Vector3(0.5f, 0f, 0)), Quaternion.identity);
-                    Instantiate(floatingShapeDash, (centerXYClicked - new Vector3(0.5f, 0f, 0)), Quaternion.identity);
-                    timer.timeLeft = timer.timeLeft + 1f;
+                    InstantiateFloatingShape(floatingShapeDash);
+                    //timer.timeLeft = timer.timeLeft + 1f;
                 }
             }
 
@@ -1151,8 +1173,8 @@ public class UserInput : MonoBehaviour {
                     }
                     counterScript.AddInAmount(shapeShortIPoints, scoreBalanceName);
                     Instantiate(Points50, (centerXYClicked + new Vector3(0.5f, 0f, 0)), Quaternion.identity);
-                    Instantiate(floatingShapeShortI, (centerXYClicked - new Vector3(0.5f, 0f, 0)), Quaternion.identity);
-                    timer.timeLeft = timer.timeLeft + 1f;
+                    InstantiateFloatingShape(floatingShapeShortI);
+                    //timer.timeLeft = timer.timeLeft + 1f;
                 }
             }
 
@@ -1180,7 +1202,7 @@ public class UserInput : MonoBehaviour {
 
             for (int i = 0; i < (61 - currentGridIndex.Length); i++)
             {
-                if (match == false && checkShapeGrid[i] == 1 && checkShapeGrid[i + shapeMatchIndexes[1]] == 1)
+                if (match == false && checkShapeGrid[i] == 1 && checkShapeGrid[i + shapeMatchIndexes[1]] == 1 && checkShapeGrid[i + shapeMatchIndexes[2]] == 1)
                 {
                     Match3BlockShape(i);
                     Destroy (GameObject.FindWithTag("ShapeMedI"));
@@ -1190,8 +1212,8 @@ public class UserInput : MonoBehaviour {
                     }
                     counterScript.AddInAmount(shapeMedIPoints, scoreBalanceName);
                     Instantiate(Points125, (centerXYClicked + new Vector3(0.5f, 0f, 0)), Quaternion.identity);
-                    Instantiate(floatingShapeMedI, (centerXYClicked - new Vector3(0.5f, 0f, 0)), Quaternion.identity);
-                    timer.timeLeft = timer.timeLeft + 2f;
+                    InstantiateFloatingShape(floatingShapeMedI);
+                    //timer.timeLeft = timer.timeLeft + 2f;
                 }
             }
 
@@ -1250,11 +1272,11 @@ public class UserInput : MonoBehaviour {
 
     private void PlayBreakSound()
     {
-        if (!audioSource.isPlaying)
-        {
+        //if (!audioSource.isPlaying)
+        //{
             audioSource.volume = PlayerPrefs.GetFloat(gameSaverScript.sfxVolumeLevel);
             audioSource.PlayOneShot(blockDestroy);
-        }
+        //}
     }
 
     private void FindCenterBlocksClicked()

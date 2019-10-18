@@ -9,8 +9,11 @@ public class Availability : MonoBehaviour
     [SerializeField] private string thisCityName;
     [SerializeField] private string nextCityName;
     [SerializeField] private string lastMarkerAvailable;
+    [SerializeField] public string thisContinent;
+    [SerializeField] public string lastContinent;
     
     [SerializeField] private Sprite available;
+    [SerializeField] private Sprite availableNoStar;
     [SerializeField] private Sprite unavailable;
 
     [SerializeField] private GameObject thanksForPlaying;
@@ -38,6 +41,23 @@ public class Availability : MonoBehaviour
         }
 
         gameSaverScript = FindObjectOfType<GameSaver>();
+
+        //PlayerPrefs.SetInt("Zermatt" + gameSaverScript.keyPointsStarEarnedPerLevel, 0);
+        //PlayerPrefs.SetInt("Zermatt" + gameSaverScript.keyCoinsStarEarnedPerLevel, 0);
+        //PlayerPrefs.SetInt("Zermatt" + gameSaverScript.keyMatchesStarEarnedPerLevel, 0);
+        //PlayerPrefs.SetInt("Zermatt" + gameSaverScript.keyPlaneFlightCompletedPerLevel, 0);
+
+        //PlayerPrefs.SetInt("Venice" + gameSaverScript.keyPointsStarEarnedPerLevel, 0);
+        //PlayerPrefs.SetInt("Venice" + gameSaverScript.keyCoinsStarEarnedPerLevel, 0);
+        //PlayerPrefs.SetInt("Venice" + gameSaverScript.keyMatchesStarEarnedPerLevel, 0);
+        //PlayerPrefs.SetInt("Venice" + gameSaverScript.keyPlaneFlightCompletedPerLevel, 0);
+
+        //PlayerPrefs.SetInt("Bangkok" + gameSaverScript.keyPointsStarEarnedPerLevel, 0);
+        //PlayerPrefs.SetInt("Bangkok" + gameSaverScript.keyCoinsStarEarnedPerLevel, 0);
+        //PlayerPrefs.SetInt("Bangkok" + gameSaverScript.keyMatchesStarEarnedPerLevel, 0);
+        //PlayerPrefs.SetInt("Bangkok" + gameSaverScript.keyPlaneFlightCompletedPerLevel, 0);
+
+        //PlayerPrefs.SetInt(gameSaverScript.thanksForPlayingCompleted, 0);
 
         if (PlayerPrefs.GetInt(previousCityName + gameSaverScript.keyPointsStarEarnedPerLevel) > 0 || PlayerPrefs.GetInt(previousCityName + gameSaverScript.keyCoinsStarEarnedPerLevel) > 0 || PlayerPrefs.GetInt(previousCityName + gameSaverScript.keyMatchesStarEarnedPerLevel) > 0 || gameObject.name == "LondonMarker")
         {
@@ -91,7 +111,15 @@ public class Availability : MonoBehaviour
     {
         if (levelAvailable == true)
         {
-            spriteRenderer.sprite = available;
+            if (PlayerPrefs.GetInt(thisCityName + gameSaverScript.keyPointsStarEarnedPerLevel) > 0 || PlayerPrefs.GetInt(thisCityName + gameSaverScript.keyCoinsStarEarnedPerLevel) > 0 || PlayerPrefs.GetInt(thisCityName + gameSaverScript.keyMatchesStarEarnedPerLevel) > 0)
+            {
+                spriteRenderer.sprite = available;
+            }
+
+            else
+            {
+                spriteRenderer.sprite = availableNoStar;
+            }
         }
 
         else

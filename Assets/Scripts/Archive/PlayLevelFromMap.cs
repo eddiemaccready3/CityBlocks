@@ -16,6 +16,9 @@ public class PlayLevelFromMap : MonoBehaviour
 
     [SerializeField] private string gameObjectName;
 
+    [SerializeField] AudioClip sceneClip;
+    AudioSource audioSource;
+
     private string sceneName;
     private string cityName;
 
@@ -29,14 +32,17 @@ public class PlayLevelFromMap : MonoBehaviour
     private GlobalControl globalControlScript;
     private Activate activeActivateScript;
     private LevelTextPopulater levelTextPopulater;
+    private GameSaver gameSaverScript;
 
     private GameObject activeMarker;
+
  
     void Start ()
     {
         levelTextPopulater = FindObjectOfType<LevelTextPopulater>();
         
         cityName = levelTextPopulater.cityName.text;
+        cityName = cityName.Replace(" ", "");
         spriteRenderer = GetComponent<SpriteRenderer>();
         if (spriteRenderer.sprite == null)
         {
@@ -51,6 +57,10 @@ public class PlayLevelFromMap : MonoBehaviour
         
         activeMarker = GameObject.Find(cityName + "Marker");
         activeActivateScript = activeMarker.GetComponent<Activate>();
+
+        audioSource = GetComponent<AudioSource>();
+
+        gameSaverScript = FindObjectOfType<GameSaver>();
     }
  
     void Update ()
@@ -59,12 +69,15 @@ public class PlayLevelFromMap : MonoBehaviour
         {
             if(mapSceneButtonActive == true)
             {
+                spriteRenderer.sprite = buttonIn;
+                PlaySound(sceneClip);
+                
                 //if (Input.GetMouseButton(0))
                 //{
-                    if(changeSprite == true)
-                    {
-                        ChangeSprite ();
-                    }
+                    //if(changeSprite == true)
+                    //{
+                        //ChangeSprite ();
+                    //}
                 //}
 
                 if (Input.GetMouseButtonUp(0))
@@ -74,6 +87,11 @@ public class PlayLevelFromMap : MonoBehaviour
                 }
 
             }
+        }
+
+        if(!Input.GetMouseButton(0))
+        {
+            spriteRenderer.sprite = buttonOut;
         }
     }
 
@@ -90,5 +108,14 @@ public class PlayLevelFromMap : MonoBehaviour
         }
 
         changeSprite = false;
+    }
+
+    private void PlaySound(AudioClip sound)
+    {
+        if (!audioSource.isPlaying)
+        {
+            audioSource.volume = PlayerPrefs.GetFloat(gameSaverScript.sfxVolumeLevel);
+            audioSource.PlayOneShot(sound);
+        }
     }
 }

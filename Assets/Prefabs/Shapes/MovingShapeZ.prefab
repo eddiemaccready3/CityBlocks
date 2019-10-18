@@ -146,9 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 30
-  moveDelay: 1.5
-  xEndPosition: 5.856
-  yEndPosition: 3.01
+  moveDelay: 0.5
   scaleSpeed: 0.12
   minScale: 0.25
   xMinMoveDistance: 0.1
@@ -209,4 +207,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22075e8a6385fe34d929438ce3396d58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transparencyValue: 0.9
+  transparencyValue: 1

@@ -30,6 +30,15 @@ public class SpinObject : MonoBehaviour
     public void RotateMarker()
     {
         markerRotationAngle -= (spinSpeed * Time.deltaTime);
-        transform.rotation = Quaternion.Euler(0f, 0f, markerRotationAngle);
+        if(markerRotationAngle < -360)
+        {
+            transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            markerRotationAngle = 0f;
+        }
+        
+        else
+        {
+            transform.rotation = Quaternion.Euler(0f, 0f, markerRotationAngle);
+        }
     }
 }

@@ -135,5 +135,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spinSpeed: 0.92
   startRotationAngle: 3600
-  hitShapePos: {x: 2.5, y: 10.26, z: 0}
+  hitShapePos: {x: 2.5, y: 9.88, z: 0}
   rotate: 0

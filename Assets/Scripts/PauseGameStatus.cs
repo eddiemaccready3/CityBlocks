@@ -6,4 +6,9 @@ public class PauseGameStatus : MonoBehaviour
 {
     public bool pauseManual;
     public bool pauseAuto;
+
+    //private void Update()
+    //{
+    //    print("PauseGameStatus - pauseManual: " + pauseManual + " pauseAuto: " + pauseAuto); 
+    //}
 }

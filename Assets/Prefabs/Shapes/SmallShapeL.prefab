@@ -107,7 +107,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.5}
+  m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
 --- !u!50 &8043762518406160327
 Rigidbody2D:
@@ -146,6 +146,7 @@ MonoBehaviour:
   gameObjectName: ShapeCount
   matched: {fileID: 21300000, guid: d00ee3c51781e744c9cae6fce4ef59d3, type: 3}
   unmatched: {fileID: 21300000, guid: 34b22c58f8e71c247a77827ca5164b6b, type: 3}
+  total: 0
 --- !u!1001 &3075776294558506057
 PrefabInstance:
   m_ObjectHideFlags: 0

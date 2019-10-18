@@ -406,19 +406,19 @@ public class AutoShuffle : MonoBehaviour
 
     private void PopulateShapesList()
     {
-        listOfShapes.Add("ShapeX");
-        listOfShapes.Add("ShapeT");
-        listOfShapes.Add("ShapeS");
-        listOfShapes.Add("ShapeZ");
-        listOfShapes.Add("ShapeL");
-        listOfShapes.Add("ShapeJ");
-        listOfShapes.Add("ShapeI");
-        listOfShapes.Add("ShapeO");
-        listOfShapes.Add("ShapeMedI");
-        listOfShapes.Add("ShapeArrow");
-        listOfShapes.Add("ShapeV");
-        listOfShapes.Add("ShapeShortI");
-        listOfShapes.Add("ShapeDash");
+        listOfShapes.Add("SmallShapeX");
+        listOfShapes.Add("SmallShapeT");
+        listOfShapes.Add("SmallShapeS");
+        listOfShapes.Add("SmallShapeZ");
+        listOfShapes.Add("SmallShapeL");
+        listOfShapes.Add("SmallShapeJ");
+        listOfShapes.Add("SmallShapeI");
+        listOfShapes.Add("SmallShapeO");
+        listOfShapes.Add("SmallShapeMedI");
+        listOfShapes.Add("SmallShapeArrow");
+        listOfShapes.Add("SmallShapeV");
+        listOfShapes.Add("SmallShapeShortI");
+        listOfShapes.Add("SmallShapeDash");
     }
 
     private void FindQtyAllBlocksOnScreen()
@@ -565,11 +565,11 @@ public class AutoShuffle : MonoBehaviour
 
     private bool SetCheckBool(int listIndex, int indexToVerify, bool shapeToSet)
     {
-        if (GameObject.FindWithTag(listOfShapes[listIndex]) != null && listIndex == indexToVerify)
+        if (GameObject.Find(listOfShapes[listIndex]) != null && listIndex == indexToVerify)
         {
             shapeToSet = true;
         }
-        else if (GameObject.FindWithTag(listOfShapes[listIndex]) == null && listIndex == indexToVerify)
+        else if (GameObject.Find(listOfShapes[listIndex]) == null && listIndex == indexToVerify)
         {
             shapeToSet = false;
         }

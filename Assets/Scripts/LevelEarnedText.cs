@@ -15,6 +15,9 @@ public class LevelEarnedText : MonoBehaviour
     [SerializeField] private Text coinsReq;
     [SerializeField] private Text matchesReq;
 
+    [SerializeField] private GameObject newShapeMenu;
+    [SerializeField] private Vector2 menuPos;
+
     private Scene scene;
     private string sceneName;
     private string nextSceneName;
@@ -110,7 +113,7 @@ public class LevelEarnedText : MonoBehaviour
     {
         if (int.Parse(pointsEarned.text) < GlobalControl.Instance.scoreBalanceSave)
         {
-            pointsDisplayed += 35;
+            pointsDisplayed += 65;
             pointsEarned.text = pointsDisplayed.ToString();
         }
 
@@ -151,6 +154,12 @@ public class LevelEarnedText : MonoBehaviour
             matchesDisplayed = GlobalControl.Instance.matchesBalanceSave;
             matchesEarned.text = matchesDisplayed.ToString();
             startAddingMatches = false;
+
+            if((PlayerPrefs.GetInt(sceneName + gameSaverScript.keyNewShapeAnnounced) == 0) && (PlayerPrefs.GetInt(sceneName + gameSaverScript.keyPointsStarEarnedPerLevel) > 0 || PlayerPrefs.GetInt(sceneName + gameSaverScript.keyCoinsStarEarnedPerLevel) > 0 || PlayerPrefs.GetInt(sceneName + gameSaverScript.keyMatchesStarEarnedPerLevel) > 0))
+            {
+                Instantiate(newShapeMenu, menuPos, Quaternion.identity);
+                PlayerPrefs.SetInt(sceneName + gameSaverScript.keyNewShapeAnnounced, 1);
+            }
         }
     }
 

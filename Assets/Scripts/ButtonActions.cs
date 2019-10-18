@@ -24,7 +24,11 @@ public class ButtonActions : MonoBehaviour
     [SerializeField] private float yMoveFactor = 0f;
     [SerializeField] private float acceleration = 1f;
 
-    private bool buttonActive = true;
+    [SerializeField] AudioClip menuClip;
+    [SerializeField] AudioClip sceneClip;
+    [SerializeField] AudioClip exitClip;
+
+    public bool buttonActive = true;
     private bool moveMenu = false;
 
     private float xMovementEachFrame;
@@ -38,12 +42,18 @@ public class ButtonActions : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
-    private PauseGameStatus pauseGameScript;
+    private PauseGameStatus pauseGameStatusScript;
+    private GameSaver gameSaverScript;
+
+    AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
-        pauseGameScript = FindObjectOfType<PauseGameStatus>();
+        pauseGameStatusScript = FindObjectOfType<PauseGameStatus>();
+        gameSaverScript = FindObjectOfType<GameSaver>();
+
+        audioSource = GetComponent<AudioSource>();
 
         //pauseGameScript.pauseManual = false;
         //pauseGameScript.pauseAuto = false;
@@ -76,8 +86,6 @@ public class ButtonActions : MonoBehaviour
 
     private void SetMenuStatus()
     {
-        //Array.Clear(menuObjects, 0, menuObjects.Length);
-
         menuObjects = GameObject.FindGameObjectsWithTag(menuTagName);
 
         if(menuObjects.Length > deactivateMenuCount)
@@ -100,19 +108,19 @@ public class ButtonActions : MonoBehaviour
         //    print("menuObjects" + go.name);
         //}
 
-        pauseGameScript = FindObjectOfType<PauseGameStatus>();
+        pauseGameStatusScript = FindObjectOfType<PauseGameStatus>();
 
         if (menuObjects.Length > 0)
         {
-            pauseGameScript.pauseManual = true;
-            pauseGameScript.pauseAuto = true;
+            pauseGameStatusScript.pauseManual = true;
+            pauseGameStatusScript.pauseAuto = true;
             //print("Game paused.");
         }
 
         else
         {
-            pauseGameScript.pauseManual = false;
-            pauseGameScript.pauseAuto = false;
+            pauseGameStatusScript.pauseManual = false;
+            pauseGameStatusScript.pauseAuto = false;
             //print("Game unpaused.");
         }
     }
@@ -124,6 +132,7 @@ public class ButtonActions : MonoBehaviour
             if (buttonType == "Menu")
             {
                 Instantiate(menu, menuPos, Quaternion.identity);
+                PlaySound(menuClip);
             }
 
             else if (buttonType == "Scene")
@@ -131,17 +140,20 @@ public class ButtonActions : MonoBehaviour
                 //pauseGameScript.pauseManual = false;
                 //pauseGameScript.pauseAuto = false;
                 //print("Load scene, unpause.  Pause = " + pauseGameScript.pauseManual + ", " + pauseGameScript.pauseAuto);
+                PlaySound(sceneClip);
                 SceneManager.LoadScene(sceneToLoad);
             }
 
             else if (buttonType == "ExitRise")
             {
+                PlaySound(exitClip);
                 moveMenu = true;
                 //print("Exit!");
             }
 
             else if (buttonType == "ExitDestroy")
             {
+                PlaySound(exitClip);
                 Destroy(menuObject);
             }
         }
@@ -173,5 +185,14 @@ public class ButtonActions : MonoBehaviour
     public void ButtonOut()
     {
         spriteRenderer.sprite = buttonOut;
+    }
+
+    private void PlaySound(AudioClip sound)
+    {
+        if (!audioSource.isPlaying)
+        {
+            audioSource.volume = PlayerPrefs.GetFloat(gameSaverScript.sfxVolumeLevel);
+            audioSource.PlayOneShot(sound);
+        }
     }
 }

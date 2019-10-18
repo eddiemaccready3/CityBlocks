@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6970903383624920330}
   - component: {fileID: 7113488549806558132}
   - component: {fileID: 292500575037245512}
+  - component: {fileID: 5381562438642860189}
   m_Layer: 0
   m_Name: ThanksForPlaying
   m_TagString: ThanksForPlaying
@@ -98,6 +99,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuTagName: ThanksForPlaying
   exitButtonName: ExitButton
+--- !u!114 &5381562438642860189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6970903383624920331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77a22675abd81af42ad25550be0c57f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 10
 --- !u!1001 &2341461951389092756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -115,6 +129,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: ExitButton
       objectReference: {fileID: 0}
+    - target: {fileID: 6135770121560151277, guid: dcdd6cde950ff58468e5ee812fbb145a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 551285030271535583, guid: dcdd6cde950ff58468e5ee812fbb145a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -123,7 +142,7 @@ PrefabInstance:
     - target: {fileID: 551285030271535583, guid: dcdd6cde950ff58468e5ee812fbb145a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 840
+      value: -47.99994
       objectReference: {fileID: 0}
     - target: {fileID: 551285030271535583, guid: dcdd6cde950ff58468e5ee812fbb145a,
         type: 3}
@@ -179,6 +198,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1125968025332305098, guid: dcdd6cde950ff58468e5ee812fbb145a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8553200205261904200, guid: dcdd6cde950ff58468e5ee812fbb145a, type: 3}
@@ -264,7 +288,7 @@ PrefabInstance:
     - target: {fileID: 3320036202151805419, guid: 0fb6e71caad1e384da7df54b2132f0f6,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 443
+      value: -445
       objectReference: {fileID: 0}
     - target: {fileID: 3320036202151805419, guid: 0fb6e71caad1e384da7df54b2132f0f6,
         type: 3}
@@ -414,7 +438,7 @@ PrefabInstance:
     - target: {fileID: 7816180800160272168, guid: e9b964f785099bf43b2c0c28dd532e11,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 445.66034
+      value: -442.3396
       objectReference: {fileID: 0}
     - target: {fileID: 7816180800160272168, guid: e9b964f785099bf43b2c0c28dd532e11,
         type: 3}

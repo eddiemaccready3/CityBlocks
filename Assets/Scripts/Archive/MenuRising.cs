@@ -14,12 +14,20 @@ public class MenuRising : MonoBehaviour
     [SerializeField] private LayerMask layer;
 
     [SerializeField] private string gameObjectName;
-    [SerializeField] private string gameObjectTag;
+    [SerializeField] private string menuObjectName;
+
+    
 
     [SerializeField] private Vector3 hitShapePos;
 
+    
+
     [SerializeField] private string menuName;
     private GameObject menuObject;
+
+    [SerializeField] AudioClip sceneClip;
+    [SerializeField] AudioClip menuClip;
+    AudioSource audioSource;
     
     private bool move = false;
 
@@ -36,6 +44,7 @@ public class MenuRising : MonoBehaviour
     private ButtonActions buttonActionsScript;
     private PauseGameStatus pauseGameScript;
     private GlobalControl globalControlScript;
+    private GameSaver gameSaverScript;
 
     void Start ()
     {
@@ -48,13 +57,16 @@ public class MenuRising : MonoBehaviour
         pauseGameScript = FindObjectOfType<PauseGameStatus>();
         buttonActionsScript = FindObjectOfType<ButtonActions>();
         globalControlScript = FindObjectOfType<GlobalControl>();
+        gameSaverScript = FindObjectOfType<GameSaver>();
+
+        audioSource = GetComponent<AudioSource>();
 
         move = false;
     }
 
     private void FixedUpdate()
     {
-        if(globalControlScript.deactivateMenu == false)
+        if (globalControlScript.deactivateMenu == false)
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -64,6 +76,7 @@ public class MenuRising : MonoBehaviour
 
                 if(hitShape.collider != null && hitShape.transform.gameObject.name == gameObjectName && hitShape.transform.position == hitShapePos)
                 {
+                    PlaySound(sceneClip);
                     ChangeSprite();
                 }
             }
@@ -74,6 +87,7 @@ public class MenuRising : MonoBehaviour
                 {
                     //GameObject.Find(menuName).gameObject.GetComponent<ButtonActions>().buttonAlreadyPressed = false;
                     ChangeSprite();
+                    PlaySound(menuClip);
                     move = true;
                     UnpauseGame();
                 }
@@ -86,6 +100,15 @@ public class MenuRising : MonoBehaviour
         }
     }
 
+    private void PlaySound(AudioClip sound)
+    {
+        if (!audioSource.isPlaying)
+        {
+            audioSource.volume = PlayerPrefs.GetFloat(gameSaverScript.sfxVolumeLevel);
+            audioSource.PlayOneShot(sound);
+        }
+    }
+
     private void UnpauseGame()
     {
         pauseGameScript.pauseAuto = false;
@@ -94,7 +117,7 @@ public class MenuRising : MonoBehaviour
 
     private void Move()
     {
-        menuObject = GameObject.FindGameObjectWithTag(gameObjectTag);
+        menuObject = GameObject.Find(menuObjectName);
         xPosition = menuObject.transform.position.x;
         yPosition = menuObject.transform.position.y;
         moveDistance = acceleration * Time.deltaTime * speedModifier;
