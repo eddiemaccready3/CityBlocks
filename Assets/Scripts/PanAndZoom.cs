@@ -45,7 +45,7 @@ public class PanAndZoom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (pauseGameScript.pauseAuto == false || pauseGameScript.pauseManual == false)
+        if (pauseGameScript.pauseAuto == false)
         {
             //Pan logic:
             mapMoveYTop = -(2550f - (cameraHeight / 2));

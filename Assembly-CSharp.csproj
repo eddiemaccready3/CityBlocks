@@ -91,6 +91,7 @@
     <Compile Include="Assets\Scripts\Archive\PanAndZoomCamera.cs" />
     <Compile Include="Assets\Scripts\Archive\PlayLevelFromMap.cs" />
     <Compile Include="Assets\Scripts\Archive\ZoomIn.cs" />
+    <Compile Include="Assets\Scripts\AutoCameraZoom.cs" />
     <Compile Include="Assets\Scripts\AutoShuffle.cs" />
     <Compile Include="Assets\Scripts\Availability.cs" />
     <Compile Include="Assets\Scripts\BlockSpawner.cs" />

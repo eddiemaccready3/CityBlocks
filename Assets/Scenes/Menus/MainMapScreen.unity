@@ -1788,6 +1788,23 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8192
   menuTagName: 
+--- !u!114 &529688692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529688688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5c8b74cfe9d2cd49b006cfac4bc8d2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraStartZoom: 1100
+  cameraEndZoom: 570
+  cameraZoomSpeed: 100
+  cam: {fileID: 1519757042}
+  zoomStartDelay: 0.5
 --- !u!1001 &548223984
 PrefabInstance:
   m_ObjectHideFlags: 0

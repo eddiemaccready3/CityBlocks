@@ -46,6 +46,8 @@ public class GameSaver : MonoBehaviour
 
     public string keyNewShapeAnnounced = "keyNewShapeAnnounced";
 
+    public string keyFirstMapZoom = "keyFirstMapZoom";
+
     public string musicVolumeSet = "keyBoolMusicVolumeSet";
     public string sfxVolumeSet = "keyBoolSfxVolumeSet";
     public string musicVolumeLevel = "musicVolumeLevel";
