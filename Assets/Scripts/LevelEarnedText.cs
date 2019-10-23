@@ -28,6 +28,8 @@ public class LevelEarnedText : MonoBehaviour
     private float coinsDisplayed = 0;
     private float matchesDisplayed = 0;
 
+    private float timeOfInstantiation;
+
     public bool startAddingScore;
     public bool startAddingCoins;
     public bool startAddingMatches;
@@ -47,6 +49,10 @@ public class LevelEarnedText : MonoBehaviour
         pauseGameScript = FindObjectOfType<PauseGameStatus>();
         pauseGameScript.pauseAuto = false;
         pauseGameScript.pauseManual = false;
+
+        timeOfInstantiation = Time.time;
+
+        GetComponent<ObjectColliderActiveStatus>().DeactivateColliders();
 
         levelPassReqsScript = FindObjectOfType<LevelPassReqs>();
 
@@ -107,6 +113,11 @@ public class LevelEarnedText : MonoBehaviour
                 MatchesCounter();
             }
         }
+
+        if((Time.time - timeOfInstantiation) > 2f)
+        {
+            GetComponent<ObjectColliderActiveStatus>().ActivateColliders();
+        }
     }
 
     private void ScoreCounter()
@@ -154,6 +165,8 @@ public class LevelEarnedText : MonoBehaviour
             matchesDisplayed = GlobalControl.Instance.matchesBalanceSave;
             matchesEarned.text = matchesDisplayed.ToString();
             startAddingMatches = false;
+            
+            //GetComponent<ObjectColliderActiveStatus>().ActivateColliders();
 
             if((PlayerPrefs.GetInt(sceneName + gameSaverScript.keyNewShapeAnnounced) == 0) && (PlayerPrefs.GetInt(sceneName + gameSaverScript.keyPointsStarEarnedPerLevel) > 0 || PlayerPrefs.GetInt(sceneName + gameSaverScript.keyCoinsStarEarnedPerLevel) > 0 || PlayerPrefs.GetInt(sceneName + gameSaverScript.keyMatchesStarEarnedPerLevel) > 0))
             {

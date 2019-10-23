@@ -133,6 +133,7 @@
     <Compile Include="Assets\Scripts\MoveCameraToContinent.cs" />
     <Compile Include="Assets\Scripts\NewShape.cs" />
     <Compile Include="Assets\Scripts\NextButtonStatus.cs" />
+    <Compile Include="Assets\Scripts\ObjectColliderActiveStatus.cs" />
     <Compile Include="Assets\Scripts\ObjectMovement.cs" />
     <Compile Include="Assets\Scripts\OscillatingObject.cs" />
     <Compile Include="Assets\Scripts\PanAndZoom.cs" />

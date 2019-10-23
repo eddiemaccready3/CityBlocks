@@ -37,7 +37,7 @@ public class NextButtonStatus : MonoBehaviour
         if(PlayerPrefs.GetInt(sceneName + gameSaverScript.keyPointsStarEarnedPerLevel) > 0 || PlayerPrefs.GetInt(sceneName + gameSaverScript.keyCoinsStarEarnedPerLevel) > 0 || PlayerPrefs.GetInt(sceneName + gameSaverScript.keyMatchesStarEarnedPerLevel) > 0)
         {
             spriteRenderer.sprite = active;
-            GetComponent<Collider2D>().enabled = true;
+            //GetComponent<Collider2D>().enabled = true;
         }
         else
         {
