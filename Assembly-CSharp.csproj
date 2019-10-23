@@ -145,6 +145,7 @@
     <Compile Include="Assets\Scripts\PointsMovement.cs" />
     <Compile Include="Assets\Scripts\ReadySetGo.cs" />
     <Compile Include="Assets\Scripts\ReplayButton.cs" />
+    <Compile Include="Assets\Scripts\RockingObject.cs" />
     <Compile Include="Assets\Scripts\RotateObject.cs" />
     <Compile Include="Assets\Scripts\RunButton.cs" />
     <Compile Include="Assets\Scripts\RunSceneButton.cs" />

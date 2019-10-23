@@ -572,6 +572,7 @@ GameObject:
   - component: {fileID: 7714047988071079397}
   - component: {fileID: 7214641357450211933}
   - component: {fileID: 7729564652309571972}
+  - component: {fileID: 4394796957904043504}
   m_Layer: 0
   m_Name: Shape
   m_TagString: Untagged
@@ -654,6 +655,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteGOName: NewShape
+--- !u!114 &4394796957904043504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4972961089867116054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b945f0cdb9913504188389bc0d0857c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalAngle: 30
+  rockSpeed: 125
 --- !u!1 &8255572493662658866
 GameObject:
   m_ObjectHideFlags: 0
