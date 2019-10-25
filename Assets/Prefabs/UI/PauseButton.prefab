@@ -58,7 +58,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.5, y: 2.5}
+  m_Size: {x: 8.5, y: 7}
   m_EdgeRadius: 0
 --- !u!212 &546733539983121887
 SpriteRenderer:
@@ -135,6 +135,7 @@ MonoBehaviour:
   menuClip: {fileID: 8300000, guid: 4be5bf924c1372c41970307ffacd7314, type: 3}
   sceneClip: {fileID: 0}
   exitClip: {fileID: 0}
+  buttonActive: 1
 --- !u!82 &355288423683573151
 AudioSource:
   m_ObjectHideFlags: 0

@@ -168,7 +168,7 @@ public class LevelEarnedText : MonoBehaviour
             
             //GetComponent<ObjectColliderActiveStatus>().ActivateColliders();
 
-            if((PlayerPrefs.GetInt(sceneName + gameSaverScript.keyNewShapeAnnounced) == 0) && (PlayerPrefs.GetInt(sceneName + gameSaverScript.keyPointsStarEarnedPerLevel) > 0 || PlayerPrefs.GetInt(sceneName + gameSaverScript.keyCoinsStarEarnedPerLevel) > 0 || PlayerPrefs.GetInt(sceneName + gameSaverScript.keyMatchesStarEarnedPerLevel) > 0))
+            if((sceneName != "Venice") && (PlayerPrefs.GetInt(sceneName + gameSaverScript.keyNewShapeAnnounced) == 0) && (PlayerPrefs.GetInt(sceneName + gameSaverScript.keyPointsStarEarnedPerLevel) > 0 || PlayerPrefs.GetInt(sceneName + gameSaverScript.keyCoinsStarEarnedPerLevel) > 0 || PlayerPrefs.GetInt(sceneName + gameSaverScript.keyMatchesStarEarnedPerLevel) > 0))
             {
                 Instantiate(newShapeMenu, menuPos, Quaternion.identity);
                 PlayerPrefs.SetInt(sceneName + gameSaverScript.keyNewShapeAnnounced, 1);
