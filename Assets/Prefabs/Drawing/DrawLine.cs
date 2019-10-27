@@ -45,7 +45,7 @@ public class DrawLine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(pauseGameScript.pauseManual == false || pauseGameScript.pauseAuto == false)
+        if(pauseGameScript.pauseAuto == false)
         {
             if (Input.GetMouseButton(0))
             {

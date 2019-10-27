@@ -18,6 +18,7 @@ public class PlayLevelFromMap : MonoBehaviour
 
     [SerializeField] AudioClip sceneClip;
     AudioSource audioSource;
+    private bool soundPlayed;
 
     private string sceneName;
     private string cityName;
@@ -59,6 +60,7 @@ public class PlayLevelFromMap : MonoBehaviour
         activeActivateScript = activeMarker.GetComponent<Activate>();
 
         audioSource = GetComponent<AudioSource>();
+        soundPlayed = false;
 
         gameSaverScript = FindObjectOfType<GameSaver>();
     }
@@ -70,7 +72,12 @@ public class PlayLevelFromMap : MonoBehaviour
             if(mapSceneButtonActive == true)
             {
                 spriteRenderer.sprite = buttonIn;
-                PlaySound(sceneClip);
+                
+                if(soundPlayed == false)
+                {
+                    PlaySound(sceneClip);
+                    soundPlayed = true;
+                }
                 
                 //if (Input.GetMouseButton(0))
                 //{

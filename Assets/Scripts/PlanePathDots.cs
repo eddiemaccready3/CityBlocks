@@ -10,8 +10,8 @@ public class PlanePathDots : MonoBehaviour
 
     private float distanceBetweenDots;
     
-    private Vector2 startingPos;
-    private Vector2 currentPos;
+    private Vector3 startingPos;
+    private Vector3 currentPos;
 
     
     
@@ -20,19 +20,19 @@ public class PlanePathDots : MonoBehaviour
     {
         dotsParentTran = GameObject.Find("PlaneTrail");
         
-        startingPos = new Vector2(transform.position.x, transform.position.y);
+        startingPos = new Vector3(transform.position.x, transform.position.y, 0f);
         Instantiate(trailDot, startingPos, Quaternion.identity, dotsParentTran.transform);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        currentPos = new Vector2(transform.position.x, transform.position.y);
+        currentPos = new Vector3(transform.position.x, transform.position.y, 0f);
 
         if(TrigFunctions.PythagoreanTheorem(TrigFunctions.FindDistance(currentPos.x, startingPos.x), TrigFunctions.FindDistance(currentPos.y, startingPos.y)) > 25f)
         {
             Instantiate(trailDot, currentPos, Quaternion.identity, dotsParentTran.transform);
-            startingPos = new Vector2(transform.position.x, transform.position.y);
+            startingPos = new Vector3(transform.position.x, transform.position.y, 0f);
         }
     }
 }

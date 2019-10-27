@@ -12,7 +12,7 @@ public class AutoCameraZoom : MonoBehaviour
 
     private float orthoSize;
 
-    private bool autoZoomComplete = false;
+    public bool autoZoomComplete = false;
 
     private GameSaver gameSaverScript;
     private PauseGameStatus pauseGameStatusScript;
@@ -37,9 +37,9 @@ public class AutoCameraZoom : MonoBehaviour
     {
         if(Time.timeSinceLevelLoad > zoomStartDelay)
         {
-            if(autoZoomComplete == false)
+            if(PlayerPrefs.GetInt(gameSaverScript.keyFirstMapZoom) == 0 && autoZoomComplete == false)
             {
-                if(PlayerPrefs.GetInt(gameSaverScript.keyFirstMapZoom) == 0 && cam.orthographicSize > cameraEndZoom)
+                if(cam.orthographicSize > cameraEndZoom)
                 {
                     orthoSize -= (cameraZoomSpeed * Time.deltaTime);
                     cam.orthographicSize = orthoSize;

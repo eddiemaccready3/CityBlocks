@@ -27,6 +27,7 @@ public class Availability : MonoBehaviour
     private SpriteRenderer spriteRenderer; 
 
     private GameSaver gameSaverScript;
+    private PauseGameStatus pauseGameScript;
 
     public bool levelAvailable;
     
@@ -41,6 +42,7 @@ public class Availability : MonoBehaviour
         }
 
         gameSaverScript = FindObjectOfType<GameSaver>();
+        pauseGameScript = FindObjectOfType<PauseGameStatus>();
 
         //PlayerPrefs.SetInt("Zermatt" + gameSaverScript.keyPointsStarEarnedPerLevel, 0);
         //PlayerPrefs.SetInt("Zermatt" + gameSaverScript.keyCoinsStarEarnedPerLevel, 0);
@@ -100,6 +102,7 @@ public class Availability : MonoBehaviour
 
         if (levelAvailable == true && gameObject.name == lastMarkerAvailable && PlayerPrefs.GetInt(gameSaverScript.thanksForPlayingCompleted) == 0)
         {
+            pauseGameScript.pauseAuto = true;
             thanksForPlaying.transform.GetComponent<Canvas>().worldCamera = cam;
             Instantiate(thanksForPlaying, Camera.main.transform.position, Quaternion.identity);
             PlayerPrefs.SetInt(gameSaverScript.thanksForPlayingCompleted, 1);

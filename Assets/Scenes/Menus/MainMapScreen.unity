@@ -1805,6 +1805,7 @@ MonoBehaviour:
   cameraZoomSpeed: 100
   cam: {fileID: 1519757042}
   zoomStartDelay: 0.5
+  autoZoomComplete: 0
 --- !u!1001 &548223984
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7949,7 +7950,7 @@ PrefabInstance:
     - target: {fileID: 6928839203178962993, guid: 0da681ac1e1163c4fbc3c90af6aae597,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 6928839203178962993, guid: 0da681ac1e1163c4fbc3c90af6aae597,
         type: 3}
