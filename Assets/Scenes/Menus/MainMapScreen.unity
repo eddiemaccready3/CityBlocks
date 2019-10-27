@@ -1059,17 +1059,17 @@ PrefabInstance:
     - target: {fileID: 6873206066239975412, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
       propertyPath: activatePointsReq
-      value: 3500
+      value: 6500
       objectReference: {fileID: 0}
     - target: {fileID: 6873206066239975412, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
       propertyPath: activateCoinsReq
-      value: 27
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 6873206066239975412, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
       propertyPath: activateMatchesReq
-      value: 8
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6873206066239975412, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
@@ -1680,17 +1680,17 @@ PrefabInstance:
     - target: {fileID: 6873206066239975412, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
       propertyPath: activatePointsReq
-      value: 3000
+      value: 7800
       objectReference: {fileID: 0}
     - target: {fileID: 6873206066239975412, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
       propertyPath: activateCoinsReq
-      value: 24
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 6873206066239975412, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
       propertyPath: activateMatchesReq
-      value: 8
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6873206066239975412, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
@@ -3862,7 +3862,7 @@ PrefabInstance:
     - target: {fileID: 6873206066239975412, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
       propertyPath: activatePointsReq
-      value: 3000
+      value: 4000
       objectReference: {fileID: 0}
     - target: {fileID: 6873206066239975412, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
@@ -3872,7 +3872,7 @@ PrefabInstance:
     - target: {fileID: 6873206066239975412, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
       propertyPath: activateMatchesReq
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6873206066239975412, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
@@ -5399,17 +5399,17 @@ PrefabInstance:
     - target: {fileID: 6873206066239975412, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
       propertyPath: activatePointsReq
-      value: 3200
+      value: 5300
       objectReference: {fileID: 0}
     - target: {fileID: 6873206066239975412, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
       propertyPath: activateCoinsReq
-      value: 28
+      value: 37
       objectReference: {fileID: 0}
     - target: {fileID: 6873206066239975412, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
       propertyPath: activateMatchesReq
-      value: 10
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 6873206066239975412, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
@@ -5739,17 +5739,17 @@ PrefabInstance:
     - target: {fileID: 6873206066239975412, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
       propertyPath: activatePointsReq
-      value: 4000
+      value: 7200
       objectReference: {fileID: 0}
     - target: {fileID: 6873206066239975412, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
       propertyPath: activateCoinsReq
-      value: 25
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 6873206066239975412, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
       propertyPath: activateMatchesReq
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6873206066239975412, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
@@ -7731,7 +7731,7 @@ PrefabInstance:
     - target: {fileID: 6873206066239975412, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
       propertyPath: activateCoinsReq
-      value: 20
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6873206066239975412, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
@@ -7757,6 +7757,11 @@ PrefabInstance:
         type: 3}
       propertyPath: sceneToLoadSet
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6873206066239975412, guid: 2a7185793342af0429bc9af4f6b25aee,
+        type: 3}
+      propertyPath: activatePointsReq
+      value: 5000
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7914551041409589986, guid: 2a7185793342af0429bc9af4f6b25aee, type: 3}

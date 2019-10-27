@@ -75,13 +75,12 @@ public class UserInput : MonoBehaviour {
     private int shapeArrowPoints = 150;
     private int shapeJPoints = 200;
     private int shapeLPoints = 200;
-    private int shapeTPoints = 250;
-    private int shapeIPoints = 325;
+    private int shapeTPoints = 225;
+    private int shapeIPoints = 300;
     private int shapeOPoints = 300;
-    private int shapeZPoints = 375;
-    private int shapeSPoints = 375;
+    private int shapeZPoints = 350;
+    private int shapeSPoints = 350;
     private int shapeXPoints = 500;
-    
     
     private int coinGold = 25;
     private int coinSilver = 15;
@@ -751,7 +750,7 @@ public class UserInput : MonoBehaviour {
                         shapesMatched.Add("ShapeT");
                     }
                     counterScript.AddInAmount(shapeTPoints, scoreBalanceName);
-                    Instantiate(Points350, (centerXYClicked + new Vector3(0.5f, 0f, 0)), Quaternion.identity);
+                    Instantiate(Points225, (centerXYClicked + new Vector3(0.5f, 0f, 0)), Quaternion.identity);
                     InstantiateFloatingShape(floatingShapeT);
 
                     //timer.timeLeft = timer.timeLeft + 2f;
@@ -899,7 +898,7 @@ public class UserInput : MonoBehaviour {
                         shapesMatched.Add("ShapeI");
                     }
                     counterScript.AddInAmount(shapeIPoints, scoreBalanceName);
-                    Instantiate(Points225, (centerXYClicked + new Vector3(0.5f, 0f, 0)), Quaternion.identity);
+                    Instantiate(Points300, (centerXYClicked + new Vector3(0.5f, 0f, 0)), Quaternion.identity);
                     InstantiateFloatingShape(floatingShapeI);
                     //timer.timeLeft = timer.timeLeft + 2f;
                 }
