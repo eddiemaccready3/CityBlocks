@@ -1177,6 +1177,11 @@ PrefabInstance:
       propertyPath: m_UiScaleMode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114961118741890816, guid: fa1b241b57e2d394e84426ad46500c33,
+        type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 224383028826171934, guid: fa1b241b57e2d394e84426ad46500c33,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -3399,7 +3404,7 @@ PrefabInstance:
     - target: {fileID: 3663359096567079161, guid: 59bdf698761177942b4c66799413a6d7,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3658007823713906103, guid: 59bdf698761177942b4c66799413a6d7,
         type: 3}

@@ -1801,7 +1801,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraStartZoom: 1100
-  cameraEndZoom: 570
+  cameraEndZoom: 730
   cameraZoomSpeed: 100
   cam: {fileID: 1519757042}
   zoomStartDelay: 0.5
@@ -2339,7 +2339,27 @@ PrefabInstance:
     - target: {fileID: 1457136832068430413, guid: 6a2b0f61b454fa04faeb574b09106d6f,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -227
+      value: -169
+      objectReference: {fileID: 0}
+    - target: {fileID: 1457136832068430413, guid: 6a2b0f61b454fa04faeb574b09106d6f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 907
+      objectReference: {fileID: 0}
+    - target: {fileID: 4043009298270111342, guid: 6a2b0f61b454fa04faeb574b09106d6f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 916.2999
+      objectReference: {fileID: 0}
+    - target: {fileID: 4043009298270111342, guid: 6a2b0f61b454fa04faeb574b09106d6f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -421
+      objectReference: {fileID: 0}
+    - target: {fileID: 7113488549806558132, guid: 6a2b0f61b454fa04faeb574b09106d6f,
+        type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a2b0f61b454fa04faeb574b09106d6f, type: 3}
@@ -6510,12 +6530,12 @@ PrefabInstance:
     - target: {fileID: 7452576720499905914, guid: 3bdbe4da4d215894a9ddc4d7865664d1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 459
+      value: 380
       objectReference: {fileID: 0}
     - target: {fileID: 7452576720499905914, guid: 3bdbe4da4d215894a9ddc4d7865664d1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 901
+      value: 882.9999
       objectReference: {fileID: 0}
     - target: {fileID: 7452576720499905914, guid: 3bdbe4da4d215894a9ddc4d7865664d1,
         type: 3}
@@ -7190,7 +7210,7 @@ PrefabInstance:
     - target: {fileID: 1361342487994247302, guid: 1abb9f0b43b32d84a8f85075bf6cddec,
         type: 3}
       propertyPath: orthographic size
-      value: 570
+      value: 730
       objectReference: {fileID: 0}
     - target: {fileID: 1361342487994247303, guid: 1abb9f0b43b32d84a8f85075bf6cddec,
         type: 3}
@@ -7260,7 +7280,7 @@ PrefabInstance:
     - target: {fileID: 1361342487994247323, guid: 1abb9f0b43b32d84a8f85075bf6cddec,
         type: 3}
       propertyPath: pinchZoomSpeed
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1361342487994247323, guid: 1abb9f0b43b32d84a8f85075bf6cddec,
         type: 3}
