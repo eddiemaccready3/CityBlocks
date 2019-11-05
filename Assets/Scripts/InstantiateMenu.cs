@@ -70,7 +70,7 @@ public class InstantiateMenu : MonoBehaviour
 
                         //print(hitShape.transform.gameObject.name + " Position: " + hitShape.transform.position.x + ", " + hitShape.transform.position.y + "; HitShape Pos: " + hitShapePos);
 
-                        if(hitShape.collider != null && hitShape.transform.gameObject.name == gameObjectName && hitShape.transform.position == hitShapePos)
+                        if(hitShape.collider != null && hitShape.transform.gameObject.name == gameObjectName && hitShape.transform.position == transform.position)
                         {
                             spriteRenderer.sprite = buttonIn;
                             PlaySound(sceneClip);

@@ -104,4 +104,9 @@ public class LevelIntroTimeline : MonoBehaviour
             blackBackground.GetComponent<DestroySelf>().delay = initialBackgroundDestroyStart;
         }
     }
+
+    private void Start()
+    {
+        print("keyNewShapeAnnounced: " + PlayerPrefs.GetInt(sceneName + gameSaverScript.keyNewShapeAnnounced));
+    }
 }

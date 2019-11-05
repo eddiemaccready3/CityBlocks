@@ -33,6 +33,7 @@ public class LevelEarnedText : MonoBehaviour
     public bool startAddingScore;
     public bool startAddingCoins;
     public bool startAddingMatches;
+    private bool newShapeMenuInstantiated = false;
 
     private GameObject pointsStar;
     private GameObject coinsStar;
@@ -118,6 +119,12 @@ public class LevelEarnedText : MonoBehaviour
         {
             GetComponent<ObjectColliderActiveStatus>().ActivateColliders();
         }
+
+        if(newShapeMenuInstantiated == true)
+        {
+            InstantiateNewShapeMenu();
+            newShapeMenuInstantiated = false;
+        }
     }
 
     private void ScoreCounter()
@@ -165,14 +172,16 @@ public class LevelEarnedText : MonoBehaviour
             matchesDisplayed = GlobalControl.Instance.matchesBalanceSave;
             matchesEarned.text = matchesDisplayed.ToString();
             startAddingMatches = false;
-            
-            //GetComponent<ObjectColliderActiveStatus>().ActivateColliders();
+            newShapeMenuInstantiated = true;
+        }
+    }
 
-            if((sceneName != "Venice") && (PlayerPrefs.GetInt(sceneName + gameSaverScript.keyNewShapeAnnounced) == 0) && (PlayerPrefs.GetInt(sceneName + gameSaverScript.keyPointsStarEarnedPerLevel) > 0 || PlayerPrefs.GetInt(sceneName + gameSaverScript.keyCoinsStarEarnedPerLevel) > 0 || PlayerPrefs.GetInt(sceneName + gameSaverScript.keyMatchesStarEarnedPerLevel) > 0))
-            {
-                Instantiate(newShapeMenu, menuPos, Quaternion.identity);
-                PlayerPrefs.SetInt(sceneName + gameSaverScript.keyNewShapeAnnounced, 1);
-            }
+    private void InstantiateNewShapeMenu()
+    {
+        if ((sceneName != "Venice") && (PlayerPrefs.GetInt(sceneName + gameSaverScript.keyNewShapeAnnounced) == 0) && (PlayerPrefs.GetInt(sceneName + gameSaverScript.keyPointsStarEarnedPerLevel) > 0 || PlayerPrefs.GetInt(sceneName + gameSaverScript.keyCoinsStarEarnedPerLevel) > 0 || PlayerPrefs.GetInt(sceneName + gameSaverScript.keyMatchesStarEarnedPerLevel) > 0))
+        {
+            Instantiate(newShapeMenu, menuPos, Quaternion.identity);
+            PlayerPrefs.SetInt(sceneName + gameSaverScript.keyNewShapeAnnounced, 1);
         }
     }
 

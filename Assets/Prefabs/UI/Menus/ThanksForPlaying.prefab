@@ -70,7 +70,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6970903383624920331}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_UiScaleMode: 1
@@ -216,12 +216,12 @@ PrefabInstance:
     - target: {fileID: 3320036202151805419, guid: 0fb6e71caad1e384da7df54b2132f0f6,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.96288174
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 3320036202151805419, guid: 0fb6e71caad1e384da7df54b2132f0f6,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.96288174
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3320036202151805419, guid: 0fb6e71caad1e384da7df54b2132f0f6,
         type: 3}
@@ -238,6 +238,12 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6444932253768422355, guid: 0fb6e71caad1e384da7df54b2132f0f6,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dd8fc7cbbebe4cc439a1353636e95601,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fb6e71caad1e384da7df54b2132f0f6, type: 3}
 --- !u!224 &219479200348915698 stripped
@@ -391,8 +397,7 @@ PrefabInstance:
     - target: {fileID: 7816180800160272169, guid: e9b964f785099bf43b2c0c28dd532e11,
         type: 3}
       propertyPath: m_Text
-      value: Thank you for playing! More levels are coming soon. Feel free to replay
-        the existing levels to earn more points and stars while you wait!
+      value: More levels coming soon!
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9b964f785099bf43b2c0c28dd532e11, type: 3}

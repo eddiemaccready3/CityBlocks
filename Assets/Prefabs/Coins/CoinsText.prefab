@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6688204823531636287}
   - component: {fileID: 7565067500613439307}
   - component: {fileID: 738309732403817366}
+  - component: {fileID: 8917128264030853779}
   m_Layer: 5
   m_Name: CoinsText
   m_TagString: Untagged
@@ -55,7 +56,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8611212023070770527}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -64,8 +65,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 00dab183eb7c0e644925ed48bf02fdbf, type: 3}
     m_FontSize: 50
@@ -89,9 +88,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 8611212023070770527}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 3, y: 3}
   m_UseGraphicAlpha: 1
+--- !u!114 &8917128264030853779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8611212023070770527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91b283f4f4b523944b41ba6107df36de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  higherPosition: 9.82
+  lowerPosition: 11.4

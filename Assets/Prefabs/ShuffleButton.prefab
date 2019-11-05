@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 114794069352931606}
   - component: {fileID: 58729197763028564}
   - component: {fileID: 2590375747005827166}
+  - component: {fileID: 7938157241100773107}
   m_Layer: 5
   m_Name: ShuffleButton
   m_TagString: Untagged
@@ -59,6 +60,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -70,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 8
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: b6f148cbe634f874b8c8860624404dad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -95,7 +97,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxBlocksOnScreen: 55
-  hitShapePos: {x: 2.5, y: 10.26, z: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 32
   currentShuffleLoopDelay: 0
   blocks:
   - {fileID: 1878720684860812, guid: aeff55c25a8047e489cbcbdf20a18d9c, type: 3}
@@ -135,5 +139,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spinSpeed: 0.92
   startRotationAngle: 3600
-  hitShapePos: {x: 2.5, y: 9.88, z: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 32
   rotate: 0
+--- !u!114 &7938157241100773107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290179658982018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91b283f4f4b523944b41ba6107df36de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  higherPosition: 9.82
+  lowerPosition: 11.4

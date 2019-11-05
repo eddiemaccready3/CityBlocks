@@ -1,16 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TimerTextMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
     [SerializeField] public float moveDelay;
     [SerializeField] private float xEndPosition;
-    [SerializeField] private float yEndPosition;
+    [SerializeField] private float xEndPosLeftJustify;
     [SerializeField] private float scaleFactor;
     [SerializeField] private float minScale;
-    
+    [SerializeField] private Text thisText;
+    [SerializeField] private Canvas thisCanvas;
+
+    float yEndPosition;
     private float xMovementEachFrame;
     private float yMovementEachFrame;
     private float timeElapsed = 0;
@@ -28,6 +32,8 @@ public class TimerTextMovement : MonoBehaviour
     // Use this for initialization
 	void Start()
     {
+        yEndPosition = GameObject.Find("Score").transform.position.y;
+        
         startXPosition = transform.position.x;
         startYPosition = transform.position.y;
 
@@ -43,9 +49,15 @@ public class TimerTextMovement : MonoBehaviour
 	
     private void FixedUpdate()
     {
+        yEndPosition = GameObject.Find("Score").transform.position.y;
         if(timeElapsed > moveDelay && moveComplete == false)
         {
             Move();
+        }
+
+        if(moveComplete == true)
+        {
+            transform.position = new Vector3(xEndPosLeftJustify, yEndPosition, 0f);
         }
 
         timeElapsed += Time.deltaTime;
@@ -82,7 +94,12 @@ public class TimerTextMovement : MonoBehaviour
         if (transform.position.y > yEndPosition)
         {
             transform.localScale = new Vector3(0.3f, 0.3f, 0f);
-            transform.position = new Vector2(xEndPosition, yEndPosition);
+            thisText.alignment = TextAnchor.MiddleLeft;
+            transform.position = new Vector3(xEndPosLeftJustify, yEndPosition, 0f);
+
+            moveComplete = true;
+
+            print("Running...");
         }
     }
 }

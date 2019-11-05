@@ -5,6 +5,7 @@ using Assets;
 
 public class MoveCameraToContinent : MonoBehaviour
 {
+    [SerializeField] private GameObject map;
     [SerializeField] private Camera cam;
 
     [SerializeField] private Vector3 cameraStartPos;
@@ -26,24 +27,25 @@ public class MoveCameraToContinent : MonoBehaviour
 
     private bool cameraMoved = false;
 
-    private PlaneMovement planeMovementScript;
+    private PlaneMovementStatic planeMovementStaticScript;
     
     // Start is called before the first frame update
     void Start()
     {
-        planeMovementScript = FindObjectOfType<PlaneMovement>();
+        cameraStartPos = map.transform.position;
+        planeMovementStaticScript = FindObjectOfType<PlaneMovementStatic>();
         
         totalXDistStartToEnd = TrigFunctions.FindDistance(cameraStartPos.x, cameraEndPos.x);
         totalYDistStartToEnd = TrigFunctions.FindDistance(cameraStartPos.y, cameraEndPos.y);
 
-        if(planeMovementScript != null)
+        if(planeMovementStaticScript != null)
         {
-            camXPerFrameMoveDist = planeMovementScript.xPerFrameMoveDistance;
-            camYPerFrameMoveDist = (planeMovementScript.xPerFrameMoveDistance * totalYDistStartToEnd) / totalXDistStartToEnd;
+            camXPerFrameMoveDist = planeMovementStaticScript.xPerFrameMoveDistance;
+            camYPerFrameMoveDist = (planeMovementStaticScript.xPerFrameMoveDistance * totalYDistStartToEnd) / totalXDistStartToEnd;
         }
 
-        newXPosEachFrame = cam.transform.position.x + camXPerFrameMoveDist;
-        newYPosEachFrame = cam.transform.position.y + camYPerFrameMoveDist;
+        newXPosEachFrame = map.transform.position.x + camXPerFrameMoveDist;
+        newYPosEachFrame = map.transform.position.y + camYPerFrameMoveDist;
 
         xMoveDirection = SetMoveDirection(cameraStartPos.x, cameraEndPos.x);
         yMoveDirection = SetMoveDirection(cameraStartPos.y, cameraEndPos.y);
@@ -67,29 +69,29 @@ public class MoveCameraToContinent : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(planeMovementScript != null)
+        if(planeMovementStaticScript != null)
         {
-            if(planeMovementScript.moveCamera == true)
+            if(planeMovementStaticScript.moveCamera == true)
             {
-                camXPerFrameMoveDist = planeMovementScript.xPerFrameMoveDistance;
-                camYPerFrameMoveDist = (planeMovementScript.xPerFrameMoveDistance * totalYDistStartToEnd) / totalXDistStartToEnd;
+                camXPerFrameMoveDist = planeMovementStaticScript.xPerFrameMoveDistance;
+                camYPerFrameMoveDist = (planeMovementStaticScript.xPerFrameMoveDistance * totalYDistStartToEnd) / totalXDistStartToEnd;
 
                 camPerFrameZoomChange = ((cameraEndZoom - cameraStartZoom) / totalXDistStartToEnd) * camXPerFrameMoveDist;
 
-                newXPosEachFrame = cam.transform.position.x + (camXPerFrameMoveDist * xMoveDirection);
-                newYPosEachFrame = cam.transform.position.y + (camYPerFrameMoveDist * yMoveDirection);
+                newXPosEachFrame = map.transform.position.x + (camXPerFrameMoveDist * xMoveDirection);
+                newYPosEachFrame = map.transform.position.y + (camYPerFrameMoveDist * yMoveDirection);
         
                 if(cameraMoved == false)
                 {
-                    if(cam.transform.position.x < cameraEndPos.x)
+                    if(map.transform.position.x > cameraEndPos.x)
                     {
-                        cam.transform.position = new Vector2(newXPosEachFrame, newYPosEachFrame);
+                        map.transform.position = new Vector2(newXPosEachFrame, newYPosEachFrame);
                         orthoSize += camPerFrameZoomChange;
                         cam.orthographicSize = orthoSize;
                     }
                     else
                     {
-                        cam.transform.position = new Vector2(cameraEndPos.x, cameraEndPos.y);
+                        map.transform.position = new Vector2(cameraEndPos.x, cameraEndPos.y);
                         cameraMoved = true;
                     }
                 }

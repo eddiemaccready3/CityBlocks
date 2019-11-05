@@ -58,6 +58,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -96,6 +97,8 @@ MonoBehaviour:
   slowSpeed: 300
   fastSpeed: 25
   yTextPosition: 9.83
+  objectToFlyTo: {fileID: 1290179658982018, guid: d1af1cbf26a2eb54aab670294e335464,
+    type: 3}
 --- !u!114 &114648997583872256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,7 +112,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 6
-  minimum: 0
-  maximum: 1
-  duration: 5
-  startTime: 0

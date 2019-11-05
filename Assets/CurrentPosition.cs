@@ -5,8 +5,13 @@ using UnityEngine;
 public class CurrentPosition : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+    void Update()
     {
-        //print("Menu location: " + transform.position);
+        float xPos = transform.position.x;
+        float yPos = transform.position.y;
+        float zPos = transform.position.z;
+
+        print("Current location: " + this.transform.position);
+        print(xPos + ", " + yPos + ", " + zPos);
     }
 }

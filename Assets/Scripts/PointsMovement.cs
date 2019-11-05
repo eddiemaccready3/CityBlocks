@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,8 +9,11 @@ public class PointsMovement : MonoBehaviour {
 	[SerializeField] private float slowSpeed;
     [SerializeField] private float fastSpeed;
     [SerializeField] private float yTextPosition = 9.83f;
+    private GameObject objectToFlyTo;
 
     private Counter counterScript;
+
+    private int fontSize;
 
     private Renderer rend;
     
@@ -31,11 +35,15 @@ public class PointsMovement : MonoBehaviour {
         counterScript = FindObjectOfType<Counter>();
         rend = GetComponent<Renderer>();
         rend.enabled = true;
+
+        fontSize = 75;
+        objectToFlyTo = GameObject.Find("ShuffleButton");
     }
 	
     private void FixedUpdate()
     {
         //print("Time elapsed " + timeElapsed);
+        yTextPosition = objectToFlyTo.transform.position.y;
         if(timeElapsed < 1.5f)
         {
             MoveSlow();
@@ -77,7 +85,7 @@ public class PointsMovement : MonoBehaviour {
             counterScript.startAddingScore = true;
             rend.enabled = false;
             counterScript.scoreBalanceText.fontStyle = FontStyle.Bold;
-            counterScript.scoreBalanceText.fontSize = 350;
+            counterScript.scoreBalanceText.fontSize = (int)Math.Round(fontSize * 1.167);
             Invoke("InvokeDestroy", 0.15f);
         }
     }
@@ -85,7 +93,7 @@ public class PointsMovement : MonoBehaviour {
     private void InvokeDestroy()
     {
         counterScript.scoreBalanceText.fontStyle = FontStyle.Normal;
-        counterScript.scoreBalanceText.fontSize = 300;
+        counterScript.scoreBalanceText.fontSize = fontSize;
         Destroy(gameObject);
     }
 }

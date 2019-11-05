@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,8 +7,11 @@ public class CoinsMovement : MonoBehaviour
     [SerializeField] private float slowSpeed;
     [SerializeField] private float fastSpeed;
     [SerializeField] private float yTextPosition = 9.83f;
+    private GameObject objectToFlyTo;
 
     private Counter counterScript;
+
+    private int fontSize;
 
     private Renderer rend;
     
@@ -32,10 +35,15 @@ public class CoinsMovement : MonoBehaviour
         counterScript = FindObjectOfType<Counter>();
         rend = GetComponent<Renderer>();
         rend.enabled = true;
+
+        fontSize = counterScript.scoreBalanceText.fontSize;
+
+        objectToFlyTo = GameObject.Find("ShuffleButton");
     }
 	
     private void FixedUpdate()
     {
+        yTextPosition = objectToFlyTo.transform.position.y;
         if(startCoinMovement == true)
         {
             if (timeElapsed < 0.25f)
@@ -80,7 +88,7 @@ public class CoinsMovement : MonoBehaviour
             counterScript.startAddingCoins = true;
             rend.enabled = false;
             counterScript.coinsBalanceText.fontStyle = FontStyle.Bold;
-            counterScript.coinsBalanceText.fontSize = 350;
+            counterScript.coinsBalanceText.fontSize = (int)Math.Round(fontSize * 1.167);
             Invoke("InvokeDestroy", 0.15f);
         }
     }
@@ -88,7 +96,7 @@ public class CoinsMovement : MonoBehaviour
     private void InvokeDestroy()
     {
         counterScript.coinsBalanceText.fontStyle = FontStyle.Normal;
-        counterScript.coinsBalanceText.fontSize = 300;
+        counterScript.coinsBalanceText.fontSize = fontSize;
         Destroy(gameObject);
     }
 }

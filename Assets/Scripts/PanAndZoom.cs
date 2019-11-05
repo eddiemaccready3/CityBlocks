@@ -13,6 +13,11 @@ public class PanAndZoom : MonoBehaviour
     private Vector2 mousePos;
     private Vector2 startMousePos;
 
+    private int panFingerId;
+    private Touch touch;
+    private float zoomPanFactor;
+    private float orthoSize;
+
     private float mapXOffset;
     private float mapYOffset;
     private float mapMoveX = 8000f;
@@ -65,32 +70,85 @@ public class PanAndZoom : MonoBehaviour
                 map.transform.position = new Vector2(mousePos.x + mapXOffset, mapMoveYBottom);
             }
 
-            if (Input.GetMouseButtonDown(0))
-            {
-                mapLocation = map.transform.position;
-                startMousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-            }
 
-            if (Input.GetMouseButton(0))
-            {
-                mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-                mousePosY = mousePos.y;
-                mapXOffset = mapLocation.x - startMousePos.x;
-                mapYOffset = mapLocation.y - startMousePos.y;
+            //if (Input.GetMouseButtonDown(0))
+            //{
+            //    mapLocation = map.transform.position;
+            //    startMousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+            //}
 
-                if (mousePosY + mapYOffset > mapMoveYTop && mousePosY + mapYOffset < mapMoveYBottom && mousePos.x + mapXOffset <= mapMoveXJumpLeft && mousePos.x + mapXOffset >= mapMoveXJumpRight)
+            //if (Input.GetMouseButton(0))
+            //{
+            //    mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+            //    mousePosY = mousePos.y;
+            //    mapXOffset = mapLocation.x - startMousePos.x;
+            //    mapYOffset = mapLocation.y - startMousePos.y;
+
+            //    if (mousePosY + mapYOffset > mapMoveYTop && mousePosY + mapYOffset < mapMoveYBottom && mousePos.x + mapXOffset <= mapMoveXJumpLeft && mousePos.x + mapXOffset >= mapMoveXJumpRight)
+            //    {
+            //        map.transform.position = new Vector2(mousePos.x + mapXOffset, mousePosY + mapYOffset);
+            //    }
+
+            //    if (mousePos.x + mapXOffset >= mapMoveXJumpLeft)
+            //    {
+            //        map.transform.position = new Vector2(mousePos.x + mapXOffset - mapMoveX, map.transform.position.y);
+            //    }
+
+            //    if (mousePos.x + mapXOffset <= mapMoveXJumpRight)
+            //    {
+            //        map.transform.position = new Vector2(mousePos.x + mapXOffset + mapMoveX, map.transform.position.y);
+            //    }
+            //}
+
+
+
+            
+        //if (touch.phase == TouchPhase.Began) {
+        //    lastPanPosition = touch.position;
+        //    panFingerId = touch.fingerId;
+        //} else if (touch.fingerId == panFingerId && touch.phase == TouchPhase.Moved) {
+        //    PanCamera(touch.position);
+
+            if (Input.touchCount > 0)
+            {
+                touch = Input.GetTouch(0);
+
+
+                if (touch.phase == TouchPhase.Began)
                 {
-                    map.transform.position = new Vector2(mousePos.x + mapXOffset, mousePosY + mapYOffset);
+                    mapLocation = map.transform.position;
+                    startMousePos = touch.position;
+                    panFingerId = touch.fingerId;
                 }
 
-                if (mousePos.x + mapXOffset >= mapMoveXJumpLeft)
+                else if (touch.fingerId == panFingerId && touch.phase == TouchPhase.Moved)
                 {
-                    map.transform.position = new Vector2(mousePos.x + mapXOffset - mapMoveX, map.transform.position.y);
-                }
+                    zoomPanFactor = cam.orthographicSize / maxFov;
+                
+                    mousePos = touch.position;
+                    mousePosY = touch.position.y;
+                    mapXOffset = (mapLocation.x - startMousePos.x);// * zoomPanFactor;
+                    mapYOffset = (mapLocation.y - startMousePos.y);// * zoomPanFactor;
 
-                if (mousePos.x + mapXOffset <= mapMoveXJumpRight)
-                {
-                    map.transform.position = new Vector2(mousePos.x + mapXOffset + mapMoveX, map.transform.position.y);
+                    print("mapLocation: " + mapLocation);
+                    print("mousePos: " + mousePos);
+                    print("mapXOffset: " + mapXOffset);
+                    print("mapYOffset: " + mapYOffset);
+
+                    if (mousePosY + mapYOffset > mapMoveYTop && mousePosY + mapYOffset < mapMoveYBottom && mousePos.x + mapXOffset <= mapMoveXJumpLeft && mousePos.x + mapXOffset >= mapMoveXJumpRight)
+                    {
+                        map.transform.position = new Vector2(mousePos.x + mapXOffset, mousePosY + mapYOffset);
+                    }
+
+                    if (mousePos.x + mapXOffset >= mapMoveXJumpLeft)
+                    {
+                        map.transform.position = new Vector2(mousePos.x + mapXOffset - mapMoveX, map.transform.position.y);
+                    }
+
+                    if (mousePos.x + mapXOffset <= mapMoveXJumpRight)
+                    {
+                        map.transform.position = new Vector2(mousePos.x + mapXOffset + mapMoveX, map.transform.position.y);
+                    }
                 }
             }
 
@@ -123,7 +181,7 @@ public class PanAndZoom : MonoBehaviour
 
             //else
             //{
-            float orthoSize = cam.orthographicSize;
+            orthoSize = cam.orthographicSize;
             float mapMenuScale;
 
             orthoSize += Input.GetAxis("Mouse ScrollWheel") * scrollZoomSpeed;

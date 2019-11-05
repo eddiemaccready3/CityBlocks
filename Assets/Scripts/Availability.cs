@@ -18,6 +18,7 @@ public class Availability : MonoBehaviour
 
     [SerializeField] private GameObject thanksForPlaying;
     [SerializeField] private GameObject plane;
+    private GameObject dotsParentTran;
 
     [SerializeField] private Camera cam;
 
@@ -35,6 +36,8 @@ public class Availability : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        dotsParentTran = GameObject.Find("PlaneTrail");
 
         if (spriteRenderer.sprite == null)
         {
@@ -79,7 +82,7 @@ public class Availability : MonoBehaviour
                     float angleInDeg = angleInRad * (180 / Mathf.PI);
 
                     plane.transform.localScale = new Vector3(0.5F, 0.5f, 0f);
-                    Instantiate(plane, previousMarkerPos, Quaternion.Euler(0f, 0f, -angleInDeg + 180));
+                    Instantiate(plane, previousMarkerPos, Quaternion.Euler(0f, 0f, -angleInDeg + 180), dotsParentTran.transform);
                     
                     //print("Fly from " + previousCityName + " to " + thisCityName);
                     //print("Flight rad angle: " + angleInRad);

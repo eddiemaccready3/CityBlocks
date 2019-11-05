@@ -7,7 +7,7 @@ public class SpinShuffleIcon : MonoBehaviour
     [SerializeField] private float spinSpeed = 0.92f;
     [SerializeField] private float startRotationAngle = 3600f;
 
-    [SerializeField] private Vector3 hitShapePos;
+    [SerializeField] LayerMask layerMask;
 
     private float rotationAngle;
 
@@ -24,9 +24,9 @@ public class SpinShuffleIcon : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-            RaycastHit2D hitShape = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+            RaycastHit2D hitShape = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, layerMask);
 
-            if (hitShape.collider != null && rotationAngle == startRotationAngle && hitShape.transform.position == hitShapePos)
+            if (hitShape.collider != null && rotationAngle == startRotationAngle && transform.position == hitShape.transform.position)
             {
                 rotate = true;
             }

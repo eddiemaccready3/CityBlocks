@@ -6,6 +6,7 @@ using Assets;
 public class PlanePathDots : MonoBehaviour
 {
     [SerializeField] private GameObject trailDot;
+    [SerializeField] private float movementFactor = 1f;
     private GameObject dotsParentTran;
 
     private float distanceBetweenDots;
@@ -29,7 +30,7 @@ public class PlanePathDots : MonoBehaviour
     {
         currentPos = new Vector3(transform.position.x, transform.position.y, 0f);
 
-        if(TrigFunctions.PythagoreanTheorem(TrigFunctions.FindDistance(currentPos.x, startingPos.x), TrigFunctions.FindDistance(currentPos.y, startingPos.y)) > 25f)
+        if(TrigFunctions.PythagoreanTheorem(TrigFunctions.FindDistance(currentPos.x, startingPos.x), TrigFunctions.FindDistance(currentPos.y, startingPos.y)) > (25f * movementFactor))
         {
             Instantiate(trailDot, currentPos, Quaternion.identity, dotsParentTran.transform);
             startingPos = new Vector3(transform.position.x, transform.position.y, 0f);

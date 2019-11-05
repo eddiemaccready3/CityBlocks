@@ -58,7 +58,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 757933128500241945}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -67,8 +67,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 7aa8111437b1d914d947015f592ed5f7, type: 3}
     m_FontSize: 300
@@ -76,7 +74,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 300
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -126,10 +124,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 30
   moveDelay: 11
-  xEndPosition: -0.75
-  yEndPosition: 10.3
+  xEndPosition: -0.58
+  xEndPosLeftJustify: 1.1
   scaleFactor: 0
   minScale: 0
+  thisText: {fileID: 798278495401502791}
+  thisCanvas: {fileID: 0}
 --- !u!114 &2684456197445722799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 757933128500241945}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}

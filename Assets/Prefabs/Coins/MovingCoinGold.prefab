@@ -57,6 +57,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -94,5 +95,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slowSpeed: 300
   fastSpeed: 25
+  objectToFlyTo: {fileID: 1290179658982018, guid: d1af1cbf26a2eb54aab670294e335464,
+    type: 3}
   yTextPosition: 9.83
   startCoinMovement: 1

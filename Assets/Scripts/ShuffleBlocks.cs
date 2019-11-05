@@ -8,7 +8,7 @@ public class ShuffleBlocks : MonoBehaviour
 {
     [SerializeField] public int maxBlocksOnScreen;
 
-    [SerializeField] private Vector3 hitShapePos;
+    [SerializeField] LayerMask layerMask;
 
     private float shuffleLoopDelayIncrement = 0.08f;
     public float currentShuffleLoopDelay = 0f;
@@ -56,11 +56,11 @@ public class ShuffleBlocks : MonoBehaviour
                     blocksGameObjectsList.Add(allGameObjectsArray[i]);
                 }
             }
-            RaycastHit2D hitShape = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-            
-            if(hitShape.collider != null && hitShape.transform.gameObject.layer == 5 && blocksGameObjectsList.Count == maxBlocksOnScreen && hitShape.transform.position == hitShapePos)// && spinShuffleIcon.rotate == true)
+            RaycastHit2D hitShape = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, layerMask);
+
+            //print("Hitshape name: " + hitShape.transform.gameObject.name);
+            if(hitShape.collider != null && blocksGameObjectsList.Count == maxBlocksOnScreen && transform.position == hitShape.transform.position)
             {
-                //rotate = true;
                 InvokeChangeBlockColors();
 
                 timer.timeLeft = timer.timeLeft - 2f;
