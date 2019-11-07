@@ -87,8 +87,11 @@ public class Activate : MonoBehaviour
 
         else if(activeMarker == false)
         {
-            spinObjectScript.rotateMarker = false;
-            spinObjectScript.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            if(PlayerPrefs.GetInt(gameSaverScript.keyStartingMarkerSpin) != 0)
+            {
+                spinObjectScript.rotateMarker = false;
+                spinObjectScript.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            }
 
             menuInstatiated = false;
         }

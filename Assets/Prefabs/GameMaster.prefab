@@ -92,6 +92,8 @@ MonoBehaviour:
   keyPointsStarEarnedPerLevel: keyPointsStarEarnedPerLevel
   keyCoinsStarEarnedPerLevel: keyCoinsStarEarnedPerLevel
   keyMatchesStarEarnedPerLevel: keyMatchesStarEarnedPerLevel
+  keyNewShapeAnnounced: keyNewShapeAnnounced
+  keyFirstMapZoom: keyFirstMapZoom
   musicVolumeSet: keyBoolMusicVolumeSet
   sfxVolumeSet: keyBoolSfxVolumeSet
   musicVolumeLevel: musicVolumeLevel
@@ -99,6 +101,7 @@ MonoBehaviour:
   thanksForPlayingCompleted: keyThanksForPlayingCompleted
   keyPlaneFlightCompletedPerLevel: keyPlaneFlightCompletedPerLevel
   keyLevelIntroCompleted: keyLevelIntroCompleted
+  keyClearAllData: keyClearAllData
   howToPlay: 0
   howToShuffle: 0
   howToEarnStars: 0

@@ -10,7 +10,7 @@ public class SpinObject : MonoBehaviour
 
     [SerializeField] public float markerRotationAngle;
 
-    public bool rotateMarker = false;
+    public bool rotateMarker = true;
 
     // Start is called before the first frame update
     void Start()

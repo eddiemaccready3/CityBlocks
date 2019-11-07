@@ -1807,6 +1807,25 @@ MonoBehaviour:
   cam: {fileID: 1519757042}
   zoomStartDelay: 0.5
   autoZoomComplete: 0
+--- !u!114 &529688693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529688688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcfd30d5e0e71a54c977cf08058583ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraStartZoom: 730
+  cameraEndZoom: 1400
+  cameraZoomSpeed: 100
+  cam: {fileID: 1519757042}
+  zoomStartDelay: 0
+  trailOfDots: {fileID: 6175341601984601348}
+  autoZoomComplete: 0
 --- !u!1001 &548223984
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2799,6 +2818,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5175900396787625051}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &769656228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769656227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 704f311399affd8429464e9fd7b2d85b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &769656229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3166,7 +3197,7 @@ PrefabInstance:
         type: 3}
       propertyPath: plane
       value: 
-      objectReference: {fileID: 1006164466811292, guid: 03ed09ba29dc6a54f80c564cd2c2d0f6,
+      objectReference: {fileID: 1006164466811292, guid: 060750be7c902ef4c867d9ca46cf007e,
         type: 3}
     - target: {fileID: 6873206066239975412, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
@@ -3253,10 +3284,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c172fe3c2816c5b4fa3e7414ccabe004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  map: {fileID: 929267694}
   cam: {fileID: 1519757042}
   cameraStartPos: {x: 84, y: 75, z: -10}
-  cameraEndPos: {x: -1900, y: 990, z: 0}
+  cameraEndPos: {x: 2064, y: -586, z: -10}
   cameraStartZoom: 730
   cameraEndZoom: 1400
 --- !u!1001 &917076435
@@ -5488,12 +5518,12 @@ PrefabInstance:
     - target: {fileID: 6873206066239975412, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
       propertyPath: activatePointsReq
-      value: 6000
+      value: 5600
       objectReference: {fileID: 0}
     - target: {fileID: 6873206066239975412, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
       propertyPath: activateCoinsReq
-      value: 37
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 6873206066239975412, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}

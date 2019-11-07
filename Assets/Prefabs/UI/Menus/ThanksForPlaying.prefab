@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77a22675abd81af42ad25550be0c57f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 10
+  delay: 7
 --- !u!1001 &3249519198724965913
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -221,7 +221,7 @@ PrefabInstance:
     - target: {fileID: 3320036202151805419, guid: 0fb6e71caad1e384da7df54b2132f0f6,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 9
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 3320036202151805419, guid: 0fb6e71caad1e384da7df54b2132f0f6,
         type: 3}
@@ -242,7 +242,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: dd8fc7cbbebe4cc439a1353636e95601,
+      objectReference: {fileID: 21300000, guid: 42073245e8aab404f96d305d6e2d93a8,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fb6e71caad1e384da7df54b2132f0f6, type: 3}
@@ -372,17 +372,17 @@ PrefabInstance:
     - target: {fileID: 7816180800160272168, guid: e9b964f785099bf43b2c0c28dd532e11,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.2771379
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 7816180800160272168, guid: e9b964f785099bf43b2c0c28dd532e11,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2771379
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 7816180800160272168, guid: e9b964f785099bf43b2c0c28dd532e11,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 5.5423026
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7816180800160272169, guid: e9b964f785099bf43b2c0c28dd532e11,
         type: 3}
@@ -397,7 +397,8 @@ PrefabInstance:
     - target: {fileID: 7816180800160272169, guid: e9b964f785099bf43b2c0c28dd532e11,
         type: 3}
       propertyPath: m_Text
-      value: More levels coming soon!
+      value: Thank you for playing the first 6 free levels!  More levels in Asia,
+        coming soon!
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9b964f785099bf43b2c0c28dd532e11, type: 3}

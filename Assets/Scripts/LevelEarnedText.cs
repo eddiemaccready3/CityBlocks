@@ -33,7 +33,7 @@ public class LevelEarnedText : MonoBehaviour
     public bool startAddingScore;
     public bool startAddingCoins;
     public bool startAddingMatches;
-    private bool newShapeMenuInstantiated = false;
+    private bool newShapeMenuInstantiate = false;
 
     private GameObject pointsStar;
     private GameObject coinsStar;
@@ -120,10 +120,10 @@ public class LevelEarnedText : MonoBehaviour
             GetComponent<ObjectColliderActiveStatus>().ActivateColliders();
         }
 
-        if(newShapeMenuInstantiated == true)
+        if(newShapeMenuInstantiate == true)
         {
             InstantiateNewShapeMenu();
-            newShapeMenuInstantiated = false;
+            newShapeMenuInstantiate = false;
         }
     }
 
@@ -172,7 +172,7 @@ public class LevelEarnedText : MonoBehaviour
             matchesDisplayed = GlobalControl.Instance.matchesBalanceSave;
             matchesEarned.text = matchesDisplayed.ToString();
             startAddingMatches = false;
-            newShapeMenuInstantiated = true;
+            newShapeMenuInstantiate = true;
         }
     }
 
