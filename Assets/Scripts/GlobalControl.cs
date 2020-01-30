@@ -16,6 +16,8 @@ public class GlobalControl : MonoBehaviour {
     public int coinsBalanceSave;
     public int matchesBalanceSave;
 
+    private string thisCityName = "Bangkok";
+
     private void Start()
     {
         scoreboardScript = FindObjectOfType<ScoreBoard>();
@@ -44,25 +46,33 @@ public class GlobalControl : MonoBehaviour {
             Application.Quit();
         }
 
-        //if (Input.GetKey("backspace"))
-        //{
-        //    PlayerPrefs.DeleteAll();
-        //}
+        if (Input.GetKey("backspace"))
+        {
+            PlayerPrefs.DeleteAll();
+        }
+
+        if (Input.GetKey("r"))
+        {
+            PlayerPrefs.SetInt(thisCityName + gameSaverScript.keyPointsStarEarnedPerLevel, 0);
+            PlayerPrefs.SetInt(thisCityName + gameSaverScript.keyCoinsStarEarnedPerLevel, 0);
+            PlayerPrefs.SetInt(thisCityName + gameSaverScript.keyMatchesStarEarnedPerLevel, 0);
+        }
 
         //if (Input.touchCount == 4)
         //{
 
-        //    //PlayerPrefs.SetInt("Venice" + gameSaverScript.keyPointsStarEarnedPerLevel, 0);
-        //    //PlayerPrefs.SetInt("Venice" + gameSaverScript.keyMatchesStarEarnedPerLevel, 0);
-        //    PlayerPrefs.SetInt("Venice" + gameSaverScript.keyPlaneFlightCompletedPerLevel, 0);
-        //    //PlayerPrefs.SetInt("Venice" + gameSaverScript.keyCoinsStarEarnedPerLevel, 0);
+            //    //PlayerPrefs.SetInt("Venice" + gameSaverScript.keyPointsStarEarnedPerLevel, 0);
+            //    //PlayerPrefs.SetInt("Venice" + gameSaverScript.keyMatchesStarEarnedPerLevel, 0);
+            //    PlayerPrefs.SetInt("Venice" + gameSaverScript.keyPlaneFlightCompletedPerLevel, 0);
+            //    //PlayerPrefs.SetInt("Venice" + gameSaverScript.keyCoinsStarEarnedPerLevel, 0);
 
-        //    //PlayerPrefs.SetInt("Bangkok" + gameSaverScript.keyPointsStarEarnedPerLevel, 0);
-        //    //PlayerPrefs.SetInt("Bangkok" + gameSaverScript.keyCoinsStarEarnedPerLevel, 0);
-        //    //PlayerPrefs.SetInt("Bangkok" + gameSaverScript.keyMatchesStarEarnedPerLevel, 0);
-        //    PlayerPrefs.SetInt("Bangkok" + gameSaverScript.keyPlaneFlightCompletedPerLevel, 0);
+            //    //PlayerPrefs.SetInt("Bangkok" + gameSaverScript.keyPointsStarEarnedPerLevel, 0);
+            //    //PlayerPrefs.SetInt("Bangkok" + gameSaverScript.keyCoinsStarEarnedPerLevel, 0);
+            //    //PlayerPrefs.SetInt("Bangkok" + gameSaverScript.keyMatchesStarEarnedPerLevel, 0);
+            //    PlayerPrefs.SetInt("Bangkok" + gameSaverScript.keyPlaneFlightCompletedPerLevel, 0);
 
-        //    PlayerPrefs.SetInt(gameSaverScript.thanksForPlayingCompleted, 0);
-        //}
-    }
+            //    PlayerPrefs.SetInt(gameSaverScript.thanksForPlayingCompleted, 0);
+            //    PlayerPrefs.SetInt(gameSaverScript.keyEndEuropeMapZoom, 0);
+            //}
+        }
 }

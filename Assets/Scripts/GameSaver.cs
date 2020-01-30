@@ -46,8 +46,7 @@ public class GameSaver : MonoBehaviour
 
     public string keyNewShapeAnnounced = "keyNewShapeAnnounced";
 
-    public string keyFirstMapZoom = "keyFirstMapZoom";
-    public string keyEndEuropeMapZoom = "keyEndEuropeMapZoom";
+    
 
     public string musicVolumeSet = "keyBoolMusicVolumeSet";
     public string sfxVolumeSet = "keyBoolSfxVolumeSet";
@@ -64,6 +63,13 @@ public class GameSaver : MonoBehaviour
     public string keyClearAllData = "keyClearAllData";
 
     public string keyStartingMarkerSpin = "keyStartingMarkerSpin";
+
+    //Camera Settings
+    public string keyFirstMapZoom = "keyFirstMapZoom";
+    public string keyEndEuropeMapZoom = "keyEndEuropeMapZoom";
+    public string cameraStartX = "cameraStartX";
+    public string cameraStartY = "cameraStartY";
+    public string cameraStartZoom = "cameraStartZoom";
 
     
 

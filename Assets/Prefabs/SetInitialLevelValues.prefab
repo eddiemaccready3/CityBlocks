@@ -43,3 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6de89db91c7442f43b0d1c401e3b8af0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newShapeMenu: {fileID: 3946119156085863536, guid: 289b8da5b2b6f8645961b06feb11d572,
+    type: 3}

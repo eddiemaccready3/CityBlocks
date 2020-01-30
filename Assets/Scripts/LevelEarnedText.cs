@@ -14,8 +14,7 @@ public class LevelEarnedText : MonoBehaviour
     [SerializeField] private Text pointsReq;
     [SerializeField] private Text coinsReq;
     [SerializeField] private Text matchesReq;
-
-    [SerializeField] private GameObject newShapeMenu;
+    
     [SerializeField] private Vector2 menuPos;
 
     private Scene scene;
@@ -34,9 +33,13 @@ public class LevelEarnedText : MonoBehaviour
     public bool startAddingCoins;
     public bool startAddingMatches;
     private bool newShapeMenuInstantiate = false;
+    private bool matchesAdded = false;
+    private bool levelInfoSaved = false;
 
     private GameObject pointsStar;
     private GameObject coinsStar;
+
+    private GameObject newShapeMenu;
 
     private LevelPassReqs levelPassReqsScript;
     private SetStarStatus setStarStatusScript;
@@ -44,6 +47,7 @@ public class LevelEarnedText : MonoBehaviour
     private UserInput userInputScript;
     private GameSaver gameSaverScript;
     private PauseGameStatus pauseGameScript;
+    private SetInitialLevelValues setInitialValuesScript;
 
     void Start()
     {
@@ -61,6 +65,7 @@ public class LevelEarnedText : MonoBehaviour
         counterScript = FindObjectOfType<Counter>();
         userInputScript = FindObjectOfType<UserInput>();
         gameSaverScript = FindObjectOfType<GameSaver>();
+        setInitialValuesScript = FindObjectOfType<SetInitialLevelValues>();
         
         startAddingScore = true;
         startAddingCoins = true;
@@ -75,8 +80,8 @@ public class LevelEarnedText : MonoBehaviour
         
         sceneName = scene.name;
 
-        PlayerPrefs.SetString("keyCurrentLevel", gameSaverScript.sceneNames[thisSceneIndex]);
-        PlayerPrefs.SetString("keyNextLevel", gameSaverScript.sceneNames[nextSceneIndex]);
+        PlayerPrefs.SetString("keyCurrentLevel", gameSaverScript.sceneNames[thisSceneIndex-1]);
+        PlayerPrefs.SetString("keyNextLevel", gameSaverScript.sceneNames[nextSceneIndex-1]);
 
         cityName.text = sceneName.ToString();
         
@@ -87,6 +92,8 @@ public class LevelEarnedText : MonoBehaviour
 
         counterScript.scoreCurrentAmount = counterScript.scoreTotalAmount;
         counterScript.scoreBalanceText.text = counterScript.scoreCurrentAmount.ToString();
+
+        newShapeMenu = setInitialValuesScript.newShapeMenu;
 
 
         SaveLevelInfo();
@@ -109,14 +116,28 @@ public class LevelEarnedText : MonoBehaviour
 
         if(int.Parse(coinsEarned.text) == GlobalControl.Instance.coinsBalanceSave)
         {
-            if(startAddingMatches == true)
+            if(startAddingMatches == true && matchesAdded == true)
             {
                 MatchesCounter();
             }
         }
 
+        if((Time.time - timeOfInstantiation) > 1f)
+        {
+            if(levelInfoSaved == false)
+            {
+                SaveLevelInfo();
+                levelInfoSaved = true;
+            }
+            
+            matchesAdded = true;
+        }
+
         if((Time.time - timeOfInstantiation) > 2f)
         {
+            HighScoreSave();
+            HighCoinsSave();
+            HighMatchesSave();
             GetComponent<ObjectColliderActiveStatus>().ActivateColliders();
         }
 
@@ -178,7 +199,8 @@ public class LevelEarnedText : MonoBehaviour
 
     private void InstantiateNewShapeMenu()
     {
-        if ((sceneName != "Venice") && (PlayerPrefs.GetInt(sceneName + gameSaverScript.keyNewShapeAnnounced) == 0) && (PlayerPrefs.GetInt(sceneName + gameSaverScript.keyPointsStarEarnedPerLevel) > 0 || PlayerPrefs.GetInt(sceneName + gameSaverScript.keyCoinsStarEarnedPerLevel) > 0 || PlayerPrefs.GetInt(sceneName + gameSaverScript.keyMatchesStarEarnedPerLevel) > 0))
+        //if ((sceneName != "Kathmandu") && (sceneName != "Venice") && (PlayerPrefs.GetInt(sceneName + gameSaverScript.keyNewShapeAnnounced) == 0) && (PlayerPrefs.GetInt(sceneName + gameSaverScript.keyPointsStarEarnedPerLevel) > 0 || PlayerPrefs.GetInt(sceneName + gameSaverScript.keyCoinsStarEarnedPerLevel) > 0 || PlayerPrefs.GetInt(sceneName + gameSaverScript.keyMatchesStarEarnedPerLevel) > 0))
+        if ((newShapeMenu != null) && (PlayerPrefs.GetInt(sceneName + gameSaverScript.keyNewShapeAnnounced) == 0) && (PlayerPrefs.GetInt(sceneName + gameSaverScript.keyPointsStarEarnedPerLevel) > 0 || PlayerPrefs.GetInt(sceneName + gameSaverScript.keyCoinsStarEarnedPerLevel) > 0 || PlayerPrefs.GetInt(sceneName + gameSaverScript.keyMatchesStarEarnedPerLevel) > 0))
         {
             Instantiate(newShapeMenu, menuPos, Quaternion.identity);
             PlayerPrefs.SetInt(sceneName + gameSaverScript.keyNewShapeAnnounced, 1);
@@ -200,9 +222,9 @@ public class LevelEarnedText : MonoBehaviour
         //print("Saved Matches made: " + PlayerPrefs.GetInt(sceneName + gameSaverScript.keyHighMatchesPerLevel));
         //print("Saved Matches made London: " + PlayerPrefs.GetInt("London" + gameSaverScript.keyHighMatchesPerLevel));
         //print("Scene name: " + sceneName);
-        HighScoreSave();
-        HighCoinsSave();
-        HighMatchesSave();
+        //HighScoreSave();
+        //HighCoinsSave();
+        //HighMatchesSave();
         if(setStarStatusScript != null)
         {
             StarCountSave();

@@ -13,6 +13,7 @@ public class ExitStopBlock : MonoBehaviour {
 
     private Collider2D [] hitColliders;
     [SerializeField] private int qtyCollidersHit;
+    [SerializeField] private LayerMask layer;
     
     
     //GameObject tempGameObject;
@@ -44,7 +45,7 @@ public class ExitStopBlock : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        hitColliders = Physics2D.OverlapBoxAll(overlapBoxPosition, overlapBoxSize, 0);
+        hitColliders = Physics2D.OverlapBoxAll(overlapBoxPosition, overlapBoxSize, 0, layer);
         //print(this.gameObject.name + " hitCollidersQty " + hitColliders.Length);
         //qtyCollidersHit = hitColliders.Length;
         //print("hitColliders Length: " + hitColliders.Length);

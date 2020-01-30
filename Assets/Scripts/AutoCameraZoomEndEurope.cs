@@ -7,10 +7,10 @@ public class AutoCameraZoomEndEurope : MonoBehaviour
     [SerializeField] private float cameraStartZoom;
     [SerializeField] private float cameraEndZoom;
     [SerializeField] private float cameraZoomSpeed;
-    [SerializeField] private Camera cam;
+    private Camera cam;
     [SerializeField] private float zoomStartDelay;
 
-    [SerializeField] private GameObject trailOfDots;
+    //[SerializeField] private GameObject trailOfDots;
 
     private float orthoSize;
 
@@ -23,12 +23,13 @@ public class AutoCameraZoomEndEurope : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        cam = Camera.main;
         gameSaverScript = FindObjectOfType<GameSaver>();
         pauseGameStatusScript = FindObjectOfType<PauseGameStatus>();
         
         orthoSize = cameraStartZoom;
 
-        if (PlayerPrefs.GetInt(gameSaverScript.keyFirstMapZoom) == 2)
+        if (PlayerPrefs.GetInt(gameSaverScript.keyFirstMapZoom) == 0)
         {
             cam.orthographicSize = orthoSize;
         }
@@ -39,9 +40,9 @@ public class AutoCameraZoomEndEurope : MonoBehaviour
     {
         if(Time.timeSinceLevelLoad > zoomStartDelay)
         {
-            if(PlayerPrefs.GetInt(gameSaverScript.keyEndEuropeMapZoom) == 2 && autoZoomComplete == false)
+            if(PlayerPrefs.GetInt(gameSaverScript.keyEndEuropeMapZoom) == 0 && autoZoomComplete == false)
             {
-                Destroy(trailOfDots);
+                //Destroy(trailOfDots);
                 if(cam.orthographicSize < cameraEndZoom)
                 {
                     orthoSize += (cameraZoomSpeed * Time.deltaTime);
@@ -54,7 +55,7 @@ public class AutoCameraZoomEndEurope : MonoBehaviour
                     cam.orthographicSize = cameraEndZoom;
                     pauseGameStatusScript.pauseAuto = false;
                     autoZoomComplete = true;
-                    PlayerPrefs.SetInt(gameSaverScript.keyEndEuropeMapZoom, 3);
+                    PlayerPrefs.SetInt(gameSaverScript.keyEndEuropeMapZoom, 1);
                 }
             }
         }

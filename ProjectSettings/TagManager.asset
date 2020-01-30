@@ -62,6 +62,8 @@ TagManager:
   - MovingShape
   - SmallShape
   - Home
+  - MapArrow
+  - MoveCamera
   layers:
   - Default
   - TransparentFX
@@ -93,7 +95,7 @@ TagManager:
   - ExitButton
   - Row1
   - Row2
-  - 
+  - Map
   - 
   m_SortingLayers:
   - name: Background

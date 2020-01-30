@@ -442,16 +442,6 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: da9feae61bcd98546b14967038beac80, type: 3}
-    - target: {fileID: 20535502365062578, guid: cd488e18013127946ac69d407d766d71,
-        type: 3}
-      propertyPath: orthographic size
-      value: 6.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 20535502365062578, guid: cd488e18013127946ac69d407d766d71,
-        type: 3}
-      propertyPath: m_AllowDynamicResolution
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3344198330244739830, guid: cd488e18013127946ac69d407d766d71,
         type: 3}
       propertyPath: adaptPosition
@@ -462,6 +452,16 @@ PrefabInstance:
       propertyPath: backgroundSprite
       value: 
       objectReference: {fileID: 1323276617}
+    - target: {fileID: 20535502365062578, guid: cd488e18013127946ac69d407d766d71,
+        type: 3}
+      propertyPath: orthographic size
+      value: 6.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 20535502365062578, guid: cd488e18013127946ac69d407d766d71,
+        type: 3}
+      propertyPath: m_AllowDynamicResolution
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 82423030591935488, guid: cd488e18013127946ac69d407d766d71, type: 3}
     - {fileID: 92079279933843356, guid: cd488e18013127946ac69d407d766d71, type: 3}
@@ -2514,6 +2514,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3180964956565921897, guid: bdcd1bb24c6c20340929ca69d50c08d0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3180964956032593567, guid: bdcd1bb24c6c20340929ca69d50c08d0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3181612450031398272, guid: bdcd1bb24c6c20340929ca69d50c08d0,
         type: 3}
       propertyPath: m_IsActive
@@ -2525,16 +2535,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3181270949894909192, guid: bdcd1bb24c6c20340929ca69d50c08d0,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3180964956565921897, guid: bdcd1bb24c6c20340929ca69d50c08d0,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3180964956032593567, guid: bdcd1bb24c6c20340929ca69d50c08d0,
         type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -3706,6 +3706,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8820931318842370850, guid: 386199746b8254e4e93b44798fe91898,
+        type: 3}
+      propertyPath: camStartX
+      value: 84
+      objectReference: {fileID: 0}
+    - target: {fileID: 8820931318842370850, guid: 386199746b8254e4e93b44798fe91898,
+        type: 3}
+      propertyPath: camStartY
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8820931318842370850, guid: 386199746b8254e4e93b44798fe91898,
+        type: 3}
+      propertyPath: camStartZoom
+      value: 730
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 386199746b8254e4e93b44798fe91898, type: 3}

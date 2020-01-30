@@ -56,7 +56,7 @@ public class PlayLevelFromMap : MonoBehaviour
         //print("Marker name: " + cityName + "Marker");
 
         
-        activeMarker = GameObject.Find(cityName + "Marker");
+        activeMarker = GameObject.Find(cityName.Replace(" ", "") + "Marker");
         activeActivateScript = activeMarker.GetComponent<Activate>();
 
         audioSource = GetComponent<AudioSource>();

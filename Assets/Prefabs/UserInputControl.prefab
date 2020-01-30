@@ -47,12 +47,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reqBlocksOnScreen: 0
+  minXBlockPos: 0
+  maxXBlockPos: 6
+  minYBlockPos: 0
+  maxYBlockPos: 10
+  blocksWidthXHeight: 60
   shapesMatched: []
   destroyer: {fileID: 1308035583604918, guid: 3b37b56e5794ae64b93504c4b82a9b18, type: 3}
   explosionParticle: {fileID: 1402457311999024, guid: 5738f35f9d9de864f95b26b37ce5856d,
     type: 3}
   trigger: {fileID: 0}
+  Points850: {fileID: 1006164466811292, guid: 21a3d2979355a234ab7cc64cab175f7f, type: 3}
+  Points700: {fileID: 1006164466811292, guid: e9cab0c4db7409f478b77d0b66fc4a06, type: 3}
+  Points600: {fileID: 1006164466811292, guid: 21e2c86fb88157c4b87eb2212a016d0a, type: 3}
   Points500: {fileID: 1006164466811292, guid: 0da6e5d1a2ff5ce4cac5c018242a17b0, type: 3}
+  Points400: {fileID: 1006164466811292, guid: e3049434a1fcc804b8b2bf9356ba2c8d, type: 3}
   Points350: {fileID: 1006164466811292, guid: e3d0ac75248d2a24a89a8626547e26d2, type: 3}
   Points300: {fileID: 1006164466811292, guid: 0b89b291024f0d7468754b525399c681, type: 3}
   Points225: {fileID: 1006164466811292, guid: 5375869f48aec3947af71a6dcce21aa4, type: 3}
@@ -87,6 +96,22 @@ MonoBehaviour:
   floatingShapeShortI: {fileID: 1982996445689656, guid: 133d7b49c64b9bf49b0a23b8cdfef2d0,
     type: 3}
   floatingShapeMedI: {fileID: 1982996445689656, guid: 07e3e6db26a977c43bd657bbc806c0e3,
+    type: 3}
+  floatingShapeLongDash: {fileID: 1982996445689656, guid: 9ca52bec9eee1024dbcdf37238ee246e,
+    type: 3}
+  floatingShapeU: {fileID: 1982996445689656, guid: 345f3c60948dc374abf4b84e2c557697,
+    type: 3}
+  floatingShape4Points: {fileID: 1982996445689656, guid: 6102f9f2088a0a14fb2ff33bba66bd0e,
+    type: 3}
+  floatingShapeW: {fileID: 1982996445689656, guid: 586bbca0bddc79e40a764825e1d819e2,
+    type: 3}
+  floatingShape5Points: {fileID: 1982996445689656, guid: 0300b56f15bc1cd4b8bdfd20cd52320e,
+    type: 3}
+  floatingShapeRectangle: {fileID: 1982996445689656, guid: 3b32df7533220f049b16a1e2e98641eb,
+    type: 3}
+  floatingShapeHollowO: {fileID: 1982996445689656, guid: 2d6008edf07b00d43acb35bac8a5e313,
+    type: 3}
+  floatingShapeWideT: {fileID: 1982996445689656, guid: 8600c22ba2d1743488eaae9c99d4aebc,
     type: 3}
   blockDestroy: {fileID: 8300000, guid: 20955b08e3cd24d4ba1100e9c1efe77b, type: 3}
   layerMask:

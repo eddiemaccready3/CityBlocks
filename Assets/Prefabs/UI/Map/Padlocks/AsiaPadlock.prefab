@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 7765203706594681622}
   - component: {fileID: 2417700012637544506}
   - component: {fileID: 2473414103536997040}
-  m_Layer: 0
+  - component: {fileID: 4885882357090306512}
+  - component: {fileID: 5867589987207653919}
+  m_Layer: 13
   m_Name: AsiaPadlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7765203706594681621}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1571, y: -83, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -44,9 +46,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f63c8561631de3e4f922c4ba47d07d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  previousSceneName: Venice
+  previousCityName: 
+  thisCityName: 
+  nextCityName: 
+  lastMarkerAvailable: 
+  thisContinent: 
+  lastContinent: 
   available: {fileID: 21300000, guid: d97984f042691c841831c2be01b1c0b3, type: 3}
+  availableNoStar: {fileID: 0}
   unavailable: {fileID: 21300000, guid: 58c0270292bcfd143ae7220e41991a38, type: 3}
+  thanksForPlaying: {fileID: 0}
+  plane: {fileID: 0}
+  cam: {fileID: 0}
+  worldCanvas: {fileID: 0}
+  previousMarkerPos: {x: 40000, y: 40000}
+  thisMarkerPos: {x: 40000, y: 40000}
   levelAvailable: 0
 --- !u!212 &2473414103536997040
 SpriteRenderer:
@@ -73,6 +87,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -96,3 +111,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &4885882357090306512
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7765203706594681621}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 57.152523, y: 27.460001}
+    newSize: {x: 57.152523, y: 27.460001}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 25, y: 30}
+  m_EdgeRadius: 0
+--- !u!114 &5867589987207653919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7765203706594681621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6d9bf5ca9d6e2d48afedf5f12d192ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

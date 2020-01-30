@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class SetInitialLevelValues : MonoBehaviour
 {
+    [SerializeField] public GameObject newShapeMenu;
+
+    [SerializeField] private float camStartX;
+    [SerializeField] private float camStartY;
+    [SerializeField] private float camStartZoom;
+    
     Scene thisScene;
     private string sceneName;
 
@@ -18,6 +24,10 @@ public class SetInitialLevelValues : MonoBehaviour
 
         gameSaverScript = FindObjectOfType<GameSaver>();
         Invoke("SetFirstRunValues", 15f);
+
+        PlayerPrefs.SetFloat(gameSaverScript.cameraStartX, camStartX);
+        PlayerPrefs.SetFloat(gameSaverScript.cameraStartY, camStartY);
+        PlayerPrefs.SetFloat(gameSaverScript.cameraStartZoom, camStartZoom);
     }
 
     private void SetFirstRunValues()

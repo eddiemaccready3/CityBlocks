@@ -20,8 +20,6 @@ public class MenuRising : MonoBehaviour
 
     [SerializeField] private Vector3 hitShapePos;
 
-    
-
     [SerializeField] private string menuName;
     private GameObject menuObject;
 

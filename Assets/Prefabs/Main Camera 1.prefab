@@ -124,7 +124,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maintainWidth: 1
   cam: {fileID: 20535502365062578}
-  adaptPosition: 0
+  adaptPosition: -3.38
+  backgroundSprite: {fileID: 0}
 --- !u!1 &1598851436689574
 GameObject:
   m_ObjectHideFlags: 0

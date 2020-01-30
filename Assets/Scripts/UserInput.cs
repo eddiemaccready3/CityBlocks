@@ -35,31 +35,67 @@ public class UserInput : MonoBehaviour {
     private const string SHAPEL3 = "1000001000011";
     private const string SHAPEL4 = "100000111";
 
-    private const string SHAPEX  = "1000011100001";
+    private const string SHAPEX = "1000011100001";
 
-    private const string SHAPEV1  = "1100001";
-    private const string SHAPEV2  = "10000011";
-    private const string SHAPEV3  = "1000011";
-    private const string SHAPEV4  = "11000001";
+    private const string SHAPEV1 = "1100001";
+    private const string SHAPEV2 = "10000011";
+    private const string SHAPEV3 = "1000011";
+    private const string SHAPEV4 = "11000001";
 
-    private const string SHAPEARROW1  = "10100001";
-    private const string SHAPEARROW2  = "1000000100001";
-    private const string SHAPEARROW3  = "10000101";
-    private const string SHAPEARROW4  = "1000010000001";
+    private const string SHAPEARROW1 = "10100001";
+    private const string SHAPEARROW2 = "1000000100001";
+    private const string SHAPEARROW3 = "10000101";
+    private const string SHAPEARROW4 = "1000010000001";
 
-    private const string SHAPEDASH1  = "100001";
-    private const string SHAPEDASH2  = "10000001";
+    private const string SHAPEDASH1 = "100001";
+    private const string SHAPEDASH2 = "10000001";
 
-    private const string SHAPESHORTI1  = "1000001";
-    private const string SHAPESHORTI2  = "11";
+    private const string SHAPESHORTI1 = "1000001";
+    private const string SHAPESHORTI2 = "11";
 
-    private const string SHAPEMEDI1  = "1000001000001";
-    private const string SHAPEMEDI2  = "111";
+    private const string SHAPEMEDI1 = "1000001000001";
+    private const string SHAPEMEDI2 = "111";
+
+
+    private const string SHAPELONGDASH1 = "100000010000001";
+    private const string SHAPELONGDASH2 = "10000100001";
+
+    private const string SHAPEU1 = "111000101";
+    private const string SHAPEU2 = "11000010000011";
+    private const string SHAPEU3 = "101000111";
+    private const string SHAPEU4 = "11000001000011";
+
+    private const string SHAPE4POINTS = "1000010100001";
+
+    private const string SHAPEW1 = "110001100001";
+    private const string SHAPEW2 = "100000110000011";
+    private const string SHAPEW3 = "100001100011";
+    private const string SHAPEW4 = "110000011000001";
+
+    private const string SHAPE5POINTS = "101000010000101";
+
+    private const string SHAPERECTANGLE1 = "111000111";
+    private const string SHAPERECTANGLE2 = "11000011000011";
+
+    private const string SHAPEHOLLOWO = "111000101000111";
+
+    private const string SHAPEWIDET1 = "111100011";
+    private const string SHAPEWIDET2 = "1000001100001100001";
+    private const string SHAPEWIDET3 = "110001111";
+    private const string SHAPEWIDET4 = "1000011000011000001";
+
+
 
     //VARIABLES
 
     //Ints
     [SerializeField] int reqBlocksOnScreen;
+
+    [SerializeField] private int minXBlockPos = 0;
+    [SerializeField] private int maxXBlockPos = 6;
+    [SerializeField] private int minYBlockPos = 0;
+    [SerializeField] private int maxYBlockPos = 10;
+    [SerializeField] private int blocksWidthXHeight = 60;
 
     private int picNumber;
 
@@ -81,6 +117,15 @@ public class UserInput : MonoBehaviour {
     private int shapeZPoints = 350;
     private int shapeSPoints = 350;
     private int shapeXPoints = 500;
+
+    private int shapeLongDashPoints = 125;
+    private int shapeUPoints = 225;
+    private int shape4PointsPoints = 300;
+    private int shapeWPoints = 500;
+    private int shape5PointsPoints = 600;
+    private int shapeRectanglePoints = 400;
+    private int shapeHollowOPoints = 700;
+    private int shapeWideTPoints = 850;
     
     private int coinGold = 25;
     private int coinSilver = 15;
@@ -134,6 +179,15 @@ public class UserInput : MonoBehaviour {
     private List<string> shapeShortIGrid = new List<string>();
     private List<string> shapeMedIGrid = new List<string>();
     private List<string> shapeOGrid = new List<string>();
+
+    private List<string> shapeLongDashGrid = new List<string>();
+    private List<string> shapeUGrid = new List<string>();
+    private List<string> shape4PointsGrid = new List<string>();
+    private List<string> shapeWGrid = new List<string>();
+    private List<string> shape5PointsGrid = new List<string>();
+    private List<string> shapeRectangleGrid = new List<string>();
+    private List<string> shapeHollowOGrid = new List<string>();
+    private List<string> shapeWideTGrid = new List<string>();
 
     public List<string> shapesMatched = new List<string>();
 
@@ -324,7 +378,11 @@ public class UserInput : MonoBehaviour {
     [SerializeField] GameObject explosionParticle;
     [SerializeField] GameObject trigger;
 
+    [SerializeField] private GameObject Points850;
+    [SerializeField] private GameObject Points700;
+    [SerializeField] private GameObject Points600;
     [SerializeField] private GameObject Points500;
+    [SerializeField] private GameObject Points400;
     [SerializeField] private GameObject Points350;
     [SerializeField] private GameObject Points300;
     [SerializeField] private GameObject Points225;
@@ -334,6 +392,8 @@ public class UserInput : MonoBehaviour {
     [SerializeField] private GameObject Points100;
     [SerializeField] private GameObject Points75;
     [SerializeField] private GameObject Points50;
+
+    
 
     [SerializeField] private GameObject floatingShapeO;
     [SerializeField] private GameObject floatingShapeT;
@@ -348,6 +408,15 @@ public class UserInput : MonoBehaviour {
     [SerializeField] private GameObject floatingShapeDash;
     [SerializeField] private GameObject floatingShapeShortI;
     [SerializeField] private GameObject floatingShapeMedI;
+
+    [SerializeField] private GameObject floatingShapeLongDash;
+    [SerializeField] private GameObject floatingShapeU;
+    [SerializeField] private GameObject floatingShape4Points;
+    [SerializeField] private GameObject floatingShapeW;
+    [SerializeField] private GameObject floatingShape5Points;
+    [SerializeField] private GameObject floatingShapeRectangle;
+    [SerializeField] private GameObject floatingShapeHollowO;
+    [SerializeField] private GameObject floatingShapeWideT;
 
     GameObject[] explosion;   
     //Audio
@@ -464,23 +533,61 @@ public class UserInput : MonoBehaviour {
         shapeXGrid.Add(SHAPEX);
 
         shapeOGrid.Add(SHAPEO);
+
+
+        shapeLongDashGrid.Add(SHAPELONGDASH1);
+        shapeLongDashGrid.Add(SHAPELONGDASH2);
+
+        shapeUGrid.Add(SHAPEU1);
+        shapeUGrid.Add(SHAPEU2);
+        shapeUGrid.Add(SHAPEU3);
+        shapeUGrid.Add(SHAPEU4);
+
+        shape4PointsGrid.Add(SHAPE4POINTS);
+
+        shapeWGrid.Add(SHAPEW1);
+        shapeWGrid.Add(SHAPEW2);
+        shapeWGrid.Add(SHAPEW3);
+        shapeWGrid.Add(SHAPEW4);
+
+        shape5PointsGrid.Add(SHAPE5POINTS);
+
+        shapeRectangleGrid.Add(SHAPERECTANGLE1);
+        shapeRectangleGrid.Add(SHAPERECTANGLE2);
+
+        shapeHollowOGrid.Add(SHAPEHOLLOWO);
+
+        shapeWideTGrid.Add(SHAPEWIDET1);
+        shapeWideTGrid.Add(SHAPEWIDET2);
+        shapeWideTGrid.Add(SHAPEWIDET3);
+        shapeWideTGrid.Add(SHAPEWIDET4);
+
     }
 
     private void PopulateShapesList()
     {
+        listOfShapes.Add("SmallShapeWideT");
+        listOfShapes.Add("SmallShapeHollowO");
+        listOfShapes.Add("SmallShape5Points");
+        listOfShapes.Add("SmallShapeW");
         listOfShapes.Add("SmallShapeX");
+        listOfShapes.Add("SmallShapeRectangle");
         listOfShapes.Add("SmallShapeS");
         listOfShapes.Add("SmallShapeZ");
+        listOfShapes.Add("SmallShape4Points");
         listOfShapes.Add("SmallShapeO");
         listOfShapes.Add("SmallShapeI");
+        listOfShapes.Add("SmallShapeU");
         listOfShapes.Add("SmallShapeT");
         listOfShapes.Add("SmallShapeL");
         listOfShapes.Add("SmallShapeJ");
         listOfShapes.Add("SmallShapeArrow");
+        listOfShapes.Add("SmallShapeLongDash");
         listOfShapes.Add("SmallShapeMedI");
         listOfShapes.Add("SmallShapeV");
         listOfShapes.Add("SmallShapeDash");
         listOfShapes.Add("SmallShapeShortI");
+
     }
 
     private void CheckMouseClicks()
@@ -503,9 +610,9 @@ public class UserInput : MonoBehaviour {
             pointRadius = 0.001f;
 
             //Create list of shapes matched from blocks clicked on as string representations of shapes
-            for (int y = 0; y < 10; y++)
+            for (int y = minYBlockPos; y < maxYBlockPos; y++)
             {
-                for (int x = 0; x < 6; x++)
+                for (int x = minXBlockPos; x < maxXBlockPos; x++)
                 {
                     Vector3 gridCheck = new Vector3(x, y, 0);
                     if (listBlocksClickedOn.Contains(gridCheck))
@@ -547,10 +654,35 @@ public class UserInput : MonoBehaviour {
     {
         if (GameObject.Find(listOfShapes[s]) != null && s == 0)
         {
-            CheckForShapeX();
+            CheckForShapeWideT();
         }
 
         else if (GameObject.Find(listOfShapes[s]) != null && s == 1)
+        {
+            CheckForShapeHollowO();
+        }
+
+        else if (GameObject.Find(listOfShapes[s]) != null && s == 2)
+        {
+            CheckForShape5Points();
+        }
+
+        else if (GameObject.Find(listOfShapes[s]) != null && s == 3)
+        {
+            CheckForShapeW();
+        }
+
+        else if (GameObject.Find(listOfShapes[s]) != null && s == 4)
+        {
+            CheckForShapeX();
+        }
+
+        else if (GameObject.Find(listOfShapes[s]) != null && s == 5)
+        {
+            CheckForShapeRectangle();
+        }
+
+        else if (GameObject.Find(listOfShapes[s]) != null && s == 6)
         {
             CheckForShapeS();
 
@@ -577,7 +709,7 @@ public class UserInput : MonoBehaviour {
                         if (match == false && checkShapeGrid[i] == 1 && checkShapeGrid[i + shapeMatchIndexes[1]] == 1 && checkShapeGrid[i + shapeMatchIndexes[2]] == 1 && checkShapeGrid[i + shapeMatchIndexes[3]] == 1)
                         {
                             Match4BlockShape(i);
-                            Destroy (GameObject.FindWithTag("ShapeT"));
+                            //Destroy (GameObject.FindWithTag("ShapeT"));
                             if (!shapesMatched.Contains("ShapeT"))
                             {
                                 shapesMatched.Add("ShapeT");
@@ -596,57 +728,72 @@ public class UserInput : MonoBehaviour {
         }
 
 
-        else if (GameObject.Find(listOfShapes[s]) != null && s == 2)
+        else if (GameObject.Find(listOfShapes[s]) != null && s == 7)
         {
             CheckForShapeZ();
         }
 
-        else if (GameObject.Find(listOfShapes[s]) != null && s == 3)
-        {
-            CheckForShapeO();
-        }
-
-        else if (GameObject.Find(listOfShapes[s]) != null && s == 4)
-        {
-            CheckForShapeI();
-        }
-
-        else if (GameObject.Find(listOfShapes[s]) != null && s == 5)
-        {
-            CheckForShapeT();
-        }
-
-        else if (GameObject.Find(listOfShapes[s]) != null && s == 6)
-        {
-            CheckForShapeL();
-        }
-
-        else if (GameObject.Find(listOfShapes[s]) != null && s == 7)
-        {
-            CheckForShapeJ();
-        }
-
         else if (GameObject.Find(listOfShapes[s]) != null && s == 8)
         {
-            CheckForShapeArrow();
+            CheckForShape4Points();
         }
 
         else if (GameObject.Find(listOfShapes[s]) != null && s == 9)
         {
-            CheckForShapeMedI();
+            CheckForShapeO();
         }
 
         else if (GameObject.Find(listOfShapes[s]) != null && s == 10)
         {
-            CheckForShapeV();
+            CheckForShapeI();
         }
 
         else if (GameObject.Find(listOfShapes[s]) != null && s == 11)
         {
-            CheckForShapeDash();
+            CheckForShapeU();
         }
 
         else if (GameObject.Find(listOfShapes[s]) != null && s == 12)
+        {
+            CheckForShapeT();
+        }
+
+        else if (GameObject.Find(listOfShapes[s]) != null && s == 13)
+        {
+            CheckForShapeL();
+        }
+
+        else if (GameObject.Find(listOfShapes[s]) != null && s == 14)
+        {
+            CheckForShapeJ();
+        }
+
+        else if (GameObject.Find(listOfShapes[s]) != null && s == 15)
+        {
+            CheckForShapeArrow();
+        }
+
+        else if (GameObject.Find(listOfShapes[s]) != null && s == 16)
+        {
+            CheckForShapeLongDash();
+        }
+        
+        else if (GameObject.Find(listOfShapes[s]) != null && s == 17)
+        {
+            CheckForShapeMedI();
+        }
+
+        else if (GameObject.Find(listOfShapes[s]) != null && s == 18)
+        {
+            CheckForShapeV();
+        }
+
+        else if (GameObject.Find(listOfShapes[s]) != null && s == 19)
+        {
+            CheckForShapeDash();
+        }
+
+        else if (GameObject.Find(listOfShapes[s]) != null && s == 20)
         {
             CheckForShapeShortI();
         }
@@ -698,7 +845,7 @@ public class UserInput : MonoBehaviour {
             if (match == false && checkShapeGrid[gridIndex] == 1 && checkShapeGrid[gridIndex + shapeMatchIndexes[1]] == 1 && checkShapeGrid[gridIndex + shapeMatchIndexes[2]] == 1 && checkShapeGrid[gridIndex + shapeMatchIndexes[3]] == 1)
             {
                 ShapeSize(gridIndex);
-                Destroy(GameObject.FindWithTag(shapeTag));
+                //Destroy(GameObject.FindWithTag(shapeTag));
                 if (!shapesMatched.Contains(shapeTag))
                 {
                     shapesMatched.Add(shapeTag);
@@ -739,12 +886,12 @@ public class UserInput : MonoBehaviour {
                 }
             }
 
-            for (int i = 0; i < (61 - currentGridIndex.Length); i++)
+            for (int i = 0; i < ((blocksWidthXHeight + 1) - currentGridIndex.Length); i++)
             {
                 if (match == false && checkShapeGrid[i] == 1 && checkShapeGrid[i + shapeMatchIndexes[1]] == 1 && checkShapeGrid[i + shapeMatchIndexes[2]] == 1 && checkShapeGrid[i + shapeMatchIndexes[3]] == 1)
                 {
                     Match4BlockShape(i);
-                    Destroy(GameObject.FindWithTag("ShapeT"));
+                    //Destroy(GameObject.FindWithTag("ShapeT"));
                     if (!shapesMatched.Contains("ShapeT"))
                     {
                         shapesMatched.Add("ShapeT");
@@ -773,12 +920,12 @@ public class UserInput : MonoBehaviour {
             }
         }
 
-        for (int i = 0; i < (61 - SHAPEO.Length); i++)
+        for (int i = 0; i < ((blocksWidthXHeight + 1) - SHAPEO.Length); i++)
         {
             if (match == false && checkShapeGrid[i] == 1 && checkShapeGrid[i + shapeMatchIndexes[1]] == 1 && checkShapeGrid[i + shapeMatchIndexes[2]] == 1 && checkShapeGrid[i + shapeMatchIndexes[3]] == 1)
             {
                 Match4BlockShape(i);
-                Destroy (GameObject.FindWithTag("ShapeO"));
+                //Destroy (GameObject.FindWithTag("ShapeO"));
                 if (!shapesMatched.Contains("ShapeO"))
                     {
                         shapesMatched.Add("ShapeO");
@@ -810,12 +957,12 @@ public class UserInput : MonoBehaviour {
             string temp = string.Join(" , ", shapeMatchIndexes.Select(x => x.ToString()).ToArray());
             //print("Match Indexes: " + temp);
 
-            for (int i = 0; i < (61 - currentGridIndex.Length); i++)
+            for (int i = 0; i < ((blocksWidthXHeight + 1) - currentGridIndex.Length); i++)
             {
                 if (match == false && checkShapeGrid[i] == 1 && checkShapeGrid[i + shapeMatchIndexes[1]] == 1 && checkShapeGrid[i + shapeMatchIndexes[2]] == 1 && checkShapeGrid[i + shapeMatchIndexes[3]] == 1)
                 {
                     Match4BlockShape(i);
-                    Destroy (GameObject.FindWithTag("ShapeS"));
+                    //Destroy (GameObject.FindWithTag("ShapeS"));
                     if (!shapesMatched.Contains("ShapeS"))
                     {
                         shapesMatched.Add("ShapeS");
@@ -849,12 +996,12 @@ public class UserInput : MonoBehaviour {
             string temp = string.Join(" , ", shapeMatchIndexes.Select(x => x.ToString()).ToArray());
             //print("Match Indexes: " + temp);
 
-            for (int i = 0; i < (61 - currentGridIndex.Length); i++)
+            for (int i = 0; i < ((blocksWidthXHeight + 1) - currentGridIndex.Length); i++)
             {
                 if (match == false && checkShapeGrid[i] == 1 && checkShapeGrid[i + shapeMatchIndexes[1]] == 1 && checkShapeGrid[i + shapeMatchIndexes[2]] == 1 && checkShapeGrid[i + shapeMatchIndexes[3]] == 1)
                 {
                     Match4BlockShape(i);
-                    Destroy (GameObject.FindWithTag("ShapeZ"));
+                    //Destroy (GameObject.FindWithTag("ShapeZ"));
                     if (!shapesMatched.Contains("ShapeZ"))
                     {
                         shapesMatched.Add("ShapeZ");
@@ -887,12 +1034,12 @@ public class UserInput : MonoBehaviour {
             string temp = string.Join(" , ", shapeMatchIndexes.Select(x => x.ToString()).ToArray());
             //print("Match Indexes: " + temp);
 
-            for (int i = 0; i < (61 - currentGridIndex.Length); i++)
+            for (int i = 0; i < ((blocksWidthXHeight + 1) - currentGridIndex.Length); i++)
             {
                 if (match == false && checkShapeGrid[i] == 1 && checkShapeGrid[i + shapeMatchIndexes[1]] == 1 && checkShapeGrid[i + shapeMatchIndexes[2]] == 1 && checkShapeGrid[i + shapeMatchIndexes[3]] == 1)
                 {
                     Match4BlockShape(i);
-                    Destroy (GameObject.FindWithTag("ShapeI"));
+                    //Destroy (GameObject.FindWithTag("ShapeI"));
                     if (!shapesMatched.Contains("ShapeI"))
                     {
                         shapesMatched.Add("ShapeI");
@@ -925,12 +1072,12 @@ public class UserInput : MonoBehaviour {
             string temp = string.Join(" , ", shapeMatchIndexes.Select(x => x.ToString()).ToArray());
             //print("Match Indexes: " + temp);
 
-            for (int i = 0; i < (61 - currentGridIndex.Length); i++)
+            for (int i = 0; i < ((blocksWidthXHeight + 1) - currentGridIndex.Length); i++)
             {
                 if (match == false && checkShapeGrid[i] == 1 & checkShapeGrid[i + shapeMatchIndexes[1]] == 1 && checkShapeGrid[i + shapeMatchIndexes[2]] == 1 && checkShapeGrid[i + shapeMatchIndexes[3]] == 1)
                 {
                     Match4BlockShape(i);
-                    Destroy (GameObject.FindWithTag("ShapeJ"));
+                    //Destroy (GameObject.FindWithTag("ShapeJ"));
                     if (!shapesMatched.Contains("ShapeJ"))
                     {
                         shapesMatched.Add("ShapeJ");
@@ -963,12 +1110,12 @@ public class UserInput : MonoBehaviour {
             string temp = string.Join(" , ", shapeMatchIndexes.Select(x => x.ToString()).ToArray());
             //print("Match Indexes: " + temp);
 
-            for (int i = 0; i < (61 - currentGridIndex.Length); i++)
+            for (int i = 0; i < ((blocksWidthXHeight + 1) - currentGridIndex.Length); i++)
             {
                 if (match == false && checkShapeGrid[i] == 1 && checkShapeGrid[i + shapeMatchIndexes[1]] == 1 && checkShapeGrid[i + shapeMatchIndexes[2]] == 1 && checkShapeGrid[i + shapeMatchIndexes[3]] == 1)
                 {
                     Match4BlockShape(i);
-                    Destroy (GameObject.FindWithTag("ShapeL"));
+                    //Destroy (GameObject.FindWithTag("ShapeL"));
                     if (!shapesMatched.Contains("ShapeL"))
                     {
                         shapesMatched.Add("ShapeL");
@@ -998,13 +1145,13 @@ public class UserInput : MonoBehaviour {
             //print("Match Indexes: " + temp);
 
 
-        for (int i = 0; i < (61 - SHAPEX.Length); i++)
+        for (int i = 0; i < ((blocksWidthXHeight + 1) - SHAPEX.Length); i++)
         {
             if (match == false && checkShapeGrid[i] == 1 && checkShapeGrid[i + shapeMatchIndexes[1]] == 1 && checkShapeGrid[i + shapeMatchIndexes[2]] == 1 && checkShapeGrid[i + shapeMatchIndexes[3]] == 1 && checkShapeGrid[i + shapeMatchIndexes[4]] == 1)
             {
                 //print("Match shape X!");
                 Match5BlockShape(i);
-                Destroy (GameObject.FindWithTag("ShapeX"));
+                //Destroy (GameObject.FindWithTag("ShapeX"));
                 if (!shapesMatched.Contains("ShapeX"))
                     {
                         shapesMatched.Add("ShapeX");
@@ -1039,13 +1186,13 @@ public class UserInput : MonoBehaviour {
             string temp = string.Join(" , ", shapeMatchIndexes.Select(x => x.ToString()).ToArray());
             //print("Match Indexes: " + temp);
 
-            for (int i = 0; i < (61 - currentGridIndex.Length); i++)
+            for (int i = 0; i < ((blocksWidthXHeight + 1) - currentGridIndex.Length); i++)
             {
                 if (match == false && checkShapeGrid[i] == 1 && checkShapeGrid[i + shapeMatchIndexes[1]] == 1 && checkShapeGrid[i + shapeMatchIndexes[2]] == 1)
                 {
                     //print("Match shape V!");
                     Match3BlockShape(i);
-                    Destroy (GameObject.FindWithTag("ShapeV"));
+                    //Destroy (GameObject.FindWithTag("ShapeV"));
                     if (!shapesMatched.Contains("ShapeV"))
                     {
                         shapesMatched.Add("ShapeV");
@@ -1079,13 +1226,13 @@ public class UserInput : MonoBehaviour {
             string temp = string.Join(" , ", shapeMatchIndexes.Select(x => x.ToString()).ToArray());
             //print("Match Indexes: " + temp);
 
-            for (int i = 0; i < (61 - currentGridIndex.Length); i++)
+            for (int i = 0; i < ((blocksWidthXHeight + 1) - currentGridIndex.Length); i++)
             {
                 if (match == false && checkShapeGrid[i] == 1 && checkShapeGrid[i + shapeMatchIndexes[1]] == 1 && checkShapeGrid[i + shapeMatchIndexes[2]] == 1)
                 {
                     //print("Match shape V!");
                     Match3BlockShape(i);
-                    Destroy (GameObject.FindWithTag("ShapeArrow"));
+                    //Destroy (GameObject.FindWithTag("ShapeArrow"));
                     if (!shapesMatched.Contains("ShapeArrow"))
                     {
                         shapesMatched.Add("ShapeArrow");
@@ -1116,16 +1263,16 @@ public class UserInput : MonoBehaviour {
                 }
             }
 
-            string temp = string.Join(" , ", shapeMatchIndexes.Select(x => x.ToString()).ToArray());
+            //string temp = string.Join(" , ", shapeMatchIndexes.Select(x => x.ToString()).ToArray());
             //print("Match Indexes: " + temp);
 
-            for (int i = 0; i < (61 - currentGridIndex.Length); i++)
+            for (int i = 0; i < ((blocksWidthXHeight + 1) - currentGridIndex.Length); i++)
             {
                 if (match == false && checkShapeGrid[i] == 1 && checkShapeGrid[i + shapeMatchIndexes[1]] == 1)
                 {
                     //print("Match shape V!");
                     Match2BlockShape(i);
-                    Destroy (GameObject.FindWithTag("ShapeDash"));
+                    //Destroy (GameObject.FindWithTag("ShapeDash"));
                     if (!shapesMatched.Contains("ShapeDash"))
                     {
                         shapesMatched.Add("ShapeDash");
@@ -1159,13 +1306,13 @@ public class UserInput : MonoBehaviour {
             string temp = string.Join(" , ", shapeMatchIndexes.Select(x => x.ToString()).ToArray());
             //print("Match Indexes: " + temp);
 
-            for (int i = 0; i < (61 - currentGridIndex.Length); i++)
+            for (int i = 0; i < ((blocksWidthXHeight + 1) - currentGridIndex.Length); i++)
             {
                 if (match == false && checkShapeGrid[i] == 1 && checkShapeGrid[i + shapeMatchIndexes[1]] == 1)
                 {
                     //print("Match shape V!");
                     Match2BlockShape(i);
-                    Destroy (GameObject.FindWithTag("ShapeShortI"));
+                    //Destroy (GameObject.FindWithTag("ShapeShortI"));
                     if (!shapesMatched.Contains("ShapeShortI"))
                     {
                         shapesMatched.Add("ShapeShortI");
@@ -1199,12 +1346,12 @@ public class UserInput : MonoBehaviour {
             string temp = string.Join(" , ", shapeMatchIndexes.Select(x => x.ToString()).ToArray());
             //print("Match Indexes: " + temp);
 
-            for (int i = 0; i < (61 - currentGridIndex.Length); i++)
+            for (int i = 0; i < ((blocksWidthXHeight + 1) - currentGridIndex.Length); i++)
             {
                 if (match == false && checkShapeGrid[i] == 1 && checkShapeGrid[i + shapeMatchIndexes[1]] == 1 && checkShapeGrid[i + shapeMatchIndexes[2]] == 1)
                 {
                     Match3BlockShape(i);
-                    Destroy (GameObject.FindWithTag("ShapeMedI"));
+                    //Destroy (GameObject.FindWithTag("ShapeMedI"));
                     if (!shapesMatched.Contains("ShapeMedI"))
                     {
                         shapesMatched.Add("ShapeMedI");
@@ -1218,6 +1365,276 @@ public class UserInput : MonoBehaviour {
 
             shapeMatchIndexes.Clear();
         }
+    }
+
+    private void CheckForShapeLongDash()
+    {
+        for (int g = 0; g < shapeLongDashGrid.Count; g++)
+        {
+            currentGridIndex = shapeLongDashGrid[g];
+            shapeMatchIndexes.Clear();
+            for (int i = 0; i < currentGridIndex.Length; i++)
+            {
+                if (currentGridIndex[i] == '1')
+                {
+                    shapeMatchIndexes.Add(i);
+                }
+            }
+
+            for (int i = 0; i < ((blocksWidthXHeight + 1) - currentGridIndex.Length); i++)
+            {
+                if (match == false && checkShapeGrid[i] == 1 && checkShapeGrid[i + shapeMatchIndexes[1]] == 1 && checkShapeGrid[i + shapeMatchIndexes[2]] == 1)
+                {
+                    Match3BlockShape(i);
+                    ////Destroy(GameObject.FindWithTag("ShapeLongDash"));
+                    if (!shapesMatched.Contains("ShapeLongDash"))
+                    {
+                        shapesMatched.Add("ShapeLongDash");
+                    }
+                    counterScript.AddInAmount(shapeLongDashPoints, scoreBalanceName);
+                    Instantiate(Points125, (centerXYClicked + new Vector3(0.5f, 0f, 0)), Quaternion.identity);
+                    InstantiateFloatingShape(floatingShapeLongDash);
+
+                    //timer.timeLeft = timer.timeLeft + 2f;
+                }
+            }
+
+            shapeMatchIndexes.Clear();
+        }
+    }
+
+    private void CheckForShapeU()
+    {
+        for (int g = 0; g < shapeUGrid.Count; g++)
+        {
+            currentGridIndex = shapeUGrid[g];
+            shapeMatchIndexes.Clear();
+            for (int i = 0; i < currentGridIndex.Length; i++)
+            {
+                if (currentGridIndex[i] == '1')
+                {
+                    shapeMatchIndexes.Add(i);
+                }
+            }
+
+            for (int i = 0; i < ((blocksWidthXHeight + 1) - currentGridIndex.Length); i++)
+            {
+                if (match == false && checkShapeGrid[i] == 1 && checkShapeGrid[i + shapeMatchIndexes[1]] == 1 && checkShapeGrid[i + shapeMatchIndexes[2]] == 1 && checkShapeGrid[i + shapeMatchIndexes[3]] == 1 && checkShapeGrid[i + shapeMatchIndexes[4]] == 1)
+                {
+                    Match5BlockShape(i);
+                    //Destroy(GameObject.FindWithTag("ShapeU"));
+                    if (!shapesMatched.Contains("ShapeU"))
+                    {
+                        shapesMatched.Add("ShapeU");
+                    }
+                    counterScript.AddInAmount(shapeUPoints, scoreBalanceName);
+                    Instantiate(Points225, (centerXYClicked + new Vector3(0.5f, 0f, 0)), Quaternion.identity);
+                    InstantiateFloatingShape(floatingShapeU);
+
+                    //timer.timeLeft = timer.timeLeft + 2f;
+                }
+            }
+
+            shapeMatchIndexes.Clear();
+        }
+    }
+
+    private void CheckForShapeRectangle()
+    {
+        for (int g = 0; g < shapeRectangleGrid.Count; g++)
+        {
+            currentGridIndex = shapeRectangleGrid[g];
+            shapeMatchIndexes.Clear();
+            for (int i = 0; i < currentGridIndex.Length; i++)
+            {
+                if (currentGridIndex[i] == '1')
+                {
+                    shapeMatchIndexes.Add(i);
+                }
+            }
+
+            for (int i = 0; i < ((blocksWidthXHeight + 1) - currentGridIndex.Length); i++)
+            {
+                if (match == false && checkShapeGrid[i] == 1 && checkShapeGrid[i + shapeMatchIndexes[1]] == 1 && checkShapeGrid[i + shapeMatchIndexes[2]] == 1 && checkShapeGrid[i + shapeMatchIndexes[3]] == 1 && checkShapeGrid[i + shapeMatchIndexes[4]] == 1 && checkShapeGrid[i + shapeMatchIndexes[5]] == 1)
+                {
+                    Match6BlockShape(i);
+                    //Destroy(GameObject.FindWithTag("Rectangle"));
+                    if (!shapesMatched.Contains("Rectangle"))
+                    {
+                        shapesMatched.Add("Rectangle");
+                    }
+                    counterScript.AddInAmount(shapeRectanglePoints, scoreBalanceName);
+                    Instantiate(Points400, (centerXYClicked + new Vector3(0.5f, 0f, 0)), Quaternion.identity);
+                    InstantiateFloatingShape(floatingShapeRectangle);
+
+                    //timer.timeLeft = timer.timeLeft + 2f;
+                }
+            }
+
+            shapeMatchIndexes.Clear();
+        }
+    }
+
+    private void CheckForShapeW()
+    {
+        for (int g = 0; g < shapeWGrid.Count; g++)
+        {
+            currentGridIndex = shapeWGrid[g];
+            shapeMatchIndexes.Clear();
+            for (int i = 0; i < currentGridIndex.Length; i++)
+            {
+                if (currentGridIndex[i] == '1')
+                {
+                    shapeMatchIndexes.Add(i);
+                }
+            }
+
+            for (int i = 0; i < ((blocksWidthXHeight + 1) - currentGridIndex.Length); i++)
+            {
+                if (match == false && checkShapeGrid[i] == 1 && checkShapeGrid[i + shapeMatchIndexes[1]] == 1 && checkShapeGrid[i + shapeMatchIndexes[2]] == 1 && checkShapeGrid[i + shapeMatchIndexes[3]] == 1 && checkShapeGrid[i + shapeMatchIndexes[4]] == 1)
+                {
+                    Match5BlockShape(i);
+                    ////Destroy(GameObject.FindWithTag("ShapeW"));
+                    if (!shapesMatched.Contains("ShapeW"))
+                    {
+                        shapesMatched.Add("ShapeW");
+                    }
+                    counterScript.AddInAmount(shapeWPoints, scoreBalanceName);
+                    Instantiate(Points500, (centerXYClicked + new Vector3(0.5f, 0f, 0)), Quaternion.identity);
+                    InstantiateFloatingShape(floatingShapeW);
+
+                    //timer.timeLeft = timer.timeLeft + 2f;
+                }
+            }
+
+            shapeMatchIndexes.Clear();
+        }
+    }
+
+    private void CheckForShapeWideT()
+    {
+        for (int g = 0; g < shapeWideTGrid.Count; g++)
+        {
+            currentGridIndex = shapeWideTGrid[g];
+            shapeMatchIndexes.Clear();
+            for (int i = 0; i < currentGridIndex.Length; i++)
+            {
+                if (currentGridIndex[i] == '1')
+                {
+                    shapeMatchIndexes.Add(i);
+                }
+            }
+
+            for (int i = 0; i < ((blocksWidthXHeight + 1) - currentGridIndex.Length); i++)
+            {
+                if (match == false && checkShapeGrid[i] == 1 && checkShapeGrid[i + shapeMatchIndexes[1]] == 1 && checkShapeGrid[i + shapeMatchIndexes[2]] == 1 && checkShapeGrid[i + shapeMatchIndexes[3]] == 1 && checkShapeGrid[i + shapeMatchIndexes[4]] == 1 && checkShapeGrid[i + shapeMatchIndexes[5]] == 1)
+                {
+                    Match6BlockShape(i);
+                    //Destroy(GameObject.FindWithTag("ShapeWideT"));
+                    if (!shapesMatched.Contains("ShapeWideT"))
+                    {
+                        shapesMatched.Add("ShapeWideT");
+                    }
+                    counterScript.AddInAmount(shapeWideTPoints, scoreBalanceName);
+                    Instantiate(Points850, (centerXYClicked + new Vector3(0.5f, 0f, 0)), Quaternion.identity);
+                    InstantiateFloatingShape(floatingShapeWideT);
+
+                    //timer.timeLeft = timer.timeLeft + 2f;
+                }
+            }
+
+            shapeMatchIndexes.Clear();
+        }
+    }
+
+    private void CheckForShape4Points()
+    {
+        for (int i = 0; i < SHAPE4POINTS.Length; i++)
+        {
+            if (SHAPE4POINTS[i] == '1')
+            {
+                shapeMatchIndexes.Add(i);
+            }
+        }
+
+        for (int i = 0; i < ((blocksWidthXHeight + 1) - SHAPE4POINTS.Length); i++)
+        {
+            if (match == false && checkShapeGrid[i] == 1 && checkShapeGrid[i + shapeMatchIndexes[1]] == 1 && checkShapeGrid[i + shapeMatchIndexes[2]] == 1 && checkShapeGrid[i + shapeMatchIndexes[3]] == 1)
+            {
+                Match4BlockShape(i);
+                //Destroy (GameObject.FindWithTag("Shape4Points"));
+                if (!shapesMatched.Contains("Shape4Points"))
+                    {
+                        shapesMatched.Add("Shape4Points");
+                    }
+                counterScript.AddInAmount(shape4PointsPoints, scoreBalanceName);
+                Instantiate(Points300, (centerXYClicked + new Vector3(0.5f, 0f, 0)), Quaternion.identity);
+                InstantiateFloatingShape(floatingShape4Points);
+                //timer.timeLeft = timer.timeLeft + 3f;
+            }
+        }
+
+        shapeMatchIndexes.Clear();
+    }
+
+    private void CheckForShape5Points()
+    {
+        for (int i = 0; i < SHAPE5POINTS.Length; i++)
+        {
+            if (SHAPE5POINTS[i] == '1')
+            {
+                shapeMatchIndexes.Add(i);
+            }
+        }
+
+        for (int i = 0; i < ((blocksWidthXHeight + 1) - SHAPE5POINTS.Length); i++)
+        {
+            if (match == false && checkShapeGrid[i] == 1 && checkShapeGrid[i + shapeMatchIndexes[1]] == 1 && checkShapeGrid[i + shapeMatchIndexes[2]] == 1 && checkShapeGrid[i + shapeMatchIndexes[3]] == 1 && checkShapeGrid[i + shapeMatchIndexes[4]] == 1)
+            {
+                Match5BlockShape(i);
+                //Destroy (GameObject.FindWithTag("Shape5Points"));
+                if (!shapesMatched.Contains("Shape5Points"))
+                    {
+                        shapesMatched.Add("Shape5Points");
+                    }
+                counterScript.AddInAmount(shape5PointsPoints, scoreBalanceName);
+                Instantiate(Points600, (centerXYClicked + new Vector3(0.5f, 0f, 0)), Quaternion.identity);
+                InstantiateFloatingShape(floatingShape5Points);
+                //timer.timeLeft = timer.timeLeft + 3f;
+            }
+        }
+
+        shapeMatchIndexes.Clear();
+    }
+
+    private void CheckForShapeHollowO()
+    {
+        for (int i = 0; i < SHAPEHOLLOWO.Length; i++)
+        {
+            if (SHAPEHOLLOWO[i] == '1')
+            {
+                shapeMatchIndexes.Add(i);
+            }
+        }
+
+        for (int i = 0; i < ((blocksWidthXHeight + 1) - SHAPEHOLLOWO.Length); i++)
+        {
+            if (match == false && checkShapeGrid[i] == 1 && checkShapeGrid[i + shapeMatchIndexes[1]] == 1 && checkShapeGrid[i + shapeMatchIndexes[2]] == 1 && checkShapeGrid[i + shapeMatchIndexes[3]] == 1 && checkShapeGrid[i + shapeMatchIndexes[4]] == 1 && checkShapeGrid[i + shapeMatchIndexes[5]] == 1 && checkShapeGrid[i + shapeMatchIndexes[6]] == 1 && checkShapeGrid[i + shapeMatchIndexes[7]] == 1)
+            {
+                Match8BlockShape(i);
+                //Destroy (GameObject.FindWithTag("ShapeHollowO"));
+                if (!shapesMatched.Contains("ShapeHollowO"))
+                    {
+                        shapesMatched.Add("ShapeHollowO");
+                    }
+                counterScript.AddInAmount(shapeHollowOPoints, scoreBalanceName);
+                Instantiate(Points700, (centerXYClicked + new Vector3(0.5f, 0f, 0)), Quaternion.identity);
+                InstantiateFloatingShape(floatingShapeHollowO);
+                //timer.timeLeft = timer.timeLeft + 3f;
+            }
+        }
+
+        shapeMatchIndexes.Clear();
     }
 
 
@@ -1263,6 +1680,36 @@ public class UserInput : MonoBehaviour {
         Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[2]) % 6), ((i + shapeMatchIndexes[2]) / 6), 0), Quaternion.identity);
         Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[3]) % 6), ((i + shapeMatchIndexes[3]) / 6), 0), Quaternion.identity);
         Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[4]) % 6), ((i + shapeMatchIndexes[4]) / 6), 0), Quaternion.identity);
+        match = true;
+        FindCenterBlocksClicked();
+
+        PlayBreakSound();
+    }
+
+    private void Match6BlockShape(int i)
+    {
+        Instantiate(destroyer, new Vector3((i % 6), (i / 6), 0), Quaternion.identity);
+        Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[1]) % 6), ((i + shapeMatchIndexes[1]) / 6), 0), Quaternion.identity);
+        Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[2]) % 6), ((i + shapeMatchIndexes[2]) / 6), 0), Quaternion.identity);
+        Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[3]) % 6), ((i + shapeMatchIndexes[3]) / 6), 0), Quaternion.identity);
+        Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[4]) % 6), ((i + shapeMatchIndexes[4]) / 6), 0), Quaternion.identity);
+        Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[5]) % 6), ((i + shapeMatchIndexes[5]) / 6), 0), Quaternion.identity);
+        match = true;
+        FindCenterBlocksClicked();
+
+        PlayBreakSound();
+    }
+
+    private void Match8BlockShape(int i)
+    {
+        Instantiate(destroyer, new Vector3((i % 6), (i / 6), 0), Quaternion.identity);
+        Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[1]) % 6), ((i + shapeMatchIndexes[1]) / 6), 0), Quaternion.identity);
+        Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[2]) % 6), ((i + shapeMatchIndexes[2]) / 6), 0), Quaternion.identity);
+        Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[3]) % 6), ((i + shapeMatchIndexes[3]) / 6), 0), Quaternion.identity);
+        Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[4]) % 6), ((i + shapeMatchIndexes[4]) / 6), 0), Quaternion.identity);
+        Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[5]) % 6), ((i + shapeMatchIndexes[5]) / 6), 0), Quaternion.identity);
+        Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[6]) % 6), ((i + shapeMatchIndexes[6]) / 6), 0), Quaternion.identity);
+        Instantiate(destroyer, new Vector3(((i + shapeMatchIndexes[7]) % 6), ((i + shapeMatchIndexes[7]) / 6), 0), Quaternion.identity);
         match = true;
         FindCenterBlocksClicked();
 

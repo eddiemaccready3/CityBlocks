@@ -21,7 +21,7 @@ public class SpawnMovingObjects : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (Time.timeSinceLevelLoad > nextSpawn)
+        if (Time.timeSinceLevelLoad > nextSpawn)
         {
             SpawnObject();
         }
@@ -29,10 +29,11 @@ public class SpawnMovingObjects : MonoBehaviour {
 
     private void SpawnObject()
     {
-        nextSpawn = Time.timeSinceLevelLoad + Random.Range(spawnRangeMin, spawnRangeMax);
-        int i = Random.Range(0, movingObjects.Length);
+        int i = Random.Range(0, movingObjects.Length - 1);
         Instantiate(movingObjects[i],
             transform.position,
             Quaternion.identity);
+
+        nextSpawn = Time.timeSinceLevelLoad + Random.Range(spawnRangeMin, spawnRangeMax);
     }
 }

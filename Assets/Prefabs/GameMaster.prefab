@@ -79,6 +79,15 @@ MonoBehaviour:
   - Zermatt
   - Venice
   - Map
+  - Bangkok
+  - NewDelhi
+  - Beijing
+  - ChiangMai
+  - Seoul
+  - HongKong
+  - Tokyo
+  - Taipei
+  - Kathmandu
   userNames: []
   currentUserNameIndex: 
   keyHighScoresPerLevel: keyHighScoresPerLevel
@@ -94,6 +103,7 @@ MonoBehaviour:
   keyMatchesStarEarnedPerLevel: keyMatchesStarEarnedPerLevel
   keyNewShapeAnnounced: keyNewShapeAnnounced
   keyFirstMapZoom: keyFirstMapZoom
+  keyEndEuropeMapZoom: keyEndEuropeMapZoom
   musicVolumeSet: keyBoolMusicVolumeSet
   sfxVolumeSet: keyBoolSfxVolumeSet
   musicVolumeLevel: musicVolumeLevel
@@ -102,6 +112,7 @@ MonoBehaviour:
   keyPlaneFlightCompletedPerLevel: keyPlaneFlightCompletedPerLevel
   keyLevelIntroCompleted: keyLevelIntroCompleted
   keyClearAllData: keyClearAllData
+  keyStartingMarkerSpin: keyStartingMarkerSpin
   howToPlay: 0
   howToShuffle: 0
   howToEarnStars: 0
