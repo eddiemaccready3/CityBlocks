@@ -170,13 +170,13 @@ Transform:
   - {fileID: 56432693}
   - {fileID: 1155526487}
   - {fileID: 1918764577}
+  - {fileID: 1178431639}
   - {fileID: 1903193229}
   - {fileID: 23266852}
   - {fileID: 1380596973}
   - {fileID: 1230510076}
   - {fileID: 985665139}
   - {fileID: 2135530754}
-  - {fileID: 1178431639}
   - {fileID: 2007296162}
   - {fileID: 737188865}
   - {fileID: 958388885}
@@ -584,6 +584,11 @@ PrefabInstance:
       propertyPath: lastContinent
       value: Asia
       objectReference: {fileID: 0}
+    - target: {fileID: 4658379968340093667, guid: 2a7185793342af0429bc9af4f6b25aee,
+        type: 3}
+      propertyPath: previousContinent
+      value: Asia
+      objectReference: {fileID: 0}
     - target: {fileID: 5647184259831435250, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
       propertyPath: m_Sprite
@@ -897,6 +902,11 @@ PrefabInstance:
       propertyPath: lastContinent
       value: Asia
       objectReference: {fileID: 0}
+    - target: {fileID: 4658379968340093667, guid: 2a7185793342af0429bc9af4f6b25aee,
+        type: 3}
+      propertyPath: previousContinent
+      value: Asia
+      objectReference: {fileID: 0}
     - target: {fileID: 5647184259831435250, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
       propertyPath: m_Sprite
@@ -1208,6 +1218,11 @@ PrefabInstance:
     - target: {fileID: 4658379968340093667, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
       propertyPath: lastContinent
+      value: Europe
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658379968340093667, guid: 2a7185793342af0429bc9af4f6b25aee,
+        type: 3}
+      propertyPath: previousContinent
       value: Europe
       objectReference: {fileID: 0}
     - target: {fileID: 5647184259831435250, guid: 2a7185793342af0429bc9af4f6b25aee,
@@ -1831,6 +1846,11 @@ PrefabInstance:
       propertyPath: lastContinent
       value: Europe
       objectReference: {fileID: 0}
+    - target: {fileID: 4658379968340093667, guid: 2a7185793342af0429bc9af4f6b25aee,
+        type: 3}
+      propertyPath: previousContinent
+      value: Europe
+      objectReference: {fileID: 0}
     - target: {fileID: 5647184259831435250, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
       propertyPath: m_Sprite
@@ -2120,6 +2140,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 1519757042}
+--- !u!114 &529688698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529688688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98d9893abc01aec4d81fefaa0ad55398, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layer:
+    serializedVersion: 2
+    m_Bits: 134217728
 --- !u!1001 &548223984
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2237,6 +2272,11 @@ PrefabInstance:
     - target: {fileID: 4658379968340093667, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
       propertyPath: lastContinent
+      value: Asia
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658379968340093667, guid: 2a7185793342af0429bc9af4f6b25aee,
+        type: 3}
+      propertyPath: previousContinent
       value: Asia
       objectReference: {fileID: 0}
     - target: {fileID: 5647184259831435250, guid: 2a7185793342af0429bc9af4f6b25aee,
@@ -2573,7 +2613,7 @@ PrefabInstance:
     - target: {fileID: 6970903383624920331, guid: 6a2b0f61b454fa04faeb574b09106d6f,
         type: 3}
       propertyPath: m_Name
-      value: TotalCoinBalance
+      value: OnScreenOverlay
       objectReference: {fileID: 0}
     - target: {fileID: 6970903383624920333, guid: 6a2b0f61b454fa04faeb574b09106d6f,
         type: 3}
@@ -2801,6 +2841,11 @@ PrefabInstance:
         type: 3}
       propertyPath: thanksForPlaying
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658379968340093667, guid: 2a7185793342af0429bc9af4f6b25aee,
+        type: 3}
+      propertyPath: previousContinent
+      value: Asia
       objectReference: {fileID: 0}
     - target: {fileID: 5647184259831435250, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
@@ -3428,6 +3473,31 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1388333596015402519, guid: febf1d31418aa4d4e9f87d695eac751d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: febf1d31418aa4d4e9f87d695eac751d, type: 3}
+--- !u!1 &807020394 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8799442844375527901, guid: 6659d26a6dc81df41910491a71fb4511,
+    type: 3}
+  m_PrefabInstance: {fileID: 8799442844257635091}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &807020395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 807020394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 043b8690556e2714bbca2810e92b98df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  previousCityName: Venice
+  thisCityName: AsiaOverlay
+  nextCityName: 
+  available: {fileID: 21300000, guid: c17b2a76cfcb69f408ca25503d45db42, type: 3}
+  availableNoStar: {fileID: 21300000, guid: c17b2a76cfcb69f408ca25503d45db42, type: 3}
+  unavailable: {fileID: 0}
+  levelAvailable: 0
 --- !u!1 &811523740 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1006164466811292, guid: 359a0184e2a5a5d46886f365a2b0cc00,
@@ -3719,6 +3789,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114217482220143544, guid: 42ab780c1b22a2142a3bd20c756037e0,
+        type: 3}
+      propertyPath: thisCityName
+      value: Bangkok
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42ab780c1b22a2142a3bd20c756037e0, type: 3}
 --- !u!1001 &860622133
@@ -3850,13 +3925,23 @@ PrefabInstance:
         type: 3}
       propertyPath: plane
       value: 
-      objectReference: {fileID: 1006164466811292, guid: 060750be7c902ef4c867d9ca46cf007e,
+      objectReference: {fileID: 1006164466811292, guid: 359a0184e2a5a5d46886f365a2b0cc00,
         type: 3}
     - target: {fileID: 4658379968340093667, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
       propertyPath: worldCanvas
       value: 
       objectReference: {fileID: 1659737655}
+    - target: {fileID: 4658379968340093667, guid: 2a7185793342af0429bc9af4f6b25aee,
+        type: 3}
+      propertyPath: previousContinent
+      value: Europe
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658379968340093667, guid: 2a7185793342af0429bc9af4f6b25aee,
+        type: 3}
+      propertyPath: thisPadlockName
+      value: AsiaPadlock
+      objectReference: {fileID: 0}
     - target: {fileID: 5647184259831435250, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
       propertyPath: m_Sprite
@@ -3989,6 +4074,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6875306593550683071, guid: 2a7185793342af0429bc9af4f6b25aee,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7718206046691887217, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
       propertyPath: m_IsActive
@@ -4083,7 +4173,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 860622135}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c172fe3c2816c5b4fa3e7414ccabe004, type: 3}
   m_Name: 
@@ -4101,6 +4191,19 @@ MonoBehaviour:
     m_Bits: 0
   arrow: {fileID: 0}
   audioClip: {fileID: 0}
+--- !u!114 &860622142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860622135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aefbe23a83cb4074888351065189fd49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  padlockName: AsiaPadlock
 --- !u!1001 &874890387
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4292,6 +4395,11 @@ PrefabInstance:
     - target: {fileID: 4658379968340093667, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
       propertyPath: lastContinent
+      value: Asia
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658379968340093667, guid: 2a7185793342af0429bc9af4f6b25aee,
+        type: 3}
+      propertyPath: previousContinent
       value: Asia
       objectReference: {fileID: 0}
     - target: {fileID: 5647184259831435250, guid: 2a7185793342af0429bc9af4f6b25aee,
@@ -4664,6 +4772,11 @@ PrefabInstance:
     - target: {fileID: 4658379968340093667, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
       propertyPath: lastContinent
+      value: Europe
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658379968340093667, guid: 2a7185793342af0429bc9af4f6b25aee,
+        type: 3}
+      propertyPath: previousContinent
       value: Europe
       objectReference: {fileID: 0}
     - target: {fileID: 5647184259831435250, guid: 2a7185793342af0429bc9af4f6b25aee,
@@ -5637,6 +5750,11 @@ PrefabInstance:
       propertyPath: lastContinent
       value: Asia
       objectReference: {fileID: 0}
+    - target: {fileID: 4658379968340093667, guid: 2a7185793342af0429bc9af4f6b25aee,
+        type: 3}
+      propertyPath: previousContinent
+      value: Asia
+      objectReference: {fileID: 0}
     - target: {fileID: 5647184259831435250, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
       propertyPath: m_Sprite
@@ -6234,6 +6352,11 @@ PrefabInstance:
       propertyPath: lastContinent
       value: Asia
       objectReference: {fileID: 0}
+    - target: {fileID: 4658379968340093667, guid: 2a7185793342af0429bc9af4f6b25aee,
+        type: 3}
+      propertyPath: previousContinent
+      value: Asia
+      objectReference: {fileID: 0}
     - target: {fileID: 5647184259831435250, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
       propertyPath: m_Sprite
@@ -6689,6 +6812,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1006164466811292, guid: 359a0184e2a5a5d46886f365a2b0cc00,
         type: 3}
+    - target: {fileID: 4658379968340093667, guid: 2a7185793342af0429bc9af4f6b25aee,
+        type: 3}
+      propertyPath: previousContinent
+      value: Europe
+      objectReference: {fileID: 0}
     - target: {fileID: 5647184259831435250, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
       propertyPath: m_Sprite
@@ -7669,6 +7797,11 @@ PrefabInstance:
       propertyPath: lastContinent
       value: Europe
       objectReference: {fileID: 0}
+    - target: {fileID: 4658379968340093667, guid: 2a7185793342af0429bc9af4f6b25aee,
+        type: 3}
+      propertyPath: previousContinent
+      value: Europe
+      objectReference: {fileID: 0}
     - target: {fileID: 5647184259831435250, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
       propertyPath: m_Sprite
@@ -7873,6 +8006,31 @@ MonoBehaviour:
   spinSpeed: 0
   markerRotationAngle: 0
   rotateMarker: 0
+--- !u!1 &1759635377 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 421292086480800499, guid: a7088a333cc1de54080dbe37d3d183f7,
+    type: 3}
+  m_PrefabInstance: {fileID: 421292087655430757}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1759635378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759635377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 043b8690556e2714bbca2810e92b98df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  previousCityName: Seoul
+  thisCityName: AustraliaPadlock
+  nextCityName: Sydney
+  available: {fileID: 0}
+  availableNoStar: {fileID: 0}
+  unavailable: {fileID: 21300000, guid: 58c0270292bcfd143ae7220e41991a38, type: 3}
+  levelAvailable: 0
 --- !u!1001 &1806243756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8085,6 +8243,11 @@ PrefabInstance:
     - target: {fileID: 4658379968340093667, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
       propertyPath: lastContinent
+      value: Asia
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658379968340093667, guid: 2a7185793342af0429bc9af4f6b25aee,
+        type: 3}
+      propertyPath: previousContinent
       value: Asia
       objectReference: {fileID: 0}
     - target: {fileID: 5647184259831435250, guid: 2a7185793342af0429bc9af4f6b25aee,
@@ -8601,7 +8764,7 @@ PrefabInstance:
     - target: {fileID: 4658379968340093667, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
       propertyPath: previousCityName
-      value: Kathmandu
+      value: Seoul
       objectReference: {fileID: 0}
     - target: {fileID: 4658379968340093667, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
@@ -8657,6 +8820,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 1ffdd9199ad58c247ab684b6b50dca51,
         type: 3}
+    - target: {fileID: 4658379968340093667, guid: 2a7185793342af0429bc9af4f6b25aee,
+        type: 3}
+      propertyPath: previousContinent
+      value: Asia
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658379968340093667, guid: 2a7185793342af0429bc9af4f6b25aee,
+        type: 3}
+      propertyPath: thisPadlockName
+      value: AustraliaPadlock
+      objectReference: {fileID: 0}
     - target: {fileID: 5647184259831435250, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
       propertyPath: m_Sprite
@@ -8721,7 +8894,7 @@ PrefabInstance:
     - target: {fileID: 6356492564760558142, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
       propertyPath: m_RootOrder
-      value: 23
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 6356492564760558142, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
@@ -9199,6 +9372,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1959277237}
+  - component: {fileID: 1959277238}
   m_Layer: 0
   m_Name: IAPManager
   m_TagString: Untagged
@@ -9220,6 +9394,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1959277238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1959277236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35bd9e7b95d33f947aa1a8e87388bb78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1993033198
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9544,7 +9730,7 @@ PrefabInstance:
     - target: {fileID: 421292086480800498, guid: a7088a333cc1de54080dbe37d3d183f7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 29
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 421292086480800498, guid: a7088a333cc1de54080dbe37d3d183f7,
         type: 3}
@@ -9596,6 +9782,11 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 559151873068034121, guid: a7088a333cc1de54080dbe37d3d183f7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6709323927823864370, guid: a7088a333cc1de54080dbe37d3d183f7,
         type: 3}
       propertyPath: m_SortingLayerID
@@ -9611,7 +9802,8 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: -8
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 559151873068034121, guid: a7088a333cc1de54080dbe37d3d183f7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a7088a333cc1de54080dbe37d3d183f7, type: 3}
 --- !u!1001 &1361342488893099636
 PrefabInstance:
@@ -9792,7 +9984,7 @@ PrefabInstance:
     - target: {fileID: 2982326369129430818, guid: eec40a23c5717ca4c9078ade0ff5bb47,
         type: 3}
       propertyPath: m_RootOrder
-      value: 24
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 2982326369129430818, guid: eec40a23c5717ca4c9078ade0ff5bb47,
         type: 3}
@@ -10027,6 +10219,11 @@ PrefabInstance:
     - target: {fileID: 4658379968340093667, guid: 2a7185793342af0429bc9af4f6b25aee,
         type: 3}
       propertyPath: lastContinent
+      value: Europe
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658379968340093667, guid: 2a7185793342af0429bc9af4f6b25aee,
+        type: 3}
+      propertyPath: previousContinent
       value: Europe
       objectReference: {fileID: 0}
     - target: {fileID: 5647184259831435250, guid: 2a7185793342af0429bc9af4f6b25aee,
@@ -10275,7 +10472,7 @@ PrefabInstance:
     - target: {fileID: 5400019433275767429, guid: a3502c556e9dc1947aa4b3ff8358337b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 26
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 5400019433275767429, guid: a3502c556e9dc1947aa4b3ff8358337b,
         type: 3}
@@ -10294,75 +10491,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3502c556e9dc1947aa4b3ff8358337b, type: 3}
---- !u!1001 &5608785687034434900
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 611244623}
-    m_Modifications:
-    - target: {fileID: 3782635848924577905, guid: 65875e985c47c4f4eb60f32c4a5fa145,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3782635848924577905, guid: 65875e985c47c4f4eb60f32c4a5fa145,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3782635848924577905, guid: 65875e985c47c4f4eb60f32c4a5fa145,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3782635848924577905, guid: 65875e985c47c4f4eb60f32c4a5fa145,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3782635848924577905, guid: 65875e985c47c4f4eb60f32c4a5fa145,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3782635848924577905, guid: 65875e985c47c4f4eb60f32c4a5fa145,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3782635848924577905, guid: 65875e985c47c4f4eb60f32c4a5fa145,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3782635848924577905, guid: 65875e985c47c4f4eb60f32c4a5fa145,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3782635848924577905, guid: 65875e985c47c4f4eb60f32c4a5fa145,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3782635848924577905, guid: 65875e985c47c4f4eb60f32c4a5fa145,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3782635848924577905, guid: 65875e985c47c4f4eb60f32c4a5fa145,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3782635848924577907, guid: 65875e985c47c4f4eb60f32c4a5fa145,
-        type: 3}
-      propertyPath: m_Name
-      value: BuyNowMenu
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 65875e985c47c4f4eb60f32c4a5fa145, type: 3}
 --- !u!1001 &6019512781917889478
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10423,7 +10551,7 @@ PrefabInstance:
     - target: {fileID: 6019512779791810244, guid: ed693e2c55985cc4c89bd6c62f3cb1b0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 28
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 6019512779791810244, guid: ed693e2c55985cc4c89bd6c62f3cb1b0,
         type: 3}
@@ -10580,7 +10708,7 @@ PrefabInstance:
     - target: {fileID: 6446438759252013808, guid: e68176ce4629c34458ca5015e7e9ffbb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 27
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 6446438759252013808, guid: e68176ce4629c34458ca5015e7e9ffbb,
         type: 3}
@@ -10743,7 +10871,7 @@ PrefabInstance:
     - target: {fileID: 6827125894257832015, guid: 0d0635b77a774204f96fe6105aa99c64,
         type: 3}
       propertyPath: m_RootOrder
-      value: 25
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 6827125894257832015, guid: 0d0635b77a774204f96fe6105aa99c64,
         type: 3}
@@ -11127,12 +11255,12 @@ PrefabInstance:
     - target: {fileID: 2417700012637544506, guid: 367c4179b03c91e4d87910775c2e57ab,
         type: 3}
       propertyPath: thisCityName
-      value: Bangkok
+      value: AsiaPadlock
       objectReference: {fileID: 0}
     - target: {fileID: 2417700012637544506, guid: 367c4179b03c91e4d87910775c2e57ab,
         type: 3}
       propertyPath: nextCityName
-      value: Tokyo
+      value: Bangkok
       objectReference: {fileID: 0}
     - target: {fileID: 2417700012637544506, guid: 367c4179b03c91e4d87910775c2e57ab,
         type: 3}
@@ -11144,15 +11272,30 @@ PrefabInstance:
       propertyPath: lastContinent
       value: Europe
       objectReference: {fileID: 0}
+    - target: {fileID: 2417700012637544506, guid: 367c4179b03c91e4d87910775c2e57ab,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5642341308970329063, guid: 367c4179b03c91e4d87910775c2e57ab,
         type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5867589987207653919, guid: 367c4179b03c91e4d87910775c2e57ab,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7765203706594681621, guid: 367c4179b03c91e4d87910775c2e57ab,
         type: 3}
       propertyPath: m_Name
       value: AsiaPadlock
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765203706594681621, guid: 367c4179b03c91e4d87910775c2e57ab,
+        type: 3}
+      propertyPath: m_Layer
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 7765203706594681622, guid: 367c4179b03c91e4d87910775c2e57ab,
         type: 3}
@@ -11224,7 +11367,8 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2417700012637544506, guid: 367c4179b03c91e4d87910775c2e57ab, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 367c4179b03c91e4d87910775c2e57ab, type: 3}
 --- !u!1 &7765203706336100765 stripped
 GameObject:
@@ -11232,6 +11376,25 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7765203706336100764}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7765203706336100766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7765203706336100765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 043b8690556e2714bbca2810e92b98df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  previousCityName: Venice
+  thisCityName: AsiaPadlock
+  nextCityName: Bangkok
+  available: {fileID: 0}
+  availableNoStar: {fileID: 21300000, guid: d97984f042691c841831c2be01b1c0b3, type: 3}
+  unavailable: {fileID: 21300000, guid: 58c0270292bcfd143ae7220e41991a38, type: 3}
+  levelAvailable: 0
 --- !u!212 &7765203706336100767
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11281,6 +11444,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7765203706336100770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7765203706336100765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c00368297b63a499bb18ef10cf7a0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layer:
+    serializedVersion: 2
+    m_Bits: 524288
+  thisObject: {fileID: 7765203706336100765}
+  menuIAP: {fileID: 3782635848924577907, guid: 65875e985c47c4f4eb60f32c4a5fa145, type: 3}
+  instantiatePos: {x: 2082, y: -500, z: 0}
+  parentGameObjectName: OnScreenOverlay
+  menuTag: Menu
+  menuDepth: 1
 --- !u!1001 &8588858359718273709
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11291,12 +11475,12 @@ PrefabInstance:
     - target: {fileID: 8588858360562508940, guid: acbde6b7ee4a8e64c9e5b26055e17e9a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2661
+      value: 2665.2
       objectReference: {fileID: 0}
     - target: {fileID: 8588858360562508940, guid: acbde6b7ee4a8e64c9e5b26055e17e9a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1366
+      value: -1362
       objectReference: {fileID: 0}
     - target: {fileID: 8588858360562508940, guid: acbde6b7ee4a8e64c9e5b26055e17e9a,
         type: 3}
@@ -11343,6 +11527,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8588858360562508940, guid: acbde6b7ee4a8e64c9e5b26055e17e9a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 8.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 8588858360562508940, guid: acbde6b7ee4a8e64c9e5b26055e17e9a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 8.54
+      objectReference: {fileID: 0}
     - target: {fileID: 8588858360562508978, guid: acbde6b7ee4a8e64c9e5b26055e17e9a,
         type: 3}
       propertyPath: m_Name
@@ -11351,7 +11545,7 @@ PrefabInstance:
     - target: {fileID: 8588858360562508978, guid: acbde6b7ee4a8e64c9e5b26055e17e9a,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: acbde6b7ee4a8e64c9e5b26055e17e9a, type: 3}
@@ -11381,7 +11575,7 @@ PrefabInstance:
     - target: {fileID: 1348287467780213807, guid: 6659d26a6dc81df41910491a71fb4511,
         type: 3}
       propertyPath: nextCityName
-      value: New Delhi
+      value: Tokyo
       objectReference: {fileID: 0}
     - target: {fileID: 1348287467780213807, guid: 6659d26a6dc81df41910491a71fb4511,
         type: 3}
@@ -11399,6 +11593,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: c17b2a76cfcb69f408ca25503d45db42,
         type: 3}
+    - target: {fileID: 1348287467780213807, guid: 6659d26a6dc81df41910491a71fb4511,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8799442844375527875, guid: 6659d26a6dc81df41910491a71fb4511,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11480,5 +11679,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1348287467780213807, guid: 6659d26a6dc81df41910491a71fb4511, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6659d26a6dc81df41910491a71fb4511, type: 3}

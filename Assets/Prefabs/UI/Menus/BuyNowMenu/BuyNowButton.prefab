@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2025114814844649463}
   - component: {fileID: 8098181285242591420}
   - component: {fileID: 4675510414524902325}
+  - component: {fileID: 2574798133136248632}
   m_Layer: 19
   m_Name: BuyNowButton
   m_TagString: Map
@@ -100,6 +101,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 524288
   thisObject: {fileID: 3455305469370366918}
+  menuTag: Menu
+  menuDepth: 0
 --- !u!58 &4675510414524902325
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -116,3 +119,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 3
+--- !u!114 &2574798133136248632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3455305469370366918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88b183cdcc97e6740b8460778a7bb931, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layer:
+    serializedVersion: 2
+    m_Bits: 524288
+  thisObject: {fileID: 3455305469370366918}
+  gameObjectName: BuyNowButton

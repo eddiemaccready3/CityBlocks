@@ -47,7 +47,7 @@ public class PlaneMovementStatic : MonoBehaviour
     private float acceleration = 10f;
 
     //Reference scripts:
-    private Availability availabilityScript;
+    private MarkerAvailability availabilityScript;
     private PauseGameStatus pauseGameScript;
 
     //Reference GameObjects
@@ -70,9 +70,9 @@ public class PlaneMovementStatic : MonoBehaviour
         scaleDownEndYPos = endMarker.transform.position.y;
         
         GameObject thisCityMarker = GameObject.Find(PlayerPrefs.GetString("thisCityName") + "Marker");
-        availabilityScript = thisCityMarker.GetComponent<Availability>();
+        availabilityScript = thisCityMarker.GetComponent<MarkerAvailability>();
 
-        if (availabilityScript.thisContinent != availabilityScript.lastContinent)
+        if (availabilityScript.thisContinent != availabilityScript.previousContinent)
         {
             moveCamera = true;
         }

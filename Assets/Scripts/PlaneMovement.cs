@@ -44,7 +44,7 @@ public class PlaneMovement : MonoBehaviour
     private float acceleration = 10f;
 
     //Reference scripts:
-    private Availability availabilityScript;
+    private MarkerAvailability availabilityScript;
     private PauseGameStatus pauseGameScript;
 
     // Use this for initialization
@@ -53,9 +53,9 @@ public class PlaneMovement : MonoBehaviour
         PauseGame();
         
         GameObject thisCityMarker = GameObject.Find(PlayerPrefs.GetString("thisCityName") + "Marker");
-        availabilityScript = thisCityMarker.GetComponent<Availability>();
+        availabilityScript = thisCityMarker.GetComponent<MarkerAvailability>();
 
-        if (availabilityScript.thisContinent != availabilityScript.lastContinent)
+        if (availabilityScript.thisContinent != availabilityScript.previousContinent)
         {
             moveCamera = true;
         }

@@ -85,25 +85,21 @@ public class UserInput : MonoBehaviour {
     private const string SHAPEWIDET4 = "1000011000011000001";
 
 
-
     //VARIABLES
 
     //Ints
-    [SerializeField] int reqBlocksOnScreen;
 
+    //Min and max XY positions and qty on screen to check for shape matches
     [SerializeField] private int minXBlockPos = 0;
     [SerializeField] private int maxXBlockPos = 6;
     [SerializeField] private int minYBlockPos = 0;
     [SerializeField] private int maxYBlockPos = 10;
     [SerializeField] private int blocksWidthXHeight = 60;
 
-    private int picNumber;
-
-    private int shapeGridPosX = 0;
-    private int shapeGridPosY = 0;
-
+    //FIX  Add comment
     private int gridIndexParam = 0;
 
+    //Point values for shape matches
     private int shapeShortIPoints = 50;
     private int shapeDashPoints = 75;
     private int shapeVPoints = 100;
@@ -127,24 +123,24 @@ public class UserInput : MonoBehaviour {
     private int shapeHollowOPoints = 700;
     private int shapeWideTPoints = 850;
     
-    private int coinGold = 25;
-    private int coinSilver = 15;
-    private int coinBronze = 8;
-
     //Floats
+
+    //Radius of point of mouse click to check for blocks
     private float pointRadius;
+
+    //Min and max XY coordinates for all blocks clicked on in this cycle
+    //Used to find coordinate center of all blocks clicked on
     private float minXClicked;
     private float maxXClicked;
     private float minYClicked;
     private float maxYClicked;
-
-    private float minX = 0f;
-    private float minY = 0f;
-
+    
     //Strings
-    private string coinBalanceName = "coin";
+
+    //ID for for adding points to the score using the AddInAmmount method
     private string scoreBalanceName = "score";
 
+    //Variable Tag for the first block clicked
     private string tagFirstBlockClicked;
     private string currentGridIndex;
 
@@ -642,9 +638,7 @@ public class UserInput : MonoBehaviour {
             checkBlocksClickedOn.Clear();
             shapeMatchIndexes.Clear();
 
-            //Reset floats and bools
-            minX = 0f;
-            minY = 0f;
+            //Reset bools
             match = false;
         }
     }

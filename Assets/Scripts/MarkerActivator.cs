@@ -41,7 +41,7 @@ public class MarkerActivator : MonoBehaviour
                         marker.transform.gameObject.GetComponent<Activate>().activeMarker = false;
                     }
 
-                    if(hitShape.transform.gameObject.GetComponent<Availability>().levelAvailable == true)
+                    if(hitShape.transform.gameObject.GetComponent<MarkerAvailability>().levelAvailable == true)
                     {
                         hitShape.transform.gameObject.GetComponent<Activate>().activeMarker = true;
                     }

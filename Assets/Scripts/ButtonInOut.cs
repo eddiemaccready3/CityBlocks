@@ -10,6 +10,12 @@ public class ButtonInOut : MonoBehaviour
     [SerializeField] private LayerMask layer;
 
     [SerializeField] private GameObject thisObject;
+
+    [SerializeField] private string menuTag;
+
+    [SerializeField] private int menuDepth;
+
+    private GameObject[] menuObjects;
     
     private SpriteRenderer spriteRenderer;
 
@@ -31,11 +37,16 @@ public class ButtonInOut : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-            hitShape = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 0, layer);
-        
-            if(hitShape.collider != null && transform.gameObject == thisObject)
+            menuObjects = GameObject.FindGameObjectsWithTag(menuTag);
+            
+            if (menuObjects.Length < menuDepth)
             {
-                ButtonIn();
+                hitShape = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 0, layer);
+        
+                if(hitShape.collider != null && hitShape.transform.gameObject == thisObject)
+                {
+                    ButtonIn();
+                }
             }
         }
         else

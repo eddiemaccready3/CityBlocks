@@ -154,6 +154,7 @@ public class ButtonActions : MonoBehaviour
             else if (buttonType == "ExitDestroy")
             {
                 PlaySound(exitClip);
+                menuObject = GameObject.Find(menuObjectName);
                 Destroy(menuObject);
             }
         }

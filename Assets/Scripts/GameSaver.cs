@@ -46,8 +46,6 @@ public class GameSaver : MonoBehaviour
 
     public string keyNewShapeAnnounced = "keyNewShapeAnnounced";
 
-    
-
     public string musicVolumeSet = "keyBoolMusicVolumeSet";
     public string sfxVolumeSet = "keyBoolSfxVolumeSet";
     public string musicVolumeLevel = "musicVolumeLevel";
@@ -63,6 +61,8 @@ public class GameSaver : MonoBehaviour
     public string keyClearAllData = "keyClearAllData";
 
     public string keyStartingMarkerSpin = "keyStartingMarkerSpin";
+
+    public string keySetBangkokMarkerToActive = "ketSetBangkokMarkerToActive";
 
     //Camera Settings
     public string keyFirstMapZoom = "keyFirstMapZoom";
@@ -104,10 +104,10 @@ public class GameSaver : MonoBehaviour
             PlayerPrefs.SetInt(musicVolumeSet, 1);
         }
 
-        else
-        {
-            musicAudioSource.volume = PlayerPrefs.GetFloat(musicVolumeLevel);
-        }
+        //else
+        //{
+        //    musicAudioSource.volume = PlayerPrefs.GetFloat(musicVolumeLevel);
+        //}
 
         if (PlayerPrefs.GetInt(sfxVolumeSet) == 0)
         {

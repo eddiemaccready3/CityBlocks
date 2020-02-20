@@ -14,8 +14,6 @@ public class ShuffleBlocks : MonoBehaviour
     public float currentShuffleLoopDelay = 0f;
 
     private int shuffleCounter = 0;
-
-    private int picNumber = 0;
     
     //private float rotationAngle;
 
@@ -111,8 +109,6 @@ public class ShuffleBlocks : MonoBehaviour
 
     public void ChangeBlockColor()
     {
-        //ScreenCapture.CaptureScreenshot("MatchPic" + picNumber + ".png");
-        //picNumber++;
         blocksGameObjectsList.Clear();
         spawnerGameObjectsList.Clear();
         allGameObjectsArray = GameObject.FindObjectsOfType(typeof(GameObject)) as GameObject[];

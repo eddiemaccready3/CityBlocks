@@ -120,7 +120,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: .01
+  bundleVersion: .03
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -166,7 +166,7 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.GoodDogGames.CityBlocksTest
   buildNumber: {}
-  AndroidBundleVersionCode: 1
+  AndroidBundleVersionCode: 3
   AndroidMinSdkVersion: 16
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
@@ -396,7 +396,7 @@ PlayerSettings:
       m_SubKind: 
     - m_Textures:
       - {fileID: 2800000, guid: f9427d5647ea9db45b3eb7c0282ad358, type: 3}
-      - {fileID: 2800000, guid: ae0250b830ee45347b2e98ce81854cc5, type: 3}
+      - {fileID: 2800000, guid: d12a74950aa278749bde82dc5402ea38, type: 3}
       m_Width: 432
       m_Height: 432
       m_Kind: 2
@@ -744,7 +744,7 @@ PlayerSettings:
     Collab: 0
     ErrorHub: 0
     Hub: 0
-    UNet: 1
+    UNet: 0
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 

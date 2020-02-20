@@ -95,7 +95,6 @@
     <Compile Include="Assets\Scripts\AutoCameraZoom.cs" />
     <Compile Include="Assets\Scripts\AutoCameraZoomEndEurope.cs" />
     <Compile Include="Assets\Scripts\AutoShuffle.cs" />
-    <Compile Include="Assets\Scripts\Availability.cs" />
     <Compile Include="Assets\Scripts\BlockSpawner.cs" />
     <Compile Include="Assets\Scripts\ButtonActions.cs" />
     <Compile Include="Assets\Scripts\ButtonActions2.cs" />
@@ -106,6 +105,7 @@
     <Compile Include="Assets\Scripts\CoinsMovement.cs" />
     <Compile Include="Assets\Scripts\CoinSpawner.cs" />
     <Compile Include="Assets\Scripts\ColliderOnOff.cs" />
+    <Compile Include="Assets\Scripts\ContinentAvailability.cs" />
     <Compile Include="Assets\Scripts\Counter.cs" />
     <Compile Include="Assets\Scripts\CurrentCityName.cs" />
     <Compile Include="Assets\Scripts\DeactivateMenu.cs" />
@@ -124,7 +124,9 @@
     <Compile Include="Assets\Scripts\GameSaver.cs" />
     <Compile Include="Assets\Scripts\GlobalControl.cs" />
     <Compile Include="Assets\Scripts\GrowObject.cs" />
+    <Compile Include="Assets\Scripts\IAPButton.cs" />
     <Compile Include="Assets\Scripts\IAPManager.cs" />
+    <Compile Include="Assets\Scripts\InstantiateIAPMenu.cs" />
     <Compile Include="Assets\Scripts\InstantiateMenu.cs" />
     <Compile Include="Assets\Scripts\InstantiateObject.cs" />
     <Compile Include="Assets\Scripts\InstantiateObjectToParent.cs" />
@@ -139,6 +141,7 @@
     <Compile Include="Assets\Scripts\LoadTAndC.cs" />
     <Compile Include="Assets\Scripts\MapSceneActivator.cs" />
     <Compile Include="Assets\Scripts\MarkerActivator.cs" />
+    <Compile Include="Assets\Scripts\MarkerAvailability.cs" />
     <Compile Include="Assets\Scripts\MenuFalling.cs" />
     <Compile Include="Assets\Scripts\MenuText.cs" />
     <Compile Include="Assets\Scripts\MoveCameraByCollision.cs" />
@@ -169,6 +172,7 @@
     <Compile Include="Assets\Scripts\ScoreBoard.cs" />
     <Compile Include="Assets\Scripts\ScoreCounter.cs" />
     <Compile Include="Assets\Scripts\SetActiveStatus.cs" />
+    <Compile Include="Assets\Scripts\SetBangkokMarkerStatus.cs" />
     <Compile Include="Assets\Scripts\SetCameraStartPos.cs" />
     <Compile Include="Assets\Scripts\SetCanvasCamera.cs" />
     <Compile Include="Assets\Scripts\SetInitialLevelValues.cs" />
