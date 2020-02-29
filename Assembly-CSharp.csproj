@@ -115,6 +115,7 @@
     <Compile Include="Assets\Scripts\DestroyerByLayer.cs" />
     <Compile Include="Assets\Scripts\DestroySelf.cs" />
     <Compile Include="Assets\Scripts\DestroySelfUnpause.cs" />
+    <Compile Include="Assets\Scripts\EnableColliderByPlayerPref.cs" />
     <Compile Include="Assets\Scripts\ExitByDestroyingMenu.cs" />
     <Compile Include="Assets\Scripts\FadeIn.cs" />
     <Compile Include="Assets\Scripts\FadeInText.cs" />

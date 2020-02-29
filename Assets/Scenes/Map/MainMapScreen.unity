@@ -11446,6 +11446,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7765203706336100768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7765203706336100765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9094433b971d63479de17b8c0c25242, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisCityName: AsiaPadlock
 --- !u!114 &7765203706336100770
 MonoBehaviour:
   m_ObjectHideFlags: 0
