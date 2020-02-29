@@ -68,8 +68,8 @@ public class LevelEarnedText : MonoBehaviour
         setInitialValuesScript = FindObjectOfType<SetInitialLevelValues>();
         
         startAddingScore = true;
-        startAddingCoins = true;
-        startAddingMatches = true;
+        startAddingCoins = false;
+        startAddingMatches = false;
 
         pointsStar = GameObject.Find("PointsStar");
         coinsStar = GameObject.Find("CoinsStar");
@@ -106,21 +106,21 @@ public class LevelEarnedText : MonoBehaviour
             ScoreCounter();
         }
 
-        if(int.Parse(pointsEarned.text) == GlobalControl.Instance.scoreBalanceSave)
-        {
+        //if(int.Parse(pointsEarned.text) == GlobalControl.Instance.scoreBalanceSave)
+        //{
             if(startAddingCoins == true)
             {
                 CoinsCounter();
             }
-        }
+        //}
 
-        if(int.Parse(coinsEarned.text) == GlobalControl.Instance.coinsBalanceSave)
-        {
-            if(startAddingMatches == true && matchesAdded == true)
+        //if(int.Parse(coinsEarned.text) == GlobalControl.Instance.coinsBalanceSave)
+        //{
+            if(startAddingMatches == true)// && matchesAdded == true)
             {
                 MatchesCounter();
             }
-        }
+        //}
 
         if((Time.time - timeOfInstantiation) > 1f)
         {
@@ -141,11 +141,11 @@ public class LevelEarnedText : MonoBehaviour
             GetComponent<ObjectColliderActiveStatus>().ActivateColliders();
         }
 
-        if(newShapeMenuInstantiate == true)
-        {
-            InstantiateNewShapeMenu();
-            newShapeMenuInstantiate = false;
-        }
+        //if(newShapeMenuInstantiate == true)
+        //{
+        //    InstantiateNewShapeMenu();
+        //    newShapeMenuInstantiate = false;
+        //}
     }
 
     private void ScoreCounter()
@@ -161,6 +161,7 @@ public class LevelEarnedText : MonoBehaviour
             pointsDisplayed = GlobalControl.Instance.scoreBalanceSave;
             pointsEarned.text = pointsDisplayed.ToString();
             startAddingScore = false;
+            startAddingCoins = true;
         }
     }
     
@@ -177,6 +178,7 @@ public class LevelEarnedText : MonoBehaviour
             coinsDisplayed = GlobalControl.Instance.coinsBalanceSave;
             coinsEarned.text = coinsDisplayed.ToString();
             startAddingCoins = false;
+            startAddingMatches = true;
         }
     }
 
@@ -193,19 +195,29 @@ public class LevelEarnedText : MonoBehaviour
             matchesDisplayed = GlobalControl.Instance.matchesBalanceSave;
             matchesEarned.text = matchesDisplayed.ToString();
             startAddingMatches = false;
-            newShapeMenuInstantiate = true;
+            PlayerPrefs.SetInt(gameSaverScript.keyTotalCoinBalance, PlayerPrefs.GetInt(gameSaverScript.keyTotalCoinBalance) + counterScript.coinsTotalAmount);
+
+            if(PlayerPrefs.GetInt(sceneName + gameSaverScript.keyPointsStarEarnedPerLevel) > 0 || PlayerPrefs.GetInt(sceneName + gameSaverScript.keyCoinsStarEarnedPerLevel) > 0 || PlayerPrefs.GetInt(sceneName + gameSaverScript.keyMatchesStarEarnedPerLevel) > 0)
+            {
+                if(PlayerPrefs.GetInt(sceneName + gameSaverScript.keyNewShapeAnnounced) < 2)
+                {
+                    PlayerPrefs.SetInt(sceneName + gameSaverScript.keyNewShapeAnnounced, 1);
+                }
+            }
+            
+            //newShapeMenuInstantiate = true;
         }
     }
 
-    private void InstantiateNewShapeMenu()
-    {
-        //if ((sceneName != "Kathmandu") && (sceneName != "Venice") && (PlayerPrefs.GetInt(sceneName + gameSaverScript.keyNewShapeAnnounced) == 0) && (PlayerPrefs.GetInt(sceneName + gameSaverScript.keyPointsStarEarnedPerLevel) > 0 || PlayerPrefs.GetInt(sceneName + gameSaverScript.keyCoinsStarEarnedPerLevel) > 0 || PlayerPrefs.GetInt(sceneName + gameSaverScript.keyMatchesStarEarnedPerLevel) > 0))
-        if ((newShapeMenu != null) && (PlayerPrefs.GetInt(sceneName + gameSaverScript.keyNewShapeAnnounced) == 0) && (PlayerPrefs.GetInt(sceneName + gameSaverScript.keyPointsStarEarnedPerLevel) > 0 || PlayerPrefs.GetInt(sceneName + gameSaverScript.keyCoinsStarEarnedPerLevel) > 0 || PlayerPrefs.GetInt(sceneName + gameSaverScript.keyMatchesStarEarnedPerLevel) > 0))
-        {
-            Instantiate(newShapeMenu, menuPos, Quaternion.identity);
-            PlayerPrefs.SetInt(sceneName + gameSaverScript.keyNewShapeAnnounced, 1);
-        }
-    }
+    //private void InstantiateNewShapeMenu()
+    //{
+    //    //if ((sceneName != "Kathmandu") && (sceneName != "Venice") && (PlayerPrefs.GetInt(sceneName + gameSaverScript.keyNewShapeAnnounced) == 0) && (PlayerPrefs.GetInt(sceneName + gameSaverScript.keyPointsStarEarnedPerLevel) > 0 || PlayerPrefs.GetInt(sceneName + gameSaverScript.keyCoinsStarEarnedPerLevel) > 0 || PlayerPrefs.GetInt(sceneName + gameSaverScript.keyMatchesStarEarnedPerLevel) > 0))
+    //    if ((newShapeMenu != null) && (PlayerPrefs.GetInt(sceneName + gameSaverScript.keyNewShapeAnnounced) == 0) && (PlayerPrefs.GetInt(sceneName + gameSaverScript.keyPointsStarEarnedPerLevel) > 0 || PlayerPrefs.GetInt(sceneName + gameSaverScript.keyCoinsStarEarnedPerLevel) > 0 || PlayerPrefs.GetInt(sceneName + gameSaverScript.keyMatchesStarEarnedPerLevel) > 0))
+    //    {
+    //        Instantiate(newShapeMenu, menuPos, Quaternion.identity);
+    //        PlayerPrefs.SetInt(sceneName + gameSaverScript.keyNewShapeAnnounced, 1);
+    //    }
+    //}
 
     public void SaveLevelInfo()
     {
@@ -230,7 +242,7 @@ public class LevelEarnedText : MonoBehaviour
             StarCountSave();
         }
 
-        PlayerPrefs.SetInt(gameSaverScript.keyTotalCoinBalance, PlayerPrefs.GetInt(gameSaverScript.keyTotalCoinBalance) + counterScript.coinsTotalAmount);
+        //PlayerPrefs.SetInt(gameSaverScript.keyTotalCoinBalance, PlayerPrefs.GetInt(gameSaverScript.keyTotalCoinBalance) + counterScript.coinsTotalAmount);
         
 
         PlayerPrefs.Save();

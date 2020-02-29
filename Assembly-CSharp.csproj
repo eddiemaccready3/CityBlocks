@@ -147,6 +147,7 @@
     <Compile Include="Assets\Scripts\MoveCameraByCollision.cs" />
     <Compile Include="Assets\Scripts\MoveCameraToContinent.cs" />
     <Compile Include="Assets\Scripts\NewShape.cs" />
+    <Compile Include="Assets\Scripts\NewShapeMenuTrigger.cs" />
     <Compile Include="Assets\Scripts\NextButtonStatus.cs" />
     <Compile Include="Assets\Scripts\ObjectColliderActiveStatus.cs" />
     <Compile Include="Assets\Scripts\ObjectMovement.cs" />
@@ -178,6 +179,7 @@
     <Compile Include="Assets\Scripts\SetInitialLevelValues.cs" />
     <Compile Include="Assets\Scripts\SetLayerDepth.cs" />
     <Compile Include="Assets\Scripts\SetMovingShapeSprite.cs" />
+    <Compile Include="Assets\Scripts\SetNewShapeMenuBool.cs" />
     <Compile Include="Assets\Scripts\SetPosition.cs" />
     <Compile Include="Assets\Scripts\SetPositionByResolution.cs" />
     <Compile Include="Assets\Scripts\SetScreenResolution.cs" />
@@ -218,7 +220,9 @@
     <Compile Include="Assets\Unity-Logs-Viewer\Reporter\ReporterMessageReceiver.cs" />
     <Compile Include="Assets\Unity-Logs-Viewer\Reporter\Test\Rotate.cs" />
     <Compile Include="Assets\Unity-Logs-Viewer\Reporter\Test\TestReporter.cs" />
+    <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-app-unity\maven-metadata.xml" />
     <None Include="Assets\FacebookSDK\link.xml" />
+    <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-messaging-unity\maven-metadata.xml" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Amy MacCready/Desktop/Eddie/Games/Unity3d/City Blocks/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
@@ -246,11 +250,17 @@
     <Reference Include="UnityEngine.XR.LegacyInputHelpers">
       <HintPath>C:/Users/Amy MacCready/Desktop/Eddie/Games/Unity3d/City Blocks/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Notifications.iOS">
+      <HintPath>C:/Users/Amy MacCready/Desktop/Eddie/Games/Unity3d/City Blocks/Library/ScriptAssemblies/Unity.Notifications.iOS.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>C:/Users/Amy MacCready/Desktop/Eddie/Games/Unity3d/City Blocks/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
       <HintPath>C:/Users/Amy MacCready/Desktop/Eddie/Games/Unity3d/City Blocks/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Notifications.Android">
+      <HintPath>C:/Users/Amy MacCready/Desktop/Eddie/Games/Unity3d/City Blocks/Library/ScriptAssemblies/Unity.Notifications.Android.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
       <HintPath>C:/Users/Amy MacCready/Desktop/Eddie/Games/Unity3d/City Blocks/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
@@ -446,6 +456,27 @@
     </Reference>
     <Reference Include="UnityEngine.XRModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.18f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.App">
+      <HintPath>C:/Users/Amy MacCready/Desktop/Eddie/Games/Unity3d/City Blocks/Assets/Firebase/Plugins/Firebase.App.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Messaging">
+      <HintPath>C:/Users/Amy MacCready/Desktop/Eddie/Games/Unity3d/City Blocks/Assets/Firebase/Plugins/Firebase.Messaging.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Platform">
+      <HintPath>C:/Users/Amy MacCready/Desktop/Eddie/Games/Unity3d/City Blocks/Assets/Firebase/Plugins/Firebase.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.TaskExtension">
+      <HintPath>C:/Users/Amy MacCready/Desktop/Eddie/Games/Unity3d/City Blocks/Assets/Firebase/Plugins/Firebase.TaskExtension.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.MiniJson">
+      <HintPath>C:/Users/Amy MacCready/Desktop/Eddie/Games/Unity3d/City Blocks/Assets/Firebase/Plugins/Google.MiniJson.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Compat">
+      <HintPath>C:/Users/Amy MacCready/Desktop/Eddie/Games/Unity3d/City Blocks/Assets/Parse/Plugins/dotNet45/Unity.Compat.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tasks">
+      <HintPath>C:/Users/Amy MacCready/Desktop/Eddie/Games/Unity3d/City Blocks/Assets/Parse/Plugins/dotNet45/Unity.Tasks.dll</HintPath>
     </Reference>
     <Reference Include="UDP">
       <HintPath>C:/Users/Amy MacCready/Desktop/Eddie/Games/Unity3d/City Blocks/Assets/Plugins/UDP/UDP.dll</HintPath>

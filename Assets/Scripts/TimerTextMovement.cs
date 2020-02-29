@@ -99,7 +99,7 @@ public class TimerTextMovement : MonoBehaviour
 
             moveComplete = true;
 
-            print("Running...");
+           //print("Running...");
         }
     }
 }

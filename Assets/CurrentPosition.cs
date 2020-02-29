@@ -11,7 +11,7 @@ public class CurrentPosition : MonoBehaviour
         float yPos = transform.position.y;
         float zPos = transform.position.z;
 
-        print("Current location: " + this.transform.position);
-        print(xPos + ", " + yPos + ", " + zPos);
+       //print("Current location: " + this.transform.position);
+       //print(xPos + ", " + yPos + ", " + zPos);
     }
 }

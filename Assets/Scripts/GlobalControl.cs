@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading.Tasks;
 
 public class GlobalControl : MonoBehaviour {
 
@@ -40,45 +41,60 @@ public class GlobalControl : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetKey("escape"))
-        {
-            scoreboardScript.HighScoreSave();
-            PlayerPrefs.Save();
-            Application.Quit();
-        }
+        //if (Input.GetKey("escape"))
+        //{
+        //    scoreboardScript.HighScoreSave();
+        //    PlayerPrefs.Save();
+        //    Application.Quit();
+        //}
 
-        if (Input.GetKey("backspace"))
-        {
-            PlayerPrefs.DeleteAll();
-        }
+        //if (Input.GetKey("backspace"))
+        //{
+        //    PlayerPrefs.DeleteAll();
+        //}
 
-        if (Input.GetKey("r"))
-        {
-            PlayerPrefs.SetInt(thisCityName + gameSaverScript.keyPointsStarEarnedPerLevel, 0);
-            PlayerPrefs.SetInt("AsiaPadlock" + gameSaverScript.keyPointsStarEarnedPerLevel, 0);
-            PlayerPrefs.SetInt(thisCityName + gameSaverScript.keyCoinsStarEarnedPerLevel, 0);
-            PlayerPrefs.SetInt(thisCityName + gameSaverScript.keyMatchesStarEarnedPerLevel, 0);
-            PlayerPrefs.SetInt(previousCityName + gameSaverScript.keyPlaneFlightCompletedPerLevel, 0);
-            PlayerPrefs.SetInt(thisCityName + gameSaverScript.keySetBangkokMarkerToActive, 0);
+        //if (Input.GetKey("r"))
+        //{
+        //    PlayerPrefs.SetInt(thisCityName + gameSaverScript.keyPointsStarEarnedPerLevel, 0);
+        //    //PlayerPrefs.SetInt("AsiaPadlock" + gameSaverScript.keyPointsStarEarnedPerLevel, 0);
+        //.SetInt("AsiaPadlock" + gameSaverScript.keyStarsEarnedPerLevel, 0);
+        //PlayerPrefs.SetInt(thisCityName + gameSaverScript.keyCoinsStarEarnedPerLevel, 0);
+        //PlayerPrefs.SetInt(thisCityName + gameSaverScript.keyMatchesStarEarnedPerLevel, 0);
+        //PlayerPrefs.SetInt(previousCityName + gameSaverScript.keyPlaneFlightCompletedPerLevel, 0);
+        //PlayerPrefs.SetInt(thisCityName + gameSaverScript.keySetBangkokMarkerToActive, 0);
 
 
-        }
+        //}
 
         //if (Input.touchCount == 4)
         //{
 
-        //    //PlayerPrefs.SetInt("Venice" + gameSaverScript.keyPointsStarEarnedPerLevel, 0);
-        //    //PlayerPrefs.SetInt("Venice" + gameSaverScript.keyMatchesStarEarnedPerLevel, 0);
-        //    PlayerPrefs.SetInt("Venice" + gameSaverScript.keyPlaneFlightCompletedPerLevel, 0);
-        //    //PlayerPrefs.SetInt("Venice" + gameSaverScript.keyCoinsStarEarnedPerLevel, 0);
-
-        //    //PlayerPrefs.SetInt("Bangkok" + gameSaverScript.keyPointsStarEarnedPerLevel, 0);
-        //    //PlayerPrefs.SetInt("Bangkok" + gameSaverScript.keyCoinsStarEarnedPerLevel, 0);
-        //    //PlayerPrefs.SetInt("Bangkok" + gameSaverScript.keyMatchesStarEarnedPerLevel, 0);
-        //    PlayerPrefs.SetInt("Bangkok" + gameSaverScript.keyPlaneFlightCompletedPerLevel, 0);
-
-        //    PlayerPrefs.SetInt(gameSaverScript.thanksForPlayingCompleted, 0);
-        //    PlayerPrefs.SetInt(gameSaverScript.keyEndEuropeMapZoom, 0);
+        //    PlayerPrefs.SetInt(thisCityName + gameSaverScript.keyPointsStarEarnedPerLevel, 0);
+        //    PlayerPrefs.SetInt("AsiaPadlock" + gameSaverScript.keyPointsStarEarnedPerLevel, 0);
+        //    PlayerPrefs.SetInt("AsiaPadlock" + gameSaverScript.keyStarsEarnedPerLevel, 0);
+        //    PlayerPrefs.SetInt(thisCityName + gameSaverScript.keyCoinsStarEarnedPerLevel, 0);
+        //    PlayerPrefs.SetInt(thisCityName + gameSaverScript.keyMatchesStarEarnedPerLevel, 0);
+        //    PlayerPrefs.SetInt(previousCityName + gameSaverScript.keyPlaneFlightCompletedPerLevel, 0);
+        //    PlayerPrefs.SetInt(thisCityName + gameSaverScript.keySetBangkokMarkerToActive, 0);
         //}
     }
+
+
+    //Firebase.FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task =>
+    //{
+    //    var dependencyStatus = task.Result;
+    //    if (dependencyStatus == Firebase.DependencyStatus.Available)
+    //    {
+    //      // Create and hold a reference to your FirebaseApp,
+    //      // where app is a Firebase.FirebaseApp property of your application class.
+    //      //   app = Firebase.FirebaseApp.DefaultInstance;
+
+    //      // Set a flag here to indicate whether Firebase is ready to use by your app.
+    //    } else
+    //    {
+    //      UnityEngine.Debug.LogError(System.String.Format(
+    //        "Could not resolve all Firebase dependencies: {0}", dependencyStatus));
+    //      // Firebase Unity SDK is not safe to use here.
+    //    }
+    //});
 }

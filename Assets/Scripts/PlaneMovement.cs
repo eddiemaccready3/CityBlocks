@@ -77,10 +77,14 @@ public class PlaneMovement : MonoBehaviour
         {
             speedModifier = 6f;
         }
+        else if(distanceMarkerToMarker >= 300f && distanceMarkerToMarker < 600f)
+        {
+            speedModifier = 12f;
+        }
 
         else
         {
-            speedModifier = 12f;
+            speedModifier = 20f;
         }
     }
 

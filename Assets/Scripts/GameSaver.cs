@@ -71,6 +71,9 @@ public class GameSaver : MonoBehaviour
     public string cameraStartY = "cameraStartY";
     public string cameraStartZoom = "cameraStartZoom";
 
+    //Release management
+    public string currentRelease = "currentRelease";
+
     
 
     //User Tips:
@@ -123,6 +126,24 @@ public class GameSaver : MonoBehaviour
         else
         {
             PlayerPrefs.SetInt(keyClearAllData, 1);
+        }
+
+        //Release updates
+        if(PlayerPrefs.GetInt(currentRelease) < 110)
+        {
+            //Reset end of all available levels announcement
+            PlayerPrefs.SetInt(thanksForPlayingCompleted, 0);
+
+            //Reset camera position to Europe
+            PlayerPrefs.SetFloat(cameraStartX, 84);
+            PlayerPrefs.SetFloat(cameraStartY, 75);
+            PlayerPrefs.SetFloat(cameraStartZoom, 730);
+
+            //Reset plane flight from Venice
+            PlayerPrefs.SetInt("Venice" + keyPlaneFlightCompletedPerLevel, 0);
+            
+            //Set to current release level
+            PlayerPrefs.SetInt(currentRelease, 110);
         }
     }
 }

@@ -36,6 +36,7 @@ public class MarkerAvailability : MonoBehaviour
     public bool levelAvailable;
 
     private bool availabilityRunComplete;
+    private bool thankYouMessageDisplayed;
     
     // Start is called before the first frame update
     void Start()
@@ -70,15 +71,9 @@ public class MarkerAvailability : MonoBehaviour
         //PlayerPrefs.SetInt(gameSaverScript.thanksForPlayingCompleted, 0);
 
 
-        
 
-        if (levelAvailable == true && gameObject.name == lastMarkerAvailable && PlayerPrefs.GetInt(gameSaverScript.thanksForPlayingCompleted) == 0)
-        {
-            pauseGameScript.pauseAuto = true;
-            thanksForPlaying.transform.GetComponent<Canvas>().worldCamera = cam;
-            Instantiate(thanksForPlaying, Camera.main.transform.position, Quaternion.identity);
-            PlayerPrefs.SetInt(gameSaverScript.thanksForPlayingCompleted, 1);
-        }
+
+        
     }
 
     // Update is called once per frame
@@ -98,14 +93,14 @@ public class MarkerAvailability : MonoBehaviour
                         if(previousMarker != null)
                         {
                             previousMarkerPos = previousMarker.transform.position;
-                            print("previousMarker: " + previousMarker.name);
+                            //print("previousMarker: " + previousMarker.name);
                         }
                         GameObject thisMarker = GameObject.Find(thisCityName.Replace(" ", "") + "Marker");
                     
                         if(previousMarker != null)
                         {
                             thisMarkerPos = thisMarker.transform.position;
-                            print("thisMarker: " + thisMarker.name);
+                           //print("thisMarker: " + thisMarker.name);
                         }
 
                         PlayerPrefs.SetString("thisCityName", thisCityName.Replace(" ", ""));
@@ -120,16 +115,11 @@ public class MarkerAvailability : MonoBehaviour
                     
                         if (plane != null)
                         {
-                            print("Plane: " + plane.transform.gameObject.name);
-                            print("Instantiate plane from: " + previousCityName + " to " + thisCityName);
                             Instantiate(plane, previousMarkerPos, Quaternion.Euler(0f, 0f, -angleInDeg + 180), dotsParentTran.transform);
                         }
                     
-                        //print("Fly from " + previousCityName + " to " + thisCityName);
-                        //print("Flight rad angle: " + angleInRad);
-                        //print("Flight deg angle: " + angleInDeg);
                         PlayerPrefs.SetInt(previousCityName + gameSaverScript.keyPlaneFlightCompletedPerLevel, 1);
-                        }
+                    }
 
                     else
                     {
@@ -145,6 +135,11 @@ public class MarkerAvailability : MonoBehaviour
             }
 
             availabilityRunComplete = true;
+        }
+
+        if(thankYouMessageDisplayed == false)
+        {
+            InstantiateThankYoMessage();
         }
         
         if (levelAvailable == true)
@@ -185,21 +180,17 @@ public class MarkerAvailability : MonoBehaviour
         {
             spriteRenderer.sprite = unavailable;
         }
+    }
 
-        //if(Input.GetKey("p"))
-        //{
-        //    GameObject previousMarker = GameObject.Find(previousCityName + "Marker");
-        //    previousMarkerPos = previousMarker.transform.position;
-        //    GameObject thisMarker = GameObject.Find(thisCityName + "Marker");
-        //    thisMarkerPos = thisMarker.transform.position;
-
-        //    PlayerPrefs.SetString("thisCityName", thisCityName);
-
-        //    float angleInRad = Mathf.Atan2(previousMarkerPos.x - thisMarkerPos.x, previousMarkerPos.y - thisMarkerPos.y);
-        //    float angleInDeg = angleInRad * (180 / Mathf.PI);
-
-        //    plane.transform.localScale = new Vector3(0.5F, 0.5f, 0f);
-        //    Instantiate(plane, previousMarkerPos, Quaternion.Euler(0f, 0f, -angleInDeg + 180));
-        //}
+    private void InstantiateThankYoMessage()
+    {
+        if (levelAvailable == true && gameObject.name == lastMarkerAvailable && PlayerPrefs.GetInt(gameSaverScript.thanksForPlayingCompleted) == 0)
+        {
+            pauseGameScript.pauseAuto = true;
+            thanksForPlaying.transform.GetComponent<Canvas>().worldCamera = cam;
+            Instantiate(thanksForPlaying, Camera.main.transform.position, Quaternion.identity);
+            thankYouMessageDisplayed = true;
+            PlayerPrefs.SetInt(gameSaverScript.thanksForPlayingCompleted, 1);
+        }
     }
 }

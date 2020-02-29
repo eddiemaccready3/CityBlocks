@@ -6,18 +6,6 @@ public class IAPButton : MonoBehaviour
 {
     [SerializeField] private LayerMask layer;
     [SerializeField] private GameObject thisObject;
-    [SerializeField] private string gameObjectName;
-    [SerializeField] private GameObject menuObject;
-
-    [SerializeField] private string markerToSpinName;
- 
-    [SerializeField] private GameObject[] deactivateObjects;
-    [SerializeField] private GameObject[] activateObjects;
-
-    [SerializeField] string gameObjectToDestroyName;
-    [SerializeField] string gameObjectToFindToDeactivate;
-    [SerializeField] string gameObjectToFindToActivate;
-    [SerializeField] string thisCityName;
     
     private RaycastHit2D hitShape;
 
@@ -37,27 +25,7 @@ public class IAPButton : MonoBehaviour
         
             if(hitShape.collider != null && hitShape.transform.gameObject == thisObject)
             {
-                //IAPManager.Instance.BuyFullGame();
-
-                PlayerPrefs.SetInt(thisCityName + gameSaverScript.keyPointsStarEarnedPerLevel, 1);
-                PlayerPrefs.SetInt(gameSaverScript.keySetBangkokMarkerToActive, 1);
-
-                //GameObject.Find(markerToSpinName).GetComponent<SpinObject>().rotateMarker = true;
-
-                Destroy(GameObject.Find(gameObjectToDestroyName));
-
-                GameObject.Find(gameObjectToFindToDeactivate).GetComponent<Collider2D>().enabled = false;
-                GameObject.Find(gameObjectToFindToActivate).GetComponent<Collider2D>().enabled = true;
-                
-                foreach(GameObject g in activateObjects)
-                {
-                    g.SetActive(true);
-                }
-                
-                foreach(GameObject g in deactivateObjects)
-                {
-                    g.SetActive(false);
-                }
+                IAPManager.Instance.BuyFullGame();
             }
         }
     }

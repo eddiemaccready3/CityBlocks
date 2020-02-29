@@ -25,13 +25,13 @@ public class CameraScreenResolution : MonoBehaviour
         
         defaultHeight = cam.orthographicSize;
         defaultWidth = cam.orthographicSize * cam.aspect;
-        print("cam.aspect: " + cam.aspect);
+       //print("cam.aspect: " + cam.aspect);
     }
 
     // Update is called once per frame
     void Update()
     {
-        print("cam.aspect: " + cam.aspect);
+       //print("cam.aspect: " + cam.aspect);
         if(maintainWidth == true)
         {
             cam.orthographicSize = ((backgroundSprite.GetComponent<Renderer>().bounds.size.x) / 2f) / cam.aspect;

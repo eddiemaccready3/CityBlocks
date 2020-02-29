@@ -130,10 +130,10 @@ public class PanAndZoom : MonoBehaviour
                     mapXOffset = (mapLocation.x - startMousePos.x);// * zoomPanFactor;
                     mapYOffset = (mapLocation.y - startMousePos.y);// * zoomPanFactor;
 
-                    print("mapLocation: " + mapLocation);
-                    print("mousePos: " + mousePos);
-                    print("mapXOffset: " + mapXOffset);
-                    print("mapYOffset: " + mapYOffset);
+                   //print("mapLocation: " + mapLocation);
+                   //print("mousePos: " + mousePos);
+                   //print("mapXOffset: " + mapXOffset);
+                   //print("mapYOffset: " + mapYOffset);
 
                     if (mousePosY + mapYOffset > mapMoveYTop && mousePosY + mapYOffset < mapMoveYBottom && mousePos.x + mapXOffset <= mapMoveXJumpLeft && mousePos.x + mapXOffset >= mapMoveXJumpRight)
                     {

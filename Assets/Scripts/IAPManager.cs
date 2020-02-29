@@ -8,7 +8,17 @@ public class IAPManager : MonoBehaviour, IStoreListener
 {
     public static IAPManager Instance{set;get;}
 
+    [SerializeField] AudioClip soundClip;
+    AudioSource audioSource;
+
     private GameSaver gameSaverScript;
+
+    [SerializeField] string thisCityName;
+    [SerializeField] string gameObjectToDestroyName;
+    [SerializeField] string gameObjectToFindToDeactivate;
+    [SerializeField] string gameObjectToFindToActivate;
+    [SerializeField] private GameObject[] deactivateObjects;
+    [SerializeField] private GameObject[] activateObjects;
     
     private static IStoreController m_StoreController;          // The Unity Purchasing system.
     private static IExtensionProvider m_StoreExtensionProvider; // The store-specific Purchasing subsystems.
@@ -35,6 +45,7 @@ public class IAPManager : MonoBehaviour, IStoreListener
         }
 
         gameSaverScript = FindObjectOfType<GameSaver>();
+        audioSource = GetComponent<AudioSource>();
     }
     public void InitializePurchasing() 
     {
@@ -163,6 +174,17 @@ public class IAPManager : MonoBehaviour, IStoreListener
         m_StoreController = controller;
         // Store specific subsystem, for accessing device-specific store features.
         m_StoreExtensionProvider = extensions;
+
+        Product product = controller.products.WithID(productPurchaseGame);
+        if(product != null && product.hasReceipt)
+        {
+            Debug.Log("Product was already purchased!");
+            
+            PlayerPrefs.SetInt("AsiaPadlock" + gameSaverScript.keyStarsEarnedPerLevel, 1);
+            PlayerPrefs.SetInt(thisCityName + gameSaverScript.keyPointsStarEarnedPerLevel, 1);
+            PlayerPrefs.SetInt(gameSaverScript.keySetBangkokMarkerToActive, 1);
+        }
+
     }
     public void OnInitializeFailed(InitializationFailureReason error)
     {
@@ -174,7 +196,30 @@ public class IAPManager : MonoBehaviour, IStoreListener
         // A non-consumable product has been purchased by this user.
         if (String.Equals(args.purchasedProduct.definition.id, productPurchaseGame, StringComparison.Ordinal))
         {
+            Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
+            
             PlayerPrefs.SetInt("AsiaPadlock" + gameSaverScript.keyStarsEarnedPerLevel, 1);
+
+            PlayerPrefs.SetInt(thisCityName + gameSaverScript.keyPointsStarEarnedPerLevel, 1);
+            PlayerPrefs.SetInt(gameSaverScript.keySetBangkokMarkerToActive, 1);
+
+            PlaySound(soundClip);
+
+            Destroy(GameObject.Find(gameObjectToDestroyName));
+
+            GameObject.Find(gameObjectToFindToDeactivate).GetComponent<Collider2D>().enabled = false;
+
+            GameObject.Find(gameObjectToFindToActivate).GetComponent<Collider2D>().enabled = true;
+
+            foreach (GameObject g in activateObjects)
+            {
+                g.SetActive(true);
+            }
+
+            foreach (GameObject g in deactivateObjects)
+            {
+                g.SetActive(false);
+            }
         }
 
         //// Or ... a consumable product has been purchased by this user.
@@ -191,6 +236,15 @@ public class IAPManager : MonoBehaviour, IStoreListener
         }
 
         return PurchaseProcessingResult.Complete;
+    }
+
+    private void PlaySound(AudioClip sound)
+    {
+        if (!audioSource.isPlaying)
+        {
+            audioSource.volume = PlayerPrefs.GetFloat(gameSaverScript.sfxVolumeLevel);
+            audioSource.PlayOneShot(sound);
+        }
     }
 
     public void OnPurchaseFailed(Product product, PurchaseFailureReason failureReason)

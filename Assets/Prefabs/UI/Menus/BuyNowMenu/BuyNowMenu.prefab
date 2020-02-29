@@ -99,7 +99,7 @@ MonoBehaviour:
     m_Bits: 524288
   thisObject: {fileID: 9144484868096079011}
   menuIAP: {fileID: 3946119156085863536, guid: 13b0e727e8eaedc47a7a993f9e86a0ba, type: 3}
-  instantiatePos: {x: 2082, y: -500, z: 0}
+  instantiatePos: {x: 2082, y: -500, z: -8}
   parentGameObjectName: OnScreenOverlay
   menuTag: Menu
   menuDepth: 2

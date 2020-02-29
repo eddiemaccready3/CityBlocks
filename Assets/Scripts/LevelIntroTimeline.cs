@@ -107,6 +107,6 @@ public class LevelIntroTimeline : MonoBehaviour
 
     private void Start()
     {
-        print("keyNewShapeAnnounced: " + PlayerPrefs.GetInt(sceneName + gameSaverScript.keyNewShapeAnnounced));
+       //print("keyNewShapeAnnounced: " + PlayerPrefs.GetInt(sceneName + gameSaverScript.keyNewShapeAnnounced));
     }
 }
