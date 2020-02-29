@@ -51,7 +51,7 @@ public class GlobalControl : MonoBehaviour {
         //if (Input.GetKey("backspace"))
         //{
         //    PlayerPrefs.DeleteAll();
-        //}
+        //} 
 
         //if (Input.GetKey("r"))
         //{
